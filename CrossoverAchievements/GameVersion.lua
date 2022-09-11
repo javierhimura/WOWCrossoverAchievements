@@ -10,39 +10,34 @@ local ServerType_ClassicTBC_PTR = "Classic TBC PTR";
 local ServerType_ClassicWOTLK_PTR = "Classic Wotlk PTR";
 local ServerType_Retail_PTR = "Retail PTR";
 
-function CrossoverAchievements:IsPTRorBeta()
-    --print('Enter IsPTRorBeta');
-    --if not self then print('self is nil'); end;
+local GameVersion = {};
+CrossoverAchievements.GameVersion = GameVersion;
+
+function GameVersion:IsPTRorBeta()
     return C_CVar.GetCVar("portal") == "test";
 end
 
-function CrossoverAchievements:IsRetail()
-    --print('Enter IsRetail');
-    --if not self then print('self is nil'); end;
+function GameVersion:IsRetail()
     return self:GetServerType() == ServerType_Retail or self:GetServerType() == ServerType_Retail_PTR;
 end
 
-function CrossoverAchievements:IsWOTLK()
-    --print('Enter IsWOTLK');
-    --if not self then print('self is nil'); end;
+function GameVersion:IsWOTLK()
     return self:GetServerType() == ServerType_ClassicWOTLK or self:GetServerType() == ServerType_ClassicWOTLK_PTR;
 end
 
-function CrossoverAchievements:HasGuildReputation()
+function GameVersion:HasGuildReputation()
     return GetExpansionLevel() >= LE_EXPANSION_CATACLYSM;
 end
 
-function CrossoverAchievements:HasGuildAchievements()
+function GameVersion:HasGuildAchievements()
     return GetExpansionLevel() >= LE_EXPANSION_CATACLYSM;
 end
 
-function CrossoverAchievements:HasStadisticSummary()
-    return CrossoverAchievements:IsWOTLK();
+function GameVersion:HasStadisticSummary()
+    return GameVersion:IsWOTLK();
 end
 
-function CrossoverAchievements:GetServerType()
-    --print('Enter GetServerType');
-    --if not self then print('self is nil'); end;
+function GameVersion:GetServerType()
     if self:IsPTRorBeta() then
         if WOW_PROJECT_ID == WOW_PROJECT_CLASSIC then
             -- vanilla
