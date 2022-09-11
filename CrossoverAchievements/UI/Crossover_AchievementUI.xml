@@ -1,17 +1,17 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
 ..\..\FrameXML\UI.xsd">
 
-	<Frame name="AchivementGoldBorderBackdrop" inherits="TooltipBackdropTemplate" virtual="true">
+	<Frame name="CrossoverAchivementGoldBorderBackdrop" inherits="TooltipBackdropTemplate" virtual="true">
 		<KeyValues>
 			<KeyValue key="backdropColorAlpha" value="0" type="number"/>
 			<KeyValue key="backdropBorderColor" value="ACHIEVEMENT_GOLD_BORDER_COLOR" type="global"/>
 		</KeyValues>
 		<Scripts>
-			<OnLoad inherit="prepend" function="AchievementFrameAchievementsBackdrop_OnLoad"/>
+			<OnLoad inherit="prepend" function="CrossoverAchievementFrameAchievementsBackdrop_OnLoad"/>
 		</Scripts>
 	</Frame>
 
-	<Button name="AchievementSearchPreviewButton" parentArray="searchPreviews" virtual="true">
+	<Button name="CrossoverAchievementSearchPreviewButton" parentArray="searchPreviews" virtual="true">
 		<Size x="206" y="27"/>
 		<Layers>
 			<Layer level="OVERLAY" textureSubLevel="3">
@@ -56,14 +56,14 @@
 		</HighlightTexture>
 		-->
 		<Scripts>
-			<OnLoad function="AchievementSearchPreviewButton_OnLoad"/>
-			<OnShow function="AchievementSearchPreviewButton_OnShow"/>
-			<OnEnter function="AchievementSearchPreviewButton_OnEnter"/>
-			<OnClick function="AchievementSearchPreviewButton_OnClick"/>
+			<OnLoad function="CrossoverAchievementSearchPreviewButton_OnLoad"/>
+			<OnShow function="CrossoverAchievementSearchPreviewButton_OnShow"/>
+			<OnEnter function="CrossoverAchievementSearchPreviewButton_OnEnter"/>
+			<OnClick function="CrossoverAchievementSearchPreviewButton_OnClick"/>
 		</Scripts>
 	</Button>
 
-	<Button name="AchievementFullSearchResultsButton" virtual="true">
+	<Button name="CrossoverAchievementFullSearchResultsButton" virtual="true">
 		<Size x="575" y="49"/>
 		<Layers>
 			<Layer level="OVERLAY" textureSubLevel="2">
@@ -111,11 +111,11 @@
 		<HighlightTexture atlas="search-highlight-large">
 		</HighlightTexture>
 		<Scripts>
-			<OnClick function="AcheivementFullSearchResultsButton_OnClick"/>
+			<OnClick function="CrossoverAcheivementFullSearchResultsButton_OnClick"/>
 		</Scripts>
 	</Button>
 
-	<StatusBar name="AchievementFrameSummaryCategoryTemplate" drawLayer="BORDER" virtual="true">
+	<StatusBar name="CrossoverAchievementFrameSummaryCategoryTemplate" drawLayer="BORDER" virtual="true">
 		<Size x="234" y="21"/>
 		<Layers>
 			<Layer level="OVERLAY">
@@ -130,7 +130,7 @@
 						<Anchor point="RIGHT" x="-5" y="3"/>
 					</Anchors>
 				</FontString>
-				<Texture name="$parentLeft" file="Interface\AchievementFrame\UI-Achievement-Header">
+				<Texture name="$parentLeft" file="  Interface\AchievementFrame\UI-Achievement-Header">
 					<Size x="32" y="48"/>
 					<Anchors>
 						<Anchor point="TOPLEFT" x="-15" y="16"/>
@@ -196,7 +196,7 @@
 				</Frames>
 				<Scripts>
 					<OnClick>
-						AchievementFrameSummaryCategoryButton_OnClick(self, button, down);
+						CrossoverAchievementFrameSummaryCategoryButton_OnClick(self, button, down);
 					</OnClick>
 					<OnEnter>
 						_G[self:GetName().."Highlight"]:Show();
@@ -209,19 +209,19 @@
 		</Frames>
 		<Scripts>
 			<OnLoad>
-				AchievementFrameSummaryCategory_OnLoad(self);
+				CrossoverAchievementFrameSummaryCategory_OnLoad(self);
 			</OnLoad>
 			<OnShow>
-				AchievementFrameSummaryCategory_OnShow(self);
+				CrossoverAchievementFrameSummaryCategory_OnShow(self);
 			</OnShow>
 			<OnEvent>
-				AchievementFrameSummaryCategory_OnEvent(self, event, ...);
+				CrossoverAchievementFrameSummaryCategory_OnEvent(self, event, ...);
 			</OnEvent>
 		</Scripts>
 		<BarTexture name="$parentBar" file="Interface\PaperDollInfoFrame\UI-Character-Skills-Bar"/>
 		<BarColor r="0" g="1" b="0"/>
 	</StatusBar>
-	<CheckButton name="AchievementCheckButtonTemplate" virtual="true">
+	<CheckButton name="CrossoverAchievementCheckButtonTemplate" virtual="true">
 		<Size>
 			<AbsDimension x="15" y="15"/>
 		</Size>
@@ -245,7 +245,7 @@
 				else
 					PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF);
 				end
-				local tracked = AchievementButton_ToggleTracking(self:GetParent().id);
+				local tracked = CrossoverAchievementButton_ToggleTracking(self:GetParent().id);
 				if ( not tracked ) then
 					self:SetChecked(false);
 				end
@@ -272,7 +272,7 @@
 		<DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled"/>
 	</CheckButton>
 
-	<Button name="AchievementFrameTabButtonTemplate" virtual="true">
+	<Button name="CrossoverAchievementFrameTabButtonTemplate" virtual="true">
         <Size x="115" y="32"/>
         <Layers>
         	<Layer level="BACKGROUND">
@@ -373,7 +373,7 @@
 		<HighlightFont style="GameFontHighlightSmall"/>
 		<DisabledFont style="GameFontHighlightSmall"/>
     </Button>
-	<Frame name="AchievementFrameAchievementsObjectivesTemplate" virtual="true">
+	<Frame name="CrossoverAchievementFrameAchievementsObjectivesTemplate" virtual="true">
 		<Layers>
 			<Layer level="ARTWORK">
 				<FontString name="$parentReputationCriteria" inherits="GameFontNormalSmall" parentKey="repCriteria">
@@ -385,9 +385,9 @@
 			</Layer>
 		</Layers>
 	</Frame>
-	<Frame name="AchievementFrameAchievementsObjectives" inherits="AchievementFrameAchievementsObjectivesTemplate" />
-	<Frame name="AchievementFrameAchievementsObjectivesOffScreen" inherits="AchievementFrameAchievementsObjectivesTemplate" />
-	<Frame name="AchievementGuildTabardTemplate" hidden="true" virtual="true">
+	<Frame name="CrossoverAchievementFrameAchievementsObjectives" inherits="CrossoverAchievementFrameAchievementsObjectivesTemplate" />
+	<Frame name="CrossoverAchievementFrameAchievementsObjectivesOffScreen" inherits="CrossoverAchievementFrameAchievementsObjectivesTemplate" />
+	<Frame name="CrossoverAchievementGuildTabardTemplate" hidden="true" virtual="true">
 		<Size x="72" y="128"/>
 		<Layers>
 			<Layer level="BACKGROUND">
@@ -418,7 +418,7 @@
 			</Layer>
 		</Layers>
 	</Frame>
-	<Frame name="MiniAchievementTemplate" virtual="true" parent="AchievementFrame">
+	<Frame name="CrossoverMiniAchievementTemplate" virtual="true" parent="CrossoverAchievementFrame">
 		<Size x="42" y="42"/>
 		<Anchors>
 			<Anchor point="CENTER"/>
@@ -487,7 +487,7 @@
 		</Scripts>
 	</Frame>
 
-	<Button name="MetaCriteriaTemplate" virtual="true">
+	<Button name="CrossoverMetaCriteriaTemplate" virtual="true">
 		<Size x="155" y="30"/>
 		<Anchors>
 			<Anchor point="CENTER"/>
@@ -527,12 +527,12 @@
 			</Layer>
 		</Layers>
 		<Scripts>
-			<!-- This OnEnter might also be called from AchievementFrameAchievements_OnEvent -->
-			<OnEnter function="AchievementMeta_OnEnter"/>
-			<OnLeave function="AchievementMeta_OnLeave"/>
+			<!-- This OnEnter might also be called from CrossoverAchievementFrameAchievements_OnEvent -->
+			<OnEnter function="CrossoverAchievementMeta_OnEnter"/>
+			<OnLeave function="CrossoverAchievementMeta_OnLeave"/>
 			<OnClick>
 				if ( self.id ) then
-					AchievementFrame_SelectAchievement(self.id);
+					CrossoverAchievementFrame_SelectAchievement(self.id);
 				end
 			</OnClick>
 		</Scripts>
@@ -545,7 +545,7 @@
 		</HighlightTexture>
 	</Button>
 
-	<StatusBar name="AchievementProgressBarTemplate" virtual="true">
+	<StatusBar name="CrossoverAchievementProgressBarTemplate" virtual="true">
 		<Size x="212" y="14"/>
 		<Anchors>
 			<Anchor point="CENTER"/>
@@ -606,7 +606,7 @@
 		<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
 	</StatusBar>
 
-	<StatusBar name="AchievementHeaderStatusBarTemplate" virtual="true">
+	<StatusBar name="CrossoverAchievementHeaderStatusBarTemplate" virtual="true">
 		<Anchors>
 			<!-- That's right. -0. -->
 			<Anchor point="TOP" x="-0" y="-17"/>
@@ -657,7 +657,7 @@
 		<BarColor r="0" g="1" b="0"/>
 	</StatusBar>
 
-	<Button name="AchievementCategoryTemplate" virtual="true">
+	<Button name="CrossoverAchievementCategoryTemplate" virtual="true">
 		<Size x="158" y="24"/>
 		<Layers>
 			<Layer level="BACKGROUND">
@@ -681,10 +681,10 @@
 		</Layers>
 		<Scripts>
 			<OnLoad>
-				AchievementCategoryButton_OnLoad(self);
+				CrossoverAchievementCategoryButton_OnLoad(self);
 			</OnLoad>
 			<OnClick>
-				AchievementCategoryButton_OnClick(self, button, down);
+				CrossoverAchievementCategoryButton_OnClick(self, button, down);
 			</OnClick>
 			<OnEnter>
 				if ( self.showTooltipFunc ) then
@@ -705,7 +705,7 @@
 		</HighlightTexture>
 	</Button>
 
-	<Frame name="AchievementIconFrameTemplate" virtual="true">
+	<Frame name="CrossoverCrossoverAchievementIconFrameTemplate" virtual="true">
 		<Layers>
 			<Layer level="BORDER">
 				<Texture name="$parentBling" file="Interface\AchievementFrame\UI-Achievement-Bling" hidden="true" parentKey="bling">
@@ -735,12 +735,12 @@
 		</Layers>
 		<Scripts>
 			<OnLoad>
-				AchievementIcon_OnLoad(self);
+				CrossoverAchievementIcon_OnLoad(self);
 			</OnLoad>
 		</Scripts>
 	</Frame>
 
-	<Frame name="AchievementCriteriaTemplate" virtual="true">
+	<Frame name="CrossoverAchievementCriteriaTemplate" virtual="true">
 		<Size x="350" y="15"/>
 		<Layers>
 			<Layer level="ARTWORK">
@@ -769,7 +769,7 @@
 		</Scripts>
 	</Frame>
 
-	<Button name="AchievementTemplate" inherits="TooltipBorderBackdropTemplate" virtual="true">
+	<Button name="CrossoverAchievementTemplate" inherits="TooltipBorderBackdropTemplate" virtual="true">
 		<Size x="434" y="142"/>
 		<Layers>
 			<Layer level="BACKGROUND">
@@ -916,10 +916,10 @@
 			</Layer>
 		</Layers>
 		<Scripts>
-			<OnLoad inherit="prepend" function="AchievementButton_OnLoad"/>
+			<OnLoad inherit="prepend" function="CrossoverAchievementButton_OnLoad"/>
 			<OnClick>
 				-- this is also called from the shield's OnClick
-				AchievementButton_OnClick(self);
+				CrossoverAchievementButton_OnClick(self);
 			</OnClick>
 			<OnEnter>
 				-- this is also called from the shield's OnEnter
@@ -995,13 +995,13 @@
 					</Layer>
 				</Layers>
 			</Frame>
-			<Frame name="$parentIcon" inherits="AchievementIconFrameTemplate" parentKey="icon">
+			<Frame name="$parentIcon" inherits="CrossoverCrossoverAchievementIconFrameTemplate" parentKey="icon">
 				<Size x="60" y="60"/>
 				<Anchors>
 					<Anchor point="TOPLEFT" x="8" y="-9"/>
 				</Anchors>
 			</Frame>
-			<Frame name="$parentTabard" inherits="AchievementGuildTabardTemplate" parentKey="tabard">
+			<Frame name="$parentTabard" inherits="CrossoverAchievementGuildTabardTemplate" parentKey="tabard">
 				<Anchors>
 					<Anchor point="TOPRIGHT" x="-3" y="-4"/>
 				</Anchors>
@@ -1038,15 +1038,15 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						AchievementShield_OnLoad(self);
+						CrossoverAchievementShield_OnLoad(self);
 					</OnLoad>
 					<OnClick>
 						local parent = self:GetParent();
-						AchievementButton_OnClick(parent);
+						CrossoverAchievementButton_OnClick(parent);
 					</OnClick>
-					<!-- This OnEnter might also be called from AchievementFrameAchievements_OnEvent -->
-					<OnEnter function="AchievementShield_OnEnter"/>
-					<OnLeave function="AchievementShield_OnLeave"/>
+					<!-- This OnEnter might also be called from CrossoverAchievementFrameAchievements_OnEvent -->
+					<OnEnter function="CrossoverAchievementShield_OnEnter"/>
+					<OnLeave function="CrossoverAchievementShield_OnLeave"/>
 				</Scripts>
 			</Button>
 			<Frame name="$parentObjectives" parentKey="objectives">
@@ -1057,14 +1057,14 @@
 					<Anchor point="BOTTOM" relativeTo="$parentRewardBackground" relativePoint="TOP" x="0" y="0"/>
 				</Anchors>
 			</Frame>
-			<CheckButton name="$parentTracked" hidden="true" inherits="AchievementCheckButtonTemplate" parentKey="tracked">
+			<CheckButton name="$parentTracked" hidden="true" inherits="CrossoverAchievementCheckButtonTemplate" parentKey="tracked">
 				<Anchors>
 					<Anchor point="TOPLEFT" x="12" y="-66"/>
 				</Anchors>
 			</CheckButton>
 		</Frames>
 	</Button>
-	<Frame name="ComparisonPlayerTemplate" inherits="TooltipBorderBackdropTemplate" virtual="true">
+	<Frame name="CrossoverComparisonPlayerTemplate" inherits="TooltipBorderBackdropTemplate" virtual="true">
 		<Size x="498" y="50"/>
 		<Layers>
 			<Layer level="BACKGROUND">
@@ -1117,7 +1117,7 @@
 			</Layer>
 		</Layers>
 		<Scripts>
-			<OnLoad inherit="prepend" function="AchievementComparisonPlayerButton_OnLoad"/>
+			<OnLoad inherit="prepend" function="CrossoverAchievementComparisonPlayerButton_OnLoad"/>
 		</Scripts>
 		<Frames>
 			<Frame name="$parentIcon" parentKey="icon">
@@ -1154,7 +1154,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						AchievementIcon_OnLoad(self);
+						CrossoverAchievementIcon_OnLoad(self);
 					</OnLoad>
 				</Scripts>
 			</Frame>
@@ -1184,13 +1184,13 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						AchievementShield_OnLoad(self);
+						CrossoverAchievementShield_OnLoad(self);
 					</OnLoad>
 				</Scripts>
 			</Frame>
 		</Frames>
 	</Frame>
-	<Frame name="SummaryAchievementTemplate" inherits="ComparisonPlayerTemplate" virtual="true">
+	<Frame name="CrossoverSummaryAchievementTemplate" inherits="CrossoverComparisonPlayerTemplate" virtual="true">
 		<Size x="100" y="48"/>
 		<KeyValues>
 			<KeyValue key="backdropBorderColor" value="ACHIEVEMENT_RED_BORDER_COLOR" type="global"/>
@@ -1261,12 +1261,12 @@
 			</Frame>
 		</Frames>
 		<Scripts>
-			<OnLoad inherit="prepend" function="AchievementFrameSummaryAchievement_OnLoad"/>
+			<OnLoad inherit="prepend" function="CrossoverAchievementFrameSummaryAchievement_OnLoad"/>
 			<OnClick>
-				AchievementFrameSummaryAchievement_OnClick(self, button, down);
+				CrossoverAchievementFrameSummaryAchievement_OnClick(self, button, down);
 			</OnClick>
 			<OnEnter>
-				AchievementFrameSummaryAchievement_OnEnter(self, motion);
+				CrossoverAchievementFrameSummaryAchievement_OnEnter(self, motion);
 			</OnEnter>
 			<OnLeave>
 				self.highlight:Hide();
@@ -1274,13 +1274,13 @@
 			</OnLeave>
 		</Scripts>
 	</Frame>
-	<Frame name="ComparisonTemplate" virtual="true">
+	<Frame name="CrossoverComparisonTemplate" virtual="true">
 		<Size x="616" y="50"/>
 		<Anchors>
 			<Anchor point="CENTER"/>
 		</Anchors>
 		<Frames>
-			<Frame name="$parentPlayer" inherits="ComparisonPlayerTemplate" parentKey="player">
+			<Frame name="$parentPlayer" inherits="CrossoverComparisonPlayerTemplate" parentKey="player">
 				<Anchors>
 					<Anchor point="LEFT"/>
 				</Anchors>
@@ -1361,7 +1361,7 @@
 							</Layer>
 						</Layers>
 						<Scripts>
-							<OnLoad function="AchievementIcon_OnLoad"/>
+							<OnLoad function="CrossoverAchievementIcon_OnLoad"/>
 						</Scripts>
 					</Frame>
 					<Frame name="$parentShield" parentKey="shield">
@@ -1389,18 +1389,18 @@
 							</Layer>
 						</Layers>
 						<Scripts>
-							<OnLoad function="AchievementShield_OnLoad"/>
+							<OnLoad function="CrossoverAchievementShield_OnLoad"/>
 						</Scripts>
 					</Frame>
 				</Frames>
 				<Scripts>
-					<OnLoad inherit="prepend" function="AchievementComparisonFriendButton_OnLoad"/>
+					<OnLoad inherit="prepend" function="CrossoverAchievementComparisonFriendButton_OnLoad"/>
 				</Scripts>
 			</Frame>
 		</Frames>
 	</Frame>
 
-	<Button name="StatTemplate" virtual="true" hidden="true">
+	<Button name="CrossoverStatTemplate" virtual="true" hidden="true">
 		<Size x="511" y="24"/>
 		<Layers>
 			<Layer level="BACKGROUND">
@@ -1441,12 +1441,12 @@
 		</Layers>
 		<Scripts>
 			<OnLoad>
-				AchievementStatButton_OnLoad(self, AchievementFrameStats);
+				CrossoverAchievementStatButton_OnLoad(self, CrossoverAchievementFrameStats);
 			</OnLoad>
 			<OnClick>
-				AchievementStatButton_OnClick(self, button, down);
+				CrossoverAchievementStatButton_OnClick(self, button, down);
 			</OnClick>
-			<OnEnter function="AchievementStatButton_OnEnter"/>
+			<OnEnter function="CrossoverAchievementStatButton_OnEnter"/>
 			<OnLeave>
 				GameTooltip:Hide();
 			</OnLeave>
@@ -1463,7 +1463,7 @@
 		</HighlightTexture>
 	</Button>
 
-	<Frame name="ComparisonStatTemplate" virtual="true">
+	<Frame name="CrossoverComparisonStatTemplate" virtual="true">
 		<Size x="511" y="24"/>
 		<Layers>
 			<Layer level="BACKGROUND">
@@ -1558,22 +1558,22 @@
 		</Frames>
 		<Scripts>
 			<OnLoad>
-				AchievementFrameComparisonStat_OnLoad(self);
+				CrossoverAchievementFrameComparisonStat_OnLoad(self);
 			</OnLoad>
 		</Scripts>
 	</Frame>
 
-	<Button name="SummaryStatTemplate" inherits="StatTemplate" virtual="true">
+	<Button name="CrossoverSummaryStatTemplate" inherits="CrossoverStatTemplate" virtual="true">
 		<Scripts>
 			<OnLoad>
 				self.summary = true;
-				AchievementStatButton_OnLoad(self, AchievementFrameSummaryStats);
+				CrossoverAchievementStatButton_OnLoad(self, CrossoverAchievementFrameSummaryStats);
 				self:SetHeight(18);
 			</OnLoad>
 		</Scripts>
 	</Button>
 
-	<Frame name="AchievementFrame" toplevel="true" parent="UIParent" frameStrata="MEDIUM" hidden="true" enableMouse="true" inherits="BackdropTemplate">
+	<Frame name="CrossoverAchievementFrame" toplevel="true" parent="UIParent" frameStrata="MEDIUM" hidden="true" enableMouse="true" inherits="BackdropTemplate">
 		<Size x="768" y="500"/>
 		<KeyValues>
 			<KeyValue key="backdropInfo" value="BACKDROP_ACHIEVEMENTS_0_64" type="global"/>
@@ -1713,7 +1713,7 @@
 			<Frame name="$parentHeader" enableMouse="true">
 				<Size x="726" y="106"/>
 				<Anchors>
-					<Anchor point="BOTTOMLEFT" relativeTo="AchievementFrame" relativePoint="TOPLEFT" x="26" y="-38"/>
+					<Anchor point="BOTTOMLEFT" relativeTo="CrossoverAchievementFrame" relativePoint="TOPLEFT" x="26" y="-38"/>
 				</Anchors>
 				<Layers>
 					<Layer level="BACKGROUND">
@@ -1736,14 +1736,14 @@
 						<Texture name="$parentPointBorder" file="Interface\AchievementFrame\UI-Achievement-Header">
 							<Size x="133" y="39"/>
 							<Anchors>
-								<Anchor point="BOTTOM" relativeTo="AchievementFrameHeader" relativePoint="BOTTOM" x="20" y="16"/>
+								<Anchor point="BOTTOM" relativeTo="CrossoverAchievementFrameHeader" relativePoint="BOTTOM" x="20" y="16"/>
 							</Anchors>
 							<TexCoords left="0.419921875" right="0.6796875" top="0.4140625" bottom="0.56640625"/>
 						</Texture>
 						<FontString name="$parentTitle" inherits="GameFontNormal" text="ACHIEVEMENT_TITLE">
 							<Size x="200" y="12"/>
 							<Anchors>
-								<Anchor point="TOP" relativeTo="AchievementFrameHeaderPointBorder" relativePoint="TOP" x="0" y="7"/>
+								<Anchor point="TOP" relativeTo="CrossoverAchievementFrameHeaderPointBorder" relativePoint="TOP" x="0" y="7"/>
 							</Anchors>
 						</FontString>
 						<Texture name="$parentLeftDDLInset" file="Interface\AchievementFrame\UI-Achievement-RightDDLInset" hidden="true">
@@ -1763,7 +1763,7 @@
 						<FontString name="$parentPoints" inherits="GameFontHighlight">
 							<Size x="0" y="12"/>
 							<Anchors>
-								<Anchor point="TOP" relativeTo="AchievementFrameHeaderPointBorder" relativePoint="TOP" x="0" y="-13"/>
+								<Anchor point="TOP" relativeTo="CrossoverAchievementFrameHeaderPointBorder" relativePoint="TOP" x="0" y="-13"/>
 							</Anchors>
 						</FontString>
 						<Texture name="$parentShield" file="Interface\AchievementFrame\UI-Achievement-TinyShield">
@@ -1776,15 +1776,15 @@
 					</Layer>
 				</Layers>
 			</Frame>
-			<Frame name="$parentCategories" inherits="AchivementGoldBorderBackdrop">
+			<Frame name="$parentCategories" inherits="CrossoverAchivementGoldBorderBackdrop">
 				<Anchors>
 					<Anchor point="TOPLEFT" x="21" y="-19"/>
 					<Anchor point="BOTTOMLEFT" x="21" y="20"/>
 				</Anchors>
 				<Size x="175" y="0"/>
 				<Scripts>
-					<OnLoad inherit="prepend" function="AchievementFrameCategories_OnLoad"/>
-					<OnShow function="AchievementFrameCategories_OnShow"/>
+					<OnLoad inherit="prepend" function="CrossoverAchievementFrameCategories_OnLoad"/>
+					<OnShow function="CrossoverAchievementFrameCategories_OnShow"/>
 				</Scripts>
 				<Frames>
 					<ScrollFrame name="$parentContainer" inherits="HybridScrollFrameTemplate">
@@ -1842,13 +1842,13 @@
 					</Layer>
 				</Layers>
 				<Scripts>
-					<OnLoad function="AchievementFrameAchievements_OnLoad"/>
-					<OnEvent function="AchievementFrameAchievements_OnEvent"/>
+					<OnLoad function="CrossoverAchievementFrameAchievements_OnLoad"/>
+					<OnEvent function="CrossoverAchievementFrameAchievements_OnEvent"/>
 					<OnHide>
-						AchievementFrameFilterDropDown:Hide();
-						AchievementFrameHeaderLeftDDLInset:Hide();
+						CrossoverAchievementFrameFilterDropDown:Hide();
+						CrossoverAchievementFrameHeaderLeftDDLInset:Hide();
 					</OnHide>
-					<OnShow function="AchievementFrameAchievements_OnShow"/>
+					<OnShow function="CrossoverAchievementFrameAchievements_OnShow"/>
 				</Scripts>
 				<Frames>
 					<ScrollFrame name="$parentContainer" inherits="HybridScrollFrameTemplate">
@@ -1865,7 +1865,7 @@
 							</Slider>
 						</Frames>
 					</ScrollFrame>
-					<Frame setAllPoints="true" inherits="AchivementGoldBorderBackdrop"/>
+					<Frame setAllPoints="true" inherits="CrossoverAchivementGoldBorderBackdrop"/>
 				</Frames>
 			</Frame>
 			<Frame name="$parentStats" hidden="true">
@@ -1875,8 +1875,8 @@
 					<Anchor point="BOTTOM" relativeTo="$parentCategories" relativePoint="BOTTOM"/>
 				</Anchors>
 				<Scripts>
-					<OnLoad function="AchievementFrameStats_OnLoad"/>
-					<OnEvent function="AchievementFrameStats_OnEvent"/>
+					<OnLoad function="CrossoverAchievementFrameStats_OnLoad"/>
+					<OnEvent function="CrossoverAchievementFrameStats_OnEvent"/>
 				</Scripts>
 				<Frames>
 					<Frame name="$parentBG">
@@ -1914,7 +1914,7 @@
 							</Slider>
 						</Frames>
 					</ScrollFrame>
-					<Frame setAllPoints="true" inherits="AchivementGoldBorderBackdrop"/>
+					<Frame setAllPoints="true" inherits="CrossoverAchivementGoldBorderBackdrop"/>
 				</Frames>
 			</Frame>
 			<Frame name="$parentSummary" hidden="true">
@@ -1935,7 +1935,7 @@
 					</Layer>
 				</Layers>
 				<Frames>
-					<Frame setAllPoints="true" inherits="AchivementGoldBorderBackdrop"/>
+					<Frame setAllPoints="true" inherits="CrossoverAchivementGoldBorderBackdrop"/>
 					<Frame name="$parentAchievements">
 						<Size x="0" y="210"/>
 						<Anchors>
@@ -2060,62 +2060,62 @@
 								<BarTexture name="$parentBar" file="Interface\PaperDollInfoFrame\UI-Character-Skills-Bar"/>
 								<BarColor r="0" g="1" b="0"/>
 							</StatusBar>
-							<StatusBar name="$parentCategory1" inherits="AchievementFrameSummaryCategoryTemplate">
+							<StatusBar name="$parentCategory1" inherits="CrossoverAchievementFrameSummaryCategoryTemplate">
 								<Anchors>
 									<Anchor point="TOPLEFT" relativeTo="$parentStatusBar" relativePoint="BOTTOMLEFT" x="0" y="-13"/>
 								</Anchors>
 							</StatusBar>
-							<StatusBar name="$parentCategory2" inherits="AchievementFrameSummaryCategoryTemplate">
+							<StatusBar name="$parentCategory2" inherits="CrossoverAchievementFrameSummaryCategoryTemplate">
 								<Anchors>
 									<Anchor point="TOPLEFT" relativeTo="$parentCategory1" relativePoint="TOPRIGHT" x="20" y="0"/>
 								</Anchors>
 							</StatusBar>
-							<StatusBar name="$parentCategory3" inherits="AchievementFrameSummaryCategoryTemplate">
+							<StatusBar name="$parentCategory3" inherits="CrossoverAchievementFrameSummaryCategoryTemplate">
 								<Anchors>
 									<Anchor point="TOPLEFT" relativeTo="$parentCategory1" relativePoint="BOTTOMLEFT" x="0" y="-10"/>
 								</Anchors>
 							</StatusBar>
-							<StatusBar name="$parentCategory4" inherits="AchievementFrameSummaryCategoryTemplate">
+							<StatusBar name="$parentCategory4" inherits="CrossoverAchievementFrameSummaryCategoryTemplate">
 								<Anchors>
 									<Anchor point="TOPLEFT" relativeTo="$parentCategory3" relativePoint="TOPRIGHT" x="20" y="0"/>
 								</Anchors>
 							</StatusBar>
-							<StatusBar name="$parentCategory5" inherits="AchievementFrameSummaryCategoryTemplate">
+							<StatusBar name="$parentCategory5" inherits="CrossoverAchievementFrameSummaryCategoryTemplate">
 								<Anchors>
 									<Anchor point="TOPLEFT" relativeTo="$parentCategory3" relativePoint="BOTTOMLEFT" x="0" y="-10"/>
 								</Anchors>
 							</StatusBar>
-							<StatusBar name="$parentCategory6" inherits="AchievementFrameSummaryCategoryTemplate">
+							<StatusBar name="$parentCategory6" inherits="CrossoverAchievementFrameSummaryCategoryTemplate">
 								<Anchors>
 									<Anchor point="TOPLEFT" relativeTo="$parentCategory5" relativePoint="TOPRIGHT" x="20" y="0"/>
 								</Anchors>
 							</StatusBar>
-							<StatusBar name="$parentCategory7" inherits="AchievementFrameSummaryCategoryTemplate">
+							<StatusBar name="$parentCategory7" inherits="CrossoverAchievementFrameSummaryCategoryTemplate">
 								<Anchors>
 									<Anchor point="TOPLEFT" relativeTo="$parentCategory5" relativePoint="BOTTOMLEFT" x="0" y="-10"/>
 								</Anchors>
 							</StatusBar>
-							<StatusBar name="$parentCategory8" inherits="AchievementFrameSummaryCategoryTemplate">
+							<StatusBar name="$parentCategory8" inherits="CrossoverAchievementFrameSummaryCategoryTemplate">
 								<Anchors>
 									<Anchor point="TOPLEFT" relativeTo="$parentCategory7" relativePoint="TOPRIGHT" x="20" y="0"/>
 								</Anchors>
 							</StatusBar>
-							<StatusBar name="$parentCategory9" inherits="AchievementFrameSummaryCategoryTemplate">
+							<StatusBar name="$parentCategory9" inherits="CrossoverAchievementFrameSummaryCategoryTemplate">
 								<Anchors>
 									<Anchor point="TOPLEFT" relativeTo="$parentCategory7" relativePoint="BOTTOMLEFT" x="0" y="-10"/>
 								</Anchors>
 							</StatusBar>
-							<StatusBar name="$parentCategory10" inherits="AchievementFrameSummaryCategoryTemplate">
+							<StatusBar name="$parentCategory10" inherits="CrossoverAchievementFrameSummaryCategoryTemplate">
 								<Anchors>
 									<Anchor point="TOPLEFT" relativeTo="$parentCategory9" relativePoint="TOPRIGHT" x="20" y="0"/>
 								</Anchors>
 							</StatusBar>
-							<StatusBar name="$parentCategory11" inherits="AchievementFrameSummaryCategoryTemplate">
+							<StatusBar name="$parentCategory11" inherits="CrossoverAchievementFrameSummaryCategoryTemplate">
 								<Anchors>
 									<Anchor point="TOPLEFT" relativeTo="$parentCategory9" relativePoint="BOTTOMLEFT" x="0" y="-10"/>
 								</Anchors>
 							</StatusBar>
-							<StatusBar name="$parentCategory12" inherits="AchievementFrameSummaryCategoryTemplate">
+							<StatusBar name="$parentCategory12" inherits="CrossoverAchievementFrameSummaryCategoryTemplate">
 								<Anchors>
 									<Anchor point="TOPLEFT" relativeTo="$parentCategory11" relativePoint="TOPRIGHT" x="20" y="0"/>
 								</Anchors>
@@ -2127,8 +2127,8 @@
 					<OnLoad>
 						self:RegisterEvent("ACHIEVEMENT_EARNED");
 					</OnLoad>
-					<OnEvent function="AchievementFrameSummary_Update"/>
-					<OnShow function="AchievementFrameSummary_OnShow"/>
+					<OnEvent function="CrossoverAchievementFrameSummary_Update"/>
+					<OnShow function="CrossoverAchievementFrameSummary_OnShow"/>
 				</Scripts>
 			</Frame>
 			<Frame name="$parentComparison" hidden="true">
@@ -2226,7 +2226,7 @@
 									</Layer>
 								</Layers>
 								<Frames>
-									<StatusBar name="$parentStatusBar" inherits="AchievementHeaderStatusBarTemplate" parentKey="statusBar">
+									<StatusBar name="$parentStatusBar" inherits="CrossoverAchievementHeaderStatusBarTemplate" parentKey="statusBar">
 										<Size x="0" y="21"/>
 										<Anchors>
 											<Anchor point="TOPLEFT" x="19" y="-17"/>
@@ -2255,7 +2255,7 @@
 									</Layer>
 								</Layers>
 								<Frames>
-									<StatusBar name="$parentStatusBar" inherits="AchievementHeaderStatusBarTemplate" parentKey="statusBar">
+									<StatusBar name="$parentStatusBar" inherits="CrossoverAchievementHeaderStatusBarTemplate" parentKey="statusBar">
 										<Size x="90" y="21"/>
 									</StatusBar>
 								</Frames>
@@ -2275,7 +2275,7 @@
 						<Frames>
 							<Slider name="$parentScrollBar" inherits="HybridScrollBarTemplate">
 								<Anchors>
-									<Anchor point="TOPLEFT" relativeTo="AchievementFrameComparisonSummary" relativePoint="TOPRIGHT" x="7" y="-16"/>
+									<Anchor point="TOPLEFT" relativeTo="CrossoverAchievementFrameComparisonSummary" relativePoint="TOPRIGHT" x="7" y="-16"/>
 									<Anchor point="BOTTOMLEFT" relativePoint="BOTTOMRIGHT" x="1" y="12"/>
 								</Anchors>
 							</Slider>
@@ -2314,7 +2314,7 @@
 							</OnShow>
 						</Scripts>
 					</ScrollFrame>
-					<Frame setAllPoints="true" inherits="AchivementGoldBorderBackdrop"/>
+					<Frame setAllPoints="true" inherits="CrossoverAchivementGoldBorderBackdrop"/>
 				</Frames>
 				<Layers>
 					<Layer level="BACKGROUND">
@@ -2346,53 +2346,53 @@
 					</Layer>
 				</Layers>
 				<Scripts>
-					<OnLoad function="AchievementFrameComparison_OnLoad"/>
-					<OnEvent function="AchievementFrameComparison_OnEvent"/>
-					<OnShow function="AchievementFrameComparison_OnShow"/>
-					<OnHide function="AchievementFrameComparison_OnHide"/>
+					<OnLoad function="CrossoverAchievementFrameComparison_OnLoad"/>
+					<OnEvent function="CrossoverAchievementFrameComparison_OnEvent"/>
+					<OnShow function="CrossoverAchievementFrameComparison_OnShow"/>
+					<OnHide function="CrossoverAchievementFrameComparison_OnHide"/>
 				</Scripts>
 			</Frame>
 			<Button name="$parentCloseButton" inherits="UIPanelCloseButton">
 				<Anchors>
-					<Anchor point="TOPRIGHT" relativeTo="AchievementFrame" relativePoint="TOPRIGHT" x="3" y="4"/>
+					<Anchor point="TOPRIGHT" relativeTo="CrossoverAchievementFrame" relativePoint="TOPRIGHT" x="3" y="4"/>
 				</Anchors>
 				<Scripts>
 					<OnShow>
-						if ( AchievementFrameComparisonHeader:IsShown() ) then
-							self:SetFrameLevel(AchievementFrameComparisonHeader:GetFrameLevel() + 1);
+						if ( CrossoverAchievementFrameComparisonHeader:IsShown() ) then
+							self:SetFrameLevel(CrossoverAchievementFrameComparisonHeader:GetFrameLevel() + 1);
 						end
 					</OnShow>
 				</Scripts>
 			</Button>
-			<Button name="$parentTab1" inherits="AchievementFrameTabButtonTemplate" id="1" text="ACHIEVEMENTS">
+			<Button name="$parentTab1" inherits="CrossoverAchievementFrameTabButtonTemplate" id="1" text="ACHIEVEMENTS">
 				<Anchors>
 					<Anchor point="BOTTOMLEFT" x="11" y="-30"/>
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						AchievementFrameTab_OnClick(self:GetID());
+						CrossoverAchievementFrameTab_OnClick(self:GetID());
 						PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB);
 					</OnClick>
 				</Scripts>
 			</Button>
-			<Button name="$parentTab2" inherits="AchievementFrameTabButtonTemplate" id="2" text="ACHIEVEMENTS_GUILD_TAB">
+			<Button name="$parentTab2" inherits="CrossoverAchievementFrameTabButtonTemplate" id="2" text="ACHIEVEMENTS_GUILD_TAB">
 				<Anchors>
 					<Anchor point="LEFT" relativeTo="$parentTab1" relativePoint="RIGHT" x="-5" y="0"/>
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						AchievementFrameTab_OnClick(self:GetID());
+						CrossoverAchievementFrameTab_OnClick(self:GetID());
 						PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB);
 					</OnClick>
 				</Scripts>
 			</Button>
-			<Button name="$parentTab3" inherits="AchievementFrameTabButtonTemplate" id="3" text="STATISTICS">
+			<Button name="$parentTab3" inherits="CrossoverAchievementFrameTabButtonTemplate" id="3" text="STATISTICS">
 				<Anchors>
 					<Anchor point="LEFT" relativeTo="$parentTab2" relativePoint="RIGHT" x="-5" y="0"/>
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						AchievementFrameTab_OnClick(self:GetID());
+						CrossoverAchievementFrameTab_OnClick(self:GetID());
 						PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB);
 					</OnClick>
 				</Scripts>
@@ -2455,7 +2455,7 @@
 							<Anchor point="TOPLEFT" x="-3"/>
 						</Anchors>
 						<Scripts>
-							<OnEnter function="AchievementFrameFilterDropDown_OnEnter"/>
+							<OnEnter function="CrossoverAchievementFrameFilterDropDown_OnEnter"/>
 							<OnLeave>
 								GameTooltip:Hide();
 							</OnLeave>
@@ -2463,7 +2463,7 @@
 					</Frame>
 				</Frames>
 				<Scripts>
-					<OnLoad function="AchievementFrameFilterDropDown_OnLoad"/>
+					<OnLoad function="CrossoverAchievementFrameFilterDropDown_OnLoad"/>
 					<OnHide>
 						CloseDropDownMenus()
 					</OnHide>
@@ -2475,13 +2475,13 @@
 					<Anchor point="TOPLEFT" relativeTo="$parentHeaderRightDDLInset" relativePoint="TOPLEFT" x="12" y="2"/>
 				</Anchors>
 				<Scripts>
-					<OnLoad function="AchievementFrameSearchBox_OnLoad"/>
-					<OnShow function="AchievementFrameSearchBox_OnShow"/>
-					<OnEnterPressed function="AchievementFrameSearchBox_OnEnterPressed"/>
-					<OnTextChanged function="AchievementFrameSearchBox_OnTextChanged"/>
-					<OnEditFocusLost function="AchievementFrameSearchBox_OnFocusLost"/>
-					<OnEditFocusGained function="AchievementFrameSearchBox_OnFocusGained"/>
-					<OnKeyDown function="AchievementFrameSearchBox_OnKeyDown"/>
+					<OnLoad function="CrossoverAchievementFrameSearchBox_OnLoad"/>
+					<OnShow function="CrossoverAchievementFrameSearchBox_OnShow"/>
+					<OnEnterPressed function="CrossoverAchievementFrameSearchBox_OnEnterPressed"/>
+					<OnTextChanged function="CrossoverAchievementFrameSearchBox_OnTextChanged"/>
+					<OnEditFocusLost function="CrossoverAchievementFrameSearchBox_OnFocusLost"/>
+					<OnEditFocusGained function="CrossoverAchievementFrameSearchBox_OnFocusGained"/>
+					<OnKeyDown function="CrossoverAchievementFrameSearchBox_OnKeyDown"/>
 				</Scripts>
 			</EditBox>
 			<Frame parentKey="searchPreviewContainer" hidden="true">
@@ -2538,27 +2538,27 @@
 					</Layer>
 				</Layers>
 				<Frames>
-					<Button inherits="AchievementSearchPreviewButton" parentKey="searchPreview1" hidden="true">
+					<Button inherits="CrossoverAchievementSearchPreviewButton" parentKey="searchPreview1" hidden="true">
 						<Anchors>
 							<Anchor point="TOPLEFT" relativePoint="TOPLEFT" x="0" y="0"/>
 						</Anchors>
 					</Button>
-					<Button inherits="AchievementSearchPreviewButton" parentKey="searchPreview2" hidden="true">
+					<Button inherits="CrossoverAchievementSearchPreviewButton" parentKey="searchPreview2" hidden="true">
 						<Anchors>
 							<Anchor point="TOPLEFT" relativeKey="$parent.searchPreview1" relativePoint="BOTTOMLEFT"/>
 						</Anchors>
 					</Button>
-					<Button inherits="AchievementSearchPreviewButton" parentKey="searchPreview3" hidden="true">
+					<Button inherits="CrossoverAchievementSearchPreviewButton" parentKey="searchPreview3" hidden="true">
 						<Anchors>
 							<Anchor point="TOPLEFT" relativeKey="$parent.searchPreview2" relativePoint="BOTTOMLEFT"/>
 						</Anchors>
 					</Button>
-					<Button inherits="AchievementSearchPreviewButton" parentKey="searchPreview4" hidden="true">
+					<Button inherits="CrossoverAchievementSearchPreviewButton" parentKey="searchPreview4" hidden="true">
 						<Anchors>
 							<Anchor point="TOPLEFT" relativeKey="$parent.searchPreview3" relativePoint="BOTTOMLEFT"/>
 						</Anchors>
 					</Button>
-					<Button inherits="AchievementSearchPreviewButton" parentKey="searchPreview5" hidden="true">
+					<Button inherits="CrossoverAchievementSearchPreviewButton" parentKey="searchPreview5" hidden="true">
 						<Anchors>
 							<Anchor point="TOPLEFT" relativeKey="$parent.searchPreview4" relativePoint="BOTTOMLEFT"/>
 						</Anchors>
@@ -2601,10 +2601,10 @@
 								self:SetFrameLevel(self:GetParent():GetFrameLevel() + 10);
 							</OnShow>
 							<OnClick>
-								AchievementFrame_ShowFullSearch();
+								CrossoverAchievementFrame_ShowFullSearch();
 								PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
 							</OnClick>
-							<OnEnter function="AchievementFrameShowAllSearchResults_OnEnter"/>
+							<OnEnter function="CrossoverAchievementFrameShowAllSearchResults_OnEnter"/>
 						</Scripts>
 					</Button>
 				</Frames>
@@ -2820,9 +2820,9 @@
 			</Frame>
 		</Frames>
 		<Scripts>
-			<OnLoad inherit="prepend" function="AchievementFrame_OnLoad"/>
-			<OnShow function="AchievementFrame_OnShow"/>
-			<OnHide function="AchievementFrame_OnHide"/>
+			<OnLoad inherit="prepend" function="CrossoverAchievementFrame_OnLoad"/>
+			<OnShow function="CrossoverAchievementFrame_OnShow"/>
+			<OnHide function="CrossoverAchievementFrame_OnHide"/>
 		</Scripts>
 	</Frame>
 
