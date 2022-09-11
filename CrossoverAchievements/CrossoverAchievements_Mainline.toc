@@ -1,0 +1,12 @@
+## Interface: 90207
+## Title: Crossover Achievements
+## Name: Crossover Achievements
+## Author: Javier Himura
+## Notes: Crossover Achievements between Retail and WOTLK Classic
+## Version: 1
+## SavedVariablesPerCharacter: CrossoverAchievements_CharacterData
+## SavedVariables: CrossoverAchievements_AccountData
+
+GameVersion.lua
+CrossoverAchievements_Extract.lua
+CrossoverAchievements.lua
