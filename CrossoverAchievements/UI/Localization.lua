@@ -1,25 +1,25 @@
 -- This file is executed at the end of addon load
 
-function AchievementFrameSummary_LocalizeButton (button)
+function CrossoverAchievementFrameSummary_LocalizeButton (button)
 
 end
 	
-function AchievementButton_LocalizeMiniAchievement (frame)
+function CrossoverAchievementButton_LocalizeMiniAchievement (frame)
 
 end
 
-function AchievementButton_LocalizeProgressBar (frame)
+function CrossoverAchievementButton_LocalizeProgressBar (frame)
 
 end
 
-function AchievementButton_LocalizeMetaAchievement (frame)
+function CrossoverAchievementButton_LocalizeMetaAchievement (frame)
 
 end
 
-function AchievementFrame_LocalizeCriteria (frame)
+function CrossoverAchievementFrame_LocalizeCriteria (frame)
 
 end
 
-function AchievementCategoryButton_Localize(button)
+function CrossoverAchievementCategoryButton_Localize(button)
 
 end
