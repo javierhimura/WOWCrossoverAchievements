@@ -1,3 +1,4 @@
+local _, CrossoverAchievements = ...
 
 UIPanelWindows["CrossoverAchievementFrame"] = { area = "doublewide", pushable = 0, xoffset = 80, whileDead = 1 };
 
@@ -163,8 +164,12 @@ function CrossoverAchievementFrame_ForceUpdate ()
 end
 
 function CrossoverAchievementFrame_SetTabs()
-	CrossoverAchievementFrameTab2:Show();
-	CrossoverAchievementFrameTab3:SetPoint("LEFT", CrossoverAchievementFrameTab2, "RIGHT", -5, 0);
+    if CrossoverAchievements:HasGuildAchievements() then
+        CrossoverAchievementFrameTab2:Show();
+        CrossoverAchievementFrameTab3:SetPoint("LEFT", CrossoverAchievementFrameTab2, "RIGHT", -5, 0);
+    else
+        CrossoverAchievementFrameTab3:SetPoint("LEFT", CrossoverAchievementFrameTab1, "RIGHT", -5, 0);
+    end
 end
 
 function CrossoverAchievementFrame_UpdateTabs(clickedTab)
@@ -243,7 +248,7 @@ function CrossoverAchievementFrameBaseTab_OnClick (id)
 		CrossoverAchievementFrameCategoriesBG:SetTexCoord(0, 0.5, 0, 1);
 		CrossoverAchievementFrameGuildEmblemLeft:Hide();
 		CrossoverAchievementFrameGuildEmblemRight:Hide();
-	elseif ( id == 2) then
+	elseif ( id == 2 and CrossoverAchievements:HasGuildAchievements() ) then
 		if ( not IN_GUILD_VIEW ) then
 			CrossoverAchievementFrame_ToggleView();
 		end
@@ -296,11 +301,11 @@ function CrossoverAchievementFrameComparisonTab_OnClick (id)
 		Crossover_achievementFunctions = CROSSOVER_COMPARISON_ACHIEVEMENT_FUNCTIONS;
 		CrossoverAchievementFrame_ShowSubFrame(CrossoverAchievementFrameComparison, CrossoverAchievementFrameComparisonContainer);
 		CrossoverAchievementFrameWaterMark:SetTexture("Interface\\AchievementFrame\\UI-Achievement-AchievementWatermark");
-	elseif ( id == 2 ) then
+	elseif ( id == 2 and CrossoverAchievements:HasGuildAchievements() ) then
 		-- We don't have support for guild achievement comparison.  Just open up the non-comparison guild achievement tab.
 		CrossoverAchievementFrameTab_OnClick = CrossoverAchievementFrameBaseTab_OnClick;
 		CrossoverAchievementFrameTab_OnClick(2);
-	elseif ( id == 3 ) then
+	else
 		Crossover_achievementFunctions = COMPARISON_STAT_FUNCTIONS;
 		CrossoverAchievementFrame_ShowSubFrame(CrossoverAchievementFrameComparison, CrossoverAchievementFrameComparisonStatsContainer);
 		CrossoverAchievementFrameWaterMark:SetTexture("Interface\\AchievementFrame\\UI-Achievement-StatWatermark");
