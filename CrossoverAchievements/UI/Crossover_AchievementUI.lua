@@ -286,7 +286,7 @@ function CrossoverAchievementFrameBaseTab_OnClick (id)
 		Crossover_achievementFunctions.updateFunc();
 	end
 
-	SwitchAchievementSearchTab(id);
+	CrossoverAchievementSwitchAchievementSearchTab(id);
 end
 
 CrossoverAchievementFrameTab_OnClick = CrossoverAchievementFrameBaseTab_OnClick;
@@ -316,7 +316,13 @@ function CrossoverAchievementFrameComparisonTab_OnClick (id)
 	CrossoverAchievementFrame_UpdateTabs(id);
 
 	Crossover_achievementFunctions.updateFunc();
-	SwitchAchievementSearchTab(id);
+	CrossoverAchievementSwitchAchievementSearchTab(id);
+end
+
+function CrossoverAchievementSwitchAchievementSearchTab(id)
+    if SwitchAchievementSearchTab then
+        SwitchAchievementSearchTab(id);
+    end
 end
 
 CrossoverAchievementFrame_SUBFRAMES = {
