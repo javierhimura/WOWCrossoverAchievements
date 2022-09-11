@@ -1846,7 +1846,7 @@
 					<OnEvent function="CrossoverAchievementFrameAchievements_OnEvent"/>
 					<OnHide>
 						CrossoverAchievementFrameFilterDropDown:Hide();
-						CrossoverAchievementFrameHeaderLeftDDLInset:Hide();
+						CrossoverAchievementFrameHeaderSearchChangeDLLInset(false);
 					</OnHide>
 					<OnShow function="CrossoverAchievementFrameAchievements_OnShow"/>
 				</Scripts>
