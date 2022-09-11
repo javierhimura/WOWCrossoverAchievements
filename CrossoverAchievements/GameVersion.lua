@@ -36,6 +36,10 @@ function CrossoverAchievements:HasGuildAchievements()
     return GetExpansionLevel() >= LE_EXPANSION_CATACLYSM;
 end
 
+function CrossoverAchievements:HasStadisticSummary()
+    return CrossoverAchievements:IsWOTLK();
+end
+
 function CrossoverAchievements:GetServerType()
     --print('Enter GetServerType');
     --if not self then print('self is nil'); end;

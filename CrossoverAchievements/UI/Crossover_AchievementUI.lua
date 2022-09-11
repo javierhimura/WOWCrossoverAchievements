@@ -3478,7 +3478,7 @@ CROSSOVER_STAT_FUNCTIONS = {
 	clearFunc = nil,
 	updateFunc = CrossoverAchievementFrameStats_Update,
 	selectedCategory = 130;
-	noSummary = true;
+	noSummary = not CrossoverAchievements:HasStadisticSummary();
 }
 
 CROSSOVER_COMPARISON_ACHIEVEMENT_FUNCTIONS = {
