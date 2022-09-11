@@ -1,7 +1,10 @@
 local _, CrossoverAchievements = ...
 
-function CrossoverAchievements:ExtractAchievementsInfo()
-    local GameVersionTable = self:GetCurrentGameVersionTable();
+local Extract = {};
+CrossoverAchievements.Extract = Extract;
+
+function Extract:ExtractAchievementsInfo()
+    local GameVersionTable = CrossoverAchievements:GetCurrentGameVersionTable();
     if not GameVersionTable then
         return;
     end
@@ -11,7 +14,7 @@ function CrossoverAchievements:ExtractAchievementsInfo()
     self:ExtractCategoriesInfo(GameVersionTable);
 end
 
-function CrossoverAchievements:ExtractAchievementInfo(GameVersionTable, achievementid)
+function Extract:ExtractAchievementInfo(GameVersionTable, achievementid)
     GameVersionTable.AchievementsInfo = GameVersionTable.AchievementsInfo or {};
     local id, name, points, completed, month, day, year, description, flags, icon, rewardText, isGuild, wasEarnedByMe, earnedBy, isStatistic = GetAchievementInfo(achievementid)
     if not id then
@@ -35,7 +38,7 @@ function CrossoverAchievements:ExtractAchievementInfo(GameVersionTable, achievem
                                                        };
 end
 
-function CrossoverAchievements:ExtractCategoriesInfo(GameVersionTable)
+function Extract:ExtractCategoriesInfo(GameVersionTable)
     GameVersionTable.CategoriesInfo = GameVersionTable.CategoriesInfo or {};
     local categories = GetCategoryList();
     for categoryindex,categoryid in ipairs(categories) do
