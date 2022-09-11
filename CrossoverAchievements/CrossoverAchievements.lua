@@ -40,6 +40,8 @@ function CrossoverAchievements:OnPlayerEnteringWorld()
     self.Extract:ExtractAchievementsInfo();
     --print('End '.. date("%a %b %d %H:%M:%S %Y"));
     self:ReplaceBlizzardFrame();
+    self.CompressHelper:DecompressDecodeData(self:GetCurrentGameVersionTable());
+    self.CompressHelper:CompressEncodeData(self:GetCurrentGameVersionTable());
     LoadAddOn("Blizzard_AchievementUI");
 end
 
