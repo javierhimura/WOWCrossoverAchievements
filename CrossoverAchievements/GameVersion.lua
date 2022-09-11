@@ -28,6 +28,10 @@ function CrossoverAchievements:IsWOTLK()
     return self:GetServerType() == ServerType_ClassicWOTLK or self:GetServerType() == ServerType_ClassicWOTLK_PTR;
 end
 
+function CrossoverAchievements:HasGuildReputation()
+    return GetExpansionLevel() >= LE_EXPANSION_CATACLYSM;
+end
+
 function CrossoverAchievements:HasGuildAchievements()
     return GetExpansionLevel() >= LE_EXPANSION_CATACLYSM;
 end

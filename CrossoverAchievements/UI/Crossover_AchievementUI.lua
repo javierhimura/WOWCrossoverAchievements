@@ -1056,7 +1056,7 @@ function CrossoverAchievementButton_UpdatePlusMinusTexture (button)
 		display = true;
 	elseif ( button.completed and GetPreviousAchievement(id) ) then
 		display = true;
-	elseif ( not button.completed and GetAchievementGuildRep(id) ) then
+	elseif ( not button.completed and CrossoverAchievements:HasGuildReputation() and GetAchievementGuildRep(id) ) then
 		display = true;
 	end
 
@@ -1773,27 +1773,30 @@ function CrossoverAchievementObjectives_DisplayCriteria (objectivesFrame, id, re
 	local numCriteriaRows = 0;
 	local numExtraCriteriaRows = 0;
 
-	local function AddExtraCriteriaRow()
-		numExtraCriteriaRows = numExtraCriteriaRows + 1;
-		yOffset = -numExtraCriteriaRows * CrossoverAchievementButton_CRITERIAROWHEIGHT;
-	end
 
-	local requiresRep, hasRep, repLevel;
-	if ( not objectivesFrame.completed ) then
-		requiresRep, hasRep, repLevel = GetAchievementGuildRep(id);
-		if ( requiresRep ) then
-			local gender = UnitSex("player");
-			local factionStandingtext = GetText("FACTION_STANDING_LABEL"..repLevel, gender);
-			objectivesFrame.repCriteria:SetFormattedText(ACHIEVEMENT_REQUIRES_GUILD_REPUTATION, factionStandingtext);
-			if ( hasRep ) then
-				objectivesFrame.repCriteria:SetTextColor(0, 1, 0);
-			else
-				objectivesFrame.repCriteria:SetTextColor(1, 0, 0);
-			end
-			objectivesFrame.repCriteria:Show();
-			AddExtraCriteriaRow();
-		end
-	end
+    if CrossoverAchievements:HasGuildReputation() then
+        local function AddExtraCriteriaRow()
+            numExtraCriteriaRows = numExtraCriteriaRows + 1;
+            yOffset = -numExtraCriteriaRows * CrossoverAchievementButton_CRITERIAROWHEIGHT;
+        end
+
+        local requiresRep, hasRep, repLevel;
+        if ( not objectivesFrame.completed ) then
+            requiresRep, hasRep, repLevel = GetAchievementGuildRep(id);
+            if ( requiresRep ) then
+                local gender = UnitSex("player");
+                local factionStandingtext = GetText("FACTION_STANDING_LABEL"..repLevel, gender);
+                objectivesFrame.repCriteria:SetFormattedText(ACHIEVEMENT_REQUIRES_GUILD_REPUTATION, factionStandingtext);
+                if ( hasRep ) then
+                    objectivesFrame.repCriteria:SetTextColor(0, 1, 0);
+                else
+                    objectivesFrame.repCriteria:SetTextColor(1, 0, 0);
+                end
+                objectivesFrame.repCriteria:Show();
+                AddExtraCriteriaRow();
+            end
+        end
+    end
 
 	local numCriteria = GetAchievementNumCriteria(id);
 	if ( numCriteria == 0 and not requiresRep ) then
