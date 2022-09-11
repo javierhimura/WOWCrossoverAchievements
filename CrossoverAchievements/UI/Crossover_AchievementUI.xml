@@ -130,7 +130,7 @@
 						<Anchor point="RIGHT" x="-5" y="3"/>
 					</Anchors>
 				</FontString>
-				<Texture name="$parentLeft" file="  Interface\AchievementFrame\UI-Achievement-Header">
+				<Texture name="$parentLeft" file="Interface\AchievementFrame\UI-Achievement-Header">
 					<Size x="32" y="48"/>
 					<Anchors>
 						<Anchor point="TOPLEFT" x="-15" y="16"/>
@@ -2469,7 +2469,7 @@
 					</OnHide>
 				</Scripts>
 			</Frame>
-			<EditBox parentKey="searchBox" inherits="SearchBoxTemplate" letters="40" hidden="false">
+			<EditBox parentKey="searchBox" name="$parentSearchBox" inherits="SearchBoxTemplate" letters="40" hidden="false">
 				<Size x="107" y="30"/>
 				<Anchors>
 					<Anchor point="TOPLEFT" relativeTo="$parentHeaderRightDDLInset" relativePoint="TOPLEFT" x="12" y="2"/>
@@ -2614,7 +2614,7 @@
 					</OnShow>
 				</Scripts>
 			</Frame>
-			<StatusBar parentKey="searchProgressBar" hidden="false">
+			<StatusBar parentKey="searchProgressBar" name="$parentSearchPreviewContainer" hidden="false">
 				<Anchors>
 					<Anchor point="TOPLEFT" relativeKey="$parent.searchPreviewContainer" relativePoint="TOPLEFT" x="20" y="-5"/>
 					<Anchor point="BOTTOMRIGHT" relativeKey="$parent.searchPreviewContainer" relativePoint="BOTTOMRIGHT" x="-20" y="10"/>

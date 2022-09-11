@@ -175,6 +175,10 @@ function CrossoverAchievementFrame_SetTabs()
         CrossoverAchievementFrameTab2.text = "";
         CrossoverAchievementFrameTab3:SetPoint("LEFT", CrossoverAchievementFrameTab1, "RIGHT", -5, 0);
     end
+    if not SetAchievementSearchString then
+        CrossoverAchievementFrameSearchBox:Hide();
+        CrossoverAchievementFrameSearchPreviewContainer:Hide();
+    end
 end
 
 function CrossoverAchievementFrame_UpdateTabs(clickedTab)
