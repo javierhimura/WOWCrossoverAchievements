@@ -2256,6 +2256,28 @@ function CrossoverAchievementStatButton_OnEnter(self)
 	end
 end
 
+function CrossoverAchievementFrameSummary_SetClassicPositions()
+   local total = table.getn(ACHIEVEMENTUI_SUMMARYCATEGORIES);
+   if total == 8 then
+        local point, relativeTo, relativePoint, xOfs, yOfs = CrossoverAchievementFrameSummaryCategoriesCategory1:GetPoint(1);  
+        CrossoverAchievementFrameSummaryCategoriesCategory1:SetPoint(point, relativeTo, relativePoint, xOfs, -24); -- -24 in Classic -13 in Retail
+        point, relativeTo, relativePoint, xOfs, yOfs = CrossoverAchievementFrameSummaryCategoriesCategory3:GetPoint(1);  
+        CrossoverAchievementFrameSummaryCategoriesCategory3:SetPoint(point, relativeTo, relativePoint, xOfs, -14); -- -14 in Classic -10 in Retail
+        point, relativeTo, relativePoint, xOfs, yOfs = CrossoverAchievementFrameSummaryCategoriesCategory5:GetPoint(1);  
+        CrossoverAchievementFrameSummaryCategoriesCategory5:SetPoint(point, relativeTo, relativePoint, xOfs, -14); -- -14 in Classic -10 in Retail
+        point, relativeTo, relativePoint, xOfs, yOfs = CrossoverAchievementFrameSummaryCategoriesCategory7:GetPoint(1);  
+        CrossoverAchievementFrameSummaryCategoriesCategory7:SetPoint(point, relativeTo, relativePoint, xOfs, -14); -- -14 in Classic -10 in Retail
+        CrossoverAchievementFrameSummaryCategoriesCategory9:Hide(); -- Only visible in Retail
+        CrossoverAchievementFrameSummaryCategoriesCategory10:Hide(); -- Only visible in Retail
+        point, relativeTo, relativePoint, xOfs, yOfs = CrossoverAchievementFrameSummaryCategories:GetPoint(1);  
+        CrossoverAchievementFrameSummaryCategories:SetPoint(point, relativeTo, relativePoint, xOfs, -8); -- -8 in Classic -6 in Retail
+        point, relativeTo, relativePoint, xOfs, yOfs = CrossoverAchievementFrameSummaryAchievements:GetPoint(1);  
+        CrossoverAchievementFrameSummaryAchievements:SetPoint(point, relativeTo, relativePoint, xOfs, -20); -- -20 in Classic -10 in Retail
+        point, relativeTo, relativePoint, xOfs, yOfs = CrossoverAchievementFrameSummary:GetPoint(1);  
+        CrossoverAchievementFrameSummary:SetPoint(point, relativeTo, relativePoint, xOfs, 0); -- 0 in Classic -1 in Retail
+   end
+end
+
 -- [[ Summary Frame ]] --
 function CrossoverAchievementFrameSummary_OnShow()
 	if ( Crossover_achievementFunctions ~= CROSSOVER_COMPARISON_ACHIEVEMENT_FUNCTIONS and Crossover_achievementFunctions ~= CROSSOVER_COMPARISON_STAT_FUNCTIONS ) then
@@ -2560,6 +2582,8 @@ function CrossoverAchievementFrameSummaryCategory_OnShow (self)
 	self:SetMinMaxValues(0, totalAchievements);
 	self:SetValue(totalCompleted);
 	self:RegisterEvent("ACHIEVEMENT_EARNED");
+    
+    CrossoverAchievementFrameSummary_SetClassicPositionstFrameSummary_SetY();
 end
 
 function CrossoverAchievementFrameSummaryCategory_OnHide (self)
