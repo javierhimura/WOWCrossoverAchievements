@@ -686,10 +686,10 @@ function CrossoverAchievementFrameCategories_SelectButton (button)
 			CrossoverAchievementFrame_ShowSubFrame(CrossoverAchievementFrameAchievements);
 			if ( id == FEAT_OF_STRENGTH_ID or id == GUILD_FEAT_OF_STRENGTH_ID ) then
 				CrossoverAchievementFrameFilterDropDown:Hide();
-				CrossoverAchievementFrameHeaderLeftDDLInset:Hide();
+				CrossoverAchievementFrameHeaderSearchChangeDLLInset(false);
 			else
 				CrossoverAchievementFrameFilterDropDown:Show();
-				CrossoverAchievementFrameHeaderLeftDDLInset:Show();
+				CrossoverAchievementFrameHeaderSearchChangeDLLInset(true);
 			end
 		elseif ( Crossover_achievementFunctions == CROSSOVER_COMPARISON_ACHIEVEMENT_FUNCTIONS ) then
 			CrossoverAchievementFrame_ShowSubFrame(CrossoverAchievementFrameComparison, CrossoverAchievementFrameComparisonContainer);
@@ -715,11 +715,27 @@ function CrossoverAchievementFrameAchievements_OnShow()
 	end
 	if ( Crossover_achievementFunctions.selectedCategory == FEAT_OF_STRENGTH_ID or Crossover_achievementFunctions.selectedCategory == GUILD_FEAT_OF_STRENGTH_ID ) then
 		CrossoverAchievementFrameFilterDropDown:Hide();
-		CrossoverAchievementFrameHeaderLeftDDLInset:Hide();
+		CrossoverAchievementFrameHeaderSearchChangeDLLInset(false);
 	else
 		CrossoverAchievementFrameFilterDropDown:Show();
-		CrossoverAchievementFrameHeaderLeftDDLInset:Show();
+		CrossoverAchievementFrameHeaderSearchChangeDLLInset(true);
 	end
+end
+
+function CrossoverAchievementFrameHeaderSearchChangeDLLInset(show)
+    if SetAchievementSearchString then
+        if show then
+            CrossoverAchievementFrameHeaderLeftDDLInset:Show();
+        else 
+            CrossoverAchievementFrameHeaderLeftDDLInset:Hide();
+        end
+    else
+        if show then
+            CrossoverAchievementFrameHeaderRightDDLInset:Show();
+        else 
+            CrossoverAchievementFrameHeaderRightDDLInset:Hide();
+        end
+    end
 end
 
 function CrossoverAchievementFrameCategories_ClearSelection ()
@@ -2275,6 +2291,8 @@ function CrossoverAchievementFrameSummary_SetClassicPositions()
         CrossoverAchievementFrameSummaryAchievements:SetPoint(point, relativeTo, relativePoint, xOfs, -20); -- -20 in Classic -10 in Retail
         point, relativeTo, relativePoint, xOfs, yOfs = CrossoverAchievementFrameSummary:GetPoint(1);  
         CrossoverAchievementFrameSummary:SetPoint(point, relativeTo, relativePoint, xOfs, 0); -- 0 in Classic -1 in Retail
+        point, relativeTo, relativePoint, xOfs, yOfs = CrossoverAchievementFrameFilterDropDown:GetPoint(1);  
+        CrossoverAchievementFrameFilterDropDown:SetPoint(point, relativeTo, relativePoint, 558, yOfs); -- 558 in Classic -148 in Retail
    end
 end
 
@@ -2583,7 +2601,7 @@ function CrossoverAchievementFrameSummaryCategory_OnShow (self)
 	self:SetValue(totalCompleted);
 	self:RegisterEvent("ACHIEVEMENT_EARNED");
     
-    CrossoverAchievementFrameSummary_SetClassicPositionstFrameSummary_SetY();
+    CrossoverAchievementFrameSummary_SetClassicPositions();
 end
 
 function CrossoverAchievementFrameSummaryCategory_OnHide (self)
