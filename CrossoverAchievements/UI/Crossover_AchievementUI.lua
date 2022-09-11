@@ -438,7 +438,7 @@ function CrossoverAchievementFrameCategories_GetCategoryList (categories)
 	for i in next, categories do
 		categories[i] = nil;
 	end
-	if ( not Crossover_achievementFunctions.noSummary ) then
+	if ( not Crossover_achievementFunctions.noSummary or CrossoverAchievements:HasStadisticSummary() ) then
 		-- Insert the fake Summary category
 		tinsert(categories, { ["id"] = "summary" });
 	end
@@ -3478,7 +3478,7 @@ CROSSOVER_STAT_FUNCTIONS = {
 	clearFunc = nil,
 	updateFunc = CrossoverAchievementFrameStats_Update,
 	selectedCategory = 130;
-	noSummary = not CrossoverAchievements:HasStadisticSummary();
+	noSummary = true;
 }
 
 CROSSOVER_COMPARISON_ACHIEVEMENT_FUNCTIONS = {
