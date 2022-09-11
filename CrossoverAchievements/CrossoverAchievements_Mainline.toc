@@ -7,6 +7,9 @@
 ## SavedVariablesPerCharacter: CrossoverAchievements_CharacterData
 ## SavedVariables: CrossoverAchievements_AccountData
 
+UI\Localization.lua
+UI\Crossover_AchievementUI.lua
+UI\Crossover_AchievementUI.xml
 GameVersion.lua
 CrossoverAchievements_Extract.lua
 CrossoverAchievements.lua
