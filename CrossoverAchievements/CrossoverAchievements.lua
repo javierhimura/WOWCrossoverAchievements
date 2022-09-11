@@ -56,24 +56,24 @@ end
 
 function CrossoverAchievements:InitializeAccountData()
     CrossoverAchievements_AccountData = CrossoverAchievements_AccountData or {};
-    if (self:IsRetail()) then
+    if (self.GameVersion:IsRetail()) then
         CrossoverAchievements_AccountData.Retail = CrossoverAchievements_AccountData.Retail or {};
         CrossoverAchievements_AccountData.Retail.Characters = CrossoverAchievements_AccountData.Retail.Characters or {};
         CrossoverAchievements_AccountData.Retail.Achievements = CrossoverAchievements_AccountData.Retail.Achievements or {};
-        CrossoverAchievements_AccountData.Retail.GameVersion = self.GetServerType(self);
+        CrossoverAchievements_AccountData.Retail.GameVersion = self.GameVersion:GetServerType(self);
     end
-    if (self:IsWOTLK()) then
+    if (self.GameVersion:IsWOTLK()) then
         CrossoverAchievements_AccountData.WOTLK = CrossoverAchievements_AccountData.WOTLK or {};
         CrossoverAchievements_AccountData.WOTLK.Characters = CrossoverAchievements_AccountData.WOTLK.Characters or {};
         CrossoverAchievements_AccountData.WOTLK.Achievements = CrossoverAchievements_AccountData.WOTLK.Achievements or {};
-        CrossoverAchievements_AccountData.WOTLK.GameVersion = self.GetServerType(self);
+        CrossoverAchievements_AccountData.WOTLK.GameVersion = self.GameVersion:GetServerType();
     end
 end
 
 function CrossoverAchievements:GetCurrentGameVersionTable()
-    if (self:IsRetail()) then
+    if (self.GameVersion:IsRetail()) then
         return CrossoverAchievements_AccountData.Retail;
-    elseif (self:IsWOTLK()) then
+    elseif (self.GameVersion:IsWOTLK()) then
         return CrossoverAchievements_AccountData.WOTLK;
     end
 end
@@ -94,7 +94,7 @@ function CrossoverAchievements:GetCurrentCharacterTable()
         CharacterTable.GUID = playerGuid;
         CharacterTable.Realm = GetRealmName();
         CharacterTable.Name = UnitName("player");
-        CharacterTable.GameVersion = self.GetServerType(self);
+        CharacterTable.GameVersion = self.GameVersion:GetServerType();
         GameVersionTable.Characters[playerGUID] = CharacterTable;
     end
 
