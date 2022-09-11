@@ -1327,9 +1327,9 @@ function CrossoverAchievementButton_DisplayAchievement (button, category, achiev
 		end
 
 		if ( points > 0 ) then
-			button.shield.icon:SetTexture([[Interface\AchievementFrame\UI-Achievement-Shields]]);
+			button.shield.icon:SetTexture([[Interface\Addons\CrossoverAchievements\Textures\UI-Achievement-Shields]]);
 		else
-			button.shield.icon:SetTexture([[Interface\AchievementFrame\UI-Achievement-Shields-NoPoints]]);
+			button.shield.icon:SetTexture([[Interface\Addons\CrossoverAchievements\Textures\UI-Achievement-Shields-NoPoints]]);
 		end
 
 		if ( isGuild ) then
@@ -2417,9 +2417,9 @@ function CrossoverAchievementFrameSummary_UpdateAchievements(...)
 			button.description:SetText(description);
 			CrossoverAchievementShield_SetPoints(points, button.shield.points, GameFontNormal, GameFontNormalSmall);
 			if ( points > 0 ) then
-				button.shield.icon:SetTexture([[Interface\AchievementFrame\UI-Achievement-Shields]]);
+				button.shield.icon:SetTexture([[Interface\Addons\CrossoverAchievements\Textures\UI-Achievement-Shields]]);
 			else
-				button.shield.icon:SetTexture([[Interface\AchievementFrame\UI-Achievement-Shields-NoPoints]]);
+				button.shield.icon:SetTexture([[Interface\Addons\CrossoverAchievements\Textures\UI-Achievement-Shields-NoPoints]]);
 			end
 
 			if ( isGuild ) then
@@ -2464,9 +2464,9 @@ function CrossoverAchievementFrameSummary_UpdateAchievements(...)
 					button.description:SetText(description);
 					CrossoverAchievementShield_SetPoints(points, button.shield.points, GameFontNormal, GameFontNormalSmall);
 					if ( points > 0 ) then
-						button.shield.icon:SetTexture([[Interface\AchievementFrame\UI-Achievement-Shields]]);
+						button.shield.icon:SetTexture([[Interface\Addons\CrossoverAchievements\Textures\UI-Achievement-Shields]]);
 					else
-						button.shield.icon:SetTexture([[Interface\AchievementFrame\UI-Achievement-Shields-NoPoints]]);
+						button.shield.icon:SetTexture([[Interface\Addons\CrossoverAchievements\Textures\UI-Achievement-Shields-NoPoints]]);
 					end
 					button.shield.wasEarnedByMe = not (completed and not wasEarnedByMe);
 					button.shield.earnedBy = earnedBy;
@@ -3099,11 +3099,11 @@ function CrossoverAchievementFrameComparison_DisplayAchievement (button, categor
 		friend.icon.texture:SetTexture(icon);
 
 		if ( points > 0 ) then
-			player.shield.icon:SetTexture([[Interface\AchievementFrame\UI-Achievement-Shields]]);
-			friend.shield.icon:SetTexture([[Interface\AchievementFrame\UI-Achievement-Shields]]);
+			player.shield.icon:SetTexture([[Interface\Addons\CrossoverAchievements\Textures\UI-Achievement-Shields]]);
+			friend.shield.icon:SetTexture([[Interface\Addons\CrossoverAchievements\Textures\UI-Achievement-Shields]]);
 		else
-			player.shield.icon:SetTexture([[Interface\AchievementFrame\UI-Achievement-Shields-NoPoints]]);
-			friend.shield.icon:SetTexture([[Interface\AchievementFrame\UI-Achievement-Shields-NoPoints]]);
+			player.shield.icon:SetTexture([[Interface\Addons\CrossoverAchievements\Textures\UI-Achievement-Shields-NoPoints]]);
+			friend.shield.icon:SetTexture([[Interface\Addons\CrossoverAchievements\Textures\UI-Achievement-Shields-NoPoints]]);
 		end
 		CrossoverAchievementShield_SetPoints(points, player.shield.points, ACHIEVEMENTCOMPARISON_PLAYERSHIELDFONT1, ACHIEVEMENTCOMPARISON_PLAYERSHIELDFONT2);
 		CrossoverAchievementShield_SetPoints(points, friend.shield.points, ACHIEVEMENTCOMPARISON_FRIENDSHIELDFONT1, ACHIEVEMENTCOMPARISON_FRIENDSHIELDFONT2);
