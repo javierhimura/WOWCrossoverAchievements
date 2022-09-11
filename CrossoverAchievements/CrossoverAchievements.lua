@@ -1,4 +1,6 @@
-local _, CrossoverAchievements = ...
+local _, app = ...
+
+CrossoverAchievements = app;
 
 local frame = CreateFrame('frame');
 
@@ -26,16 +28,31 @@ end
 
 frame.events.ACHIEVEMENT_EARNED = function(achievementid)
     CrossoverAchievements:OnAchievementEarned(achievementid);
+
 end
 
+local Blz_AchievementFrame_ToggleAchievementFrame = nil;
+
 function CrossoverAchievements:OnPlayerEnteringWorld()
-    print('Start '.. date("%a %b %d %H:%M:%S %Y"));
+    --print('Start '.. date("%a %b %d %H:%M:%S %Y"));
     self:InitializeAccountData();
     self:ExportAchievements();
     self:ExtractAchievementsInfo();
-    print('End '.. date("%a %b %d %H:%M:%S %Y"));
+    --print('End '.. date("%a %b %d %H:%M:%S %Y"));
+    self:ReplaceBlizzardFrame();
+    LoadAddOn("Blizzard_AchievementUI");
 end
 
+--/script CrossoverAchievements.ShowBlizFrame();
+function CrossoverAchievements:ShowBlizFrame()
+    CrossoverAchievements:Blz_AchievementFrame_ToggleAchievementFrame();
+end
+
+function CrossoverAchievements:ReplaceBlizzardFrame()
+    LoadAddOn("Blizzard_AchievementUI");
+    self.Blz_AchievementFrame_ToggleAchievementFrame = AchievementFrame_ToggleAchievementFrame;
+    AchievementFrame_ToggleAchievementFrame = CrossoverAchievementFrame_ToggleAchievementFrame;
+end
 
 function CrossoverAchievements:InitializeAccountData()
     CrossoverAchievements_AccountData = CrossoverAchievements_AccountData or {};
