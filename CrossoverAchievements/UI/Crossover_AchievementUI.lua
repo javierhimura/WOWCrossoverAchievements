@@ -1075,7 +1075,44 @@ CrossoverAchievementButton_MAXHEIGHT = 232;
 CrossoverAchievementButton_TEXTUREHEIGHT = 128;
 GUILDCrossoverAchievementButton_MINHEIGHT = 128;
 
-function CrossoverAchievementButton_UpdatePlusMinusTexture (button)
+function CrossoverAchievementButton_UpdatePlusMinusTexture(button)
+    if CrossoverAchievements:IsWOTLK() then
+        CrossoverAchievementButton_UpdatePlusMinusTexture_WOTLK(button);
+    else
+        CrossoverAchievementButton_UpdatePlusMinusTexture_Retail(button);
+    end
+end
+
+function CrossoverAchievementButton_UpdatePlusMinusTexture_WOTLK (button)
+	local id = button.id;
+	if ( not id ) then
+		return; -- This happens when we create buttons
+	end
+
+	local display = false;
+	if ( GetAchievementNumCriteria(id) ~= 0 ) then
+		display = true;
+	elseif ( GetPreviousAchievement(id) and button.completed ) then
+		display = true;
+	end
+	
+	if ( display ) then
+		button.plusMinus:Show();			
+		if ( button.collapsed and button.saturated ) then
+			button.plusMinus:SetTexCoord(0, .5, 0, .5);
+		elseif ( button.collapsed ) then
+			button.plusMinus:SetTexCoord(.5, 1, 0, .5);
+		elseif ( button.saturated ) then
+			button.plusMinus:SetTexCoord(0, .5, .5, 1);
+		else
+			button.plusMinus:SetTexCoord(.5, 1, .5, 1);
+		end
+	else
+		button.plusMinus:Hide();
+	end
+end
+
+function CrossoverAchievementButton_UpdatePlusMinusTexture_Retail (button)
 	local id = button.id;
 	if ( not id ) then
 		return; -- This happens when we create buttons
@@ -1086,7 +1123,7 @@ function CrossoverAchievementButton_UpdatePlusMinusTexture (button)
 		display = true;
 	elseif ( button.completed and GetPreviousAchievement(id) ) then
 		display = true;
-	elseif ( not button.completed and CrossoverAchievements:HasGuildReputation() and GetAchievementGuildRep(id) ) then
+	elseif ( not button.completed and GetAchievementGuildRep(id) ) then
 		display = true;
 	end
 
@@ -1423,8 +1460,9 @@ function CrossoverAchievementFrameAchievements_SelectButton (button)
 	achievements.selectionIndex = button.index;
 	button.selected = true;
 
-
-	SetFocusedAchievement(button.id);
+    if SetFocusedAchievement then
+        SetFocusedAchievement(button.id);
+    end
 end
 
 function CrossoverAchievementButton_ResetObjectives ()
