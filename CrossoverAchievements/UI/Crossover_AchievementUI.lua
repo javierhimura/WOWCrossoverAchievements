@@ -171,21 +171,28 @@ function CrossoverAchievementFrame_SetTabs()
         CrossoverAchievementFrameTab2:Show();
         CrossoverAchievementFrameTab3:SetPoint("LEFT", CrossoverAchievementFrameTab2, "RIGHT", -5, 0);
     else
+        CrossoverAchievementFrameTab2:Hide();
+        CrossoverAchievementFrameTab2.text = "";
         CrossoverAchievementFrameTab3:SetPoint("LEFT", CrossoverAchievementFrameTab1, "RIGHT", -5, 0);
     end
 end
 
 function CrossoverAchievementFrame_UpdateTabs(clickedTab)
+    if clickedTab == 2 and not CrossoverAchievements:HasGuildAchievements() then
+        return;
+    end
 	CrossoverAchievementFrame.searchResults:Hide();
 	PanelTemplates_Tab_OnClick(_G["CrossoverAchievementFrameTab"..clickedTab], CrossoverAchievementFrame);
 	local tab;
 	for i = 1, 3 do
-		tab = _G["CrossoverAchievementFrameTab"..i];
-		if ( i == clickedTab ) then
-			tab.text:SetPoint("CENTER", 0, -5);
-		else
-			tab.text:SetPoint("CENTER", 0, -3);
-		end
+        if i ~= 2 or CrossoverAchievements:HasGuildAchievements() then
+            tab = _G["CrossoverAchievementFrameTab"..i];
+            if ( i == clickedTab ) then
+                tab.text:SetPoint("CENTER", 0, -5);
+            else
+                tab.text:SetPoint("CENTER", 0, -3);
+            end
+        end
 	end
 end
 
