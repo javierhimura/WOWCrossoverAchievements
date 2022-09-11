@@ -37,7 +37,7 @@ function CrossoverAchievements:OnPlayerEnteringWorld()
     --print('Start '.. date("%a %b %d %H:%M:%S %Y"));
     self:InitializeAccountData();
     self:ExportAchievements();
-    self:ExtractAchievementsInfo();
+    self.Extract:ExtractAchievementsInfo();
     --print('End '.. date("%a %b %d %H:%M:%S %Y"));
     self:ReplaceBlizzardFrame();
     LoadAddOn("Blizzard_AchievementUI");
