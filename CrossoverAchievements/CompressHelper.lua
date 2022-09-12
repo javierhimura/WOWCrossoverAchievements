@@ -10,26 +10,20 @@ local libCE = libC:GetChatEncodeTable();
 local libSerializer = LibStub("LibSerialize");
 local LibBase64 = LibStub:GetLibrary("LibBase64-1.0");
 
-function CompressHelper:CompressEncodeData(GameVersionTable)
-    local ExportTable = {};
-    GameVersionTable.ExportData = {};
-    ExportTable.GameVersion = GameVersionTable.GameVersion;
-    ExportTable.Time = GameVersionTable.Time;
-    ExportTable.Characters = GameVersionTable.Characters;
-    ExportTable.Achievements = GameVersionTable.Achievements;
+function CompressHelper:CompressEncodeData(ExportTable)
     local json = libJ:JSONEncode(ExportTable);
     local base64Data1 = LibBase64.Encode(json);
     local compressedData1 = libC:Compress(base64Data1);
     local compressedData2 = libCE:Encode(compressedData1);
     local base64Data2 = LibBase64.Encode(compressedData2);
-    GameVersionTable.ExportData = base64Data2;
+    return base64Data2;
 end
 
-function CompressHelper:DecompressDecodeData(GameVersionTable)
-    if not GameVersionTable.ExportData or GameVersionTable.ExportData == "" then
+function CompressHelper:DecompressDecodeData(EncodedImportData)
+    if not EncodedImportData or EncodedImportData == "" then
         return;
     end
-    local compressedData2 = LibBase64.Decode(GameVersionTable.ExportData);
+    local compressedData2 = LibBase64.Decode(EncodedImportData);
     if not compressedData2 then
         return;
     end
@@ -49,5 +43,5 @@ function CompressHelper:DecompressDecodeData(GameVersionTable)
     if not ImportData or ImportData == {} then
         return;
     end
-    GameVersionTable.ImportData = ImportData;
+    return ImportData;
 end

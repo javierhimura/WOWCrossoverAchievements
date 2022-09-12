@@ -55,6 +55,10 @@ function GameVersion:HasGuildAchievements()
     return GetExpansionLevel() >= LE_EXPANSION_CATACLYSM;
 end
 
+function GameVersion:HasBlizzardAccountAchievements(ServerType)
+    return ServerType == ServerType_Retail or ServerType == ServerType_Retail_PTR;
+end
+
 function GameVersion:HasStadisticSummary()
     return GameVersion:IsWOTLK();
 end
@@ -70,7 +74,7 @@ function GameVersion:GetServerType()
         elseif WOW_PROJECT_ID == WOW_PROJECT_WRATH_CLASSIC then
             -- wotlk
             return ServerType_ClassicWOTLK_PTR;
-        elseif WOW_PROJECT_ID == WOW_PROJECT_MAINLINE
+        elseif WOW_PROJECT_ID == WOW_PROJECT_MAINLINE then
             -- mainline
             return ServerType_Retail_PTR;
         else 
@@ -87,7 +91,7 @@ function GameVersion:GetServerType()
         elseif WOW_PROJECT_ID == WOW_PROJECT_WRATH_CLASSIC then
             -- wotlk
             return ServerType_ClassicWOTLK;
-        elseif WOW_PROJECT_ID == WOW_PROJECT_MAINLINE
+        elseif WOW_PROJECT_ID == WOW_PROJECT_MAINLINE then
             -- mainline
             return ServerType_Retail;
         else 
