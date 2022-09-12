@@ -34,7 +34,8 @@ end
 local Blz_AchievementFrame_ToggleAchievementFrame = nil;
 
 function CrossoverAchievements:OnPlayerEnteringWorld()
-    if self.GameVersion:IsValidVersion() then
+    if not self.GameVersion:IsValidVersion() then
+        print('CrossoverAchievements not compatible with this game version');
         return;
     end
     --print('Start '.. date("%a %b %d %H:%M:%S %Y"));
@@ -42,9 +43,95 @@ function CrossoverAchievements:OnPlayerEnteringWorld()
     self:ExportAchievements();
     self.Extract:ExtractAchievementsInfo();
     self:ReplaceBlizzardFrame();
-    self.CompressHelper:DecompressDecodeData(self:GetCurrentGameVersionTable());
-    self.CompressHelper:CompressEncodeData(self:GetCurrentGameVersionTable());
+    self:ExportData();
+    self:ImportData();
     --print('End '.. date("%a %b %d %H:%M:%S %Y"));
+end
+
+function CrossoverAchievements:ExportData()
+  local GameVersionTable = self:GetCurrentGameVersionTable();
+  local ExportTable = {};
+  ExportTable.GameVersion = GameVersionTable.GameVersion;
+  ExportTable.Time = GameVersionTable.Time;
+  ExportTable.Characters = GameVersionTable.Characters;
+  if self.GameVersion:HasBlizzardAccountAchievements(GameVersionTable.GameVersion) then
+    ExportTable.Achievements = GameVersionTable.Achievements;
+  end
+  local CompressData = self.CompressHelper:CompressEncodeData(ExportTable);
+  if self.GameVersion:IsRetail() then
+    if not LoadAddOn("CrossoverAchievements - Retail") then
+        print("Can Load CrossoverAchievements - Retail Export Addon");
+        return;
+    end
+    CrossoverAchievements_Retail.Export = CompressData;
+    CrossoverAchievements_Retail.GameVersion = GameVersionTable.GameVersion;
+    CrossoverAchievements_Retail.Time = GameVersionTable.Time;
+    print('CrossoverAchievements_Retail Export');
+  end
+  if self.GameVersion:IsWOTLK() then
+    if not LoadAddOn("CrossoverAchievements - WOTLK") then
+        return;
+    end
+    CrossoverAchievements_WOTLK.Export = CompressData;
+    CrossoverAchievements_WOTLK.GameVersion = GameVersionTable.GameVersion;
+    CrossoverAchievements_WOTLK.Time = GameVersionTable.Time;
+    print('CrossoverAchievements_WOTLK Export');
+  end
+end
+
+function CrossoverAchievements:ImportData()
+  local CompressData;
+  if self.GameVersion:IsRetail() then
+    if not LoadAddOn("CrossoverAchievements - WOTLK") then
+        return;
+    end
+    if not CrossoverAchievements_WOTLK then
+        return;
+    end
+    CompressData = CrossoverAchievements_WOTLK;
+  end
+  if self.GameVersion:IsWOTLK() then
+    if not LoadAddOn("CrossoverAchievements - Retail") then
+        return;
+    end
+    if not CrossoverAchievements_Retail then
+        return;
+    end
+    CompressData = CrossoverAchievements_Retail;
+  end
+  -- Not data exported from the other version, or invalid data
+  if not CompressData or 
+     not CompressData.Export or 
+     not CompressData.GameVersion or 
+     not CompressData.Time or 
+     not self.GameVersion:CanImportData(CompressData.GameVersion) then
+    return;
+  end
+  
+  -- Data exported from the other version already processed
+  if CrossoverAchievements_AccountData[CompressData.GameVersion] and 
+     CrossoverAchievements_AccountData[CompressData.GameVersion].Time >= CompressData.Time then
+    return;
+  end
+ 
+  local ImportData = self.CompressHelper:DecompressDecodeData(CompressData.Export);
+  -- Data exported cant be decompressed
+  if not ImportData then
+    return;
+  end
+  
+  if ImportData.GameVersion ~= CompressData.GameVersion or
+     ImportData.Time ~= CompressData.Time  then
+    -- Invalid data, it should have the same information compressed and decompressed
+    return;
+  end
+  
+  if ImportData.Achievements and not self.GameVersion:HasBlizzardAccountAchievements(ImportData.GameVersion) then
+    -- WOTLK Classic data can't have account achievements
+    return;
+  end
+  
+  CrossoverAchievements_AccountData[ImportData.GameVersion] = ImportData;
 end
 
 --/script CrossoverAchievements.ShowBlizFrame();
@@ -85,9 +172,6 @@ end
 function CrossoverAchievements:GetCurrentCharacterTable()
     local playerGUID = UnitGUID("player");
     local GameVersionTable = self:GetCurrentGameVersionTable();
-    if not GameVersionTable then
-        return;
-    end
     local CharacterTable = GameVersionTable.Characters[playerGUID];
     
     if CharacterTable == nil then
@@ -107,9 +191,6 @@ end
 
 function CrossoverAchievements:ExportAchievements()
     local GameVersionTable = self:GetCurrentGameVersionTable();
-    if not GameVersionTable then
-        return;
-    end
     local CharacterTable = self:GetCurrentCharacterTable();
     local categories = GetCategoryList();
     for categoryindex,categoryID in ipairs(categories) do
@@ -128,9 +209,6 @@ end
 
 function CrossoverAchievements:OnAchievementEarned(achievementid)
     local GameVersionTable = self:GetCurrentGameVersionTable();
-    if not GameVersionTable then
-        return;
-    end
     local CharacterTable = self:GetCurrentCharacterTable();
     self:ExportAchievement(GameVersionTable, CharacterTable, achievementid);
 end
