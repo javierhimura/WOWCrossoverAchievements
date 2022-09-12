@@ -29,5 +29,27 @@ function CompressHelper:DecompressDecodeData(data_to_trasmit_WoW_addon)
     if not ImportTable or ImportTable == {} then
         return;
     end
+    return RestoreNumericIndex(ImportTable);
+end
+
+function RestoreNumericIndex(ImportTable)
+    ImportTable.Achievements = RestoreNumericIndexTable(ImportTable.Achievements);
+    for _,CharacterTable in pairs(ImportTable.Characters) do 
+        CharacterTable.Achievements = RestoreNumericIndexTable(CharacterTable.Achievements);
+    end
     return ImportTable;
+end
+
+function RestoreNumericIndexTable(StrKeysTable)
+    local Table = nil;
+    if StrKeysTable then
+        Table = {};
+        for strkey, value in pairs(StrKeysTable) do 
+            local intkey = tonumber(strkey);
+            if intkey then
+                Table[intkey] = value;
+            end
+        end
+    end
+    return Table;
 end
