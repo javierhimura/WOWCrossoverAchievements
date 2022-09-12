@@ -2,6 +2,8 @@ local _, CrossoverAchievements = ...
 
 UIPanelWindows["CrossoverAchievementFrame"] = { area = "doublewide", pushable = 0, xoffset = 80, whileDead = 1 };
 
+local GetAchievementInfo = CrossoverAchievements.API.GetAchievementInfo;
+
 local ACHIEVEMENTUI_CATEGORIES = {};
 
 local ACHIEVEMENT_GOLD_BORDER_COLOR	= CreateColor(1, 0.675, 0.125);
