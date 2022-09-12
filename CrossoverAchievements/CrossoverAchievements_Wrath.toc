@@ -9,15 +9,14 @@
 
 lib\LibStub\LibStub.lua
 lib\AceSerializer-3.0\AceSerializer-3.0.lua
-lib\LibSerialize\serializer.lua
-lib\LibCompress\LibCompress.lua
-lib\LibParse\LibParse.lua
-lib\LibBase64-1.0\LibBase64-1.0.lua
 lib\CallbackHandler-1.0\CallbackHandler-1.0.lua
+lib\LibDeflate\LibDeflate.lua
+lib\json.lua
 GameVersion.lua
 CompressHelper.lua
 UI\Localization.lua
 UI\Crossover_AchievementUI.lua
 UI\Crossover_AchievementUI.xml
 CrossoverAchievements_Extract.lua
+CrossoverAchievements_Account.lua
 CrossoverAchievements.lua
