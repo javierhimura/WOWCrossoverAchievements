@@ -37,6 +37,9 @@ Vv protocol version
 
 local tinsert,type,format,find,gsub,concat,char,byte,modf,frexp,floor=tinsert,type,string.format,string.find,string.gsub,table.concat,string.char,string.byte,math.modf,math.frexp,math.floor;
 
+if not LibSerialize then
+ LibSerialize = {}
+end
 
 
 function LibSerialize:InitSera()
