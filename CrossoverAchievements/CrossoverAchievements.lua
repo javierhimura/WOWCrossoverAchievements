@@ -61,9 +61,10 @@ function CrossoverAchievements:ExportData()
   local CompressData = self.CompressHelper:CompressEncodeData(ExportTable);
   if self.GameVersion:IsRetail() then
     if not LoadAddOn("CrossoverAchievements - Retail") then
-        print("Can Load CrossoverAchievements - Retail Export Addon");
+        --print("Can Load CrossoverAchievements - Retail Export Addon");
         return;
     end
+    CrossoverAchievements_Retail.DataVersion = AddonDataVersion;
     CrossoverAchievements_Retail.Export = CompressData;
     CrossoverAchievements_Retail.GameVersion = GameVersionTable.GameVersion;
     CrossoverAchievements_Retail.Time = GameVersionTable.Time;
@@ -72,6 +73,7 @@ function CrossoverAchievements:ExportData()
     if not LoadAddOn("CrossoverAchievements - WOTLK") then
         return;
     end
+    CrossoverAchievements_WOTLK.DataVersion = AddonDataVersion;
     CrossoverAchievements_WOTLK.Export = CompressData;
     CrossoverAchievements_WOTLK.GameVersion = GameVersionTable.GameVersion;
     CrossoverAchievements_WOTLK.Time = GameVersionTable.Time;
@@ -88,6 +90,11 @@ function CrossoverAchievements:ImportData()
         return;
     end
     CompressData = CrossoverAchievements_WOTLK;
+    -- Data from a newer version
+    if CompressData and CompressData.DataVersion and CompressData.DataVersion > AddonDataVersion then
+        print('Please upgrade CrossoverAchievements addons to be able to Import WOTLK data');
+        return;
+    end
   end
   if self.GameVersion:IsWOTLK() then
     if not LoadAddOn("CrossoverAchievements - Retail") then
@@ -97,6 +104,11 @@ function CrossoverAchievements:ImportData()
         return;
     end
     CompressData = CrossoverAchievements_Retail;
+    -- Data from a newer version
+    if CompressData and CompressData.DataVersion and CompressData.DataVersion > AddonDataVersion then
+        print('Please upgrade CrossoverAchievements addons to be able to Import Retail data');
+        return;
+    end
   end
   -- Not data exported from the other version, or invalid data
   if not CompressData or 
@@ -120,7 +132,8 @@ function CrossoverAchievements:ImportData()
   end
   
   if ImportData.GameVersion ~= CompressData.GameVersion or
-     ImportData.Time ~= CompressData.Time  then
+     ImportData.Time ~= CompressData.Time or
+     ImportData.DataVersion ~= CompressData.DataVersion  then
     -- Invalid data, it should have the same information compressed and decompressed
     return;
   end
