@@ -41,10 +41,11 @@ function CrossoverAchievements:OnPlayerEnteringWorld()
     --print('Start '.. date("%a %b %d %H:%M:%S %Y"));
     self:InitializeAccountData();
     self:ExportAchievements();
-    self.Extract:ExtractAchievementsInfo();
+    --self.Extract:ExtractAchievementsInfo();
     self:ReplaceBlizzardFrame();
     self:ExportData();
     self:ImportData();
+    CrossoverAchievements.Account:ProcessCompletedAchievements();
     --print('End '.. date("%a %b %d %H:%M:%S %Y"));
 end
 
@@ -66,7 +67,6 @@ function CrossoverAchievements:ExportData()
     CrossoverAchievements_Retail.Export = CompressData;
     CrossoverAchievements_Retail.GameVersion = GameVersionTable.GameVersion;
     CrossoverAchievements_Retail.Time = GameVersionTable.Time;
-    print('CrossoverAchievements_Retail Export');
   end
   if self.GameVersion:IsWOTLK() then
     if not LoadAddOn("CrossoverAchievements - WOTLK") then
@@ -75,7 +75,6 @@ function CrossoverAchievements:ExportData()
     CrossoverAchievements_WOTLK.Export = CompressData;
     CrossoverAchievements_WOTLK.GameVersion = GameVersionTable.GameVersion;
     CrossoverAchievements_WOTLK.Time = GameVersionTable.Time;
-    print('CrossoverAchievements_WOTLK Export');
   end
 end
 
