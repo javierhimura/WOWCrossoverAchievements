@@ -5,3 +5,7 @@
 ## Notes: Crossover Achievements between Retail and WOTLK Classic. Imports achievement data into Retail that the same addon in WOTLK Classic has exported.
 ## Version: 1
 ## SavedVariables: CrossoverAchievements_WOTLK
+## Dependencies: CrossoverAchievements
+## LoadOnDemand: 1
+
+CrossoverAchievements - WOTLK.lua
