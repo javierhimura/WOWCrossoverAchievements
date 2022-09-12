@@ -147,26 +147,17 @@ end
 
 function CrossoverAchievements:InitializeAccountData()
     CrossoverAchievements_AccountData = CrossoverAchievements_AccountData or {};
-    if self.GameVersion:IsRetail() then
-        CrossoverAchievements_AccountData.Retail = CrossoverAchievements_AccountData.Retail or {};
-        CrossoverAchievements_AccountData.Retail.Characters = CrossoverAchievements_AccountData.Retail.Characters or {};
-        CrossoverAchievements_AccountData.Retail.Achievements = CrossoverAchievements_AccountData.Retail.Achievements or {};
-        CrossoverAchievements_AccountData.Retail.GameVersion = self.GameVersion:GetServerType(self);
+    local AchievementsDataType = self.GameVersion.GetAchievementsDataType();
+    CrossoverAchievements_AccountData[AchievementsDataType] = CrossoverAchievements_AccountData[AchievementsDataType] or {};
+    CrossoverAchievements_AccountData[AchievementsDataType].Characters = CrossoverAchievements_AccountData[AchievementsDataType].Characters or {};
+    if self.GameVersion:HasBlizzardAccountAchievements(AchievementsDataType)  then
+        CrossoverAchievements_AccountData[AchievementsDataType].Achievements = CrossoverAchievements_AccountData[AchievementsDataType].Achievements or {};
     end
-    if self.GameVersion:IsWOTLK() then
-        CrossoverAchievements_AccountData.WOTLK = CrossoverAchievements_AccountData.WOTLK or {};
-        CrossoverAchievements_AccountData.WOTLK.Characters = CrossoverAchievements_AccountData.WOTLK.Characters or {};
-        CrossoverAchievements_AccountData.WOTLK.Achievements = CrossoverAchievements_AccountData.WOTLK.Achievements or {};
-        CrossoverAchievements_AccountData.WOTLK.GameVersion = self.GameVersion:GetServerType();
-    end
+    CrossoverAchievements_AccountData[AchievementsDataType].GameVersion = self.GameVersion:GetServerType(self);
 end
 
 function CrossoverAchievements:GetCurrentGameVersionTable()
-    if self.GameVersion:IsRetail() then
-        return CrossoverAchievements_AccountData.Retail;
-    elseif self.GameVersion:IsWOTLK() then
-        return CrossoverAchievements_AccountData.WOTLK;
-    end
+    return CrossoverAchievements_AccountData[self.GameVersion.GetAchievementsDataType()];
 end
 
 function CrossoverAchievements:GetCurrentCharacterTable()
@@ -220,7 +211,7 @@ function CrossoverAchievements:ExportAchievement(GameVersionTable, CharacterTabl
         if ( bit.band(flags, ACHIEVEMENT_FLAGS_ACCOUNT) == ACHIEVEMENT_FLAGS_ACCOUNT ) then
             if not GameVersionTable.Achievements[achievementid] or GameVersionTable.Achievements[achievementid] ~= achievementtime then
                 GameVersionTable.Achievements[achievementid] = achievementtime;
-                GameVersionTable.Time = time()
+                GameVersionTable.Time = time();
             end
         elseif wasEarnedByMe then
             if not CharacterTable.Achievements[achievementid] or CharacterTable.Achievements[achievementid] ~= achievementtime then

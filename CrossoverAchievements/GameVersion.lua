@@ -1,14 +1,14 @@
 local _, CrossoverAchievements = ...
 
-local ServerType_ClassicEra = "Classic Era";
-local ServerType_ClassicTBC = "Classic TBC";
-local ServerType_ClassicWOTLK = "Classic Wotlk";
-local ServerType_Retail = "Retail";
+ServerType_ClassicEra = "Classic Era";
+ServerType_ClassicTBC = "Classic TBC";
+ServerType_ClassicWOTLK = "Classic Wotlk";
+ServerType_Retail = "Retail";
 
-local ServerType_ClassicEra_PTR = "Classic Era PTR";
-local ServerType_ClassicTBC_PTR = "Classic TBC PTR";
-local ServerType_ClassicWOTLK_PTR = "Classic Wotlk PTR";
-local ServerType_Retail_PTR = "Retail PTR";
+ServerType_ClassicEra_PTR = "Classic Era PTR";
+ServerType_ClassicTBC_PTR = "Classic TBC PTR";
+ServerType_ClassicWOTLK_PTR = "Classic Wotlk PTR";
+ServerType_Retail_PTR = "Retail PTR";
 
 local GameVersion = {};
 CrossoverAchievements.GameVersion = GameVersion;
@@ -61,6 +61,25 @@ end
 
 function GameVersion:HasStadisticSummary()
     return GameVersion:IsWOTLK();
+end
+
+function GameVersion:GetAchievementsDataType()
+    if WOW_PROJECT_ID == WOW_PROJECT_CLASSIC then
+        -- vanilla
+        return nil;
+    elseif WOW_PROJECT_ID == WOW_PROJECT_BURNING_CRUSADE_CLASSIC then
+        -- tbc
+        return nil;
+    elseif WOW_PROJECT_ID == WOW_PROJECT_WRATH_CLASSIC then
+        -- wotlk
+        return ServerType_ClassicWOTLK;
+    elseif WOW_PROJECT_ID == WOW_PROJECT_MAINLINE then
+        -- mainline
+        return ServerType_Retail;
+    else 
+        -- future Classic versions, WOTLK for now
+        return ServerType_ClassicWOTLK;
+    end
 end
 
 function GameVersion:GetServerType()
