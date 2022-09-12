@@ -17,6 +17,28 @@ function GameVersion:IsPTRorBeta()
     return C_CVar.GetCVar("portal") == "test";
 end
 
+function GameVersion:CanImportData(ImportServerType)
+    if self:IsWOTLK()  then
+        if self:IsPTRorBeta() then
+            return ImportServerType == ServerType_Retail or ImportServerType == ServerType_Retail_PTR;
+        else
+            return ImportServerType == ServerType_Retail;
+        end
+    end
+    if self:IsRetail()  then
+        if self:IsPTRorBeta() then
+            return ImportServerType == ServerType_ClassicWOTLK or ImportServerType == ServerType_ClassicWOTLK_PTR;
+        else
+            return ImportServerType == ServerType_ClassicWOTLK;
+        end
+    end
+    return false;
+end
+
+function GameVersion:IsValidVersion()
+    return self:IsRetail() or self:IsWOTLK();
+end
+
 function GameVersion:IsRetail()
     return self:GetServerType() == ServerType_Retail or self:GetServerType() == ServerType_Retail_PTR;
 end
@@ -48,9 +70,12 @@ function GameVersion:GetServerType()
         elseif WOW_PROJECT_ID == WOW_PROJECT_WRATH_CLASSIC then
             -- wotlk
             return ServerType_ClassicWOTLK_PTR;
-        else
+        elseif WOW_PROJECT_ID == WOW_PROJECT_MAINLINE
             -- mainline
             return ServerType_Retail_PTR;
+        else 
+            -- future Classic PTR and Beta versions, WOTLK PTR for now
+            return ServerType_ClassicWOTLK_PTR;
         end
     else 
         if WOW_PROJECT_ID == WOW_PROJECT_CLASSIC then
@@ -62,9 +87,12 @@ function GameVersion:GetServerType()
         elseif WOW_PROJECT_ID == WOW_PROJECT_WRATH_CLASSIC then
             -- wotlk
             return ServerType_ClassicWOTLK;
-        else
+        elseif WOW_PROJECT_ID == WOW_PROJECT_MAINLINE
             -- mainline
             return ServerType_Retail;
+        else 
+            -- future Classic versions, WOTLK for now
+            return ServerType_ClassicWOTLK;
         end
     end 
 end

@@ -34,15 +34,17 @@ end
 local Blz_AchievementFrame_ToggleAchievementFrame = nil;
 
 function CrossoverAchievements:OnPlayerEnteringWorld()
+    if self.GameVersion:IsValidVersion() then
+        return;
+    end
     --print('Start '.. date("%a %b %d %H:%M:%S %Y"));
     self:InitializeAccountData();
     self:ExportAchievements();
     self.Extract:ExtractAchievementsInfo();
-    --print('End '.. date("%a %b %d %H:%M:%S %Y"));
     self:ReplaceBlizzardFrame();
     self.CompressHelper:DecompressDecodeData(self:GetCurrentGameVersionTable());
     self.CompressHelper:CompressEncodeData(self:GetCurrentGameVersionTable());
-    LoadAddOn("Blizzard_AchievementUI");
+    --print('End '.. date("%a %b %d %H:%M:%S %Y"));
 end
 
 --/script CrossoverAchievements.ShowBlizFrame();
@@ -58,13 +60,13 @@ end
 
 function CrossoverAchievements:InitializeAccountData()
     CrossoverAchievements_AccountData = CrossoverAchievements_AccountData or {};
-    if (self.GameVersion:IsRetail()) then
+    if self.GameVersion:IsRetail() then
         CrossoverAchievements_AccountData.Retail = CrossoverAchievements_AccountData.Retail or {};
         CrossoverAchievements_AccountData.Retail.Characters = CrossoverAchievements_AccountData.Retail.Characters or {};
         CrossoverAchievements_AccountData.Retail.Achievements = CrossoverAchievements_AccountData.Retail.Achievements or {};
         CrossoverAchievements_AccountData.Retail.GameVersion = self.GameVersion:GetServerType(self);
     end
-    if (self.GameVersion:IsWOTLK()) then
+    if self.GameVersion:IsWOTLK() then
         CrossoverAchievements_AccountData.WOTLK = CrossoverAchievements_AccountData.WOTLK or {};
         CrossoverAchievements_AccountData.WOTLK.Characters = CrossoverAchievements_AccountData.WOTLK.Characters or {};
         CrossoverAchievements_AccountData.WOTLK.Achievements = CrossoverAchievements_AccountData.WOTLK.Achievements or {};
@@ -73,9 +75,9 @@ function CrossoverAchievements:InitializeAccountData()
 end
 
 function CrossoverAchievements:GetCurrentGameVersionTable()
-    if (self.GameVersion:IsRetail()) then
+    if self.GameVersion:IsRetail() then
         return CrossoverAchievements_AccountData.Retail;
-    elseif (self.GameVersion:IsWOTLK()) then
+    elseif self.GameVersion:IsWOTLK() then
         return CrossoverAchievements_AccountData.WOTLK;
     end
 end
