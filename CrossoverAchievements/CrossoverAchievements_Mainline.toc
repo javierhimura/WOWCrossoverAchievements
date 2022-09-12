@@ -14,9 +14,10 @@ lib\LibDeflate\LibDeflate.lua
 lib\json.lua
 GameVersion.lua
 CompressHelper.lua
+CrossoverAchievements_Account.lua
+CrossoverAchievements_API.lua
 UI\Localization.lua
 UI\Crossover_AchievementUI.lua
 UI\Crossover_AchievementUI.xml
 CrossoverAchievements_Extract.lua
-CrossoverAchievements_Account.lua
 CrossoverAchievements.lua
