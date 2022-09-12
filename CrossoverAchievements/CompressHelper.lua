@@ -1,47 +1,33 @@
 local _, CrossoverAchievements = ...
 
-local CompressHelper = {};
-CrossoverAchievements.CompressHelper = CompressHelper;
+CrossoverAchievements.CompressHelper = CrossoverAchievements.CompressHelper or {};
+local CompressHelper = CrossoverAchievements.CompressHelper;
 
-local libJ = LibStub:GetLibrary("LibParse");
-local libS = LibStub:GetLibrary("AceSerializer-3.0");
-local libC = LibStub:GetLibrary("LibCompress");
-local libCE = libC:GetChatEncodeTable();
-local libSerializer = LibStub("LibSerialize");
-local LibBase64 = LibStub:GetLibrary("LibBase64-1.0");
+local LibDeflate = LibStub:GetLibrary("LibDeflate")
+local json = json;
 
 function CompressHelper:CompressEncodeData(ExportTable)
-    local json = libJ:JSONEncode(ExportTable);
-    local base64Data1 = LibBase64.Encode(json);
-    local compressedData1 = libC:Compress(base64Data1);
-    local compressedData2 = libCE:Encode(compressedData1);
-    local base64Data2 = LibBase64.Encode(compressedData2);
-    return base64Data2;
+    local jsondata = json.stringify(ExportTable);
+    local compress_deflate = LibDeflate:CompressDeflate(jsondata);
+    local data_to_trasmit_WoW_addon = LibDeflate:EncodeForPrint(compress_deflate)
+    return data_to_trasmit_WoW_addon;
 end
 
-function CompressHelper:DecompressDecodeData(EncodedImportData)
-    if not EncodedImportData or EncodedImportData == "" then
+function CompressHelper:DecompressDecodeData(data_to_trasmit_WoW_addon)
+    if not data_to_trasmit_WoW_addon or data_to_trasmit_WoW_addon == "" then
         return;
     end
-    local compressedData2 = LibBase64.Decode(EncodedImportData);
-    if not compressedData2 then
+    local compress_deflate = LibDeflate:DecodeForPrint(data_to_trasmit_WoW_addon);
+    if not compress_deflate then
         return;
     end
-    local compressedData1 = libCE:Decode(compressedData2);
-    if not compressedData1 then
+    local jsondata = LibDeflate:DecompressDeflate(compress_deflate);
+    if not jsondata then
         return;
     end
-    local base64Data1 = libC:Decompress(compressedData1);
-    if not base64Data1 or base64Data1 == "" then
+    local ImportTable = json.parse(jsondata);
+    if not ImportTable or ImportTable == {} then
         return;
     end
-    local json = LibBase64.Decode(base64Data1);
-    if not json or json == "" then
-        return;
-    end
-    local ImportData = libJ:JSONDecode(json);
-    if not ImportData or ImportData == {} then
-        return;
-    end
-    return ImportData;
+    return ImportTable;
 end
