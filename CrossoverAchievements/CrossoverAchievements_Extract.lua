@@ -22,6 +22,7 @@ function Extract:ExtractAchievementInfo(GameVersionTable, achievementid)
         return;
     end
     local previousid = GetPreviousAchievement(achievementid);
+    local nextid = GetNextAchievement(achievementid);
     local categoryid = GetAchievementCategory(achievementid)
     GameVersionTable.AchievementsInfo[achievementid] = {
                                                        id = id,
@@ -34,6 +35,7 @@ function Extract:ExtractAchievementInfo(GameVersionTable, achievementid)
                                                        isGuild = isGuild,
                                                        isStatistic = isStatistic,
                                                        previousid = previousid,
+                                                       nextid = nextid,
                                                        categoryid = categoryid
                                                        };
 end
