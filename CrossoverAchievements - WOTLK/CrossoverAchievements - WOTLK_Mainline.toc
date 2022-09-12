@@ -1,0 +1,7 @@
+## Interface: 90207
+## Title: Crossover Achievements WOTLK Classic Import
+## Name: Crossover Achievements WOTLK Classic Import
+## Author: Javier Himura
+## Notes: Crossover Achievements between Retail and WOTLK Classic. Imports achievement data into Retail that the same addon in WOTLK Classic has exported.
+## Version: 1
+## SavedVariables: CrossoverAchievements_WOTLK
