@@ -9,7 +9,7 @@
 
 lib\LibStub\LibStub.lua
 lib\AceSerializer-3.0\AceSerializer-3.0.lua
-lib\libserialize\serializer.lua
+lib\LibSerialize\serializer.lua
 lib\LibCompress\LibCompress.lua
 lib\LibParse\LibParse.lua
 lib\LibBase64-1.0\LibBase64-1.0.lua
