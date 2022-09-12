@@ -1,33 +1,31 @@
 @echo off
 
-set "classicpath=..\..\..\..\_classic_\WTF\Account"
-set "retailpath=..\..\..\..\_retail_\WTF\Account"
-IF NOT EXIST %classicpath% goto classicnotfound
-IF NOT EXIST %retailpath% goto retailnotfound
+IF NOT EXIST ..\..\..\..\_classic_\WTF\Account goto classicnotfound
+IF NOT EXIST ..\..\..\..\_retail_\WTF\Account goto retailnotfound
 goto classicretailfound
+
+:classicnotfound
+echo WOTLK Classic WTF folder not found.
+IF NOT EXIST ..\..\..\..\_retail_\WTF\Account goto retailnotfound
+goto end
 
 :retailnotfound
 echo Retail WTF folder not found.
 goto end
 
-:classicnotfound
-echo WOTLK Classic WTF folder not found.
-goto end
 
 :classicretailfound
-set "wotlkluafile=SavedVariables\CrossoverAchievements - WOTLK.lua"
-for /d %%F in ("%classicpath%\*") do (
-    IF EXIST %%F\"%wotlkluafile%" (
+for /d %%F in ("..\..\..\..\_retail_\WTF\Account\*") do (
+    IF EXIST %%F\"SavedVariables\CrossoverAchievements - WOTLK.lua" (
         echo Exporting WOTLK Classic Data file to Retail
-        copy "%classicpath%\%%~nF\%wotlkluafile%" "%retailpath%\%%~nF\%wotlkluafile%"
+        copy "..\..\..\..\_classic_\WTF\Account\%%~nF\SavedVariables\CrossoverAchievements - WOTLK.lua" "..\..\..\..\_retail_\WTF\Account\%%~nF\SavedVariables\CrossoverAchievements - WOTLK.lua"
     )
 )
 
-set "retailluafile=SavedVariables\CrossoverAchievements - Retail.lua"
-for /d %%F in ("%retailpath%\*") do (
-    IF EXIST %%F\"%retailluafile%" (
+for /d %%F in ("..\..\..\..\_retail_\WTF\Account\*") do (
+    IF EXIST %%F\"SavedVariables\CrossoverAchievements - Retail.lua" (
         echo Exporting Retail Data file to WOTLK Classic
-        copy "%retailpath%\%%~nF\%retailluafile%" "%classicpath%\%%~nF\%retailluafile%"
+        copy "..\..\..\..\_retail_\WTF\Account\%%~nF\SavedVariables\CrossoverAchievements - Retail.lua" "..\..\..\..\_classic_\WTF\Account\%%~nF\SavedVariables\CrossoverAchievements - Retail.lua"
     )
 )
 
