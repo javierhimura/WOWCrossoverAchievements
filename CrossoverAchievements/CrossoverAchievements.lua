@@ -55,6 +55,7 @@ function CrossoverAchievements:ExportData()
   ExportTable.GameVersion = GameVersionTable.GameVersion;
   ExportTable.Time = GameVersionTable.Time;
   ExportTable.Characters = GameVersionTable.Characters;
+  ExportTable.DataVersion = AddonDataVersion;
   if self.GameVersion:HasBlizzardAccountAchievements(GameVersionTable.GameVersion) then
     ExportTable.Achievements = GameVersionTable.Achievements;
   end
@@ -115,6 +116,7 @@ function CrossoverAchievements:ImportData()
      not CompressData.Export or 
      not CompressData.GameVersion or 
      not CompressData.Time or 
+     not CompressData.DataVersion or 
      not self.GameVersion:CanImportData(CompressData.GameVersion) then
     return;
   end
