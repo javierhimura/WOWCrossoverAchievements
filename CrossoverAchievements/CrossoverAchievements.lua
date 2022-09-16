@@ -16,12 +16,6 @@ frame:RegisterEvent("ACHIEVEMENT_EARNED");
 
 local AddonDataVersion = 1;
 
-function wrap_with(obj, func)
-    return function(...)
-        return func(obj, ...)
-    end
-end
-
 frame.events.PLAYER_ENTERING_WORLD = function(...)
     CrossoverAchievements:OnPlayerEnteringWorld();
 end
