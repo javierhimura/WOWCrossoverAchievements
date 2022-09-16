@@ -21,9 +21,13 @@ function Account:ProcessCompletedAchievement(AchievementID, AchievementTime, Acc
                                  Realm = Realm,
                                  GameVersion = GameVersion
                                  };
-    elseif (WasEarnedByMe and not CompletedAchievements[AchievementID].WasEarnedByMe) or -- Current Character Achievements prevail over other characters
-           (WasEarnedHere and not CompletedAchievements[AchievementID].WasEarnedHere) or -- Current Version Achievements prevail over other characters
-           AchievementTime <  CompletedAchievements[AchievementID].AchievementTime then -- Oldest achievement prevail
+    elseif AchievementTime <  CompletedAchievements[AchievementID].AchievementTime then -- Oldest achievement prevail
+        if CompletedAchievements[AchievementID].WasEarnedByMe and not WasEarnedByMe then
+            return;  -- Current Character Achievements prevail over other characters
+        end
+        if CompletedAchievements[AchievementID].WasEarnedHere and not WasEarnedHere then
+            return;  -- Current Version Achievements prevail over other versions
+        end
         CompletedAchievements[AchievementID].AchievementTime = AchievementTime;
         CompletedAchievements[AchievementID].Account = Account;
         CompletedAchievements[AchievementID].WasEarnedByMe = WasEarnedByMe;
