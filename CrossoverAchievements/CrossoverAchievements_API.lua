@@ -11,11 +11,14 @@ function API.GetAchievementInfo(categoryid, index)
     if not AccountInfo then
         return achievementid, name, points, completed, month, day, year, description, flags, icon, rewardText, isGuild, wasEarnedByMe, earnedBy;
     else
-        return achievementid, name, points, true     , month, day, year, description, flags, icon, rewardText, isGuild, AccountInfo.WasEarnedByMe, AccountInfo.EarnedBy;
+        year = date("%y", AccountInfo.AchievementTime)
+        month = date("%m", AccountInfo.AchievementTime)
+        day = date("%d", AccountInfo.AchievementTime)
+        return achievementid, name, points, true, month, day, year, description, flags, icon, rewardText, isGuild, AccountInfo.WasEarnedByMe, AccountInfo.EarnedBy;
     end
 end
 
 --/script print(GetAchievementInfo(13));
---/script print(CrossoverAchievements.API:GetAchievementInfo(13));
---/script print(CrossoverAchievements.API:GetAchievementInfo(645));
---/script print( CrossoverAchievements.Account:GetCompletedAchievementInfo(13));
+--/script print(CrossoverAchievements.API.GetAchievementInfo(13));
+--/script print(CrossoverAchievements.API.GetAchievementInfo(645));
+--/script print( CrossoverAchievements.Account.GetCompletedAchievementInfo(13));
