@@ -13,6 +13,8 @@ lib\CallbackHandler-1.0\CallbackHandler-1.0.lua
 lib\LibDeflate\LibDeflate.lua
 lib\json.lua
 GameVersion.lua
+Data\Achievements.lua
+Data\Categories.lua
 CompressHelper.lua
 CrossoverAchievements_Account.lua
 CrossoverAchievements_API.lua
