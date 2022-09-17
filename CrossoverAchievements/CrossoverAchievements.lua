@@ -210,8 +210,7 @@ function CrossoverAchievements:OnAchievementEarned(achievementid)
     local GameVersionTable = self:GetCurrentGameVersionTable();
     local CharacterTable = self:GetCurrentCharacterTable();
     self:ExportAchievement(GameVersionTable, CharacterTable, achievementid);
-    local data = CrossoverAchievements.Data.Achievements:GetAchievementData(achievementid);
-    local accountachievement = data.AccountWide;
+    local accountachievement = CrossoverAchievements.API.IsAccountWideAchievement(achievementid);
 	self.Account:ProcessCompletedAchievement(achievementid, time(), accountachievement, true, true, CharacterTable.Name,  CharacterTable.Realm, CharacterTable.GameVersion);
 end
 
