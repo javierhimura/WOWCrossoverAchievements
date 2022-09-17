@@ -11,18 +11,17 @@ frame.refreshDataForce = true;
 frame.events = {};
 frame:SetSize(1, 1);
 frame:Show();
-frame:RegisterEvent("PLAYER_ENTERING_WORLD");
+frame:RegisterEvent("PLAYER_LOGIN");
 frame:RegisterEvent("ACHIEVEMENT_EARNED");
 
 local AddonDataVersion = 1;
 
-frame.events.PLAYER_ENTERING_WORLD = function(...)
+frame.events.PLAYER_LOGIN = function(...)
     CrossoverAchievements:OnPlayerEnteringWorld();
 end
 
 frame.events.ACHIEVEMENT_EARNED = function(achievementid)
     CrossoverAchievements:OnAchievementEarned(achievementid);
-
 end
 
 local Blz_AchievementFrame_ToggleAchievementFrame = nil;
