@@ -3,6 +3,12 @@ local _, CrossoverAchievements = ...
 local Extract = {};
 CrossoverAchievements.Extract = Extract;
 
+local GetCategoryInfo = GetCategoryInfo;
+local GetAchievementCategory = GetAchievementCategory;
+local GetNextAchievement = GetNextAchievement;
+local GetPreviousAchievement = GetPreviousAchievement;
+local GetAchievementInfo = GetAchievementInfo;
+
 function Extract:ExtractAchievementsInfo()
     local GameVersionTable = CrossoverAchievements:GetCurrentGameVersionTable();
     if not GameVersionTable then
@@ -51,5 +57,26 @@ function Extract:ExtractCategoriesInfo(GameVersionTable)
                                                      parentCategoryid = parentCategoryid,
                                                      flags = flags,
                                                      };
+    end
+    for achievementid, _ in pairs(GameVersionTable.AchievementsInfo) do 
+        local categoryid = GameVersionTable.AchievementsInfo[achievementid].categoryid;
+        if not GameVersionTable.CategoriesInfo[categoryid] then
+            local title, parentCategoryid, flags = GetCategoryInfo(categoryid);
+            if title then
+                GameVersionTable.CategoriesInfo[categoryid]= {
+                                                             id = categoryid,
+                                                             title = title,
+                                                             parentCategoryid = parentCategoryid,
+                                                             flags = flags,
+                                                             };
+            else
+                GameVersionTable.CategoriesInfo[categoryid]= {
+                                                             id = categoryid,
+                                                             title = "HIDDEN_CATEGORY",
+                                                             parentCategoryid = 0,
+                                                             flags = 0,
+                                                             };
+            end
+        end
     end
 end
