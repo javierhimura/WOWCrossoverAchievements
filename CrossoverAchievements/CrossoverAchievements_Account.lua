@@ -34,6 +34,7 @@ function Account:ProcessCompletedAchievement(AchievementID, AchievementTime, Acc
         CompletedAchievements[AchievementID].EarnedBy = EarnedBy;
         CompletedAchievements[AchievementID].Realm = Realm;
         CompletedAchievements[AchievementID].GameVersion = GameVersion;
+        CrossoverAchievements.Data.Achievements:SetAchievementData(AchievementID);
     end
 end
 

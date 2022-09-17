@@ -210,27 +210,30 @@ function CrossoverAchievements:OnAchievementEarned(achievementid)
     local GameVersionTable = self:GetCurrentGameVersionTable();
     local CharacterTable = self:GetCurrentCharacterTable();
     self:ExportAchievement(GameVersionTable, CharacterTable, achievementid);
-    local flags = select(9, GetAchievementInfo(achievementid));
-    local accountachievement = bit.band(flags, ACHIEVEMENT_FLAGS_ACCOUNT) == ACHIEVEMENT_FLAGS_ACCOUNT;
+    local data = CrossoverAchievements.Data.Achievements:GetAchievementData(achievementid);
+    local accountachievement = data.AccountWide;
 	self.Account:ProcessCompletedAchievement(achievementid, time(), accountachievement, true, true, CharacterTable.Name,  CharacterTable.Realm, CharacterTable.GameVersion);
 end
 
 function CrossoverAchievements:ExportAchievement(GameVersionTable, CharacterTable, achievementid)
-    local _, achname, _, completed, achivementmonth, achivementday, achivementyear, _, flags, _, _, isGuild, wasEarnedByMe, earnedBy, isStatistic = GetAchievementInfo(achievementid);
+    local _, achname, points, completed, achivementmonth, achivementday, achivementyear, _, flags, _, _, isGuild, wasEarnedByMe, earnedBy, isStatistic = GetAchievementInfo(achievementid);
     if completed and not isGuild and not isStatistic then
         local achievementtime = time({year = 2000 + achivementyear, month = achivementmonth, day = achivementday});
         if ( bit.band(flags, ACHIEVEMENT_FLAGS_ACCOUNT) == ACHIEVEMENT_FLAGS_ACCOUNT ) then
-            if not GameVersionTable.Achievements[achievementid] or GameVersionTable.Achievements[achievementid] ~= achievementtime then
+            CrossoverAchievements.Data.Achievements:SetAchievementData(achievementid, points, true);
+			if not GameVersionTable.Achievements[achievementid] or GameVersionTable.Achievements[achievementid] ~= achievementtime then
                 GameVersionTable.Achievements[achievementid] = achievementtime;
                 GameVersionTable.Time = time();
             end
         elseif wasEarnedByMe then
+            CrossoverAchievements.Data.Achievements:SetAchievementData(achievementid, points, false);
             if not CharacterTable.Achievements[achievementid] or CharacterTable.Achievements[achievementid] ~= achievementtime then
                 CharacterTable.Achievements[achievementid] = achievementtime;
                 CharacterTable.Time = time();
                 GameVersionTable.Time = time();
             end
-        else 
+        else
+            CrossoverAchievements.Data.Achievements:SetAchievementData(achievementid, points, false);
             --print('Achievement ' .. achname .. ' earned by ' .. earnedBy);
         end
     end
