@@ -4,9 +4,14 @@ local Account = {};
 CrossoverAchievements.Account = Account;
 
 local CompletedAchievements = {};
+local TotalPoints = 0;
 
 function Account:GetCompletedAchievementInfo(AchievementID)
     return CompletedAchievements[AchievementID];
+end
+
+function Account:GetTotalPoints()
+    return TotalPoints;
 end
 
 function Account:ProcessCompletedAchievement(AchievementID, AchievementTime, Account, WasEarnedByMe, WasEarnedHere, EarnedBy, Realm, GameVersion)
@@ -21,6 +26,7 @@ function Account:ProcessCompletedAchievement(AchievementID, AchievementTime, Acc
                                  Realm = Realm,
                                  GameVersion = GameVersion
                                  };
+        TotalPoints = TotalPoints + CrossoverAchievements.Data.Achievements:GetAchievementData(AchievementID).Points;
     elseif AchievementTime <  CompletedAchievements[AchievementID].AchievementTime then -- Oldest achievement prevail
         if CompletedAchievements[AchievementID].WasEarnedByMe and not WasEarnedByMe then
             return;  -- Current Character Achievements prevail over other characters
@@ -34,12 +40,12 @@ function Account:ProcessCompletedAchievement(AchievementID, AchievementTime, Acc
         CompletedAchievements[AchievementID].EarnedBy = EarnedBy;
         CompletedAchievements[AchievementID].Realm = Realm;
         CompletedAchievements[AchievementID].GameVersion = GameVersion;
-        CrossoverAchievements.Data.Achievements:SetAchievementData(AchievementID);
     end
 end
 
 function Account:ReprocessCompletedAchievements()
     CompletedAchievements = {};
+    TotalPoints = 0;
     self:ProcessCompletedAchievements();
 end
 
@@ -73,9 +79,6 @@ end
 function Account:ProcessCompletedAchievementsCharacter(CharacterTable, WasEarnedByMe, WasEarnedHere)
     if CharacterTable.Achievements then
         for AchievementID, AchievementTime in pairs(CharacterTable.Achievements) do 
-            if AchievementID == 14 then
-                print('AchievementID 14');
-            end
             self:ProcessCompletedAchievement(AchievementID, AchievementTime, false, WasEarnedByMe, WasEarnedHere, CharacterTable.Name, CharacterTable.Realm, CharacterTable.GameVersion);
         end
     end
