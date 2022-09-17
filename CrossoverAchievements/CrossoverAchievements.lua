@@ -26,6 +26,7 @@ frame.events.ACHIEVEMENT_EARNED = function(achievementid)
 end
 
 local Blz_AchievementFrame_ToggleAchievementFrame = nil;
+local GetAchievementInfo = GetAchievementInfo;
 
 function CrossoverAchievements:OnPlayerEnteringWorld()
     if not self.GameVersion:IsValidVersion() then
@@ -210,6 +211,9 @@ function CrossoverAchievements:OnAchievementEarned(achievementid)
     local GameVersionTable = self:GetCurrentGameVersionTable();
     local CharacterTable = self:GetCurrentCharacterTable();
     self:ExportAchievement(GameVersionTable, CharacterTable, achievementid);
+    local flags = select(9, GetAchievementInfo(achievementid));
+    local accountachievement = bit.band(flags, ACHIEVEMENT_FLAGS_ACCOUNT) == ACHIEVEMENT_FLAGS_ACCOUNT;
+	self.Account:ProcessCompletedAchievement(achievementid, time(), accountachievement, true, true, CharacterTable.Name,  CharacterTable.Realm, CharacterTable.GameVersion);
 end
 
 function CrossoverAchievements:ExportAchievement(GameVersionTable, CharacterTable, achievementid)
