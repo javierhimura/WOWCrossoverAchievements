@@ -3,6 +3,8 @@ local _, CrossoverAchievements = ...
 UIPanelWindows["CrossoverAchievementFrame"] = { area = "doublewide", pushable = 0, xoffset = 80, whileDead = 1 };
 
 local GetAchievementInfo = CrossoverAchievements.API.GetAchievementInfo;
+local GetPreviousAchievement = CrossoverAchievements.API.GetPreviousAchievement;
+local GetNextAchievement = CrossoverAchievements.API.GetNextAchievement;
 
 local ACHIEVEMENTUI_CATEGORIES = {};
 
