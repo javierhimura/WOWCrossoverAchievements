@@ -33,6 +33,7 @@ function CrossoverAchievements:OnPlayerEnteringWorld()
         return;
     end
     --print('Start '.. date("%a %b %d %H:%M:%S %Y"));
+    self.IsLoading = true;
     self:InitializeAccountData();
     self:ExportAchievements();
     --self.Extract:ExtractAchievementsInfo();
@@ -40,6 +41,7 @@ function CrossoverAchievements:OnPlayerEnteringWorld()
     self:ExportData();
     self:ImportData();
     CrossoverAchievements.Account:ProcessCompletedAchievements();
+    self.IsLoading = false;
     --print('End '.. date("%a %b %d %H:%M:%S %Y"));
 end
 
