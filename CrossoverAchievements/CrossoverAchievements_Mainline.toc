@@ -15,6 +15,7 @@ lib\json.lua
 GameVersion.lua
 Data\Achievements.lua
 Data\Categories.lua
+Data\LastAchievements.lua
 CompressHelper.lua
 CrossoverAchievements_Account.lua
 CrossoverAchievements_API.lua

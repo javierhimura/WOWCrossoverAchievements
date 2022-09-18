@@ -8,6 +8,7 @@ local GetNextAchievement = CrossoverAchievements.API.GetNextAchievement;
 local GetCategoryInfo = GetCategoryInfo;
 local GetCategoryNumAchievements = CrossoverAchievements.API.GetCategoryNumAchievements;
 local GetTotalAchievementPoints = CrossoverAchievements.API.GetTotalAchievementPoints;
+local GetLatestCompletedAchievements = CrossoverAchievements.API.GetLatestCompletedAchievements;
 
 local ACHIEVEMENTUI_CATEGORIES = {};
 

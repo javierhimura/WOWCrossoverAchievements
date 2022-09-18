@@ -27,6 +27,7 @@ function Account:ProcessCompletedAchievement(AchievementID, AchievementTime, Acc
                                  GameVersion = GameVersion
                                  };
         TotalPoints = TotalPoints + CrossoverAchievements.Data.Achievements:GetAchievementData(AchievementID).Points;
+        CrossoverAchievements.Data.LastAchievements:SetLastAchievement(AchievementID, AchievementTime);
     elseif AchievementTime <  CompletedAchievements[AchievementID].AchievementTime then -- Oldest achievement prevail
         if CompletedAchievements[AchievementID].WasEarnedByMe and not WasEarnedByMe then
             return;  -- Current Character Achievements prevail over other characters
@@ -40,6 +41,7 @@ function Account:ProcessCompletedAchievement(AchievementID, AchievementTime, Acc
         CompletedAchievements[AchievementID].EarnedBy = EarnedBy;
         CompletedAchievements[AchievementID].Realm = Realm;
         CompletedAchievements[AchievementID].GameVersion = GameVersion;
+        CrossoverAchievements.Data.LastAchievements:SetLastAchievement(AchievementID, AchievementTime);
     end
 end
 

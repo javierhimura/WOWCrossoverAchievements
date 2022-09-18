@@ -6,7 +6,7 @@ local GetPreviousAchievement = GetPreviousAchievement;
 local GetAchievementCategory = GetAchievementCategory;
 
 CrossoverAchievements.Data = CrossoverAchievements.Data or {};
-CrossoverAchievements.Data.Achievements = CrossoverAchievements.Data.Categories or {};
+CrossoverAchievements.Data.Achievements = CrossoverAchievements.Data.Achievements or {};
 local Achievements = CrossoverAchievements.Data.Achievements;
 
 Achievements.List = {}
