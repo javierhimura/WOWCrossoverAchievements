@@ -69,7 +69,6 @@ function API.GetCategoryNumAchievements(categoryId, includeAll)
     else
         total = CrossoverAchievements.Data.Categories:GetCategoryVisibleAchievements(categoryId);
         completed = CrossoverAchievements.Data.Categories:GetCategoryCompletedVisibleAchievements(categoryId);
-        --print('GetCategoryNumAchievements else '..categoryId.. ' total '..total);
 	end
     incompleted = total - completed;
     return total, completed, incompleted;
