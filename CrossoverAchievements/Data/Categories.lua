@@ -22,21 +22,23 @@ function Categories:SetCategoryAchievement(categoryid, achievementid)
 		   parentCategoryID == FOSCategoryID then
 		   FOSLegacyCategoryList[categoryid] = true;
 		end
+		CategoryList[categoryid].Total = 0;
 	end
 	CategoryList[categoryid].SortedAchievements = nil;
 	CategoryList[categoryid].CompletedVisible = 0;
+	CategoryList[categoryid].Total = CategoryList[categoryid].Total + 1;
     CategoryList[categoryid].Achievements[achievementid] = true;
 end
 
 function Categories:IsFOSLegacyAchievement(categoryid)
-	return FOSLegacyCategoryList(categoryid)
+	return FOSLegacyCategoryList[categoryid];
 end
 
 function Categories:GetCategoryCompletedAchievements(categoryid)
 	if not CategoryList[categoryid] then
 		return 0;
 	end
-	return table.getn(CategoryList[categoryid].Achievements);
+	return CategoryList[categoryid].Total;
 end
 
 function Categories:GetCategoryVisibleAchievements(categoryid)
