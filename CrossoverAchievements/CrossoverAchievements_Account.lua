@@ -56,14 +56,23 @@ function Account:ProcessCompletedAchievements()
     local CurrentGameVersionTable = CrossoverAchievements:GetCurrentGameVersionTable();
     local CurrentCharacterTable = CurrentGameVersionTable.Characters[playerGUID];
     local GameVersionsWithAchievements = CrossoverAchievements.GameVersion.GameVersionsWithAchievements;
+
+    -- Load account achievements from current version and achievements from current character first, they have priority
+    self:ProcessCompletedAchievementsVersion(CurrentGameVersionTable, true);
+    self:ProcessCompletedAchievementsCharacter(CurrentCharacterTable, true, true);
+
     for _,GameVersion in pairs(GameVersionsWithAchievements) do 
         local GameVersionTable = CrossoverAchievements_AccountData[GameVersion];
         local WasEarnedHere = (CurrentGameVersionTable == GameVersionTable); 
         if GameVersionTable then
-            self:ProcessCompletedAchievementsVersion(CrossoverAchievements_AccountData[GameVersion], WasEarnedHere);
+            if GameVersionTable ~= CurrentGameVersionTable then
+                self:ProcessCompletedAchievementsVersion(CrossoverAchievements_AccountData[GameVersion], WasEarnedHere);
+			end
             for _,CharacterTable in pairs(CrossoverAchievements_AccountData[GameVersion].Characters) do 
-                local WasEarnedByMe = (CurrentCharacterTable == CharacterTable);
-                self:ProcessCompletedAchievementsCharacter(CharacterTable, WasEarnedByMe, WasEarnedHere );
+                if CharacterTable and CharacterTable ~= CurrentCharacterTable then
+                    local WasEarnedByMe = (CurrentCharacterTable == CharacterTable);
+                    self:ProcessCompletedAchievementsCharacter(CharacterTable, WasEarnedByMe, WasEarnedHere );
+				end
             end
         end
     end
