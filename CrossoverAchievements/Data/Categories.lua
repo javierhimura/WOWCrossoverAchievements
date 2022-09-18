@@ -81,6 +81,12 @@ function Categories:GetCategoryAchievement(categoryid, index)
 	return CategoryList[categoryid].SortedAchievements[index];
 end
 
+function Categories:SortCategories()
+	for categoryid,_ in pairs(CategoryList) do  
+		self:SortCategory(categoryid);
+	end
+end
+
 function Categories:SortCategory(categoryid)
 	if not CategoryList[categoryid] then
 		return;
