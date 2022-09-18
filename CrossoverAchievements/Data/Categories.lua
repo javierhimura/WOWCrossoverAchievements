@@ -23,5 +23,122 @@ function Categories:SetCategoryAchievement(categoryid, achievementid)
 		   FOSLegacyCategoryList[categoryid] = true;
 		end
 	end
+	CategoryList[categoryid].SortedAchievements = nil;
+	CategoryList[categoryid].CompletedVisible = 0;
     CategoryList[categoryid].Achievements[achievementid] = true;
+end
+
+function Categories:IsFOSLegacyAchievement(categoryid)
+	return FOSLegacyCategoryList(categoryid)
+end
+
+function Categories:GetCategoryCompletedAchievements(categoryid)
+	if not CategoryList[categoryid] then
+		return 0;
+	end
+	return table.getn(CategoryList[categoryid].Achievements);
+end
+
+function Categories:GetCategoryVisibleAchievements(categoryid)
+	if not CategoryList[categoryid] then
+		return 0;
+	end
+	if not CategoryList[categoryid].SortedAchievement then
+		self:SortCategory(categoryid);
+	end
+	return table.getn(CategoryList[categoryid].SortedAchievements);
+end
+
+function Categories:GetCategoryCompletedVisibleAchievements(categoryid)
+	if not CategoryList[categoryid] then
+		return 0;
+	end
+	if not CategoryList[categoryid].SortedAchievement then
+		self:SortCategory(categoryid);
+	end
+	return CategoryList[categoryid].CompletedVisible;
+end
+
+function Categories:GetCategoryAchievement(categoryid, index)
+	if not CategoryList[categoryid] then
+		return nil;
+	end
+	if not CategoryList[categoryid].SortedAchievement then
+		self:SortCategory(categoryid);
+	end
+	local total = self:GetCategoryVisibleAchievements(categoryid);
+	if total < index then
+		return nil;
+	end 
+	return CategoryList[categoryid].SortedAchievements[index];
+end
+
+function Categories:SortCategory(categoryid)
+	if not CategoryList[categoryid] or CategoryList[categoryid].SortedAchievement then
+		return;
+	end
+	CategoryList[categoryid].SortedAchievements = {};
+	for achievementid,_ in pairs(CategoryList[categoryid].Achievements) do
+		local lastid = achievementid;
+		local data = CrossoverAchievements.Data.Achievements:GetAchievementData(achievementid);
+		local completed = CrossoverAchievements.Account:GetCompletedAchievementInfo(lastid);
+		if completed then
+			-- Get last achievement in chain completed
+			while (data.NextId and CrossoverAchievements.Account:GetCompletedAchievementInfo(data.NextId)) do
+				lastid = achievementid;
+				data = Achievements:GetAchievementData(achievementid);
+				completed = CrossoverAchievements.Account:GetCompletedAchievementInfo(lastid);
+			end
+			CategoryList[categoryid].CompletedVisible = CategoryList[categoryid].CompletedVisible + 1;
+		end
+		table.insert(CategoryList[categoryid].SortedAchievements, lastid);
+		if completed and data.NextId and not self:IsFOSLegacyAchievement(categoryid) then
+			-- if not in FOS nor Legacy add next uncompleted achievement in chain
+			table.insert(CategoryList[categoryid].SortedAchievements, data.NextId);
+		end
+		if completed then
+			CategoryList[categoryid].CompletedVisible = CategoryList[categoryid].CompletedVisible + 1;
+		end
+	end
+	table.sort(CategoryList[categoryid].SortedAchievements, OrderAchievements);
+end
+
+local function OrderAchievements(achievementA, achievementB)
+	local DataA = CrossoverAchievements.Account:GetCompletedAchievementInfo(achievementA); 
+	local DataB = CrossoverAchievements.Account:GetCompletedAchievementInfo(achievementB);
+	local CompletedA = DataA ~= nil;
+	local CompletedB = DataB ~= nil;
+	
+	if CompletedA ~= CompletedB then
+		--completed achievement first
+		return CompletedA;
+	end
+
+	if not CompletedA and not CompletedB then
+		-- Incompleted achievements in id order
+		return achievementA < achievementB;
+	end
+
+	if DataA.Account ~= DataB.Account then
+		--account achievement first
+		return DataA.Account;
+	end
+
+	if DataA.WasEarnedByMe ~= DataB.WasEarnedByMe then
+		--completed by this character achievements before completed by other character achievements
+		return DataA.WasEarnedByMe;
+	end
+
+	if DataA.WasEarnedHere ~= DataB.WasEarnedHere then
+		--completed in this version achievements before completed in other versions achievements
+		return DataA.WasEarnedHere;
+	end
+
+	if DataA.AchievementTime ~= DataB.AchievementTime then
+		 -- Older achievement first
+		return DataA.AchievementTime < DataB.AchievementTime;
+	end
+
+	-- If nothing else thenAchievement id order
+	return achievementA < achievementB;
 end
