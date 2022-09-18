@@ -70,8 +70,8 @@ end
 
 function Account:ProcessCompletedAchievementsVersion(GameVersionTable, WasEarnedHere)
     if GameVersionTable.Achievements then
-        for AchievementID, AchievementTime in pairs(GameVersionTable.Achievements) do 
-            self:ProcessCompletedAchievement(AchievementID, AchievementTime, true, WasEarnedHere, WasEarnedHere, nil, GameVersionTable.GameVersion);
+        for AchievementID, AchievementTime in pairs(GameVersionTable.Achievements) do
+            self:ProcessCompletedAchievement(AchievementID, AchievementTime, true, WasEarnedHere, WasEarnedHere, GameVersionTable.GameVersion, GameVersionTable.GameVersion);
         end
     end
 end

@@ -61,7 +61,10 @@ function GameVersion:HasGuildAchievements()
 end
 
 function GameVersion:HasBlizzardAccountAchievements(ServerType)
-    return ServerType == ServerType_Retail or ServerType == ServerType_Retail_PTR;
+    if not ServerType then
+        ServerType = self:GetServerType();
+    end
+     return ServerType == ServerType_Retail or ServerType == ServerType_Retail_PTR;
 end
 
 function GameVersion:HasStadisticSummary()
