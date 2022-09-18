@@ -41,6 +41,7 @@ function CrossoverAchievements:OnPlayerEnteringWorld()
     self:ExportData();
     self:ImportData();
     CrossoverAchievements.Account:ProcessCompletedAchievements();
+    CrossoverAchievements.Data.Categories:SortCategories();
     self.IsLoading = false;
     --print('End '.. date("%a %b %d %H:%M:%S %Y"));
 end
