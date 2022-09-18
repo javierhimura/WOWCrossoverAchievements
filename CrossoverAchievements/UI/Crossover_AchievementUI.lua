@@ -5,6 +5,9 @@ UIPanelWindows["CrossoverAchievementFrame"] = { area = "doublewide", pushable = 
 local GetAchievementInfo = CrossoverAchievements.API.GetAchievementInfo;
 local GetPreviousAchievement = CrossoverAchievements.API.GetPreviousAchievement;
 local GetNextAchievement = CrossoverAchievements.API.GetNextAchievement;
+local GetNextAchievement = CrossoverAchievements.API.GetNextAchievement;
+local GetCategoryInfo = GetCategoryInfo;
+local GetCategoryNumAchievements = CrossoverAchievements.API.GetCategoryNumAchievements
 
 local ACHIEVEMENTUI_CATEGORIES = {};
 

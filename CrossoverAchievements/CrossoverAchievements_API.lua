@@ -45,7 +45,19 @@ function API.GetNextAchievement(achievementid)
     return data.NextId;
 end
 
---/script print(GetAchievementInfo(13));
---/script print(CrossoverAchievements.API.GetAchievementInfo(13));
---/script print(CrossoverAchievements.API.GetAchievementInfo(645));
---/script print( CrossoverAchievements.Account.GetCompletedAchievementInfo(13));
+function API.GetCategoryNumAchievements(categoryId, includeAll)
+    local total, completed, incompleted = 0;
+    if CrossoverAchievements.Data.Categories:IsFOSLegacyAchievement(categoryId) then
+        completed = CrossoverAchievements.Data.Categories:GetCategoryCompletedAchievements(categoryId);
+        total = completed;
+    elseif includeAll then
+        total, completed, incompleted = Blz_GetCategoryNumAchievements(categoryId);
+        completed = CrossoverAchievements.Data.Categories:GetCategoryCompletedAchievements(categoryId);
+    else
+        total = CrossoverAchievements.Data.Categories:GetCategoryVisibleAchievements(categoryId);
+        completed = CrossoverAchievements.Data.Categories:GetCategoryCompletedVisibleAchievements(categoryId);
+        --print('GetCategoryNumAchievements else '..categoryId.. ' total '..total);
+	end
+    incompleted = total - completed;
+    return total, completed, incompleted;
+end
