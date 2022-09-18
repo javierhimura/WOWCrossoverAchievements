@@ -29,6 +29,13 @@ function Categories:SetCategoryAchievement(categoryid, achievementid)
     CategoryList[categoryid].Achievements[achievementid] = true;
 end
 
+function Categories:RefreshSortCategory(categoryid)
+	CategoryList[categoryid].SortedAchievements = nil;
+	CategoryList[categoryid].VisibleAchievements = {};
+	CategoryList[categoryid].Total = 0;
+	CategoryList[categoryid].CompletedVisible = 0;
+end
+
 function Categories:IsFOSLegacyAchievement(categoryid)
 	return FOSLegacyCategoryList[categoryid];
 end
