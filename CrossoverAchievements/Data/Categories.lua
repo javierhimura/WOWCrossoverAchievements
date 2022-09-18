@@ -30,10 +30,7 @@ function Categories:SetCategoryAchievement(categoryid, achievementid)
 end
 
 function Categories:RefreshSortCategory(categoryid)
-	CategoryList[categoryid].SortedAchievements = nil;
-	CategoryList[categoryid].VisibleAchievements = {};
-	CategoryList[categoryid].Total = 0;
-	CategoryList[categoryid].CompletedVisible = 0;
+	CategoryList[categoryid].IsSorted = false;
 end
 
 function Categories:IsFOSLegacyAchievement(categoryid)
@@ -44,7 +41,7 @@ function Categories:GetCategoryCompletedAchievements(categoryid)
 	if not CategoryList[categoryid] then
 		return 0;
 	end
-	if not CategoryList[categoryid].SortedAchievement then
+	if not CategoryList[categoryid].IsSorted then
 		self:SortCategory(categoryid);
 	end
 	return CategoryList[categoryid].Total;
@@ -54,7 +51,7 @@ function Categories:GetCategoryVisibleAchievements(categoryid)
 	if not CategoryList[categoryid] then
 		return 0;
 	end
-	if not CategoryList[categoryid].SortedAchievement then
+	if not CategoryList[categoryid].IsSorted then
 		self:SortCategory(categoryid);
 	end
 	return table.getn(CategoryList[categoryid].SortedAchievements);
@@ -64,7 +61,7 @@ function Categories:GetCategoryCompletedVisibleAchievements(categoryid)
 	if not CategoryList[categoryid] then
 		return 0;
 	end
-	if not CategoryList[categoryid].SortedAchievement then
+	if not CategoryList[categoryid].IsSorted then
 		self:SortCategory(categoryid);
 	end
 	return CategoryList[categoryid].CompletedVisible;
@@ -74,7 +71,7 @@ function Categories:GetCategoryAchievement(categoryid, index)
 	if not CategoryList[categoryid] then
 		return nil;
 	end
-	if not CategoryList[categoryid].SortedAchievement then
+	if not CategoryList[categoryid].IsSorted then
 		self:SortCategory(categoryid);
 	end
 	local total = self:GetCategoryVisibleAchievements(categoryid);
@@ -85,13 +82,18 @@ function Categories:GetCategoryAchievement(categoryid, index)
 end
 
 function Categories:SortCategory(categoryid)
-	if not CategoryList[categoryid] or CategoryList[categoryid].SortedAchievement then
+	if not CategoryList[categoryid] then
+		return;
+	end
+	if CategoryList[categoryid].IsSorting or CategoryList[categoryid].IsSorted then
 		return;
 	end
 	if self:IsFOSLegacyAchievement(categoryid) then
 		self:SortCategoryFOS(categoryid);
 		return;
 	end
+	
+	CategoryList[categoryid].IsSorting = true;
 	CategoryList[categoryid].SortedAchievements = {};
 	CategoryList[categoryid].VisibleAchievements = {};
 	CategoryList[categoryid].Total = 0;
@@ -126,6 +128,9 @@ function Categories:SortCategory(categoryid)
 		end
 	end
 	table.sort(CategoryList[categoryid].SortedAchievements, OrderAchievements);
+	
+	CategoryList[categoryid].IsSorting = false;
+	CategoryList[categoryid].IsSorted = true;
 end
 
 function Categories:SortCategoryFOS(categoryid)
