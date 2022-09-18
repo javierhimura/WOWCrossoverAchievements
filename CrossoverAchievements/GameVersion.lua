@@ -1,4 +1,4 @@
-local _, CrossoverAchievements = ...
+local CrossoverAchievements = LibStub("AceAddon-3.0"):GetAddon("CrossoverAchievements");
 
 local ServerType_ClassicEra = "Classic Era";
 local ServerType_ClassicTBC = "Classic TBC";

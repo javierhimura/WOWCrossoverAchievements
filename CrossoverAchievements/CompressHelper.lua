@@ -1,4 +1,4 @@
-local _, CrossoverAchievements = ...
+local CrossoverAchievements = LibStub("AceAddon-3.0"):GetAddon("CrossoverAchievements");
 
 CrossoverAchievements.CompressHelper = CrossoverAchievements.CompressHelper or {};
 local CompressHelper = CrossoverAchievements.CompressHelper;

@@ -1,17 +1,19 @@
-local _, app = ...
-
-CrossoverAchievements = app;
+local CrossoverAchievements = LibStub("AceAddon-3.0"):NewAddon("CrossoverAchievements", "AceTimer-3.0");
 
 local frame = CreateFrame('frame');
 
 local frame = CreateFrame("FRAME", "CrossoverAchievements", UIParent);
 frame:SetScript("OnEvent", function(self, e, ...) (self.events[e] or print)(...); end);
+frame:SetScript('OnUpdate', function(self, elapsed)
+    CrossoverAchievements:OnUpdate()
+end)
 frame:SetPoint("BOTTOMLEFT", UIParent, "TOPLEFT", 0, 0);
 frame.refreshDataForce = true;
 frame.events = {};
 frame:SetSize(1, 1);
 frame:Show();
 frame:RegisterEvent("PLAYER_LOGIN");
+frame:RegisterEvent("ACHIEVEMENT_EARNED");
 frame:RegisterEvent("ACHIEVEMENT_EARNED");
 
 local AddonDataVersion = 1;
@@ -27,23 +29,54 @@ end
 local Blz_AchievementFrame_ToggleAchievementFrame = nil;
 local GetAchievementInfo = GetAchievementInfo;
 
-function CrossoverAchievements:OnPlayerEnteringWorld()
+function CrossoverAchievements:OnInitialize()
     if not self.GameVersion:IsValidVersion() then
         print('CrossoverAchievements not compatible with this game version');
         return;
     end
-    --print('Start '.. date("%a %b %d %H:%M:%S %Y"));
-    self.IsLoading = true;
-    self:InitializeAccountData();
-    self:ExportAchievements();
-    --self.Extract:ExtractAchievementsInfo();
     self:ReplaceBlizzardFrame();
+    self:ScheduleTimer(
+	    function()
+		    self:Initialize();
+	    end, 1
+	);
+end
+
+function CrossoverAchievements:OnEnable()
+    self:OnInitialize();
+end
+
+function CrossoverAchievements:OnDisable()
     self:ExportData();
-    self:ImportData();
-    CrossoverAchievements.Account:ProcessCompletedAchievements();
-    CrossoverAchievements.Data.Categories:SortCategories();
-    self.IsLoading = false;
-    --print('End '.. date("%a %b %d %H:%M:%S %Y"));
+end
+
+function CrossoverAchievements:Initialize()
+    if not self.IsLoaded then
+        --print('Start '.. date("%a %b %d %H:%M:%S %Y"));
+        self.IsLoading = true;
+        self:InitializeAccountData();
+        self:ExportAchievements();
+        --self.Extract:ExtractAchievementsInfo();
+        self:ExportData();
+        self:ImportData();
+        CrossoverAchievements.Account:ProcessCompletedAchievements();
+        CrossoverAchievements.Data.Categories:SortCategories();
+        self.IsLoading = false;
+        self.IsLoaded = true;
+        --print('End '.. date("%a %b %d %H:%M:%S %Y"));
+	end
+end
+
+function CrossoverAchievements:OnUpdate()
+    if not self.GameVersion:IsValidVersion() then
+        return;
+    end
+    if self.IsLoaded then
+        -- It won't actually sort all categories on every update, only the ones that are pending sorting
+        -- after earning one achievement it should sort only the category of the new achievements
+        -- all other categories are sorted on initialize
+        CrossoverAchievements.Data.Categories:SortCategories();
+	end
 end
 
 function CrossoverAchievements:ExportData()
