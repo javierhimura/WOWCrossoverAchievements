@@ -43,3 +43,10 @@ function Achievements:GetAchievementData(achievementid)
 	end;
 	return Achievements.List[achievementid] 
 end
+
+function Achievements:RefreshSortAchievement(achievementid)
+	local data = self:GetAchievementData(achievementid);
+	if data and data.CategoryId then
+		CrossoverAchievements.Data.Categories:RefreshSortCategory(categoryid);
+	end
+end

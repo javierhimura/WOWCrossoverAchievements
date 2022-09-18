@@ -212,6 +212,7 @@ function CrossoverAchievements:OnAchievementEarned(achievementid)
     self:ExportAchievement(GameVersionTable, CharacterTable, achievementid);
     local accountachievement = CrossoverAchievements.API.IsAccountWideAchievement(achievementid);
 	self.Account:ProcessCompletedAchievement(achievementid, time(), accountachievement, true, true, CharacterTable.Name,  CharacterTable.Realm, CharacterTable.GameVersion);
+    self.Data.Achievements:RefreshSortAchievement(achievementid);
 end
 
 function CrossoverAchievements:ExportAchievement(GameVersionTable, CharacterTable, achievementid)
