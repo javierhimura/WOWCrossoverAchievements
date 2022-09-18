@@ -28,11 +28,11 @@ function Achievements:SetAchievementData(achievementid, points, accountwide)
 	Achievements.List[achievementid] = {};
 	Achievements.List[achievementid].Points = points;
 	Achievements.List[achievementid].AccountWide = accountwide;
-	Achievements.List[achievementid].NextID = GetNextAchievement(achievementid);
-	Achievements.List[achievementid].PreviousID = GetPreviousAchievement(achievementid);
+	Achievements.List[achievementid].NextId = GetNextAchievement(achievementid);
+	Achievements.List[achievementid].PreviousId = GetPreviousAchievement(achievementid);
 	local categoryid = GetAchievementCategory(achievementid);
 	if categoryid ~= nil then
-		Achievements.List[achievementid].CategoryID = categoryid;
+		Achievements.List[achievementid].CategoryId = categoryid;
 		CrossoverAchievements.Data.Categories:SetCategoryAchievement(categoryid, achievementid);
 	end
 end
