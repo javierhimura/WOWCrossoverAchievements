@@ -1,4 +1,4 @@
-local _, CrossoverAchievements = ...
+local CrossoverAchievements = LibStub("AceAddon-3.0"):GetAddon("CrossoverAchievements");
 
 local GetAchievementInfo = GetAchievementInfo;
 local GetNextAchievement = GetNextAchievement;

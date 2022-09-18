@@ -1,4 +1,4 @@
-local _, CrossoverAchievements = ...
+local CrossoverAchievements = LibStub("AceAddon-3.0"):GetAddon("CrossoverAchievements");
 
 UIPanelWindows["CrossoverAchievementFrame"] = { area = "doublewide", pushable = 0, xoffset = 80, whileDead = 1 };
 
@@ -95,6 +95,9 @@ end
 -- [[ CrossoverAchievementFrame ]] --
 
 function CrossoverAchievementFrame_ToggleAchievementFrame(toggleStatFrame, toggleGuildView)
+	if not CrossoverAchievements.IsLoaded then
+		return;
+	end
 	CrossoverAchievementFrameComparison:Hide();
 	CrossoverAchievementFrameTab_OnClick = CrossoverAchievementFrameBaseTab_OnClick;
 	if ( not toggleStatFrame ) then

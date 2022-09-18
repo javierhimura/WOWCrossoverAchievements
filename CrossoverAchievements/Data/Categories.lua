@@ -1,4 +1,4 @@
-local _, CrossoverAchievements = ...
+local CrossoverAchievements = LibStub("AceAddon-3.0"):GetAddon("CrossoverAchievements");
 
 CrossoverAchievements.Data = CrossoverAchievements.Data or {};
 CrossoverAchievements.Data.Categories = CrossoverAchievements.Data.Categories or {};
