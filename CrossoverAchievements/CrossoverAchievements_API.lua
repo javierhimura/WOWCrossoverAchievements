@@ -9,7 +9,20 @@ local Blz_GetNextAchievement = GetNextAchievement;
 local Blz_GetCategoryNumAchievements = GetCategoryNumAchievements;
 
 function API.GetAchievementInfo(categoryid, index)
-    local achievementid, name, points, completed, month, day, year, description, flags, icon, rewardText, isGuild, wasEarnedByMe, earnedBy = Blz_GetAchievementInfo(categoryid, index);
+    local achievementid, name, points, completed, month, day, year, description, flags, icon, rewardText, isGuild, wasEarnedByMe, earnedBy;
+    if index then
+        -- search achievementid by index category in addon data
+	    achievementid = CrossoverAchievements.Data.Categories:GetCategoryAchievement(categoryid, index);
+    else
+        achievementid = categoryid;
+	end
+	if achievementid then
+        -- achievementid received by parameter or found in category data, search additional data
+		_, name, points, completed, month, day, year, description, flags, icon, rewardText, isGuild, wasEarnedByMe, earnedBy = Blz_GetAchievementInfo(achievementid);
+    else
+        -- statistic or guild achievement don't exits in categories data, search in blizzard data
+        achievementid, name, points, completed, month, day, year, description, flags, icon, rewardText, isGuild, wasEarnedByMe, earnedBy = Blz_GetAchievementInfo(categoryid, index);
+	end
     local AccountInfo = CrossoverAchievements.Account:GetCompletedAchievementInfo(achievementid);
     if not AccountInfo then
         return achievementid, name, points, completed, month, day, year, description, flags, icon, rewardText, isGuild, wasEarnedByMe, earnedBy;
