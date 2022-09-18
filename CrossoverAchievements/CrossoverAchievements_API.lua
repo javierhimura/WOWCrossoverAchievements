@@ -9,6 +9,9 @@ local Blz_GetNextAchievement = GetNextAchievement;
 local Blz_GetCategoryNumAchievements = GetCategoryNumAchievements;
 
 function API.GetAchievementInfo(categoryid, index)
+    if CrossoverAchievements.IsLoading then
+	    return Blz_GetAchievementInfo(categoryid, index);
+	end
     local achievementid, name, points, completed, month, day, year, description, flags, icon, rewardText, isGuild, wasEarnedByMe, earnedBy;
     if index then
         -- search achievementid by index category in addon data
@@ -43,6 +46,9 @@ function API.IsAccountWideAchievement(achievementid)
 end
 
 function API.GetPreviousAchievement(achievementid)
+    if CrossoverAchievements.IsLoading then
+	    return Blz_GetPreviousAchievement(achievementid);
+	end
     local data = CrossoverAchievements.Data.Achievements:GetAchievementData(achievementid);
     if not data then
 	    return Blz_GetPreviousAchievement(achievementid);
@@ -51,6 +57,9 @@ function API.GetPreviousAchievement(achievementid)
 end
 
 function API.GetNextAchievement(achievementid)
+    if CrossoverAchievements.IsLoading then
+	    return Blz_GetNextAchievement(achievementid);
+	end
     local data = CrossoverAchievements.Data.Achievements:GetAchievementData(achievementid);
     if not data then
 	    return Blz_GetNextAchievement(achievementid);
@@ -59,6 +68,9 @@ function API.GetNextAchievement(achievementid)
 end
 
 function API.GetCategoryNumAchievements(categoryId, includeAll)
+    if CrossoverAchievements.IsLoading then
+	    return Blz_GetCategoryNumAchievements(categoryId, includeAll);
+	end
     local total, completed, incompleted = 0;
     if CrossoverAchievements.Data.Categories:IsFOSLegacyAchievement(categoryId) then
         completed = CrossoverAchievements.Data.Categories:GetCategoryCompletedAchievements(categoryId);
