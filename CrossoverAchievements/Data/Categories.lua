@@ -10,6 +10,9 @@ local FOSLegacyCategoryList = {};
 local LegacyAchievementCategoryID = 15234;
 local FOSCategoryID = 81;
 
+local GetCategoryNumAchievements = GetCategoryNumAchievements;
+local GetAchievementInfo = GetAchievementInfo;
+
 function Categories:SetCategoryAchievement(categoryid, achievementid)
     if not CategoryList[categoryid] then
 	    CategoryList[categoryid] = {};
@@ -23,8 +26,6 @@ function Categories:SetCategoryAchievement(categoryid, achievementid)
 		   FOSLegacyCategoryList[categoryid] = true;
 		end
 	end
-	CategoryList[categoryid].SortedAchievements = nil;
-	CategoryList[categoryid].CompletedVisible = 0;
     CategoryList[categoryid].Achievements[achievementid] = true;
 end
 
@@ -80,6 +81,50 @@ function Categories:SortCategory(categoryid)
 	if not CategoryList[categoryid] or CategoryList[categoryid].SortedAchievement then
 		return;
 	end
+	if self:IsFOSLegacyAchievement(categoryid) then
+		self:SortCategoryFOS(categoryid);
+		return;
+	end
+	CategoryList[categoryid].SortedAchievements = {};
+	CategoryList[categoryid].VisibleAchievements = {};
+	CategoryList[categoryid].Total = 0;
+	CategoryList[categoryid].CompletedVisible = 0;
+	local blztotal = GetCategoryNumAchievements(categoryid);
+	for index = 1,blztotal  do
+		local achievementid = GetAchievementInfo(categoryid, index);
+		local lastid = achievementid;
+		local data = CrossoverAchievements.Data.Achievements:GetAchievementData(lastid);
+		local completed = CrossoverAchievements.Account:GetCompletedAchievementInfo(lastid);
+		if completed then
+			-- Get last achievement in chain completed
+			while (data.NextId and CrossoverAchievements.Account:GetCompletedAchievementInfo(data.NextId)) do
+				lastid = data.NextId;
+				data = CrossoverAchievements.Data.Achievements:GetAchievementData(lastid);
+				completed = CrossoverAchievements.Account:GetCompletedAchievementInfo(lastid);
+			end
+			CategoryList[categoryid].CompletedVisible = CategoryList[categoryid].CompletedVisible + 1;
+		end
+		if not CategoryList[categoryid].VisibleAchievements[lastid] then
+			CategoryList[categoryid].VisibleAchievements[lastid] = true;
+			CategoryList[categoryid].Total = CategoryList[categoryid].Total + 1;
+			CategoryList[categoryid].SortedAchievements[CategoryList[categoryid].Total] = lastid;
+		end
+		if completed and data.NextId then
+			-- if not in FOS nor Legacy add next uncompleted achievement in chain
+			if not CategoryList[categoryid].VisibleAchievements[data.NextId] then
+				CategoryList[categoryid].VisibleAchievements[data.NextId] = true;
+				CategoryList[categoryid].Total = CategoryList[categoryid].Total + 1;
+				CategoryList[categoryid].SortedAchievements[CategoryList[categoryid].Total] = data.NextId;
+			end
+		end
+	end
+	table.sort(CategoryList[categoryid].SortedAchievements, OrderAchievements);
+end
+
+function Categories:SortCategoryFOS(categoryid)
+	if not CategoryList[categoryid] or CategoryList[categoryid].SortedAchievement then
+		return;
+	end
 	CategoryList[categoryid].SortedAchievements = {};
 	CategoryList[categoryid].VisibleAchievements = {};
 	CategoryList[categoryid].Total = 0;
@@ -101,14 +146,6 @@ function Categories:SortCategory(categoryid)
 			CategoryList[categoryid].VisibleAchievements[lastid] = true;
 			CategoryList[categoryid].Total = CategoryList[categoryid].Total + 1;
 			CategoryList[categoryid].SortedAchievements[CategoryList[categoryid].Total] = lastid;
-		end
-		if completed and data.NextId and not self:IsFOSLegacyAchievement(categoryid) then
-			-- if not in FOS nor Legacy add next uncompleted achievement in chain
-			if not CategoryList[categoryid].VisibleAchievements[data.NextId] then
-				CategoryList[categoryid].VisibleAchievements[data.NextId] = true;
-				CategoryList[categoryid].Total = CategoryList[categoryid].Total + 1;
-				CategoryList[categoryid].SortedAchievements[CategoryList[categoryid].Total] = data.NextId;
-			end
 		end
 	end
 	table.sort(CategoryList[categoryid].SortedAchievements, OrderAchievements);
