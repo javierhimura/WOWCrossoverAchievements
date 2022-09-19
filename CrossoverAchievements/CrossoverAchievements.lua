@@ -65,7 +65,8 @@ function CrossoverAchievements:CheckClearWTFData()
 
         if not self.GameVersion:IsRetail() and
 		   LoadAddOn("CrossoverAchievements - Retail") and
-           CrossoverAchievements_Retail ~= nil
+           CrossoverAchievements_Retail ~= nil and
+		   CrossoverAchievements_WOTLK.DataVersion < self.AddonDataVersion
 		then
             CrossoverAchievements_Retail = nil;
 		    print('You will need to import updated achievements data from Retail');
@@ -73,7 +74,8 @@ function CrossoverAchievements:CheckClearWTFData()
 
         if not self.GameVersion:IsWOTLK() and 
 		   LoadAddOn("CrossoverAchievements - WOTLK") and
-		   CrossoverAchievements_WOTLK ~= nil
+		   CrossoverAchievements_WOTLK ~= nil and
+		   CrossoverAchievements_WOTLK.DataVersion < self.AddonDataVersion
 		then
             CrossoverAchievements_WOTLK = nil;
 		    print('You will need to import updated achievements data from WOTLK');
