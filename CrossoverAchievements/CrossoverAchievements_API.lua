@@ -99,5 +99,6 @@ function API.GetLatestCompletedAchievements()
     if CrossoverAchievements.IsLoading or guildOnly then
 	    return Blz_GetLatestCompletedAchievements();
 	end
-    return CrossoverAchievements.Data.LastAchievements:GetLastAchievements();
+    return Blz_GetLatestCompletedAchievements();
+    --return CrossoverAchievements.Data.LastAchievements:GetLastAchievements();
 end
