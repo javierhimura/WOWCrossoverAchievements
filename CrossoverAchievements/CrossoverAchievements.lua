@@ -1,4 +1,5 @@
 local CrossoverAchievements = LibStub("AceAddon-3.0"):NewAddon("CrossoverAchievements", "AceTimer-3.0");
+_G["CrossoverAchievements"] = CrossoverAchievements;
 
 local frame = CreateFrame('frame');
 
@@ -18,9 +19,11 @@ frame.events.ACHIEVEMENT_EARNED = function(achievementid)
     CrossoverAchievements:OnAchievementEarned(achievementid);
 end
 
+CrossoverAchievements.AddonDataVersion = 2;
+
 local Blz_AchievementFrame_ToggleAchievementFrame = nil;
 local GetAchievementInfo = GetAchievementInfo;
-local AddonDataVersion = 1;
+local ClearWTFData = false;
 
 function CrossoverAchievements:OnInitialize()
     if not self.GameVersion:IsValidVersion() then
@@ -43,19 +46,55 @@ function CrossoverAchievements:OnDisable()
     self:ExportData();
 end
 
+function CrossoverAchievements:CheckClearWTFData()
+    if not CrossoverAchievements_AccountData then
+	    return;
+	end
+    local WTFDataVersion = CrossoverAchievements_AccountData.DataVersion;
+    self:InitializeAccountData();
+    local GameVersionTable = self:GetCurrentGameVersionTable();
+    if ClearWTFData or 
+	   not WTFDataVersion or
+	   WTFDataVersion < self.AddonDataVersion
+	then
+        CrossoverAchievements_AccountData = nil;
+        print('CrossoverAchievements Data found from a previous incompatible version.');
+		print('You will need to login with all of your characters.');
+
+        if not self.GameVersion:IsRetail() and
+		   LoadAddOn("CrossoverAchievements - Retail") and
+           CrossoverAchievements_Retail ~= nil
+		then
+            CrossoverAchievements_Retail = nil;
+		    print('You will need to import updated achievements data from Retail');
+		end
+
+        if not self.GameVersion:IsWOTLK() and 
+		   LoadAddOn("CrossoverAchievements - WOTLK") and
+		   CrossoverAchievements_WOTLK ~= nil
+		then
+            CrossoverAchievements_WOTLK = nil;
+		    print('You will need to import updated achievements data from WOTLK');
+		end	
+	end
+end 
+
 function CrossoverAchievements:Initialize()
-    if not self.IsLoaded then
+    if not self.IsLoaded and not self.IsLoading then
+   
         --print('Start '.. date("%a %b %d %H:%M:%S %Y"));
         self.IsLoading = true;
+        self:CheckClearWTFData();
         self:InitializeAccountData();
         self:ExportAchievements();
         --self.Extract:ExtractAchievementsInfo();
         self:ExportData();
         self:ImportData();
-        CrossoverAchievements.Account:ProcessCompletedAchievements();
-        CrossoverAchievements.Data.Categories:SortCategories();
+        self.Account:ProcessCompletedAchievements();
+        self.Data.Categories:SortCategories();
         self.IsLoading = false;
         self.IsLoaded = true;
+        self.Data.LastAchievements:SetLastAchievements()
         --print('End '.. date("%a %b %d %H:%M:%S %Y"));
 	end
 end
@@ -68,7 +107,7 @@ function CrossoverAchievements:OnUpdate()
         -- It won't actually sort all categories on every update, only the ones that are pending sorting
         -- after earning one achievement it should sort only the category of the new achievements
         -- all other categories are sorted on initialize
-        CrossoverAchievements.Data.Categories:SortCategories();
+        self.Data.Categories:SortCategories();
 	end
 end
 
@@ -78,7 +117,7 @@ function CrossoverAchievements:ExportData()
   ExportTable.GameVersion = GameVersionTable.GameVersion;
   ExportTable.Time = GameVersionTable.Time;
   ExportTable.Characters = GameVersionTable.Characters;
-  ExportTable.DataVersion = AddonDataVersion;
+  ExportTable.DataVersion = self.AddonDataVersion;
   if self.GameVersion:HasBlizzardAccountAchievements(GameVersionTable.GameVersion) then
     ExportTable.Achievements = GameVersionTable.Achievements;
   end
@@ -88,7 +127,7 @@ function CrossoverAchievements:ExportData()
         --print("Can Load CrossoverAchievements - Retail Export Addon");
         return;
     end
-    CrossoverAchievements_Retail.DataVersion = AddonDataVersion;
+    CrossoverAchievements_Retail.DataVersion = self.AddonDataVersion;
     CrossoverAchievements_Retail.Export = CompressData;
     CrossoverAchievements_Retail.GameVersion = GameVersionTable.GameVersion;
     CrossoverAchievements_Retail.Time = GameVersionTable.Time;
@@ -97,7 +136,7 @@ function CrossoverAchievements:ExportData()
     if not LoadAddOn("CrossoverAchievements - WOTLK") then
         return;
     end
-    CrossoverAchievements_WOTLK.DataVersion = AddonDataVersion;
+    CrossoverAchievements_WOTLK.DataVersion = self.AddonDataVersion;
     CrossoverAchievements_WOTLK.Export = CompressData;
     CrossoverAchievements_WOTLK.GameVersion = GameVersionTable.GameVersion;
     CrossoverAchievements_WOTLK.Time = GameVersionTable.Time;
@@ -115,9 +154,17 @@ function CrossoverAchievements:ImportData()
     end
     CompressData = CrossoverAchievements_WOTLK;
     -- Data from a newer version
-    if CompressData and CompressData.DataVersion and CompressData.DataVersion > AddonDataVersion then
-        print('Please upgrade CrossoverAchievements addons to be able to Import WOTLK data');
-        return;
+    if CompressData and CompressData.DataVersion then
+        if CompressData.DataVersion > self.AddonDataVersion then
+            print('Please upgrade CrossoverAchievements addon to be able to Import WOTLK data');
+            CrossoverAchievements_WOTLK = nil;
+            return;
+		end
+        if CompressData.DataVersion < self.AddonDataVersion then
+            print('Please Export WOTLK data with the last version of CrossoverAchievements addon');
+            CrossoverAchievements_WOTLK = nil;
+            return;
+		end
     end
   end
   if self.GameVersion:IsWOTLK() then
@@ -129,9 +176,17 @@ function CrossoverAchievements:ImportData()
     end
     CompressData = CrossoverAchievements_Retail;
     -- Data from a newer version
-    if CompressData and CompressData.DataVersion and CompressData.DataVersion > AddonDataVersion then
-        print('Please upgrade CrossoverAchievements addons to be able to Import Retail data');
-        return;
+    if CompressData and CompressData.DataVersion then
+        if CompressData.DataVersion < self.AddonDataVersion then
+            print('Please upgrade CrossoverAchievements addon to be able to Import Retail data');
+            CrossoverAchievements_Retail = nil;
+            return;
+        end
+        if CompressData.DataVersion < self.AddonDataVersion then
+            print('Please Export Retail data with the last version of CrossoverAchievements addon');
+            CrossoverAchievements_Retail = nil;
+            return;
+		end
     end
   end
   -- Not data exported from the other version, or invalid data
@@ -171,7 +226,6 @@ function CrossoverAchievements:ImportData()
   CrossoverAchievements_AccountData[ImportData.GameVersion] = ImportData;
 end
 
---/script CrossoverAchievements.ShowBlizFrame();
 function CrossoverAchievements:ShowBlizFrame()
     CrossoverAchievements:Blz_AchievementFrame_ToggleAchievementFrame();
 end
@@ -184,8 +238,10 @@ end
 
 function CrossoverAchievements:InitializeAccountData()
     CrossoverAchievements_AccountData = CrossoverAchievements_AccountData or {};
+    CrossoverAchievements_AccountData.DataVersion = self.AddonDataVersion;
     local AchievementsDataType = self.GameVersion.GetAchievementsDataType();
     CrossoverAchievements_AccountData[AchievementsDataType] = CrossoverAchievements_AccountData[AchievementsDataType] or {};
+    CrossoverAchievements_AccountData[AchievementsDataType].DataVersion = self.AddonDataVersion;
     CrossoverAchievements_AccountData[AchievementsDataType].Characters = CrossoverAchievements_AccountData[AchievementsDataType].Characters or {};
     if self.GameVersion:HasBlizzardAccountAchievements(AchievementsDataType)  then
         CrossoverAchievements_AccountData[AchievementsDataType].Achievements = CrossoverAchievements_AccountData[AchievementsDataType].Achievements or {};
