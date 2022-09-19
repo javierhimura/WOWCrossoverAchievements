@@ -25,7 +25,7 @@ local Blz_AchievementFrame_ToggleAchievementFrame = nil;
 local GetAchievementInfo = GetAchievementInfo;
 local ClearWTFData = false;
 local CharacterNames = nil;
-local SaveCharacterNamesWTF = true;
+local SaveCharacterNamesWTF = false;
 
 function CrossoverAchievements:OnInitialize()
     if not self.GameVersion:IsValidVersion() then
@@ -247,7 +247,8 @@ function CrossoverAchievements:InitializeAccountData()
     CrossoverAchievements_AccountData[AchievementsDataType].Characters = CrossoverAchievements_AccountData[AchievementsDataType].Characters or {};
     if self.GameVersion:HasBlizzardAccountAchievements(AchievementsDataType)  then
         CrossoverAchievements_AccountData[AchievementsDataType].Achievements = CrossoverAchievements_AccountData[AchievementsDataType].Achievements or {};
-    end
+        CrossoverAchievements_AccountData[AchievementsDataType].Total = CrossoverAchievements_AccountData[AchievementsDataType].Total or 0;
+	end
     CrossoverAchievements_AccountData[AchievementsDataType].GameVersion = self.GameVersion:GetServerType(self);
 end
 
@@ -263,11 +264,11 @@ function CrossoverAchievements:GetCurrentCharacterTable()
     if CharacterTable == nil then
         CharacterTable = {};
     	CharacterTable.Time = time();
-        CharacterTable.Achievements = CharacterTable.Achievements or {};
+        CharacterTable.Achievements = {};
+        CharacterTable.Total = 0;
         CharacterTable.GUID = playerGUID;
         CharacterTable.Realm = GetRealmName();
         CharacterTable.Name = UnitName("player");
-        CharacterTable.GameVersion = self.GameVersion:GetServerType();
         CurrentGameVersionTable.Characters[playerGUID] = CharacterTable;
     end
 
@@ -312,6 +313,7 @@ function CrossoverAchievements:ExportAchievement(CurrentGameVersionTable, Curren
             self.Data.Achievements:SetAchievementData(achievementid, points, true);
 			if not CurrentGameVersionTable.Achievements[achievementid] or CurrentGameVersionTable.Achievements[achievementid] ~= achievementtime then
                 CurrentGameVersionTable.Achievements[achievementid] = achievementtime;
+                CurrentGameVersionTable.Total = CurrentGameVersionTable.Total + 1;
                 CurrentGameVersionTable.Time = time();
             end
         elseif wasEarnedByMe then
@@ -319,6 +321,7 @@ function CrossoverAchievements:ExportAchievement(CurrentGameVersionTable, Curren
             self.Data.Achievements:SetAchievementData(achievementid, points, false);
             if not CurrentCharacterTable.Achievements[achievementid] or CurrentCharacterTable.Achievements[achievementid] ~= achievementtime then
                 CurrentCharacterTable.Achievements[achievementid] = achievementtime;
+                CurrentCharacterTable.Total = CurrentCharacterTable.Total + 1;
                 CurrentCharacterTable.Time = time();
                 CurrentGameVersionTable.Time = time();
 
@@ -391,6 +394,7 @@ function CrossoverAchievements:ExportAchievementByName(CurrentGameVersionTable, 
         CharacterByNameTable = {};
     	CharacterByNameTable.Time = time();
         CharacterByNameTable.Achievements = {};
+        CharacterByNameTable.Total = 0;
         CharacterByNameTable.Name = earnedBy;
         CharacterByNameTable.GameVersion = self.GameVersion:GetServerType();
         CurrentGameVersionTable.Characters[earnedBy] = CharacterByNameTable;
@@ -398,6 +402,7 @@ function CrossoverAchievements:ExportAchievementByName(CurrentGameVersionTable, 
 
     if not CharacterByNameTable.Achievements[achievementid] or CharacterByNameTable.Achievements[achievementid] ~= achievementtime then
 		CharacterByNameTable.Achievements[achievementid] = achievementtime;
+        CharacterByNameTable.Total = CharacterByNameTable.Total + 1;
         CharacterByNameTable.Time = time();
         CurrentGameVersionTable.Time = time();
     end
@@ -412,5 +417,9 @@ function CrossoverAchievements:RemoveAchievementByName(CurrentGameVersionTable, 
        CharacterByNameTable.Achievements[achievementid] == achievementtime
 	then
         CharacterByNameTable.Achievements[achievementid] = nil;
+        CharacterByNameTable.Total = CharacterByNameTable.Total - 1;
+	end
+    if CharacterByNameTable and CharacterByNameTable.Total == 0 then
+	    CurrentGameVersionTable.Characters[CurrentCharacterTable.Name] = nil;
 	end
 end
