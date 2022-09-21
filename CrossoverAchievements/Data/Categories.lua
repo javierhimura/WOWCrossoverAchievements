@@ -197,6 +197,12 @@ function Categories:SortCategoryFOS(categoryid)
 	if not CategoryList[categoryid] or CategoryList[categoryid].SortedAchievement then
 		return;
 	end
+	
+	if SaveCategoriesWFT then
+		local title, parentCategoryid, flags = GetCategoryInfo(categoryid);
+		CategoryList[categoryid].Title = title;
+	end
+
 	CategoryList[categoryid].SortedAchievements = {};
 	CategoryList[categoryid].VisibleAchievements = {};
 	CategoryList[categoryid].Visible = 0;
@@ -222,11 +228,21 @@ function Categories:SortCategoryFOS(categoryid)
 				local numtotal, numcompleted = self:GetTotalAchievementsFromId(lastid);
 				CategoryList[categoryid].Total = CategoryList[categoryid].Total + numtotal;
 				CategoryList[categoryid].TotalCompleted = CategoryList[categoryid].TotalCompleted + numcompleted;
-				CategoryList[categoryid].SortedAchievements[CategoryList[categoryid].Total] = lastid;
+				CategoryList[categoryid].SortedAchievements[CategoryList[categoryid].Visible] = lastid;
 			end
 		end
 	end
-	table.sort(CategoryList[categoryid].SortedAchievements, OrderAchievements);
+	if SaveCategoriesWFT then
+        CrossoverAchievements_AccountData.CategoryList = CategoryList;
+    else
+        CrossoverAchievements_AccountData.CategoryList = nil;
+	end
+
+	if CategoryList[categoryid].Visible > 0 then
+		table.sort(CategoryList[categoryid].SortedAchievements, OrderAchievements);
+	end
+	CategoryList[categoryid].IsSorting = false;
+	CategoryList[categoryid].IsSorted = true;
 end
 
 function OrderAchievements(achievementA, achievementB)
