@@ -1,9 +1,10 @@
 local CrossoverAchievements = LibStub("AceAddon-3.0"):GetAddon("CrossoverAchievements");
+local GameVersion_ClassicWOTLK = "Classic Wotlk";
 
 CrossoverAchievements.Data = CrossoverAchievements.Data or {};
 CrossoverAchievements.Data.Achievements = CrossoverAchievements.Data.Achievements or {};
-CrossoverAchievements.Data.Achievements.WOTLK = CrossoverAchievements.Data.Achievements.WOTLK or {};
-CrossoverAchievements.Data.Achievements.WOTLK.Phases = {
+CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK] = CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK] or {};
+CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].Phases = {
     PHASE0_PREPATH = 0,
     PHASE0_SEASON_OF_MASTERY = 1,
     PHASE1_CLASSIC_WOTLK_LAUNCH = 2,
@@ -29,7 +30,7 @@ CrossoverAchievements.Data.Achievements.WOTLK.Phases = {
 -- Removed Achievement that was available in a given expansion, including Retail, but was removed without being turned into a Legacy achievement or FOS 
 -- Phase in which the achievement will be added in Classic WOTLK or was added in OG WOTLK
 -- OtherSide For Alliance/Horde separate factions the achievement in the other faction
-CrossoverAchievements.Data.Achievements.WOTLK.List = {
+CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
   -- General Start
     -- Level 10
     [6] = {Faction = 'Both'},
