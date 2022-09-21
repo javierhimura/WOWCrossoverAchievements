@@ -137,7 +137,7 @@ function Account:ProcessCompletedAchievements()
     if SaveCompletedAchievementsWTF then
         CrossoverAchievements_AccountData.AllAchievements = CompletedAchievements;
     else
-        SaveCompletedAchievementsWTF = nil;
+        CrossoverAchievements_AccountData.AllAchievements = nil;
 	end
 end
 
