@@ -178,7 +178,7 @@ function CrossoverAchievementFrame_ForceUpdate ()
 end
 
 function CrossoverAchievementFrame_SetTabs()
-    if CrossoverAchievements.GameVersion:HasGuildAchievements() then
+    if CrossoverAchievements.GameVersionHelper:HasGuildAchievements() then
         CrossoverAchievementFrameTab2:Show();
         CrossoverAchievementFrameTab3:SetPoint("LEFT", CrossoverAchievementFrameTab2, "RIGHT", -5, 0);
     else
@@ -193,14 +193,14 @@ function CrossoverAchievementFrame_SetTabs()
 end
 
 function CrossoverAchievementFrame_UpdateTabs(clickedTab)
-    if clickedTab == 2 and not CrossoverAchievements.GameVersion:HasGuildAchievements() then
+    if clickedTab == 2 and not CrossoverAchievements.GameVersionHelper:HasGuildAchievements() then
         return;
     end
 	CrossoverAchievementFrame.searchResults:Hide();
 	PanelTemplates_Tab_OnClick(_G["CrossoverAchievementFrameTab"..clickedTab], CrossoverAchievementFrame);
 	local tab;
 	for i = 1, 3 do
-        if i ~= 2 or CrossoverAchievements.GameVersion:HasGuildAchievements() then
+        if i ~= 2 or CrossoverAchievements.GameVersionHelper:HasGuildAchievements() then
             tab = _G["CrossoverAchievementFrameTab"..i];
             if ( i == clickedTab ) then
                 tab.text:SetPoint("CENTER", 0, -5);
@@ -273,7 +273,7 @@ function CrossoverAchievementFrameBaseTab_OnClick (id)
 		CrossoverAchievementFrameCategoriesBG:SetTexCoord(0, 0.5, 0, 1);
 		CrossoverAchievementFrameGuildEmblemLeft:Hide();
 		CrossoverAchievementFrameGuildEmblemRight:Hide();
-	elseif ( id == 2 and CrossoverAchievements.GameVersion:HasGuildAchievements() ) then
+	elseif ( id == 2 and CrossoverAchievements.GameVersionHelper:HasGuildAchievements() ) then
 		if ( not IN_GUILD_VIEW ) then
 			CrossoverAchievementFrame_ToggleView();
 		end
@@ -326,7 +326,7 @@ function CrossoverAchievementFrameComparisonTab_OnClick (id)
 		Crossover_achievementFunctions = CROSSOVER_COMPARISON_ACHIEVEMENT_FUNCTIONS;
 		CrossoverAchievementFrame_ShowSubFrame(CrossoverAchievementFrameComparison, CrossoverAchievementFrameComparisonContainer);
 		CrossoverAchievementFrameWaterMark:SetTexture("Interface\\AchievementFrame\\UI-Achievement-AchievementWatermark");
-	elseif ( id == 2 and CrossoverAchievements.GameVersion:HasGuildAchievements() ) then
+	elseif ( id == 2 and CrossoverAchievements.GameVersionHelper:HasGuildAchievements() ) then
 		-- We don't have support for guild achievement comparison.  Just open up the non-comparison guild achievement tab.
 		CrossoverAchievementFrameTab_OnClick = CrossoverAchievementFrameBaseTab_OnClick;
 		CrossoverAchievementFrameTab_OnClick(2);
@@ -449,7 +449,7 @@ function CrossoverAchievementFrameCategories_GetCategoryList (categories)
 	for i in next, categories do
 		categories[i] = nil;
 	end
-	if ( not Crossover_achievementFunctions.noSummary or CrossoverAchievements.GameVersion:HasStadisticSummary() ) then
+	if ( not Crossover_achievementFunctions.noSummary or CrossoverAchievements.GameVersionHelper:HasStadisticSummary() ) then
 		-- Insert the fake Summary category
 		tinsert(categories, { ["id"] = "summary" });
 	end
@@ -1087,7 +1087,7 @@ CrossoverAchievementButton_TEXTUREHEIGHT = 128;
 GUILDCrossoverAchievementButton_MINHEIGHT = 128;
 
 function CrossoverAchievementButton_UpdatePlusMinusTexture(button)
-    if CrossoverAchievements.GameVersion:IsWOTLK() then
+    if CrossoverAchievements.GameVersionHelper:IsWOTLK() then
         CrossoverAchievementButton_UpdatePlusMinusTexture_WOTLK(button);
     else
         CrossoverAchievementButton_UpdatePlusMinusTexture_Retail(button);
@@ -1853,7 +1853,7 @@ function CrossoverAchievementObjectives_DisplayCriteria (objectivesFrame, id, re
 	local numExtraCriteriaRows = 0;
 
 
-    if CrossoverAchievements.GameVersion:HasGuildReputation() then
+    if CrossoverAchievements.GameVersionHelper:HasGuildReputation() then
         local function AddExtraCriteriaRow()
             numExtraCriteriaRows = numExtraCriteriaRows + 1;
             yOffset = -numExtraCriteriaRows * CrossoverAchievementButton_CRITERIAROWHEIGHT;

@@ -1,129 +1,149 @@
 local CrossoverAchievements = LibStub("AceAddon-3.0"):GetAddon("CrossoverAchievements");
 
-local ServerType_ClassicEra = "Classic Era";
-local ServerType_ClassicTBC = "Classic TBC";
-local ServerType_ClassicWOTLK = "Classic Wotlk";
-local ServerType_Retail = "Retail";
+local GameVersion_ClassicEra = "Classic Era";
+local GameVersion_ClassicTBC = "Classic TBC";
+local GameVersion_ClassicWOTLK = "Classic Wotlk";
+local GameVersion_Retail = "Retail";
 
-local ServerType_ClassicEra_PTR = "Classic Era PTR";
-local ServerType_ClassicTBC_PTR = "Classic TBC PTR";
-local ServerType_ClassicWOTLK_PTR = "Classic Wotlk PTR";
-local ServerType_Retail_PTR = "Retail PTR";
+local GameVersion_ClassicEra_PTR = "Classic Era PTR";
+local GameVersion_ClassicTBC_PTR = "Classic TBC PTR";
+local GameVersion_ClassicWOTLK_PTR = "Classic Wotlk PTR";
+local GameVersion_Retail_PTR = "Retail PTR";
 
-local GameVersion = {};
-CrossoverAchievements.GameVersion = GameVersion;
+local GameVersionHelper = {};
+CrossoverAchievements.GameVersionHelper = GameVersionHelper;
 
-CrossoverAchievements.GameVersion.GameVersionsWithAchievements = {
-    ServerType_ClassicWOTLK,
-    ServerType_Retail
+CrossoverAchievements.GameVersionHelper.GameVersionsWithAchievements = {
+    GameVersion_ClassicWOTLK,
+    GameVersion_Retail
 };
 
-function GameVersion:IsPTRorBeta()
+function GameVersionHelper:IsPTRorBeta()
     return C_CVar.GetCVar("portal") == "test";
 end
 
-function GameVersion:CanImportData(ImportServerType)
+function GameVersionHelper:CanImportData(GameVersion)
     if self:IsWOTLK()  then
         if self:IsPTRorBeta() then
-            return ImportServerType == ServerType_Retail or ImportServerType == ServerType_Retail_PTR;
+            return GameVersion == GameVersion_Retail or GameVersion == GameVersion_Retail_PTR;
         else
-            return ImportServerType == ServerType_Retail;
+            return GameVersion == GameVersion_Retail;
         end
     end
     if self:IsRetail()  then
         if self:IsPTRorBeta() then
-            return ImportServerType == ServerType_ClassicWOTLK or ImportServerType == ServerType_ClassicWOTLK_PTR;
+            return GameVersion == GameVersion_ClassicWOTLK or GameVersion == GameVersion_ClassicWOTLK_PTR;
         else
-            return ImportServerType == ServerType_ClassicWOTLK;
+            return GameVersion == GameVersion_ClassicWOTLK;
         end
     end
     return false;
 end
 
-function GameVersion:IsValidVersion()
+function GameVersionHelper:IsValidVersion()
     return self:IsRetail() or self:IsWOTLK();
 end
 
-function GameVersion:IsRetail()
-    return self:GetServerType() == ServerType_Retail or self:GetServerType() == ServerType_Retail_PTR;
-end
-
-function GameVersion:IsWOTLK()
-    return self:GetServerType() == ServerType_ClassicWOTLK or self:GetServerType() == ServerType_ClassicWOTLK_PTR;
-end
-
-function GameVersion:HasGuildReputation()
-    return GetExpansionLevel() >= LE_EXPANSION_CATACLYSM;
-end
-
-function GameVersion:HasGuildAchievements()
-    return GetExpansionLevel() >= LE_EXPANSION_CATACLYSM;
-end
-
-function GameVersion:HasBlizzardAccountAchievements(ServerType)
-    if not ServerType then
-        ServerType = self:GetServerType();
+function GameVersionHelper:IsRetail(GameVersion)
+    if GameVersion == nil then
+        GameVersion = self:GetCurrentVersion();
     end
-     return ServerType == ServerType_Retail or ServerType == ServerType_Retail_PTR;
+    return GameVersion == GameVersion_Retail or GameVersion == GameVersion_Retail_PTR;
 end
 
-function GameVersion:HasStadisticSummary()
-    return GameVersion:IsWOTLK();
+function GameVersionHelper:IsWOTLK(GameVersion)
+    if GameVersion == nil then
+        GameVersion = self:GetCurrentVersion();
+    end
+    return GameVersion == GameVersion_ClassicWOTLK or GameVersion == GameVersion_ClassicWOTLK_PTR;
 end
 
-function GameVersion:GetAchievementsDataType()
-    if WOW_PROJECT_ID == WOW_PROJECT_CLASSIC then
+function GameVersionHelper:HasClassicAchievements(GameVersion)
+    return self:IsWOTLK(GameVersion);
+end
+
+function GameVersionHelper:GetClassicAchievementsDataType(GameVersion)
+    if not self:HasClassicAchievements(GameVersion) then
+	    return nil;
+	end
+    return self:GetAchievementsDataType(GameVersion);
+end
+
+function GameVersionHelper:HasGuildReputation()
+    return GetExpansionLevel() >= LE_EXPANSION_CATACLYSM;
+end
+
+function GameVersionHelper:HasGuildAchievements()
+    return GetExpansionLevel() >= LE_EXPANSION_CATACLYSM;
+end
+
+function GameVersionHelper:HasBlizzardAccountAchievements(GameVersion)
+    if not GameVersion then
+        GameVersion = self:GetCurrentVersion();
+    end
+     return self:IsRetail(GameVersion);
+end
+
+function GameVersionHelper:HasStadisticSummary()
+    return GameVersionHelper:IsWOTLK();
+end
+
+function GameVersionHelper:GetAchievementsDataType(GameVersion)
+    if GameVersion == nil then
+        GameVersion = self:GetCurrentVersion();
+    end
+    if GameVersion == GameVersion_ClassicEra or GameVersion == GameVersion_ClassicEra_PTR then
         -- vanilla
         return nil;
-    elseif WOW_PROJECT_ID == WOW_PROJECT_BURNING_CRUSADE_CLASSIC then
+    elseif GameVersion == GameVersion_ClassicTBC or GameVersion == GameVersion_ClassicTBC_PTR then
         -- tbc
         return nil;
-    elseif WOW_PROJECT_ID == WOW_PROJECT_WRATH_CLASSIC then
+    elseif GameVersion == GameVersion_ClassicWOTLK or GameVersion == GameVersion_ClassicWOTLK_PTR then
         -- wotlk
-        return ServerType_ClassicWOTLK;
-    elseif WOW_PROJECT_ID == WOW_PROJECT_MAINLINE then
+        return GameVersion_ClassicWOTLK;
+    elseif GameVersion == GameVersion_Retail or GameVersion == GameVersion_Retail_PTR then
         -- mainline
-        return ServerType_Retail;
+        return GameVersion_Retail;
     else 
         -- future Classic versions, WOTLK for now
-        return ServerType_ClassicWOTLK;
+        return GameVersion_ClassicWOTLK;
     end
 end
 
-function GameVersion:GetServerType()
+function GameVersionHelper:GetCurrentVersion()
     if self:IsPTRorBeta() then
         if WOW_PROJECT_ID == WOW_PROJECT_CLASSIC then
             -- vanilla
-            return ServerType_ClassicEra_PTR;
+            return GameVersion_ClassicEra_PTR;
         elseif WOW_PROJECT_ID == WOW_PROJECT_BURNING_CRUSADE_CLASSIC then
             -- tbc
-            return ServerType_ClassicTBC_PTR;
+            return GameVersion_ClassicTBC_PTR;
         elseif WOW_PROJECT_ID == WOW_PROJECT_WRATH_CLASSIC then
             -- wotlk
-            return ServerType_ClassicWOTLK_PTR;
+            return GameVersion_ClassicWOTLK_PTR;
         elseif WOW_PROJECT_ID == WOW_PROJECT_MAINLINE then
             -- mainline
-            return ServerType_Retail_PTR;
+            return GameVersion_Retail_PTR;
         else 
             -- future Classic PTR and Beta versions, WOTLK PTR for now
-            return ServerType_ClassicWOTLK_PTR;
+            return GameVersion_ClassicWOTLK_PTR;
         end
     else 
         if WOW_PROJECT_ID == WOW_PROJECT_CLASSIC then
             -- vanilla
-            return ServerType_ClassicEra;
+            return GameVersion_ClassicEra;
         elseif WOW_PROJECT_ID == WOW_PROJECT_BURNING_CRUSADE_CLASSIC then
             -- tbc
-            return ServerType_ClassicTBC;
+            return GameVersion_ClassicTBC;
         elseif WOW_PROJECT_ID == WOW_PROJECT_WRATH_CLASSIC then
             -- wotlk
-            return ServerType_ClassicWOTLK;
+            return GameVersion_ClassicWOTLK;
         elseif WOW_PROJECT_ID == WOW_PROJECT_MAINLINE then
             -- mainline
-            return ServerType_Retail;
+            return GameVersion_Retail;
         else 
             -- future Classic versions, WOTLK for now
-            return ServerType_ClassicWOTLK;
+            return GameVersion_ClassicWOTLK;
         end
     end 
 end

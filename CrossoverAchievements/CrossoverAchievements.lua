@@ -28,7 +28,7 @@ local CharacterNames = nil;
 local SaveCharacterNamesWTF = false;
 
 function CrossoverAchievements:OnInitialize()
-    if not self.GameVersion:IsValidVersion() then
+    if not self.GameVersionHelper:IsValidVersion() then
         print('CrossoverAchievements not compatible with this game version');
         return;
     end
@@ -63,7 +63,7 @@ function CrossoverAchievements:CheckClearWTFData()
         print('CrossoverAchievements Data found from a previous incompatible version.');
 		print('You will need to login with all of your characters.');
 
-        if not self.GameVersion:IsRetail() and
+        if not self.GameVersionHelper:IsRetail() and
 		   LoadAddOn("CrossoverAchievements - Retail") and
            CrossoverAchievements_Retail ~= nil and
 		   CrossoverAchievements_WOTLK.DataVersion < self.AddonDataVersion
@@ -72,7 +72,7 @@ function CrossoverAchievements:CheckClearWTFData()
 		    print('You will need to import updated achievements data from Retail');
 		end
 
-        if not self.GameVersion:IsWOTLK() and 
+        if not self.GameVersionHelper:IsWOTLK() and 
 		   LoadAddOn("CrossoverAchievements - WOTLK") and
 		   CrossoverAchievements_WOTLK ~= nil and
 		   CrossoverAchievements_WOTLK.DataVersion < self.AddonDataVersion
@@ -104,7 +104,7 @@ function CrossoverAchievements:Initialize()
 end
 
 function CrossoverAchievements:OnUpdate()
-    if not self.GameVersion:IsValidVersion() then
+    if not self.GameVersionHelper:IsValidVersion() then
         return;
     end
     if self.IsLoaded then
@@ -122,11 +122,11 @@ function CrossoverAchievements:ExportData()
   ExportTable.Time = GameVersionTable.Time;
   ExportTable.Characters = GameVersionTable.Characters;
   ExportTable.DataVersion = self.AddonDataVersion;
-  if self.GameVersion:HasBlizzardAccountAchievements(GameVersionTable.GameVersion) then
+  if self.GameVersionHelper:HasBlizzardAccountAchievements(GameVersionTable.GameVersion) then
     ExportTable.Achievements = GameVersionTable.Achievements;
   end
   local CompressData = self.CompressHelper:CompressEncodeData(ExportTable);
-  if self.GameVersion:IsRetail() then
+  if self.GameVersionHelper:IsRetail() then
     if not LoadAddOn("CrossoverAchievements - Retail") then
         --print("Can Load CrossoverAchievements - Retail Export Addon");
         return;
@@ -136,7 +136,7 @@ function CrossoverAchievements:ExportData()
     CrossoverAchievements_Retail.GameVersion = GameVersionTable.GameVersion;
     CrossoverAchievements_Retail.Time = GameVersionTable.Time;
   end
-  if self.GameVersion:IsWOTLK() then
+  if self.GameVersionHelper:IsWOTLK() then
     if not LoadAddOn("CrossoverAchievements - WOTLK") then
         return;
     end
@@ -149,7 +149,7 @@ end
 
 function CrossoverAchievements:ImportData()
   local CompressData;
-  if self.GameVersion:IsRetail() then
+  if self.GameVersionHelper:IsRetail() then
     if not LoadAddOn("CrossoverAchievements - WOTLK") then
         return;
     end
@@ -171,7 +171,7 @@ function CrossoverAchievements:ImportData()
 		end
     end
   end
-  if self.GameVersion:IsWOTLK() then
+  if self.GameVersionHelper:IsWOTLK() then
     if not LoadAddOn("CrossoverAchievements - Retail") then
         return;
     end
@@ -199,7 +199,7 @@ function CrossoverAchievements:ImportData()
      not CompressData.GameVersion or 
      not CompressData.Time or 
      not CompressData.DataVersion or 
-     not self.GameVersion:CanImportData(CompressData.GameVersion) then
+     not self.GameVersionHelper:CanImportData(CompressData.GameVersion) then
     return;
   end
   
@@ -222,7 +222,7 @@ function CrossoverAchievements:ImportData()
     return;
   end
   
-  if ImportData.Achievements and not self.GameVersion:HasBlizzardAccountAchievements(ImportData.GameVersion) then
+  if ImportData.Achievements and not self.GameVersionHelper:HasBlizzardAccountAchievements(ImportData.GameVersion) then
     -- WOTLK Classic data can't have account achievements
     return;
   end
@@ -243,19 +243,19 @@ end
 function CrossoverAchievements:InitializeAccountData()
     CrossoverAchievements_AccountData = CrossoverAchievements_AccountData or {};
     CrossoverAchievements_AccountData.DataVersion = self.AddonDataVersion;
-    local AchievementsDataType = self.GameVersion.GetAchievementsDataType();
+    local AchievementsDataType = self.GameVersionHelper:GetAchievementsDataType();
     CrossoverAchievements_AccountData[AchievementsDataType] = CrossoverAchievements_AccountData[AchievementsDataType] or {};
     CrossoverAchievements_AccountData[AchievementsDataType].DataVersion = self.AddonDataVersion;
     CrossoverAchievements_AccountData[AchievementsDataType].Characters = CrossoverAchievements_AccountData[AchievementsDataType].Characters or {};
-    if self.GameVersion:HasBlizzardAccountAchievements(AchievementsDataType)  then
+    if self.GameVersionHelper:HasBlizzardAccountAchievements(AchievementsDataType)  then
         CrossoverAchievements_AccountData[AchievementsDataType].Achievements = CrossoverAchievements_AccountData[AchievementsDataType].Achievements or {};
         CrossoverAchievements_AccountData[AchievementsDataType].Total = CrossoverAchievements_AccountData[AchievementsDataType].Total or 0;
 	end
-    CrossoverAchievements_AccountData[AchievementsDataType].GameVersion = self.GameVersion:GetServerType(self);
+    CrossoverAchievements_AccountData[AchievementsDataType].GameVersion = self.GameVersionHelper:GetCurrentVersion();
 end
 
 function CrossoverAchievements:GetCurrentGameVersionTable()
-    return CrossoverAchievements_AccountData[self.GameVersion.GetAchievementsDataType()];
+    return CrossoverAchievements_AccountData[self.GameVersionHelper:GetAchievementsDataType()];
 end
 
 function CrossoverAchievements:GetCurrentCharacterTable()
@@ -398,7 +398,7 @@ function CrossoverAchievements:ExportAchievementByName(CurrentGameVersionTable, 
         CharacterByNameTable.Achievements = {};
         CharacterByNameTable.Total = 0;
         CharacterByNameTable.Name = earnedBy;
-        CharacterByNameTable.GameVersion = self.GameVersion:GetServerType();
+        CharacterByNameTable.GameVersion = self.GameVersionHelper:GetCurrentVersion();
         CurrentGameVersionTable.Characters[earnedBy] = CharacterByNameTable;
     end
 
