@@ -78,6 +78,27 @@ function GameVersionHelper:HasGuildAchievements()
     return GetExpansionLevel() >= LE_EXPANSION_CATACLYSM;
 end
 
+function GameVersionHelper:GetVersionExpansionLevel(GameVersion)
+    if not GameVersion then
+	    return GetExpansionLevel();
+    elseif GameVersion == GameVersion_ClassicEra or GameVersion == GameVersion_ClassicEra_PTR then
+        -- vanilla
+        return LE_EXPANSION_CLASSIC;
+    elseif GameVersion == GameVersion_ClassicTBC or GameVersion == GameVersion_ClassicTBC_PTR then
+        -- tbc
+        return LE_EXPANSION_BURNING_CRUSADE;
+    elseif GameVersion == GameVersion_ClassicWOTLK or GameVersion == GameVersion_ClassicWOTLK_PTR then
+        -- wotlk
+        return LE_EXPANSION_WRATH_OF_THE_LICH_KING;
+    elseif GameVersion == GameVersion_Retail or GameVersion == GameVersion_Retail_PTR then
+        -- mainline
+        return LE_EXPANSION_SHADOWLANDS;
+    else 
+        -- future Classic versions, Cataclysm for now
+        return LE_EXPANSION_CATACLYSM;
+    end
+end
+
 function GameVersionHelper:HasBlizzardAccountAchievements(GameVersion)
     if not GameVersion then
         GameVersion = self:GetCurrentVersion();
