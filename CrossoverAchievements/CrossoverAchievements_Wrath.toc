@@ -10,7 +10,7 @@
 lib\LibStub\LibStub.lua
 lib\AceAddon-3.0\AceAddon-3.0.xml
 lib\AceTimer-3.0\AceTimer-3.0.xml
-lib\AceSerializer-3.0\AceSerializer-3.0.lua
+lib\AceSerializer-3.0\AceSerializer-3.0.xml
 lib\CallbackHandler-1.0\CallbackHandler-1.0.lua
 lib\LibDeflate\LibDeflate.lua
 lib\json.lua
@@ -19,11 +19,11 @@ Data\Achievements.lua
 Data\Categories.lua
 Data\LastAchievements.lua
 Data\Achievements\WOTLK.lua
-CompressHelper.lua
-GameVersionHelper.lua
+Helpers\CompressHelper.lua
+Helpers\GameVersionHelper.lua
 CrossoverAchievements_Account.lua
 CrossoverAchievements_API.lua
+CrossoverAchievements_Extract.lua
 UI\Localization.lua
 UI\Crossover_AchievementUI.lua
 UI\Crossover_AchievementUI.xml
-CrossoverAchievements_Extract.lua
