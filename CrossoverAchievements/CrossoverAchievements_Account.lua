@@ -81,6 +81,7 @@ function Account:ProcessCompletedAchievement(AchievementID, AchievementTime, Acc
         CompletedAchievements[ConvertedAchievementID].AchievementTime = AchievementTime;
         CompletedAchievements[ConvertedAchievementID].Account = Account;
         CompletedAchievements[ConvertedAchievementID].WasEarnedByMe = WasEarnedByMe;
+        CompletedAchievements[ConvertedAchievementID].WasEarnedHere = WasEarnedHere;
         CompletedAchievements[ConvertedAchievementID].EarnedBy = EarnedBy;
         CompletedAchievements[ConvertedAchievementID].Realm = Realm;
         CompletedAchievements[ConvertedAchievementID].GameVersion = GameVersion;
