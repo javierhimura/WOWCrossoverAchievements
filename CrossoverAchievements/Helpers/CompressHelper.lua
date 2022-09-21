@@ -1,7 +1,8 @@
 local CrossoverAchievements = LibStub("AceAddon-3.0"):GetAddon("CrossoverAchievements");
 
-CrossoverAchievements.CompressHelper = CrossoverAchievements.CompressHelper or {};
-local CompressHelper = CrossoverAchievements.CompressHelper;
+CrossoverAchievements.Helpers = CrossoverAchievements.Helpers or {};
+CrossoverAchievements.Helpers.CompressHelper = CrossoverAchievements.Helpers.CompressHelper or {};
+local CompressHelper = CrossoverAchievements.Helpers.CompressHelper;
 
 local LibDeflate = LibStub:GetLibrary("LibDeflate")
 local json = json;

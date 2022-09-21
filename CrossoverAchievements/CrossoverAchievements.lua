@@ -125,7 +125,7 @@ function CrossoverAchievements:ExportData()
   if self.GameVersionHelper:HasBlizzardAccountAchievements(GameVersionTable.GameVersion) then
     ExportTable.Achievements = GameVersionTable.Achievements;
   end
-  local CompressData = self.CompressHelper:CompressEncodeData(ExportTable);
+  local CompressData = self.Helpers.CompressHelper:CompressEncodeData(ExportTable);
   if self.GameVersionHelper:IsRetail() then
     if not LoadAddOn("CrossoverAchievements - Retail") then
         --print("Can Load CrossoverAchievements - Retail Export Addon");
@@ -209,7 +209,7 @@ function CrossoverAchievements:ImportData()
     return;
   end
  
-  local ImportData = self.CompressHelper:DecompressDecodeData(CompressData.Export);
+  local ImportData = self.Helpers.CompressHelper:DecompressDecodeData(CompressData.Export);
   -- Data exported cant be decompressed
   if not ImportData then
     return;
