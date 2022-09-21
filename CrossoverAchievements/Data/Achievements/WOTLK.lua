@@ -2840,7 +2840,7 @@ CrossoverAchievements.Data.Achievements.WOTLK.List = {
     [15335] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE0_SEASON_OF_MASTERY},
     --  The Immortal Season of Mastery
     [15637] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE0_SEASON_OF_MASTERY},
-    -- &lt;Hidden&gt; Joyous Journeys - Hit 70 with Buff Joyous Journeys
+    -- <Hidden> Joyous Journeys - Hit 70 with Buff Joyous Journeys
     --[15853] = {Faction = 'Both', ClassicOnly = true},
     -- The Perfect Pebble
     [16332] = {Faction = 'Both', ClassicOnly = true},

@@ -15,12 +15,12 @@ lib\CallbackHandler-1.0\CallbackHandler-1.0.lua
 lib\LibDeflate\LibDeflate.lua
 lib\json.lua
 CrossoverAchievements.lua
-GameVersion.lua
 Data\Achievements.lua
 Data\Categories.lua
 Data\LastAchievements.lua
 Data\Achievements\WOTLK.lua
 CompressHelper.lua
+GameVersionHelper.lua
 CrossoverAchievements_Account.lua
 CrossoverAchievements_API.lua
 UI\Localization.lua
