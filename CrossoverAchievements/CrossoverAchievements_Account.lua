@@ -54,7 +54,7 @@ function Account:ProcessCompletedAchievements()
     local playerGUID = UnitGUID("player");
     local CurrentGameVersionTable = CrossoverAchievements:GetCurrentGameVersionTable();
     local CurrentCharacterTable = CurrentGameVersionTable.Characters[playerGUID];
-    local GameVersionsWithAchievements = CrossoverAchievements.GameVersionHelper.GameVersionsWithAchievements;
+    local GameVersionsWithAchievements = CrossoverAchievements.Helpers.GameVersionHelper.GameVersionsWithAchievements;
 
     -- Load account achievements from current version and achievements from current character first, they have priority
     self:ProcessCompletedAchievementsVersion(CurrentGameVersionTable, true);

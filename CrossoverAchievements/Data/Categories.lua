@@ -185,7 +185,7 @@ function OrderAchievements(achievementA, achievementB)
 		return achievementA < achievementB;
 	end
 
-	if CrossoverAchievements.GameVersionHelper:HasBlizzardAccountAchievements() and DataA.Account ~= DataB.Account then
+	if CrossoverAchievements.Helpers.GameVersionHelper:HasBlizzardAccountAchievements() and DataA.Account ~= DataB.Account then
 		--account achievement first
 		return DataA.Account;
 	end

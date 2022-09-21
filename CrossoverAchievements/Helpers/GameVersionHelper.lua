@@ -10,10 +10,11 @@ local GameVersion_ClassicTBC_PTR = "Classic TBC PTR";
 local GameVersion_ClassicWOTLK_PTR = "Classic Wotlk PTR";
 local GameVersion_Retail_PTR = "Retail PTR";
 
-local GameVersionHelper = {};
-CrossoverAchievements.GameVersionHelper = GameVersionHelper;
+CrossoverAchievements.Helpers = CrossoverAchievements.Helpers or {};
+CrossoverAchievements.Helpers.GameVersionHelper = CrossoverAchievements.Helpers.GameVersionHelper or {};
+local GameVersionHelper = CrossoverAchievements.Helpers.GameVersionHelper;
 
-CrossoverAchievements.GameVersionHelper.GameVersionsWithAchievements = {
+CrossoverAchievements.Helpers.GameVersionHelper.GameVersionsWithAchievements = {
     GameVersion_ClassicWOTLK,
     GameVersion_Retail
 };
