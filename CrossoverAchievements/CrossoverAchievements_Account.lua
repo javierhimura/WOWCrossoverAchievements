@@ -26,29 +26,33 @@ function Account:ConvertAchievementVersion(AchievementID, ImportAchievementsData
 	    return AchievementID;
 	end
     if not ImportAchievementsData.List[AchievementID] then
-        -- Achievement doesn't exits in this version
+        -- There is import data but achievement does not exits in this version, return nil to ignore the achievement
+        -- All existing Classic achievements are included in import data
 	    return nil;
 	end
     local data = ImportAchievementsData.List[AchievementID];
     if data.ClassicOnly and not CrossoverAchievements.Helpers.GameVersionHelper:HasClassicAchievements() then
-        -- Classic achievement but current version is not Classic
-        -- Achievement that doesn't exits on a version will be added in the future
+        -- Classic exclusive achievement but current version is not Classic
+        -- Achievement that doesn't exits on a version will be added in future updates
 	    return nil;
 	end
     if data.Removed ~= nil and data.Removed >= CurrentGameVersionExpansionLevel then
         -- Achievement removed before current version
-        -- Achievement that doesn't exits on a version will be added in the future
+        -- Achievement that doesn't exits on a version will be added in future updates
 	    return nil;
 	end
     if data.Faction ~= factionBoth then
         if data.Merged ~= nil and data.Merged <= CurrentGameVersionExpansionLevel then
             -- Faction split achievement merged before current version
+            -- In Classic there was two achievements separated for Alliance and Horde but in Retail only one achievement exists for both factions
             -- Return merged version of the achievement
 	        return data.MergedId;
         elseif playerFaction ~= data.Faction then
+            -- Achievement with separate version for Horde and Alliance, return the equivalent achievement for player's faction
+            -- There are some achievements in retail that are only available in one faction without an equivalent achievement
+            -- Such case will return nil and will be ignored
             return data.OtherSide;
 	    end
-        return AchievementID;
 	end
 
     return AchievementID;
@@ -113,8 +117,8 @@ function Account:ProcessCompletedAchievements()
         local WasEarnedHere = (CurrentGameVersionTable == GameVersionTable); 
         if GameVersionTable then
 		    local ImportAchievementsDataVersion = ImportAchievementsDataGlobal;
-            -- If current Game Version is Retail use WOTLK Achievements data for both WOTLK only
-            -- Between Retail character translation is not needed, every achievement is consider valid to avoid problems in future updates
+            -- If current Game Version is Retail use WOTLK Achievements data for achievements imported from WOTLK
+            -- Between Retail character translation is not needed, every achievement is consider valid to avoid problems if Blizzard adds future updates
             -- There are no problems in WOTLK having an achievement database because is a closed version with all future achievements already in game
             -- Future Classic versions will require an update
             local GameVersion = GameVersionTable.GameVersion;
