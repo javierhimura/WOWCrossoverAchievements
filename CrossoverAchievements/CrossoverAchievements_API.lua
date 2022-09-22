@@ -10,6 +10,7 @@ local Blz_GetCategoryNumAchievements = GetCategoryNumAchievements;
 local Blz_GetTotalAchievementPoints = GetTotalAchievementPoints;
 local Blz_GetLatestCompletedAchievements = GetLatestCompletedAchievements;
 local Blz_GetAchievementCategory = GetAchievementCategory;
+local Blz_GetNumCompletedAchievements = GetNumCompletedAchievements;
 
 function API.GetAchievementInfo(categoryid, index)
     if CrossoverAchievements.IsLoading then
@@ -114,3 +115,13 @@ function API.GetAchievementCategory(achievementid)
 	end
     return data.CategoryId;
 end
+
+function API.GetNumCompletedAchievements(IN_GUILD_VIEW)
+    if CrossoverAchievements.IsLoading or IN_GUILD_VIEW then
+	    return Blz_GetNumCompletedAchievements(IN_GUILD_VIEW);
+	end
+    local total, numcompleted = Blz_GetNumCompletedAchievements(IN_GUILD_VIEW);
+    numcompleted = CrossoverAchievements.Account:GetNumCompletedAchievements();
+    return total, numcompleted;
+end
+

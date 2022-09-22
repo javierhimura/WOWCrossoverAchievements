@@ -5,6 +5,7 @@ CrossoverAchievements.Account = Account;
 
 local CompletedAchievements = {};
 local TotalPoints = 0;
+local NumCompletedAchievements = 0;
 local SaveCompletedAchievementsWTF = false;
 
 local playerGUID = UnitGUID('PLAYER');
@@ -18,6 +19,10 @@ end
 
 function Account:GetTotalPoints()
     return TotalPoints;
+end
+
+function Account:GetNumCompletedAchievements()
+    return NumCompletedAchievements;
 end
 
 function Account:ConvertAchievementVersion(AchievementID, ImportAchievementsData)
@@ -75,6 +80,7 @@ function Account:ProcessCompletedAchievement(AchievementID, AchievementTime, Acc
                                  GameVersion = GameVersion
                                  };
         TotalPoints = TotalPoints + CrossoverAchievements.Data.Achievements:GetAchievementData(ConvertedAchievementID).Points;
+        NumCompletedAchievements = NumCompletedAchievements + 1;
     elseif AchievementTime <  CompletedAchievements[ConvertedAchievementID].AchievementTime then -- Oldest achievement prevail
         if CompletedAchievements[ConvertedAchievementID].WasEarnedByMe and not WasEarnedByMe then
             return;  -- Current Character Achievements prevail over other characters
@@ -95,6 +101,7 @@ end
 function Account:ReprocessCompletedAchievements()
     CompletedAchievements = {};
     TotalPoints = 0;
+    NumCompletedAchievements = 0;
     self:ProcessCompletedAchievements();
 end
 
