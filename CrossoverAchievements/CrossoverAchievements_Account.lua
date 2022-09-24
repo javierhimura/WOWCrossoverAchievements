@@ -41,7 +41,7 @@ function Account:ConvertAchievementVersion(AchievementID, ImportAchievementsData
         -- Achievement that doesn't exits on a version will be added in future updates
 	    return nil;
 	end
-    if data.Removed ~= nil and data.Removed >= CurrentGameVersionExpansionLevel then
+    if data.Removed ~= nil and CurrentGameVersionExpansionLevel >= data.Removed then
         -- Achievement removed before current version
         -- Achievement that doesn't exits on a version will be added in future updates
 	    return nil;
@@ -64,7 +64,7 @@ function Account:ConvertAchievementVersion(AchievementID, ImportAchievementsData
 end
 
 function Account:ProcessCompletedAchievement(AchievementID, AchievementTime, Account, WasEarnedByMe, WasEarnedHere, EarnedBy, Realm, GameVersion, ImportAchievementsData)
-    local ConvertedAchievementID = self:ConvertAchievementVersion(AchievementID, ImportAchievementsData);
+	local ConvertedAchievementID = self:ConvertAchievementVersion(AchievementID, ImportAchievementsData);
     if ConvertedAchievementID == nil then
 	    return;
 	end
