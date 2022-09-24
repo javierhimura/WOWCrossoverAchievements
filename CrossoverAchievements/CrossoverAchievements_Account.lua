@@ -118,8 +118,8 @@ function Account:ReprocessCompletedAchievements()
 end
 
 function Account:ProcessCompletedAchievements()
-    local CurrentGameVersionTable = CrossoverAchievements:GetCurrentGameVersionTable();
-    local CurrentCharacterTable = CurrentGameVersionTable.Characters[playerGUID];
+    local CurrentGameVersionTable = CrossoverAchievements.Storage:GetCurrentGameVersionTable();
+    local CurrentCharacterTable = CrossoverAchievements.Storage:GetCurrentCharacterTable();
     local GameVersionsWithAchievements = CrossoverAchievements.Helpers.GameVersionHelper.GameVersionsWithAchievements;
 
     -- If current Game Version is WOTLK use WOTLK Achievements data for both WOTLK and Retail achievements
@@ -132,7 +132,7 @@ function Account:ProcessCompletedAchievements()
     self:ProcessCompletedAchievementsCharacter(CurrentCharacterTable, true, true, ImportAchievementsDataGlobal);
 
     for _,GameVersion in pairs(GameVersionsWithAchievements) do 
-        local GameVersionTable = CrossoverAchievements_AccountData[GameVersion];
+        local GameVersionTable = CrossoverAchievements.Storage:GetGameVersionTable(GameVersion);
         local WasEarnedHere = (CurrentGameVersionTable == GameVersionTable); 
         if GameVersionTable then
 		    local ImportAchievementsDataVersion = ImportAchievementsDataGlobal;
