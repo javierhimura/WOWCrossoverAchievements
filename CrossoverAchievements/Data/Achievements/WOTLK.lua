@@ -2222,6 +2222,8 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
       [275] = {Faction = 'Both'},
       -- School of Hard Knocks
       [1786] = {Faction = 'Both'},
+      -- Once An Orphan... -- Not in Classic Removed in OG WOTLK Patch 3.1.0 before anyone was able to complete it
+      --[1787] = {Faction = 'Both', Removed = LE_EXPANSION_WRATH_OF_THE_LICH_KING},
       -- Bad Example
       [1788] = {Faction = 'Both'},
       -- Daily Chores
