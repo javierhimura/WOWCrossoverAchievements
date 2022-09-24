@@ -491,6 +491,9 @@ function CrossoverAchievementFrameCategories_GetCategoryList (categories)
 end
 
 local displayCategories = {};
+function AchievementFrameCategories_Update()
+	CrossoverAchievementFrameCategories_Update();
+end
 function CrossoverAchievementFrameCategories_Update ()
 	local scrollFrame = CrossoverAchievementFrameCategoriesContainer
 

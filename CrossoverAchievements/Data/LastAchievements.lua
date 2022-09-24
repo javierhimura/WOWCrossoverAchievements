@@ -18,7 +18,6 @@ function LastAchievements:SetLastAchievement(achievementid, achievementime)
 	end
 	if Total < MaxLastAchievements then
 		Total = Total + 1;
-
 	end
 	if Total == MaxLastAchievements then
 		table.remove(AchievementList, MaxLastAchievements + 1);
@@ -48,7 +47,6 @@ function LastAchievements:SetLastAchievements()
 			end
 		end
 	end
-    AchievedTimeList = nil;
 end
 
 function LastAchievements:GetLastAchievements()

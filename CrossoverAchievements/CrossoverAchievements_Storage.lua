@@ -132,15 +132,15 @@ function Storage:GetCurrentGameVersionTable()
     local CurrentGameVersionTable = AccountData[CurrentGameVersion];
     if CurrentGameVersionTable == nil then
         CurrentGameVersionTable = {};
-        if CrossoverAchievements.Helpers.GameVersionHelper:HasBlizzardAccountAchievements() then
-            CurrentGameVersionTable.Achievements = {};
-		end
-        CurrentGameVersionTable.Characters = {};
-        CurrentGameVersionTable.Total = 0;
-        CurrentGameVersionTable.Time = time();
-        CurrentGameVersionTable.GameVersion = CurrentGameVersion;
-	    AccountData[CurrentGameVersion] = CurrentGameVersionTable;
 	end
+    if CrossoverAchievements.Helpers.GameVersionHelper:HasBlizzardAccountAchievements() then
+        CurrentGameVersionTable.Achievements = CurrentGameVersionTable.Achievements or {};
+	end
+    CurrentGameVersionTable.Characters = CurrentGameVersionTable.Characters or {};
+    CurrentGameVersionTable.Total = CurrentGameVersionTable.Total or  0;
+    CurrentGameVersionTable.Time = CurrentGameVersionTable.Time or time();
+    CurrentGameVersionTable.GameVersion = CurrentGameVersionTable.GameVersion or CurrentGameVersion;
+	AccountData[CurrentGameVersion] = CurrentGameVersionTable;
     return CurrentGameVersionTable;
 end
 
