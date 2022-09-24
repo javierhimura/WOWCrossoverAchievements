@@ -38,6 +38,16 @@ function Categories:IsFOSLegacyAchievement(categoryid)
 	return FOSLegacyCategoryList[categoryid];
 end
 
+function Categories:GetAllCategoriesTotalAchievements()
+	local Total = 0;
+	for categoryid,_ in pairs(CategoryList) do  
+		if CategoryList[categoryid].Total ~= nil then
+			Total = Total + CategoryList[categoryid].Total;
+		end
+	end
+	return Total;
+end
+
 function Categories:GetCategoryTotalAchievements(categoryid)
 	if not CategoryList[categoryid] then
 		return 0;
