@@ -101,8 +101,7 @@ function API.GetLatestCompletedAchievements()
     if CrossoverAchievements.IsLoading then
 	    return Blz_GetLatestCompletedAchievements();
 	end
-    return Blz_GetLatestCompletedAchievements();
-    --return CrossoverAchievements.Data.LastAchievements:GetLastAchievements();
+    return CrossoverAchievements.Data.LastAchievements:GetLastAchievements();
 end
 
 function API.GetAchievementCategory(achievementid)

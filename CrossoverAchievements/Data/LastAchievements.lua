@@ -7,28 +7,39 @@ CrossoverAchievements.Data.LastAchievements = CrossoverAchievements.Data.LastAch
 local LastAchievements = CrossoverAchievements.Data.LastAchievements;
 local GetCategoryList = GetCategoryList;
  
-local List = {};
+local AchievementList = {};
+local AchievedTimeList = {};
 local Total = 0;
-local LastTime = nil;
 local MaxLastAchievements = 5;
+local LastTime = nil;
 
 function LastAchievements:SetLastAchievement(achievementid, achievementime)
-	if LastTime and achievementime < LastTime then
+	if Total == MaxLastAchievements and achievementime < LastTime then
 		return;
 	end
-	table.insert(List, 1, achievementid);
-	LastTime = achievementime;
-	if Total == MaxLastAchievements then
-		table.remove(List, MaxLastAchievements + 1);
-	else
+	if Total < MaxLastAchievements then
 		Total = Total + 1;
+
+	end
+	if Total == MaxLastAchievements then
+		table.remove(AchievementList, MaxLastAchievements + 1);
+		table.remove(AchievedTimeList, MaxLastAchievements + 1);
+	end
+	for position = 1, MaxLastAchievements do
+		if position == Total or AchievedTimeList[position] <= achievementime then
+			table.insert(AchievementList, position, achievementid);
+			table.insert(AchievedTimeList, position, achievementime);
+			LastTime = AchievedTimeList[Total];
+			return;
+		end
 	end
 end
 
 function LastAchievements:SetLastAchievements()
-	List = {};
-	Total = 0;
-	LastTime = nil;
+    AchievementList = {};
+    AchievedTimeList = {};
+    Total = 0;
+    LastTime = nil;
 	for _,categoryid in pairs(GetCategoryList()) do
 		for index = 1, CrossoverAchievements.API.GetCategoryNumAchievements(categoryid) do
 			local achievementid = CrossoverAchievements.API.GetAchievementInfo(categoryid, index);
@@ -38,8 +49,9 @@ function LastAchievements:SetLastAchievements()
 			end
 		end
 	end
+    AchievedTimeList = nil;
 end
 
 function LastAchievements:GetLastAchievements()
-	return unpack(List);
+	return unpack(AchievementList);
 end
