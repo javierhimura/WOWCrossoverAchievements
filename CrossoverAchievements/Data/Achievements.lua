@@ -50,3 +50,26 @@ function Achievements:RefreshSortAchievement(achievementid)
 		CrossoverAchievements.Data.Categories:RefreshSortCategory(categoryid);
 	end
 end
+
+function Achievements:GetTotalAchievementsFromId(achievementid)
+	local previousid = achievementid;
+	local numtotal = 1;
+	local numcompleted = 0;
+	local data = CrossoverAchievements.Data.Achievements:GetAchievementData(previousid);
+	local completed = CrossoverAchievements.Account:GetCompletedAchievementInfo(previousid);
+	if completed then
+		numcompleted = numcompleted + 1;
+	end
+
+	while data.PreviousId do
+		previousid = data.PreviousId;
+		data = CrossoverAchievements.Data.Achievements:GetAchievementData(previousid);
+		completed = CrossoverAchievements.Account:GetCompletedAchievementInfo(previousid);
+		numtotal = numtotal + 1;
+		if completed then
+			numcompleted = numcompleted + 1;
+		end
+	end
+
+	return numtotal, numcompleted;
+end

@@ -98,28 +98,6 @@ function Categories:SortCategories()
 	end
 end
 
-function Categories:GetTotalAchievementsFromId(achievementid)
-	local previousid = achievementid;
-	local numtotal = 1;
-	local numcompleted = 0;
-	local data = CrossoverAchievements.Data.Achievements:GetAchievementData(previousid);
-	local completed = CrossoverAchievements.Account:GetCompletedAchievementInfo(previousid);
-	if completed then
-		numcompleted = numcompleted + 1;
-	end
-	while data.PreviousId do
-		previousid = data.PreviousId;
-		data = CrossoverAchievements.Data.Achievements:GetAchievementData(previousid);
-		completed = CrossoverAchievements.Account:GetCompletedAchievementInfo(previousid);
-		numtotal = numtotal + 1;
-		if completed then
-			numcompleted = numcompleted + 1;
-		end
-	end
-
-	return numtotal, numcompleted;
-end
-
 function Categories:SortCategory(categoryid)
 	if not CategoryList[categoryid] then
 		return;
@@ -164,7 +142,7 @@ function Categories:SortCategory(categoryid)
 			if completed then
 				CategoryList[categoryid].VisibleCompleted = CategoryList[categoryid].VisibleCompleted + 1;
 			end
-			local numtotal, numcompleted = self:GetTotalAchievementsFromId(lastid);
+			local numtotal, numcompleted = CrossoverAchievements.Data.Achievements:GetTotalAchievementsFromId(lastid);
 			CategoryList[categoryid].Total = CategoryList[categoryid].Total + numtotal;
 			CategoryList[categoryid].TotalCompleted = CategoryList[categoryid].TotalCompleted + numcompleted;
 			CategoryList[categoryid].SortedAchievements[CategoryList[categoryid].Visible] = lastid;
@@ -178,7 +156,7 @@ function Categories:SortCategory(categoryid)
 			if not CategoryList[categoryid].VisibleAchievements[data.NextId] then
 				CategoryList[categoryid].VisibleAchievements[data.NextId] = true;
 				CategoryList[categoryid].Visible = CategoryList[categoryid].Visible + 1;
-				CategoryList[categoryid].SortedAchievements[CategoryList[categoryid].Total] = data.NextId;
+				CategoryList[categoryid].SortedAchievements[CategoryList[categoryid].Visible] = data.NextId;
 			end
 		end
 	end
@@ -225,7 +203,7 @@ function Categories:SortCategoryFOS(categoryid)
 				CategoryList[categoryid].VisibleAchievements[lastid] = true;
 				CategoryList[categoryid].Visible = CategoryList[categoryid].Visible + 1;
 				CategoryList[categoryid].VisibleCompleted = CategoryList[categoryid].VisibleCompleted + 1;
-				local numtotal, numcompleted = self:GetTotalAchievementsFromId(lastid);
+				local numtotal, numcompleted = CrossoverAchievements.Data.Achievements:GetTotalAchievementsFromId(lastid);
 				CategoryList[categoryid].Total = CategoryList[categoryid].Total + numtotal;
 				CategoryList[categoryid].TotalCompleted = CategoryList[categoryid].TotalCompleted + numcompleted;
 				CategoryList[categoryid].SortedAchievements[CategoryList[categoryid].Visible] = lastid;
