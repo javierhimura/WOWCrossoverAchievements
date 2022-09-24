@@ -26,7 +26,8 @@ local GetAchievementInfo = GetAchievementInfo;
 local ClearWTFData = false;
 local CharacterNames = nil;
 local SaveCharacterNamesWTF = false;
-
+local playerGUID = UnitGUID("PLAYER");
+	
 function CrossoverAchievements:OnInitialize()
     if not self.Helpers.GameVersionHelper:IsValidVersion() then
         print('CrossoverAchievements not compatible with this game version');
@@ -259,7 +260,6 @@ function CrossoverAchievements:GetCurrentGameVersionTable()
 end
 
 function CrossoverAchievements:GetCurrentCharacterTable()
-    local playerGUID = UnitGUID("player");
     local CurrentGameVersionTable = self:GetCurrentGameVersionTable();
     local CharacterTable = CurrentGameVersionTable.Characters[playerGUID];
     
