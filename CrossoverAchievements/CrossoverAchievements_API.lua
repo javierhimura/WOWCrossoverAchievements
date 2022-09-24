@@ -87,6 +87,9 @@ function API.GetCategoryNumAchievements(categoryId, includeAll)
         completed = CrossoverAchievements.Data.Categories:GetCategoryCompletedVisibleAchievements(categoryId);
 	end
     incompleted = total - completed;
+    if total == 0 then
+	    return API.Blz_GetCategoryNumAchievements(categoryId, includeAll);
+	end
     return total, completed, incompleted;
 end
 

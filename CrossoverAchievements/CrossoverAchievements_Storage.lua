@@ -30,14 +30,11 @@ function Storage:InitializeAccountData()
     CrossoverAchievements_AccountData.AccountData = AccountData;
 end
 
-function Storage:OnInitialize()
+function Storage:CheckDataPreviousVersions()
     if not CrossoverAchievements_AccountData then
-        self:InitializeAccountData();
-	    return;
+	    return true;
 	end
     local WTFDataVersion = CrossoverAchievements_AccountData.DataVersion;
-    self:InitializeAccountData();
-    local GameVersionTable = self:GetCurrentGameVersionTable();
     if ClearWTFData or 
 	   not WTFDataVersion or
 	   WTFDataVersion < self.AddonDataVersion
@@ -65,12 +62,14 @@ function Storage:OnInitialize()
             CrossoverAchievements_WOTLK = nil;
 		    print('You will need to import updated achievements data from WOTLK');
 		end	
-        self:InitializeAccountData();
+        return false;
 	end
-    if CrossoverAchievements_AccountData == nil then
-	    CrossoverAchievements_AccountData = {};
-	end
+    return true;
+end
 
+function Storage:OnInitialize()
+    self:CheckDataPreviousVersions();
+    self:InitializeAccountData();
     local GameVersionsWithAchievements = CrossoverAchievements.Helpers.GameVersionHelper.GameVersionsWithAchievements;
     for _,GameVersion in pairs(GameVersionsWithAchievements) do
         Storage:ImportVersionData(GameVersion);
@@ -85,7 +84,11 @@ function Storage:GetCurrentGameVersionTable()
     local CurrentGameVersion = CrossoverAchievements.Helpers.GameVersionHelper:GetAchievementsDataType();
     local CurrentGameVersionTable = AccountData[CurrentGameVersion];
     if CurrentGameVersionTable == nil then
-        CurrentGameVersionTable.Achievements = {};
+        CurrentGameVersionTable = {};
+        if CrossoverAchievements.Helpers.GameVersionHelper:HasBlizzardAccountAchievements() then
+            CurrentGameVersionTable.Achievements = {};
+		end
+        CurrentGameVersionTable.Characters = {};
         CurrentGameVersionTable.Total = 0;
         CurrentGameVersionTable.Time = time();
         CurrentGameVersionTable.GameVersion = CurrentGameVersion;
