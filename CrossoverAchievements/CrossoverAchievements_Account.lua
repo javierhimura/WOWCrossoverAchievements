@@ -148,9 +148,9 @@ function Account:ProcessCompletedAchievements()
             end
 
             if GameVersionTable ~= CurrentGameVersionTable then
-                self:ProcessCompletedAchievementsVersion(CrossoverAchievements_AccountData[GameVersion], WasEarnedHere, ImportAchievementsDataVersion);
+                self:ProcessCompletedAchievementsVersion(GameVersionTable, WasEarnedHere, ImportAchievementsDataVersion);
 			end
-            for _,CharacterTable in pairs(CrossoverAchievements_AccountData[GameVersion].Characters) do 
+            for _,CharacterTable in pairs(GameVersionTable.Characters) do 
                 if CharacterTable and CharacterTable ~= CurrentCharacterTable then
                     local WasEarnedByMe = (CurrentCharacterTable == CharacterTable);
                     self:ProcessCompletedAchievementsCharacter(CharacterTable, WasEarnedByMe, WasEarnedHere, ImportAchievementsDataVersion);
