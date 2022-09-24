@@ -80,7 +80,7 @@ function API.GetCategoryNumAchievements(categoryId, includeAll)
         completed = CrossoverAchievements.Data.Categories:GetCategoryCompletedAchievements(categoryId);
         total = completed;
     elseif includeAll then
-        total, completed, incompleted = Blz_GetCategoryNumAchievements(categoryId);
+        total  = CrossoverAchievements.Data.Categories:GetCategoryTotalAchievements(categoryId);
         completed = CrossoverAchievements.Data.Categories:GetCategoryCompletedAchievements(categoryId);
     else
         total = CrossoverAchievements.Data.Categories:GetCategoryVisibleAchievements(categoryId);
@@ -120,8 +120,8 @@ function API.GetNumCompletedAchievements(IN_GUILD_VIEW)
     if CrossoverAchievements.IsLoading or IN_GUILD_VIEW then
 	    return Blz_GetNumCompletedAchievements(IN_GUILD_VIEW);
 	end
-    local total, numcompleted = Blz_GetNumCompletedAchievements(IN_GUILD_VIEW);
-    numcompleted = CrossoverAchievements.Account:GetNumCompletedAchievements();
+    local total, _ = Blz_GetNumCompletedAchievements(IN_GUILD_VIEW);
+    local numcompleted = CrossoverAchievements.Account:GetNumCompletedAchievements();
     return total, numcompleted;
 end
 
