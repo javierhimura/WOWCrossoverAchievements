@@ -11,8 +11,13 @@ local LegacyAchievementCategoryID = 15234;
 local FOSCategoryID = 81;
 local SaveCategoriesWFT = false;
 
-local GetCategoryNumAchievements = GetCategoryNumAchievements;
-local GetAchievementInfo = GetAchievementInfo;
+local GetCategoryNumAchievements = nil;
+local GetAchievementInfo = nil;
+
+function Categories:Initialize()
+	GetCategoryNumAchievements = CrossoverAchievements.API.Blz_GetCategoryNumAchievements;
+	GetAchievementInfo = CrossoverAchievements.API.Blz_GetAchievementInfo;
+end
 
 function Categories:SetCategoryAchievement(categoryid, achievementid)
     if not CategoryList[categoryid] then

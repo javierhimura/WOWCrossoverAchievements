@@ -12,6 +12,19 @@ local GetLatestCompletedAchievements = CrossoverAchievements.API.GetLatestComple
 local GetAchievementLink = GetAchievementLink; 
 local GetAchievementCategory = CrossoverAchievements.API.GetAchievementCategory;
 local GetNumCompletedAchievements = CrossoverAchievements.API.GetNumCompletedAchievements;
+local GetCategoryList = GetCategoryList;
+local GetGuildCategoryList = GetGuildCategoryList;
+local GetGuildLogoInfo = GetGuildLogoInfo;
+local GetGuildAchievementNumMembers = GetGuildAchievementNumMembers;
+local GetGuildAchievementMembers = GetGuildAchievementMembers;
+local GetGuildAchievementMemberInfo = GetGuildAchievementMemberInfo;
+local GetComparisonAchievementPoints = GetComparisonAchievementPoints;
+local GetComparisonCategoryNumAchievements = GetComparisonCategoryNumAchievements;
+local GetComparisonAchievementPoints = GetComparisonAchievementPoints;
+local GetComparisonCategoryNumAchievements = GetComparisonCategoryNumAchievements;
+local GetComparisonStatistic = GetComparisonStatistic;
+local GetStatistic = GetStatistic;
+local GetStatisticsCategoryList = GetStatisticsCategoryList;
 
 local ACHIEVEMENTUI_CATEGORIES = {};
 
@@ -452,7 +465,7 @@ function CrossoverAchievementFrameCategories_GetCategoryList (categories)
 	for i in next, categories do
 		categories[i] = nil;
 	end
-	if ( not Crossover_achievementFunctions.noSummary or CrossoverAchievements.Helpers.GameVersionHelper:HasStadisticSummary() ) then
+	if ( not Crossover_achievementFunctions.noSummary or CrossoverAchievements.Helpers.GameVersionHelper:HasStatisticSummary() ) then
 		-- Insert the fake Summary category
 		tinsert(categories, { ["id"] = "summary" });
 	end

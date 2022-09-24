@@ -3,7 +3,6 @@ local CrossoverAchievements = LibStub("AceAddon-3.0"):GetAddon("CrossoverAchieve
 CrossoverAchievements.Data = CrossoverAchievements.Data or {};
 CrossoverAchievements.Data.LastAchievements = CrossoverAchievements.Data.LastAchievements or {};
 
-
 local LastAchievements = CrossoverAchievements.Data.LastAchievements;
 local GetCategoryList = GetCategoryList;
  

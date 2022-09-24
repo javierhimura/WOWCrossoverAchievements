@@ -19,11 +19,7 @@ frame.events.ACHIEVEMENT_EARNED = function(achievementid)
     CrossoverAchievements:OnAchievementEarned(achievementid);
 end
 
-CrossoverAchievements.AddonDataVersion = 2;
-
 local Blz_AchievementFrame_ToggleAchievementFrame = nil;
-local GetAchievementInfo = GetAchievementInfo;
-local ClearWTFData = false;
 	
 function CrossoverAchievements:OnInitialize()
     if not self.Helpers.GameVersionHelper:IsValidVersion() then
@@ -50,7 +46,12 @@ function CrossoverAchievements:Initialize()
     if not self.IsLoaded and not self.IsLoading then
         --print('Start '.. date("%a %b %d %H:%M:%S %Y"));
         self.IsLoading = true;
+
+        self.Data.Categories:Initialize();
+        self.Data.Achievements:Initialize();
         self.Storage:OnInitialize();
+        self.Character:Initialize();
+
         self.Character:ProcessBlizzardAchievementsData();
         --self.Extract:ExtractAchievementsInfo();
         self.Storage:ExportVersionData();
