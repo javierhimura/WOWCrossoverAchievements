@@ -1855,12 +1855,11 @@ function CrossoverAchievementObjectives_DisplayCriteria (objectivesFrame, id, re
 	local numCriteriaRows = 0;
 	local numExtraCriteriaRows = 0;
 
-
+    local function AddExtraCriteriaRow()
+        numExtraCriteriaRows = numExtraCriteriaRows + 1;
+        yOffset = -numExtraCriteriaRows * CrossoverAchievementButton_CRITERIAROWHEIGHT;
+    end
     if CrossoverAchievements.Helpers.GameVersionHelper:HasGuildReputation() then
-        local function AddExtraCriteriaRow()
-            numExtraCriteriaRows = numExtraCriteriaRows + 1;
-            yOffset = -numExtraCriteriaRows * CrossoverAchievementButton_CRITERIAROWHEIGHT;
-        end
 
         local requiresRep, hasRep, repLevel;
         if ( not objectivesFrame.completed ) then
