@@ -1,15 +1,22 @@
 local CrossoverAchievements = LibStub("AceAddon-3.0"):GetAddon("CrossoverAchievements");
 
-local GetAchievementInfo = GetAchievementInfo;
-local GetNextAchievement = GetNextAchievement;
-local GetPreviousAchievement = GetPreviousAchievement;
-local GetAchievementCategory = GetAchievementCategory;
+local GetAchievementInfo = nil;
+local GetNextAchievement = nil;
+local GetPreviousAchievement = nil;
+local GetAchievementCategory = nil;
 
 CrossoverAchievements.Data = CrossoverAchievements.Data or {};
 CrossoverAchievements.Data.Achievements = CrossoverAchievements.Data.Achievements or {};
 local Achievements = CrossoverAchievements.Data.Achievements;
 
 Achievements.List = {}
+
+function Achievements:Initialize()
+	GetAchievementInfo = CrossoverAchievements.API.Blz_GetAchievementInfo;
+	GetNextAchievement = CrossoverAchievements.API.Blz_GetNextAchievement;
+	GetPreviousAchievement = CrossoverAchievements.API.Blz_GetPreviousAchievement;
+	GetAchievementCategory = CrossoverAchievements.API.Blz_GetAchievementCategory;
+end
 
 function Achievements:SetAchievementData(achievementid, points, accountwide)
 	if Achievements.List[achievementid] then

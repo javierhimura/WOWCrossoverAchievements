@@ -106,7 +106,7 @@ function GameVersionHelper:HasBlizzardAccountAchievements(GameVersion)
      return self:IsRetail(GameVersion);
 end
 
-function GameVersionHelper:HasStadisticSummary()
+function GameVersionHelper:HasStatisticSummary()
     return GameVersionHelper:IsWOTLK();
 end
 

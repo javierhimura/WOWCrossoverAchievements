@@ -5,6 +5,11 @@ CrossoverAchievements.Character = Character;
 
 local CharacterNames = nil;
 local SaveCharacterNamesWTF = false;
+local GetAchievementInfo = nil;
+
+function Character:Initialize()
+	GetAchievementInfo = CrossoverAchievements.API.Blz_GetAchievementInfo;
+end
 
 function Character:ProcessBlizzardAchievementsData()
     local CurrentGameVersionTable = CrossoverAchievements.Storage:GetCurrentGameVersionTable();

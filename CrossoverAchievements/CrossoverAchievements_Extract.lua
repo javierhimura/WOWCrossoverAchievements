@@ -3,13 +3,22 @@ local CrossoverAchievements = LibStub("AceAddon-3.0"):GetAddon("CrossoverAchieve
 local Extract = {};
 CrossoverAchievements.Extract = Extract;
 
-local GetCategoryInfo = GetCategoryInfo;
-local GetAchievementCategory = GetAchievementCategory;
-local GetNextAchievement = GetNextAchievement;
-local GetPreviousAchievement = GetPreviousAchievement;
-local GetAchievementInfo = GetAchievementInfo;
+local GetCategoryInfo = nil;
+local GetAchievementCategory = nil;
+local GetNextAchievement = nil;
+local GetPreviousAchievement = nil;
+local GetAchievementInfo = nil;
+
+function Extract:Initialize()
+    GetCategoryInfo = CrossoverAchievements.API.Blz_GetCategoryInfo;
+    GetAchievementCategory = CrossoverAchievements.API.Blz_GetAchievementCategory;
+    GetNextAchievement = CrossoverAchievements.API.Blz_GetNextAchievement;
+    GetPreviousAchievement = CrossoverAchievements.API.Blz_GetPreviousAchievement;
+    GetAchievementInfo = CrossoverAchievements.API.Blz_GetAchievementInfo;
+end
 
 function Extract:ExtractAchievementsInfo()
+    self:Initialize();
     local GameVersionTable = CrossoverAchievements.Storage:GetCurrentGameVersionTable();
     if not GameVersionTable then
         return;

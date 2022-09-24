@@ -8,6 +8,7 @@ local playerName = UnitName("player");
 local realmName = GetRealmName();
 
 local AccountData = {};
+local ClearWTFData = false;
 
 Storage.AddonDataVersion = 2;
 
@@ -16,7 +17,7 @@ function Storage:InitializeAccountData()
     CrossoverAchievements_AccountData.DataVersion = self.AddonDataVersion;
     local AchievementsDataType = CrossoverAchievements.Helpers.GameVersionHelper:GetAchievementsDataType();
     CrossoverAchievements_AccountData[AchievementsDataType] = CrossoverAchievements_AccountData[AchievementsDataType] or {};
-    CrossoverAchievements_AccountData[AchievementsDataType].DataVersion = CrossoverAchievements.AddonDataVersion;
+    CrossoverAchievements_AccountData[AchievementsDataType].DataVersion = self.AddonDataVersion;
     CrossoverAchievements_AccountData[AchievementsDataType].Characters = CrossoverAchievements_AccountData[AchievementsDataType].Characters or {};
     if CrossoverAchievements.Helpers.GameVersionHelper:HasBlizzardAccountAchievements(AchievementsDataType)  then
         CrossoverAchievements_AccountData[AchievementsDataType].Achievements = CrossoverAchievements_AccountData[AchievementsDataType].Achievements or {};
@@ -102,7 +103,7 @@ function Storage:ExportVersionData()
   ExportTable.GameVersion = GameVersionTable.GameVersion;
   ExportTable.Time = GameVersionTable.Time;
   ExportTable.Characters = GameVersionTable.Characters;
-  ExportTable.DataVersion = CrossoverAchievements.AddonDataVersion;
+  ExportTable.DataVersion = self.AddonDataVersion;
   if CrossoverAchievements.Helpers.GameVersionHelper:HasBlizzardAccountAchievements(GameVersionTable.GameVersion) then
     ExportTable.Achievements = GameVersionTable.Achievements;
   end
@@ -111,7 +112,7 @@ function Storage:ExportVersionData()
     if not LoadAddOn("CrossoverAchievements - Retail") then
         return;
     end
-    CrossoverAchievements_Retail.DataVersion = CrossoverAchievements.AddonDataVersion;
+    CrossoverAchievements_Retail.DataVersion = self.AddonDataVersion;
     CrossoverAchievements_Retail.Export = CompressData;
     CrossoverAchievements_Retail.GameVersion = GameVersionTable.GameVersion;
     CrossoverAchievements_Retail.Time = GameVersionTable.Time;
@@ -120,7 +121,7 @@ function Storage:ExportVersionData()
     if not LoadAddOn("CrossoverAchievements - WOTLK") then
         return;
     end
-    CrossoverAchievements_WOTLK.DataVersion = CrossoverAchievements.AddonDataVersion;
+    CrossoverAchievements_WOTLK.DataVersion = self.AddonDataVersion;
     CrossoverAchievements_WOTLK.Export = CompressData;
     CrossoverAchievements_WOTLK.GameVersion = GameVersionTable.GameVersion;
     CrossoverAchievements_WOTLK.Time = GameVersionTable.Time;
@@ -139,12 +140,12 @@ function Storage:ImportVersionData()
     CompressData = CrossoverAchievements_WOTLK;
     -- Data from a newer version
     if CompressData and CompressData.DataVersion then
-        if CompressData.DataVersion > CrossoverAchievements.AddonDataVersion then
+        if CompressData.DataVersion > self.AddonDataVersion then
             print('Please upgrade CrossoverAchievements addon to be able to Import WOTLK data');
             CrossoverAchievements_WOTLK = nil;
             return;
 		end
-        if CompressData.DataVersion < CrossoverAchievements.AddonDataVersion then
+        if CompressData.DataVersion < self.AddonDataVersion then
             print('Please Export WOTLK data with the last version of CrossoverAchievements addon');
             CrossoverAchievements_WOTLK = nil;
             return;
@@ -161,12 +162,12 @@ function Storage:ImportVersionData()
     CompressData = CrossoverAchievements_Retail;
     -- Data from a newer version
     if CompressData and CompressData.DataVersion then
-        if CompressData.DataVersion < CrossoverAchievements.AddonDataVersion then
+        if CompressData.DataVersion < self.AddonDataVersion then
             print('Please upgrade CrossoverAchievements addon to be able to Import Retail data');
             CrossoverAchievements_Retail = nil;
             return;
         end
-        if CompressData.DataVersion < CrossoverAchievements.AddonDataVersion then
+        if CompressData.DataVersion < self.AddonDataVersion then
             print('Please Export Retail data with the last version of CrossoverAchievements addon');
             CrossoverAchievements_Retail = nil;
             return;
