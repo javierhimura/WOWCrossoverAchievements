@@ -11,6 +11,9 @@ API.Blz_GetTotalAchievementPoints = GetTotalAchievementPoints;
 API.Blz_GetLatestCompletedAchievements = GetLatestCompletedAchievements;
 API.Blz_GetAchievementCategory = GetAchievementCategory;
 API.Blz_GetNumCompletedAchievements = GetNumCompletedAchievements;
+API.Blz_GetCategoryInfo = GetCategoryInfo;
+API.Blz_GetAchievementNumCriteria = GetAchievementNumCriteria;
+API.Blz_GetAchievementCriteriaInfo = GetAchievementCriteriaInfo;
 
 function API.GetAchievementInfo(categoryid, index)
     if CrossoverAchievements.IsLoading then
