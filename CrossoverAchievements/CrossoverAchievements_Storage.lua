@@ -96,7 +96,7 @@ function Storage:GetCurrentCharacterTable()
     return CurrentGameVersionTable.Characters[playerGUID];
 end
 
-function Storage:ExportData()
+function Storage:ExportVersionData()
   local GameVersionTable = self:GetCurrentGameVersionTable();
   local ExportTable = {};
   ExportTable.GameVersion = GameVersionTable.GameVersion;
@@ -127,7 +127,7 @@ function Storage:ExportData()
   end
 end
 
-function Storage:ImportData()
+function Storage:ImportVersionData()
   local CompressData;
   if CrossoverAchievements.Helpers.GameVersionHelper:IsRetail() then
     if not LoadAddOn("CrossoverAchievements - WOTLK") then
