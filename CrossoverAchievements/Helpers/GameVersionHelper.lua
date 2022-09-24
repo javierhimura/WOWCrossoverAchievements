@@ -42,7 +42,7 @@ function GameVersionHelper:CanImportData(GameVersion)
 end
 
 function GameVersionHelper:IsValidVersion()
-    return self:IsRetail() or self:IsWOTLK();
+    return self:IsRetail() or self:IsClassic();
 end
 
 function GameVersionHelper:IsRetail(GameVersion)
@@ -50,6 +50,10 @@ function GameVersionHelper:IsRetail(GameVersion)
         GameVersion = self:GetCurrentVersion();
     end
     return GameVersion == GameVersion_Retail or GameVersion == GameVersion_Retail_PTR;
+end
+
+function GameVersionHelper:IsClassic(GameVersion)
+    return self:IsWOTLK(GameVersion);
 end
 
 function GameVersionHelper:IsWOTLK(GameVersion)
@@ -60,7 +64,7 @@ function GameVersionHelper:IsWOTLK(GameVersion)
 end
 
 function GameVersionHelper:HasClassicAchievements(GameVersion)
-    return self:IsWOTLK(GameVersion);
+    return self:IsClassic(GameVersion);
 end
 
 function GameVersionHelper:GetClassicAchievementsDataType(GameVersion)

@@ -53,7 +53,7 @@ function CrossoverAchievements:Initialize()
         self.Data.Achievements:Initialize();
         self.Character:Initialize();
         self.Character:ProcessBlizzardAchievementsData();
-        --self.Extract:ExtractAchievementsInfo();
+        self.Extract:ExtractAchievementsInfo();
         self.Storage:ExportVersionData();
         self.Account:ProcessCompletedAchievements();
         self.Data.Categories:SortCategories();
