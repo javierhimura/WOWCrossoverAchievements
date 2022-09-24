@@ -2631,8 +2631,8 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     [980] = {Faction = 'Both'},
     -- Hero of Shattrath
     [1205] = {Faction = 'Both'},
-    -- Yellow Brewfest Stein
-    [1292] = {Faction = 'Both'},
+    -- Yellow Brewfest Stein (Never available in Classic. TBC started with 2008 Reward Blue Brewfest Stein)
+    [1292] = {Faction = 'Both', Phase = UNRELEASED_PROMOTIONS},
     -- Blue Brewfest Stein
     [1293] = {Faction = 'Both'},
     -- Realm First! Magic Seeker
@@ -2740,7 +2740,7 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Venomhide Ravasaur (Horde)
     [3357] = {Faction = 'Horde', OtherSide = 3356},
     -- Furious Gladiator
-    [3436] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_6},
+    [3436] = {Faction = 'Both', Phase = PHASE2_ARENA_SEASON_6},
     -- A Brew-FAST Mount
     [3496] = {Faction = 'Both'},
     -- The Marine Marine
@@ -2750,11 +2750,11 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Jade Tiger
     [3636] = {Faction = 'Both', Phase = UNRELEASED_PROMOTIONS},
     -- Furious Gladiator's Frostwyrm
-    [3756] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_6},
+    [3756] = {Faction = 'Both', Phase = PHASE2_ARENA_SEASON_6},
     -- Relentless Gladiator's Frostwyrm
-    [3757] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_7},
+    [3757] = {Faction = 'Both', Phase = PHASE3_ARENA_SEASON_7},
     -- Relentless Gladiator
-    [3758] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_7},
+    [3758] = {Faction = 'Both', Phase = PHASE3_ARENA_SEASON_7},
     -- Onyx Panther
     [3896] = {Faction = 'Both', Phase = UNRELEASED_PROMOTIONS},
     -- Realm First! Grand Crusader
@@ -2770,9 +2770,9 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Realm First! Fall of the Lich King
     [4576] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
     -- Wrathful Gladiator
-    [4599] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_8},
+    [4599] = {Faction = 'Both', Phase = PHASE4_ARENA_SEASON_8},
     -- Wrathful Gladiator's Frostwyrm
-    [4600] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_8},
+    [4600] = {Faction = 'Both', Phase = PHASE4_ARENA_SEASON_8},
     -- Shadowmourne
     [4623] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
     -- Invincible's Reins
