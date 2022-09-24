@@ -60,7 +60,7 @@ function Account:ConvertAchievementVersion(AchievementID, ImportAchievementsData
 	    end
 	end
     if data.MergedNew and data.Merged > CurrentGameVersionExpansionLevel then
-	    -- Addon merged into a new achievement instead of using horde or alliance original achievements
+	    -- Achievement merged into a new achievement instead of using horde or alliance original achievements
         -- Restore original achievements for Classic
         local dataMerged = ImportAchievementsData.List[data.MergedId];
         if dataMerged == nil then
