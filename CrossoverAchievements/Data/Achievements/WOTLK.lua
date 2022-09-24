@@ -19,10 +19,11 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].Phases = {
     RFD = 11,
     UNRELEASED_PROMOTIONS = 12,
     CATACLYSM_PREPATCH = 13,
-    PHASE1_ARENA_SEASON_5 = 14,
-    PHASE2_ARENA_SEASON_6 = 15,
-    PHASE3_ARENA_SEASON_7 = 16,
-    PHASE4_ARENA_SEASON_8 = 17,
+    PHASE1_ARENA_SEASON_5_START = 14,
+    PHASE1_ARENA_SEASON_5_END = 15,
+    PHASE2_ARENA_SEASON_6_END = 16,
+    PHASE3_ARENA_SEASON_7_END = 17,
+    PHASE4_ARENA_SEASON_8_END = 18,
 };
 -- ClassicOnly Achievement added in WOTLK Classic never available in Retail, not even in OG WOTLK
 -- Merged Achievement with different version for Alliance and Horde but was merged in a given expansion into a single achievement
@@ -518,63 +519,63 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     [2017] = {Faction = 'Horde', OtherSide = 2016, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Arena Start
       -- Step Into The Arena
-      [397] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5},
+      [397] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
       -- Mercilessly Dedicated
-      [398] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5},
+      [398] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
       -- Just the Two of Us: 1550
-      [399] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5},
+      [399] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
       -- Just the Two of Us: 1750
-      [400] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5},
+      [400] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
       -- Just the Two of Us: 2000
-      [401] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5},
+      [401] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
       -- Three's Company: 1550
-      [402] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5},
+      [402] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
       -- Three's Company: 1750
-      [403] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5},
+      [403] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
       -- High Five: 2000
-      [404] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5},
+      [404] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
       -- Three's Company: 2000
-      [405] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5},
+      [405] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
       -- High Five: 1550
-      [406] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5},
+      [406] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
       -- High Five: 1750
-      [407] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5},
+      [407] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
       -- Hot Streak
-      [408] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5},
+      [408] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
       -- Last Man Standing
-      [409] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5},
+      [409] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
       -- World Wide Winner
-      [699] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5},
+      [699] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
       -- Vengefully Dedicated
-      [875] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5},
+      [875] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
       -- Brutally Dedicated
-      [876] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5},
+      [876] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
       -- Just the Two of Us: 2200
-      [1159] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5},
+      [1159] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
       -- Three's Company: 2200
-      [1160] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5},
+      [1160] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
       -- High Five: 2200
-      [1161] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5},
+      [1161] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
       -- Hotter Streak
-      [1162] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5},
+      [1162] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
       -- The Arena Master
-      [1174] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5},
+      [1174] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
       -- Challenger
-      [2090] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5},
+      [2090] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_END},
       -- Gladiator
-      [2091] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5},
+      [2091] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_END},
       -- Duelist
-      [2092] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5},
+      [2092] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_END},
       -- Rival
-      [2093] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5},
+      [2093] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_END},
       -- Rival: Season 5
-      [16313] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5},
+      [16313] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_END},
       -- Gladiator: Season 5
-      [16314] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5},
+      [16314] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_END},
       -- Duelist: Season 5
-      [16315] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5},
+      [16315] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_END},
       -- Challenger: Season 5
-      [16316] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5},
+      [16316] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_END},
     -- Arena Ends
     -- Alterac Valley Start
       -- Alterac Valley Victory
@@ -2726,7 +2727,7 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- The Fifth Element
     [2496] = {Faction = 'Both'},
     -- Deadly Gladiator's Frostwyrm
-    [3096] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5},
+    [3096] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_END},
     -- Realm First! Death's Demise
     [3117] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
     -- Val'anyr, Hammer of Ancient Kings
@@ -2734,13 +2735,13 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Realm First! Celestial Defender
     [3259] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
     -- Deadly Gladiator
-    [3336] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5},
+    [3336] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_END},
     -- Winterspring Frostsaber (Alliance)
     [3356] = {Faction = 'Alliance', OtherSide = 3357},
     -- Venomhide Ravasaur (Horde)
     [3357] = {Faction = 'Horde', OtherSide = 3356},
     -- Furious Gladiator
-    [3436] = {Faction = 'Both', Phase = PHASE2_ARENA_SEASON_6},
+    [3436] = {Faction = 'Both', Phase = PHASE2_ARENA_SEASON_6_END},
     -- A Brew-FAST Mount
     [3496] = {Faction = 'Both'},
     -- The Marine Marine
@@ -2750,11 +2751,11 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Jade Tiger
     [3636] = {Faction = 'Both', Phase = UNRELEASED_PROMOTIONS},
     -- Furious Gladiator's Frostwyrm
-    [3756] = {Faction = 'Both', Phase = PHASE2_ARENA_SEASON_6},
+    [3756] = {Faction = 'Both', Phase = PHASE2_ARENA_SEASON_6_END},
     -- Relentless Gladiator's Frostwyrm
-    [3757] = {Faction = 'Both', Phase = PHASE3_ARENA_SEASON_7},
+    [3757] = {Faction = 'Both', Phase = PHASE3_ARENA_SEASON_7_END},
     -- Relentless Gladiator
-    [3758] = {Faction = 'Both', Phase = PHASE3_ARENA_SEASON_7},
+    [3758] = {Faction = 'Both', Phase = PHASE3_ARENA_SEASON_7_END},
     -- Onyx Panther
     [3896] = {Faction = 'Both', Phase = UNRELEASED_PROMOTIONS},
     -- Realm First! Grand Crusader
@@ -2770,9 +2771,9 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Realm First! Fall of the Lich King
     [4576] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
     -- Wrathful Gladiator
-    [4599] = {Faction = 'Both', Phase = PHASE4_ARENA_SEASON_8},
+    [4599] = {Faction = 'Both', Phase = PHASE4_ARENA_SEASON_8_END},
     -- Wrathful Gladiator's Frostwyrm
-    [4600] = {Faction = 'Both', Phase = PHASE4_ARENA_SEASON_8},
+    [4600] = {Faction = 'Both', Phase = PHASE4_ARENA_SEASON_8_END},
     -- Shadowmourne
     [4623] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
     -- Invincible's Reins
