@@ -20,6 +20,7 @@ frame.events.ACHIEVEMENT_EARNED = function(achievementid)
 end
 
 local Blz_AchievementFrame_ToggleAchievementFrame = nil;
+local Blz_AchievementFrameCategories_Update = nil;
 	
 function CrossoverAchievements:OnInitialize()
     if not self.Helpers.GameVersionHelper:IsValidVersion() then
@@ -82,7 +83,9 @@ end
 function CrossoverAchievements:ReplaceBlizzardFrame()
     LoadAddOn("Blizzard_AchievementUI");
     self.Blz_AchievementFrame_ToggleAchievementFrame = AchievementFrame_ToggleAchievementFrame;
+    self.Blz_AchievementFrameCategories_Update = CrossoverAchievementFrameCategories_Update;
     AchievementFrame_ToggleAchievementFrame = CrossoverAchievementFrame_ToggleAchievementFrame;
+    AchievementFrameCategories_Update = CrossoverAchievementFrameCategories_Update;
 end
 
 function CrossoverAchievements:OnAchievementEarned(achievementid)
@@ -93,5 +96,5 @@ function CrossoverAchievements:OnAchievementEarned(achievementid)
 	self.Account:ProcessCompletedAchievement(achievementid, time(), accountachievement, true, true, CurrentCharacterTable.Name,  CurrentCharacterTable.Realm, CurrentCharacterTable.GameVersion);
     self.Data.Achievements:RefreshSortAchievement(achievementid);
     self.Data.LastAchievements:SetLastAchievement(achievementid, time());
-    self.Storage:ExportData();
+    self.Storage:ExportVersionData();
 end

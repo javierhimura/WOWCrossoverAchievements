@@ -54,7 +54,7 @@ end
 function Achievements:RefreshSortAchievement(achievementid)
 	local data = self:GetAchievementData(achievementid);
 	if data and data.CategoryId then
-		CrossoverAchievements.Data.Categories:RefreshSortCategory(categoryid);
+		CrossoverAchievements.Data.Categories:RefreshSortCategory(data.CategoryId);
 	end
 end
 
