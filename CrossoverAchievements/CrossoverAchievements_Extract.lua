@@ -10,7 +10,7 @@ local GetPreviousAchievement = GetPreviousAchievement;
 local GetAchievementInfo = GetAchievementInfo;
 
 function Extract:ExtractAchievementsInfo()
-    local GameVersionTable = CrossoverAchievements:GetCurrentGameVersionTable();
+    local GameVersionTable = CrossoverAchievements.Storage:GetCurrentGameVersionTable();
     if not GameVersionTable then
         return;
     end
