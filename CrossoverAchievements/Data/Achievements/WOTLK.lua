@@ -182,22 +182,22 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Of Blood and Anguish
     [1576] = {Faction = 'Both'},
     -- The Loremaster (WOTLK Alliance) //7520
-    [1681] = {Faction = 'Alliance', OtherSide = 1682, Merged = LE_EXPANSION_CATACLYSM, MergedId = 7520, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1681] = {Faction = 'Alliance', OtherSide = 1682, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 7520, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- The Loremaster (WOTLK Horde) //7520
-    [1682] = {Faction = 'Horde', OtherSide = 1681, Merged = LE_EXPANSION_CATACLYSM, MergedId = 7520, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1682] = {Faction = 'Horde', OtherSide = 1681, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 7520, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- The Loremaster (Retail)
-    [7520] = {Faction = 'Both', Merged = LE_EXPANSION_CATACLYSM, MergedNew = true, MergedId = 1681, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [7520] = {Faction = 'Both', Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedNew = true, MergedId = 1681, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Classic Start
       -- The Green Hills of Stranglethorn
       [940] = {Faction = 'Both'},
       -- Loremaster of Eastern Kingdoms (Alliance)
-      [1676] = {Faction = 'Alliance', OtherSide = 1677, Merged = LE_EXPANSION_CATACLYSM, MergedId = 1676},
+      [1676] = {Faction = 'Alliance', OtherSide = 1677, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1676},
       -- Loremaster of Eastern Kingdoms (Horde)
-      [1677] = {Faction = 'Horde', OtherSide = 1676, Merged = LE_EXPANSION_CATACLYSM, MergedId = 1676},
+      [1677] = {Faction = 'Horde', OtherSide = 1676, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1676},
       -- Loremaster of Kalimdor (Alliance)
-      [1678] = {Faction = 'Alliance', OtherSide = 1680, Merged = LE_EXPANSION_CATACLYSM, MergedId = 1678},
+      [1678] = {Faction = 'Alliance', OtherSide = 1680, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1678},
       -- Loremaster of Kalimdor (Horde)
-      [1680] = {Faction = 'Horde', OtherSide = 1678, Merged = LE_EXPANSION_CATACLYSM, MergedId = 1678},
+      [1680] = {Faction = 'Horde', OtherSide = 1678, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1678},
     -- Classic Ends
     -- The Burning Crusade Start
       -- Hills Like White Elekk
