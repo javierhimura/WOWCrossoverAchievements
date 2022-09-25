@@ -76,7 +76,7 @@ function Account:ConvertAchievementVersion(AchievementID, ImportAchievementsData
 end
 
 function Account:ProcessCompletedAchievement(AchievementID, AchievementTime, Account, WasEarnedByMe, WasEarnedHere, EarnedBy, Realm, GameVersion, ImportAchievementsData)
-	local ConvertedAchievementID = self:ConvertAchievementVersion(AchievementID, ImportAchievementsData);
+    local ConvertedAchievementID = self:ConvertAchievementVersion(AchievementID, ImportAchievementsData);
     if ConvertedAchievementID == nil then
 	    return;
 	end
@@ -93,20 +93,28 @@ function Account:ProcessCompletedAchievement(AchievementID, AchievementTime, Acc
                                  };
         TotalPoints = TotalPoints + CrossoverAchievements.Data.Achievements:GetAchievementData(ConvertedAchievementID).Points;
         NumCompletedAchievements = NumCompletedAchievements + 1;
-    elseif AchievementTime <  CompletedAchievements[ConvertedAchievementID].AchievementTime then -- Oldest achievement prevail
-        if CompletedAchievements[ConvertedAchievementID].WasEarnedByMe and not WasEarnedByMe then
-            return;  -- Current Character Achievements prevail over other characters
-        end
-        if CompletedAchievements[ConvertedAchievementID].WasEarnedHere and not WasEarnedHere then
-            return;  -- Current Version Achievements prevail over other versions
-        end
-        CompletedAchievements[ConvertedAchievementID].AchievementTime = AchievementTime;
-        CompletedAchievements[ConvertedAchievementID].Account = Account;
-        CompletedAchievements[ConvertedAchievementID].WasEarnedByMe = WasEarnedByMe;
-        CompletedAchievements[ConvertedAchievementID].WasEarnedHere = WasEarnedHere;
-        CompletedAchievements[ConvertedAchievementID].EarnedBy = EarnedBy;
-        CompletedAchievements[ConvertedAchievementID].Realm = Realm;
-        CompletedAchievements[ConvertedAchievementID].GameVersion = GameVersion;
+    else
+        local UpdateAchievement = false;
+        if WasEarnedByMe ~= CompletedAchievements[ConvertedAchievementID].WasEarnedByMe then
+            -- Current Character Achievements prevail over other characters
+		    UpdateAchievement = WasEarnedByMe;
+		elseif WasEarnedHere ~= CompletedAchievements[ConvertedAchievementID].WasEarnedHere then
+             -- Current Version Achievements prevail over other versions
+		    UpdateAchievement = WasEarnedHere;
+        elseif AchievementTime <  CompletedAchievements[ConvertedAchievementID].AchievementTime then
+		    -- For other characters oldest achievement prevail
+		    UpdateAchievement = true;
+		end
+		
+        if UpdateAchievement then
+            CompletedAchievements[ConvertedAchievementID].AchievementTime = AchievementTime;
+            CompletedAchievements[ConvertedAchievementID].Account = Account;
+            CompletedAchievements[ConvertedAchievementID].WasEarnedByMe = WasEarnedByMe;
+            CompletedAchievements[ConvertedAchievementID].WasEarnedHere = WasEarnedHere;
+            CompletedAchievements[ConvertedAchievementID].EarnedBy = EarnedBy;
+            CompletedAchievements[ConvertedAchievementID].Realm = Realm;
+            CompletedAchievements[ConvertedAchievementID].GameVersion = GameVersion;
+		end
     end
 end
 

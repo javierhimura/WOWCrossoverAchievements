@@ -37,6 +37,13 @@ end
 
 function Categories:RefreshSortCategory(categoryid)
 	CategoryList[categoryid].IsSorted = false;
+	CategoryList[categoryid].IsSorting = false;
+	CategoryList[categoryid].SortedAchievements = {};
+	CategoryList[categoryid].VisibleAchievements = {};
+	CategoryList[categoryid].Visible = 0;
+	CategoryList[categoryid].VisibleCompleted = 0;
+	CategoryList[categoryid].Total = 0;
+	CategoryList[categoryid].TotalCompleted = 0;
 end
 
 function Categories:IsFOSLegacyAchievement(categoryid)
@@ -130,6 +137,7 @@ function Categories:SortCategory(categoryid)
 		CategoryList[categoryid].Title = title;
 	end
 
+	print('SortCategory '..categoryid);
 	CategoryList[categoryid].IsSorting = true;
 	CategoryList[categoryid].SortedAchievements = {};
 	CategoryList[categoryid].VisibleAchievements = {};
