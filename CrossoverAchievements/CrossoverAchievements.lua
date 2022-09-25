@@ -23,6 +23,7 @@ local Blz_AchievementFrame_ToggleAchievementFrame = nil;
 local Blz_AchievementFrameCategories_Update = nil;
 local Blz_ToggleAchievementFrame = nil;
 local Blz_AchievementMicroButton_Update = nil;
+local CanReplaceBlizzardFrame = true;
 	
 function CrossoverAchievements:OnInitialize()
     if not self.Helpers.GameVersionHelper:IsValidVersion() then
@@ -108,6 +109,9 @@ function CrossoverAchievements.ToggleAchievementFrame(stats)
 end
 
 function CrossoverAchievements:ReplaceBlizzardFrame()
+    if not CanReplaceBlizzardFrame then
+	    return;
+	end
     LoadAddOn("Blizzard_AchievementUI");
     self.Blz_AchievementFrame_ToggleAchievementFrame = AchievementFrame_ToggleAchievementFrame;
     self.Blz_AchievementFrameCategories_Update = CrossoverAchievementFrameCategories_Update;
