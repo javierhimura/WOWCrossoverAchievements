@@ -14,6 +14,7 @@ API.Blz_GetNumCompletedAchievements = GetNumCompletedAchievements;
 API.Blz_GetCategoryInfo = GetCategoryInfo;
 API.Blz_GetAchievementNumCriteria = GetAchievementNumCriteria;
 API.Blz_GetAchievementCriteriaInfo = GetAchievementCriteriaInfo;
+API.Blz_HasCompletedAnyAchievement = HasCompletedAnyAchievement;
 
 function API.GetAchievementInfo(categoryid, index)
     if CrossoverAchievements.IsLoading then
@@ -130,3 +131,10 @@ function API.GetNumCompletedAchievements(IN_GUILD_VIEW)
     return total, numcompleted;
 end
 
+function API.HasCompletedAnyAchievement()
+    if CrossoverAchievements.IsLoading then
+	    return API.Blz_HasCompletedAnyAchievement();
+	end
+    local numcompleted = CrossoverAchievements.Account:GetNumCompletedAchievements();
+    return numcompleted > 0;
+end
