@@ -171,6 +171,7 @@ function CrossoverAchievementFrame_OnShow (self)
 		CrossoverAchievementCategoryButton_OnClick(CrossoverAchievementFrameCategoriesContainerButton1);
 	end
 	UpdateMicroButtons();
+	CrossoverAchievements.EnableAchievementMicroButton();
 	CrossoverAchievementFrame_LoadTextures();
 end
 
@@ -180,6 +181,7 @@ function CrossoverAchievementFrame_OnHide (self)
 	self.searchResults:Hide();
 	self.searchBox:SetText("");
 	UpdateMicroButtons();
+	CrossoverAchievements.EnableAchievementMicroButton();
 	CrossoverAchievementFrame_ClearTextures();
 end
 
@@ -902,6 +904,10 @@ function CrossoverAchievementFrameAchievements_OnEvent (self, event, ...)
 	elseif ( event == "ACHIEVEMENT_SEARCH_UPDATED" ) then
 		CrossoverAchievementFrame.searchBox.fullSearchFinished = true;
 		CrossoverAchievementFrame_UpdateSearch(self);
+	end
+
+	if CrossoverAchievements.Helpers.GameVersionHelper:IsWOTLK() and not AchievementMicroButton:IsShown() then
+		AchievementMicroButton_Update();
 	end
 end
 

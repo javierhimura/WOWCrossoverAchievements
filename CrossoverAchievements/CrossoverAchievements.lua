@@ -21,6 +21,8 @@ end
 
 local Blz_AchievementFrame_ToggleAchievementFrame = nil;
 local Blz_AchievementFrameCategories_Update = nil;
+local Blz_ToggleAchievementFrame = nil;
+local Blz_AchievementMicroButton_Update = nil;
 	
 function CrossoverAchievements:OnInitialize()
     if not self.Helpers.GameVersionHelper:IsValidVersion() then
@@ -59,7 +61,8 @@ function CrossoverAchievements:Initialize()
         self.Data.Categories:SortCategories();
         self.IsLoading = false;
         self.IsLoaded = true;
-        self.Data.LastAchievements:SetLastAchievements()
+        self.Data.LastAchievements:SetLastAchievements();
+        CrossoverAchievements.EnableAchievementMicroButton()
         --print('End '.. date("%a %b %d %H:%M:%S %Y"));
 	end
 end
@@ -77,15 +80,42 @@ function CrossoverAchievements:OnUpdate()
 end
 
 function CrossoverAchievements:ShowBlizFrame()
-    CrossoverAchievements:Blz_AchievementFrame_ToggleAchievementFrame();
+    self.Blz_AchievementFrame_ToggleAchievementFrame();
+end
+
+function CrossoverAchievements.EnableAchievementMicroButton()
+	if CrossoverAchievements.API.HasCompletedAnyAchievement() and CanShowAchievementUI() and not Kiosk.IsEnabled()  then
+        AchievementMicroButton.minLevel = nil;
+		AchievementMicroButton:Enable();
+		AchievementMicroButton:SetButtonState("NORMAL");
+	end
+end
+
+function CrossoverAchievements.AchievementMicroButton_Update(...)
+    CrossoverAchievements.Blz_AchievementMicroButton_Update(...)
+    CrossoverAchievements.EnableAchievementMicroButton();
+end
+
+function CrossoverAchievements.ToggleAchievementFrame(stats)
+	if (Kiosk.IsEnabled()) then
+		return;
+	end
+
+	if (CrossoverAchievements.API.HasCompletedAnyAchievement() or IsInGuild() ) and CanShowAchievementUI() then
+		AchievementFrame_LoadUI();
+		CrossoverAchievementFrame_ToggleAchievementFrame(stats);
+	end
 end
 
 function CrossoverAchievements:ReplaceBlizzardFrame()
     LoadAddOn("Blizzard_AchievementUI");
     self.Blz_AchievementFrame_ToggleAchievementFrame = AchievementFrame_ToggleAchievementFrame;
     self.Blz_AchievementFrameCategories_Update = CrossoverAchievementFrameCategories_Update;
+    self.Blz_ToggleAchievementFrame = ToggleAchievementFrame;
+    self.Blz_AchievementMicroButton_Update = AchievementMicroButton_Update;
     AchievementFrame_ToggleAchievementFrame = CrossoverAchievementFrame_ToggleAchievementFrame;
     AchievementFrameCategories_Update = CrossoverAchievementFrameCategories_Update;
+    ToggleAchievementFrame = CrossoverAchievements.ToggleAchievementFrame;
 end
 
 function CrossoverAchievements:OnAchievementEarned(achievementid)

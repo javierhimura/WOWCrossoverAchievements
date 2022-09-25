@@ -137,7 +137,6 @@ function Categories:SortCategory(categoryid)
 		CategoryList[categoryid].Title = title;
 	end
 
-	print('SortCategory '..categoryid);
 	CategoryList[categoryid].IsSorting = true;
 	CategoryList[categoryid].SortedAchievements = {};
 	CategoryList[categoryid].VisibleAchievements = {};
