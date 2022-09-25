@@ -36,16 +36,14 @@ end
 
 function LastAchievements:InitializeBlzData(...)
 	local numAchievements = select("#", ...);
-	for position = 1, MaxLastAchievements do
-		if position <= numAchievements then
-			achievementid = select(position, ...);
-			local AccountInfo = CrossoverAchievements.Account:GetCompletedAchievementInfo(achievementid);
-			if AccountInfo then 
-				table.insert(AchievementList, position, achievementid);
-				table.insert(AchievedTimeList, position, AccountInfo.AchievementTime);
-				AchievementBlzList[achievementid] = true;
-				LastTime = AchievedTimeList[position];
-			end
+	for position = 1, numAchievements do
+		achievementid = select(position, ...);
+		local AccountInfo = CrossoverAchievements.Account:GetCompletedAchievementInfo(achievementid);
+		if AccountInfo then 
+			table.insert(AchievementList, position, achievementid);
+			table.insert(AchievedTimeList, position, AccountInfo.AchievementTime);
+			AchievementBlzList[achievementid] = true;
+			LastTime = AchievedTimeList[position];
 		end
 		Total = position;
 	end
