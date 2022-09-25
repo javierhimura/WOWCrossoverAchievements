@@ -3,6 +3,8 @@ local CrossoverAchievements = LibStub("AceAddon-3.0"):GetAddon("CrossoverAchieve
 local API = {};
 CrossoverAchievements.API = API;
 
+local playerGUID = UnitGUID('PLAYER');
+
 API.Blz_GetAchievementInfo = GetAchievementInfo;
 API.Blz_GetPreviousAchievement = GetPreviousAchievement;
 API.Blz_GetNextAchievement = GetNextAchievement;
@@ -14,6 +16,7 @@ API.Blz_GetNumCompletedAchievements = GetNumCompletedAchievements;
 API.Blz_GetCategoryInfo = GetCategoryInfo;
 API.Blz_GetAchievementNumCriteria = GetAchievementNumCriteria;
 API.Blz_GetAchievementCriteriaInfo = GetAchievementCriteriaInfo;
+API.Blz_GetAchievementLink = GetAchievementLink;
 API.Blz_HasCompletedAnyAchievement = HasCompletedAnyAchievement;
 
 function API.GetAchievementInfo(categoryid, index)
@@ -129,6 +132,28 @@ function API.GetNumCompletedAchievements(IN_GUILD_VIEW)
     local total, _ = API.Blz_GetNumCompletedAchievements(IN_GUILD_VIEW);
     local numcompleted = CrossoverAchievements.Account:GetNumCompletedAchievements();
     return total, numcompleted;
+end
+
+function API.GetAchievementLink(achievementid)
+    if CrossoverAchievements.IsLoading or not CrossoverAchievements.Helpers.GameVersionHelper:IsWOTLK() then
+        -- Achievements links can't be modified in Retail
+	    return API.Blz_GetAchievementLink(achievementid);
+	end
+    local link = API.Blz_GetAchievementLink(achievementid);
+    local AccountInfo = CrossoverAchievements.Account:GetCompletedAchievementInfo(achievementid);
+    if not AccountInfo or AccountInfo.WasEarnedByMe then
+        -- Uncompleted achievement or achievement earned by current character
+        -- Blizzard link is the same as the one we could generate so return Blizzard's instead
+	    return API.Blz_GetAchievementLink(achievementid);
+	end
+    -- Create an achievement link with addon achievement time
+    local year = date("%y", AccountInfo.AchievementTime)
+    local month = date("%m", AccountInfo.AchievementTime)
+    local day = date("%d", AccountInfo.AchievementTime)
+    local name = select(2, API.Blz_GetAchievementInfo(achievementid));
+	local linkguid = string.gsub(playerGUID, '0x', '');
+    local addonlink = "|cffffff00|Hachievement:".. achievementid ..":"..linkguid..":1:"..month..":"..day..":"..year..":4294967295:4294967295:4294967295:4294967295|h["..name.."]|h|r"
+	return addonlink;
 end
 
 function API.HasCompletedAnyAchievement()
