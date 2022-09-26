@@ -75,7 +75,7 @@ function Account:ConvertAchievementVersion(AchievementID, ImportAchievementsData
     return AchievementID;
 end
 
-function Account:ProcessCompletedAchievement(AchievementID, AchievementTime, Account, WasEarnedByMe, WasEarnedHere, EarnedBy, Realm, GameVersion, ImportAchievementsData)
+function Account:ProcessCompletedAchievement(AchievementID, AchievementTime, Account, WasEarnedByMe, WasEarnedHere, EarnedBy, Realm, EarnedByGuid, GameVersion, ImportAchievementsData)
     local ConvertedAchievementID = self:ConvertAchievementVersion(AchievementID, ImportAchievementsData);
     if ConvertedAchievementID == nil then
 	    return;
@@ -89,7 +89,8 @@ function Account:ProcessCompletedAchievement(AchievementID, AchievementTime, Acc
                                  WasEarnedHere = WasEarnedHere,
                                  EarnedBy = EarnedBy,
                                  Realm = Realm,
-                                 GameVersion = GameVersion
+                                 GameVersion = GameVersion,
+                                 EarnedByGuid = EarnedByGuid
                                  };
         TotalPoints = TotalPoints + CrossoverAchievements.Data.Achievements:GetAchievementData(ConvertedAchievementID).Points;
         NumCompletedAchievements = NumCompletedAchievements + 1;
@@ -114,6 +115,7 @@ function Account:ProcessCompletedAchievement(AchievementID, AchievementTime, Acc
             CompletedAchievements[ConvertedAchievementID].EarnedBy = EarnedBy;
             CompletedAchievements[ConvertedAchievementID].Realm = Realm;
             CompletedAchievements[ConvertedAchievementID].GameVersion = GameVersion;
+            CompletedAchievements[ConvertedAchievementID].EarnedByGuid = EarnedByGuid;
 		end
     end
 end
@@ -176,7 +178,7 @@ end
 function Account:ProcessCompletedAchievementsVersion(GameVersionTable, WasEarnedHere, ImportAchievementsData)
     if GameVersionTable.Achievements then
         for AchievementID, AchievementTime in pairs(GameVersionTable.Achievements) do
-            self:ProcessCompletedAchievement(AchievementID, AchievementTime, true, WasEarnedHere, WasEarnedHere, GameVersionTable.GameVersion, GameVersionTable.GameVersion, GameVersionTable.GameVersion, ImportAchievementsData);
+            self:ProcessCompletedAchievement(AchievementID, AchievementTime, true, WasEarnedHere, WasEarnedHere, GameVersionTable.GameVersion, GameVersionTable.GameVersion, '', GameVersionTable.GameVersion, ImportAchievementsData);
         end
     end
 end
@@ -184,7 +186,7 @@ end
 function Account:ProcessCompletedAchievementsCharacter(CharacterTable, WasEarnedByMe, WasEarnedHere, ImportAchievementsData)
     if CharacterTable.Achievements then
         for AchievementID, AchievementTime in pairs(CharacterTable.Achievements) do 
-            self:ProcessCompletedAchievement(AchievementID, AchievementTime, false, WasEarnedByMe, WasEarnedHere, CharacterTable.Name, CharacterTable.Realm, CharacterTable.GameVersion, ImportAchievementsData);
+            self:ProcessCompletedAchievement(AchievementID, AchievementTime, false, WasEarnedByMe, WasEarnedHere, CharacterTable.Name, CharacterTable.Realm, CharacterTable.GUID, CharacterTable.GameVersion, ImportAchievementsData);
         end
     end
 end

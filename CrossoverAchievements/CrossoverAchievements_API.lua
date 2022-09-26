@@ -152,6 +152,9 @@ function API.GetAchievementLink(achievementid)
     local day = date("%d", AccountInfo.AchievementTime)
     local name = select(2, API.Blz_GetAchievementInfo(achievementid));
 	local linkguid = string.gsub(playerGUID, '0x', '');
+    --if AccountInfo.WasEarnedHere and AccountInfo.EarnedByGuid ~= nil and AccountInfo.EarnedByGuid ~= '' then
+	--    linkguid = string.gsub(AccountInfo.EarnedByGuid, '0x', '');
+	--end
     local addonlink = "|cffffff00|Hachievement:".. achievementid ..":"..linkguid..":1:"..month..":"..day..":"..year..":4294967295:4294967295:4294967295:4294967295|h["..name.."]|h|r"
 	return addonlink;
 end
