@@ -110,6 +110,10 @@ function GameVersionHelper:HasBlizzardAccountAchievements(GameVersion)
      return self:IsRetail(GameVersion);
 end
 
+function GameVersionHelper:HasClassicQuestFrame()
+    return GameVersionHelper:IsWOTLK();
+end
+
 function GameVersionHelper:HasStatisticSummary()
     return GameVersionHelper:IsWOTLK();
 end

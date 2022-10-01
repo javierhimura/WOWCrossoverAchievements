@@ -12,19 +12,17 @@ local GetLatestCompletedAchievements = CrossoverAchievements.API.GetLatestComple
 local GetAchievementLink = CrossoverAchievements.API.GetAchievementLink; 
 local GetAchievementCategory = CrossoverAchievements.API.GetAchievementCategory;
 local GetNumCompletedAchievements = CrossoverAchievements.API.GetNumCompletedAchievements;
-local GetCategoryList = GetCategoryList;
-local GetGuildCategoryList = GetGuildCategoryList;
+local GetCategoryList = CrossoverAchievements.API.Blz_GetCategoryList;
+local GetGuildCategoryList = CrossoverAchievements.API.Blz_GetGuildCategoryList;
 local GetGuildLogoInfo = GetGuildLogoInfo;
 local GetGuildAchievementNumMembers = GetGuildAchievementNumMembers;
 local GetGuildAchievementMembers = GetGuildAchievementMembers;
 local GetGuildAchievementMemberInfo = GetGuildAchievementMemberInfo;
 local GetComparisonAchievementPoints = GetComparisonAchievementPoints;
 local GetComparisonCategoryNumAchievements = GetComparisonCategoryNumAchievements;
-local GetComparisonAchievementPoints = GetComparisonAchievementPoints;
-local GetComparisonCategoryNumAchievements = GetComparisonCategoryNumAchievements;
 local GetComparisonStatistic = GetComparisonStatistic;
 local GetStatistic = GetStatistic;
-local GetStatisticsCategoryList = GetStatisticsCategoryList;
+local GetStatisticsCategoryList = CrossoverAchievements.API.Blz_GetStatisticsCategoryList;
 
 local ACHIEVEMENTUI_CATEGORIES = {};
 
@@ -96,7 +94,7 @@ local guildMemberRequestFrame;
 
 local trackedAchievements = {};
 local Crossover_achievementFunctions;
-local function updateTrackedAchievements (...)
+local function updateTrackedCrossoverAchievements (...)
 	local count = select("#", ...);
 
 	for i = 1, count do
@@ -335,6 +333,7 @@ end
 CrossoverAchievementFrameTab_OnClick = CrossoverAchievementFrameBaseTab_OnClick;
 
 function CrossoverAchievementFrameComparisonTab_OnClick (id)
+	print('CrossoverAchievementFrameComparisonTab_OnClick '..id);
 	if ( IN_GUILD_VIEW ) then
 		CrossoverAchievementFrame_ToggleView();
 		CrossoverAchievementFrameGuildEmblemLeft:Hide();
@@ -349,7 +348,8 @@ function CrossoverAchievementFrameComparisonTab_OnClick (id)
 		CrossoverAchievementFrameTab_OnClick = CrossoverAchievementFrameBaseTab_OnClick;
 		CrossoverAchievementFrameTab_OnClick(2);
 	else
-		Crossover_achievementFunctions = COMPARISON_STAT_FUNCTIONS;
+		Crossover_achievementFunctions = CROSSOVER_COMPARISON_STAT_FUNCTIONS;
+		--Crossover_achievementFunctions.updateFunc = CrossoverAchievementFrameComparison_UpdateStats;
 		CrossoverAchievementFrame_ShowSubFrame(CrossoverAchievementFrameComparison, CrossoverAchievementFrameComparisonStatsContainer);
 		CrossoverAchievementFrameWaterMark:SetTexture("Interface\\AchievementFrame\\UI-Achievement-StatWatermark");
 	end
@@ -359,6 +359,7 @@ function CrossoverAchievementFrameComparisonTab_OnClick (id)
 	CrossoverAchievementFrame_UpdateTabs(id);
 
 	Crossover_achievementFunctions.updateFunc();
+	--PanelTemplates_Tab_OnClick(_G["CrossoverAchievementFrameTab"..id], AchievementFrame);
 	CrossoverAchievementSwitchAchievementSearchTab(id);
 end
 
@@ -787,6 +788,9 @@ function CrossoverAchievementFrameCategories_ClearSelection ()
 end
 
 function CrossoverAchievementFrameComparison_UpdateStatusBars (id)
+	if id == "summary" then
+		id = ACHIEVEMENT_COMPARISON_SUMMARY_ID;
+	end
 	local numAchievements, numCompleted = GetCategoryNumAchievements(id);
 	local name = GetCategoryInfo(id);
 
@@ -859,7 +863,7 @@ function CrossoverAchievementFrameAchievements_OnEvent (self, event, ...)
 		self:RegisterEvent("RECEIVED_ACHIEVEMENT_MEMBER_LIST");
 		self:RegisterEvent("ACHIEVEMENT_SEARCH_UPDATED");
 
-		updateTrackedAchievements(GetTrackedAchievements());
+		updateTrackedCrossoverAchievements(GetTrackedAchievements());
 	elseif ( event == "ACHIEVEMENT_EARNED" ) then
 		local achievementID = ...;
 		CrossoverAchievementFrameCategories_GetCategoryList(ACHIEVEMENTUI_CATEGORIES);
@@ -890,7 +894,7 @@ function CrossoverAchievementFrameAchievements_OnEvent (self, event, ...)
 			trackedAchievements[k] = nil;
 		end
 
-		updateTrackedAchievements(GetTrackedAchievements());
+		updateTrackedCrossoverAchievements(GetTrackedAchievements());
 	elseif ( event == "RECEIVED_ACHIEVEMENT_MEMBER_LIST" ) then
 		local achievementID = ...;
 		-- check if we initiated the request from a meta criteria and we're still over it
@@ -1336,10 +1340,17 @@ function CrossoverAchievementButton_OnClick (self, button, down, ignoreModifiers
 	end
 end
 
+function CrossoverAchievementWatchFrame_Update()
+	if CrossoverAchievements.Helpers.GameVersionHelper:HasClassicQuestFrame() then
+		WatchFrame_Update();
+	end
+end
+
 function CrossoverAchievementButton_ToggleTracking (id)
 	if ( trackedAchievements[id] ) then
 		RemoveTrackedAchievement(id);
 		CrossoverAchievementFrameAchievements_ForceUpdate();
+		CrossoverAchievementWatchFrame_Update();
 		return;
 	end
 
@@ -1358,9 +1369,11 @@ function CrossoverAchievementButton_ToggleTracking (id)
 
 	AddTrackedAchievement(id);
 	CrossoverAchievementFrameAchievements_ForceUpdate();
-
+	CrossoverAchievementWatchFrame_Update();
 	return true;
 end
+
+
 
 function CrossoverAchievementButton_DisplayAchievement (button, category, achievement, selectionID, renderOffScreen)
 	local id, name, points, completed, month, day, year, description, flags, icon, rewardText, isGuild, wasEarnedByMe, earnedBy = GetAchievementInfo(category, achievement);
@@ -2167,6 +2180,7 @@ end
 
 
 function CrossoverAchievementFrameStats_Update ()
+	print('CrossoverAchievementFrameStats_Update');
 	local category = Crossover_achievementFunctions.selectedCategory;
 	local scrollFrame = CrossoverAchievementFrameStatsContainer;
 	local offset = HybridScrollFrame_GetOffset(scrollFrame);
@@ -2682,7 +2696,11 @@ function CrossoverAchievementFrameSummaryCategory_OnHide (self)
 end
 
 function CrossoverAchievementFrame_SelectAchievement(id, forceSelect, isComparison)
-	if ( (not CrossoverAchievementFrame:IsShown() and not forceSelect) or (not C_AchievementInfo.IsValidAchievement(id)) ) then
+	if not CrossoverAchievementFrame:IsShown() and not forceSelect then
+		return;
+	end
+
+	if CrossoverAchievements.Helpers.GameVersionHelper:IsRetail() and not C_AchievementInfo.IsValidAchievement(973) then
 		return;
 	end
 
@@ -3069,9 +3087,12 @@ function CrossoverAchievementFrameComparison_OnEvent (self, event, ...)
 		C_AchievementInfo.SetPortraitTexture(CrossoverAchievementFrameComparisonHeaderPortrait);
 	elseif event == "UNIT_PORTRAIT_UPDATE" then
 		local updateUnit = ...;
-		if UnitName(updateUnit) == CrossoverAchievementFrameComparisonHeaderName:GetText() then
-			C_AchievementInfo.SetPortraitTexture(CrossoverAchievementFrameComparisonHeaderPortrait);
+		if ( updateUnit and updateUnit == CrossoverAchievementFrameComparisonHeaderPortrait.unit and UnitName(updateUnit) == CrossoverAchievementFrameComparisonHeaderName:GetText() ) then
+			SetPortraitTexture(AchievementFrameComparisonHeaderPortrait, updateUnit);
 		end
+		--if UnitName(updateUnit) == CrossoverAchievementFrameComparisonHeaderName:GetText() then
+		--	C_AchievementInfo.SetPortraitTexture(CrossoverAchievementFrameComparisonHeaderPortrait);
+		--end
 	end
 
 	CrossoverAchievementFrameComparison_ForceUpdate();

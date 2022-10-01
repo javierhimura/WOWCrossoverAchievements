@@ -34,23 +34,23 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].Phases = {
 CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
   -- General Start
     -- Level 10
-    [6] = {Faction = 'Both'},
+    [6] = {Faction = 'Both', Retroactive = true},
     -- Level 20
-    [7] = {Faction = 'Both'},
+    [7] = {Faction = 'Both', Retroactive = true},
     -- Level 30
-    [8] = {Faction = 'Both'},
+    [8] = {Faction = 'Both', Retroactive = true},
     -- Level 40
-    [9] = {Faction = 'Both'},
+    [9] = {Faction = 'Both', Retroactive = true},
     -- Level 50
-    [10] = {Faction = 'Both'},
+    [10] = {Faction = 'Both', Retroactive = true},
     -- Level 60
-    [11] = {Faction = 'Both'},
+    [11] = {Faction = 'Both', Retroactive = true},
     -- Level 70
-    [12] = {Faction = 'Both'},
+    [12] = {Faction = 'Both', Retroactive = true},
     -- Level 80
     [13] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Plenty of Pets
-    [15] = {Faction = 'Both'},
+    [15] = {Faction = 'Both', Retroactive = true},
     -- Did Somebody Order a Knuckle Sandwich?
     [16] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Shave and a Haircut
@@ -66,27 +66,27 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Needy
     [559] = {Faction = 'Both'},
     -- Represent
-    [621] = {Faction = 'Both'},
+    [621] = {Faction = 'Both', Retroactive = true},
     -- Master of Arms
     [705] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Fast and Furious
-    [889] = {Faction = 'Both'},
+    [889] = {Faction = 'Both', Retroactive = true},
     -- Into The Wild Blue Yonder
-    [890] = {Faction = 'Both'},
+    [890] = {Faction = 'Both', Retroactive = true},
     -- Giddy Up!
-    [891] = {Faction = 'Both'},
+    [891] = {Faction = 'Both', Retroactive = true},
     -- The Right Stuff
-    [892] = {Faction = 'Both'},
+    [892] = {Faction = 'Both', Retroactive = true},
     -- Going Down?
     [964] = {Faction = 'Both'},
     -- Can I Keep Him?
-    [1017] = {Faction = 'Both'},
+    [1017] = {Faction = 'Both', Retroactive = true},
     -- Ten Tabards
-    [1020] = {Faction = 'Both'},
+    [1020] = {Faction = 'Both', Retroactive = true},
     -- Twenty-Five Tabards
-    [1021] = {Faction = 'Both'},
+    [1021] = {Faction = 'Both', Retroactive = true},
     -- My Storage is 'Gigantique'
-    [1165] = {Faction = 'Both'},
+    [1165] = {Faction = 'Both', Retroactive = true},
     -- Got My Mind On My Money
     [1176] = {Faction = 'Both'},
     -- Got My Mind On My Money
@@ -104,9 +104,9 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Well Read
     [1244] = {Faction = 'Both'},
     -- Plethora of Pets
-    [1248] = {Faction = 'Both'},
+    [1248] = {Faction = 'Both', Retroactive = true},
     -- Shop Smart, Shop Pet...Smart
-    [1250] = {Faction = 'Both'},
+    [1250] = {Faction = 'Both', Retroactive = true},
     -- Friend or Fowl?
     [1254] = {Faction = 'Both'},
     -- Tastes Like Chicken
@@ -114,7 +114,7 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- It's Happy Hour Somewhere
     [1833] = {Faction = 'Both'},
     -- Higher Learning
-    [1956] = {Faction = 'Both'},
+    [1956] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Armored Brown Bear
     [2076] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Wooly Mammoth
@@ -126,17 +126,17 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Get to the Choppa!
     [2097] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Stable Keeper
-    [2141] = {Faction = 'Both'},
+    [2141] = {Faction = 'Both', Retroactive = true},
     -- Filling Up The Barn
-    [2142] = {Faction = 'Both'},
+    [2142] = {Faction = 'Both', Retroactive = true},
     -- Leading the Cavalry
-    [2143] = {Faction = 'Both'},
+    [2143] = {Faction = 'Both', Retroactive = true},
     -- Lil' Game Hunter
-    [2516] = {Faction = 'Both'},
+    [2516] = {Faction = 'Both', Retroactive = true},
     -- Mountain o' Mounts (Alliance)
-    [2536] = {Faction = 'Alliance', OtherSide = 2537},
+    [2536] = {Faction = 'Alliance', OtherSide = 2537, Retroactive = true},
     -- Mountain o' Mounts (Horde)
-    [2537] = {Faction = 'Horde', OtherSide = 2536},
+    [2537] = {Faction = 'Horde', OtherSide = 2536, Retroactive = true},
     -- Pest Control
     [2556] = {Faction = 'Both'},
     -- To All The Squirrels Who Shared My Life
@@ -150,19 +150,19 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- A Simple Re-Quest
     [31] = {Faction = 'Both'},
     -- 2000 Quests Completed
-    [32] = {Faction = 'Both'},
+    [32] = {Faction = 'Both', Retroactive = true},
     -- 50 Quests Completed
-    [503] = {Faction = 'Both'},
+    [503] = {Faction = 'Both', Retroactive = true},
     -- 100 Quests Completed
-    [504] = {Faction = 'Both'},
+    [504] = {Faction = 'Both', Retroactive = true},
     -- 250 Quests Completed
-    [505] = {Faction = 'Both'},
+    [505] = {Faction = 'Both', Retroactive = true},
     -- 500 Quests Completed
-    [506] = {Faction = 'Both'},
+    [506] = {Faction = 'Both', Retroactive = true},
     -- 1000 Quests Completed
-    [507] = {Faction = 'Both'},
+    [507] = {Faction = 'Both', Retroactive = true},
     -- 1500 Quests Completed
-    [508] = {Faction = 'Both'},
+    [508] = {Faction = 'Both', Retroactive = true},
     -- Hemet Nesingwary: The Collected Quests
     [941] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- 5 Daily Quests Complete
@@ -182,50 +182,50 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Of Blood and Anguish
     [1576] = {Faction = 'Both'},
     -- The Loremaster (WOTLK Alliance) //7520
-    [1681] = {Faction = 'Alliance', OtherSide = 1682, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 7520, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1681] = {Faction = 'Alliance', OtherSide = 1682, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 7520, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH, Retroactive = true},
     -- The Loremaster (WOTLK Horde) //7520
-    [1682] = {Faction = 'Horde', OtherSide = 1681, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 7520, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1682] = {Faction = 'Horde', OtherSide = 1681, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 7520, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH, Retroactive = true},
     -- The Loremaster (Retail)
-    [7520] = {Faction = 'Both', Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedNew = true, MergedId = 1681, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [7520] = {Faction = 'Both', Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedNew = true, MergedId = 1681, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH, Retroactive = true},
     -- Classic Start
       -- The Green Hills of Stranglethorn
-      [940] = {Faction = 'Both'},
+      [940] = {Faction = 'Both', Retroactive = true},
       -- Loremaster of Eastern Kingdoms (Alliance)
-      [1676] = {Faction = 'Alliance', OtherSide = 1677, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1676},
+      [1676] = {Faction = 'Alliance', OtherSide = 1677, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1676, Retroactive = true},
       -- Loremaster of Eastern Kingdoms (Horde)
-      [1677] = {Faction = 'Horde', OtherSide = 1676, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1676},
+      [1677] = {Faction = 'Horde', OtherSide = 1676, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1676, Retroactive = true},
       -- Loremaster of Kalimdor (Alliance)
-      [1678] = {Faction = 'Alliance', OtherSide = 1680, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1678},
+      [1678] = {Faction = 'Alliance', OtherSide = 1680, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1678, Retroactive = true},
       -- Loremaster of Kalimdor (Horde)
-      [1680] = {Faction = 'Horde', OtherSide = 1678, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1678},
+      [1680] = {Faction = 'Horde', OtherSide = 1678, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1678, Retroactive = true},
     -- Classic Ends
     -- The Burning Crusade Start
       -- Hills Like White Elekk
-      [939] = {Faction = 'Both'},
+      [939] = {Faction = 'Both', Retroactive = true},
       -- To Hellfire and Back (Alliance)
-      [1189] = {Faction = 'Alliance', OtherSide = 1271},
+      [1189] = {Faction = 'Alliance', OtherSide = 1271, Retroactive = true},
       -- Mysteries of the Marsh
-      [1190] = {Faction = 'Both'},
+      [1190] = {Faction = 'Both', Retroactive = true},
       -- Terror of Terokkar (Alliance)
-      [1191] = {Faction = 'Alliance', OtherSide = 1272},
+      [1191] = {Faction = 'Alliance', OtherSide = 1272, Retroactive = true},
       -- Nagrand Slam (Alliance)
-      [1192] = {Faction = 'Alliance', OtherSide = 1273},
+      [1192] = {Faction = 'Alliance', OtherSide = 1273, Retroactive = true},
       -- On the Blade's Edge
-      [1193] = {Faction = 'Both'},
+      [1193] = {Faction = 'Both', Retroactive = true},
       -- Into the Nether
-      [1194] = {Faction = 'Both'},
+      [1194] = {Faction = 'Both', Retroactive = true},
       -- Shadow of the Betrayer
-      [1195] = {Faction = 'Both'},
+      [1195] = {Faction = 'Both', Retroactive = true},
       -- Loremaster of Outland (Alliance)
-      [1262] = {Faction = 'Alliance', OtherSide = 1274, Merged = LE_EXPANSION_CATACLYSM, MergedId = 1262},
+      [1262] = {Faction = 'Alliance', OtherSide = 1274, Merged = LE_EXPANSION_CATACLYSM, MergedId = 1262, Retroactive = true},
       -- To Hellfire and Back (Horde)
-      [1271] = {Faction = 'Horde', OtherSide = 1189},
+      [1271] = {Faction = 'Horde', OtherSide = 1189, Retroactive = true},
       -- Terror of Terokkar (Horde)
-      [1272] = {Faction = 'Horde', OtherSide = 1191},
+      [1272] = {Faction = 'Horde', OtherSide = 1191, Retroactive = true},
       -- Nagrand Slam (Horde)
-      [1273] = {Faction = 'Horde', OtherSide = 1192},
+      [1273] = {Faction = 'Horde', OtherSide = 1192, Retroactive = true},
       -- Loremaster of Outland (Horde)
-      [1274] = {Faction = 'Horde', OtherSide = 1262, Merged = LE_EXPANSION_CATACLYSM, MergedId = 1262},
+      [1274] = {Faction = 'Horde', OtherSide = 1262, Merged = LE_EXPANSION_CATACLYSM, MergedId = 1262, Retroactive = true},
       -- Bombs Away
       [1275] = {Faction = 'Both'},
       -- Blade's Edge Bomberman
@@ -281,128 +281,128 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
 
   -- Exploration Start
     -- Explore Eastern Kingdoms
-    [42] = {Faction = 'Both'},
+    [42] = {Faction = 'Both', Retroactive = true},
     -- Explore Kalimdor
-    [43] = {Faction = 'Both'},
+    [43] = {Faction = 'Both', Retroactive = true},
     -- Explore Outland
-    [44] = {Faction = 'Both'},
+    [44] = {Faction = 'Both', Retroactive = true},
     -- Explore Northrend
     [45] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- World Explorer
     [46] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Eastern Kingdoms Start
       -- Explore Dun Morogh
-      [627] = {Faction = 'Both'},
+      [627] = {Faction = 'Both', Retroactive = true},
       -- Explore Alterac Mountains
-      [760] = {Faction = 'Both', Removed = LE_EXPANSION_CATACLYSM},
+      [760] = {Faction = 'Both', Removed = LE_EXPANSION_CATACLYSM, Retroactive = true},
       -- Explore Arathi Highlands
-      [761] = {Faction = 'Both'},
+      [761] = {Faction = 'Both', Retroactive = true},
       -- Explore Badlands
-      [765] = {Faction = 'Both'},
+      [765] = {Faction = 'Both', Retroactive = true},
       -- Explore Blasted Lands
-      [766] = {Faction = 'Both'},
+      [766] = {Faction = 'Both', Retroactive = true},
       -- Explore Tirisfal Glades
-      [768] = {Faction = 'Both'},
+      [768] = {Faction = 'Both', Retroactive = true},
       -- Explore Silverpine Forest
-      [769] = {Faction = 'Both'},
+      [769] = {Faction = 'Both', Retroactive = true},
       -- Explore Western Plaguelands
-      [770] = {Faction = 'Both'},
+      [770] = {Faction = 'Both', Retroactive = true},
       -- Explore Eastern Plaguelands
-      [771] = {Faction = 'Both'},
+      [771] = {Faction = 'Both', Retroactive = true},
       -- Explore Hillsbrad Foothills
-      [772] = {Faction = 'Both'},
+      [772] = {Faction = 'Both', Retroactive = true},
       -- Explore The Hinterlands
-      [773] = {Faction = 'Both'},
+      [773] = {Faction = 'Both', Retroactive = true},
       -- Explore Searing Gorge
-      [774] = {Faction = 'Both'},
+      [774] = {Faction = 'Both', Retroactive = true},
       -- Explore Burning Steppes
-      [775] = {Faction = 'Both'},
+      [775] = {Faction = 'Both', Retroactive = true},
       -- Explore Elwynn Forest
-      [776] = {Faction = 'Both'},
+      [776] = {Faction = 'Both', Retroactive = true},
       -- Explore Deadwind Pass
-      [777] = {Faction = 'Both'},
+      [777] = {Faction = 'Both', Retroactive = true},
       -- Explore Duskwood
-      [778] = {Faction = 'Both'},
+      [778] = {Faction = 'Both', Retroactive = true},
       -- Explore Loch Modan
-      [779] = {Faction = 'Both'},
+      [779] = {Faction = 'Both', Retroactive = true},
       -- Explore Redridge Mountains
-      [780] = {Faction = 'Both'},
+      [780] = {Faction = 'Both', Retroactive = true},
       -- Explore Stranglethorn Vale
-      [781] = {Faction = 'Both'},
+      [781] = {Faction = 'Both', Retroactive = true},
       -- Explore Swamp of Sorrows
-      [782] = {Faction = 'Both'},
+      [782] = {Faction = 'Both', Retroactive = true},
       -- Explore Westfall
-      [802] = {Faction = 'Both'},
+      [802] = {Faction = 'Both', Retroactive = true},
       -- Explore Wetlands
-      [841] = {Faction = 'Both'},
+      [841] = {Faction = 'Both', Retroactive = true},
       -- Explore Ghostlands
-      [858] = {Faction = 'Both'},
+      [858] = {Faction = 'Both', Retroactive = true},
       -- Explore Eversong Woods
-      [859] = {Faction = 'Both'},
+      [859] = {Faction = 'Both', Retroactive = true},
       -- Explore Isle of Quel'Danas
-      [868] = {Faction = 'Both'},
+      [868] = {Faction = 'Both', Retroactive = true},
     -- Eastern Kingdoms Ends
     -- Kalimdor Start
       -- Explore Durotar
-      [728] = {Faction = 'Both'},
+      [728] = {Faction = 'Both', Retroactive = true},
       -- Explore Mulgore
-      [736] = {Faction = 'Both'},
+      [736] = {Faction = 'Both', Retroactive = true},
       -- Explore The Barrens
-      [750] = {Faction = 'Both'},
+      [750] = {Faction = 'Both', Retroactive = true},
       -- Explore Teldrassil
-      [842] = {Faction = 'Both'},
+      [842] = {Faction = 'Both', Retroactive = true},
       -- Explore Darkshore
-      [844] = {Faction = 'Both'},
+      [844] = {Faction = 'Both', Retroactive = true},
       -- Explore Ashenvale
-      [845] = {Faction = 'Both'},
+      [845] = {Faction = 'Both', Retroactive = true},
       -- Explore Thousand Needles
-      [846] = {Faction = 'Both'},
+      [846] = {Faction = 'Both', Retroactive = true},
       -- Explore Stonetalon Mountains
-      [847] = {Faction = 'Both'},
+      [847] = {Faction = 'Both', Retroactive = true},
       -- Explore Desolace
-      [848] = {Faction = 'Both'},
+      [848] = {Faction = 'Both', Retroactive = true},
       -- Explore Feralas
-      [849] = {Faction = 'Both'},
+      [849] = {Faction = 'Both', Retroactive = true},
       -- Explore Dustwallow Marsh
-      [850] = {Faction = 'Both'},
+      [850] = {Faction = 'Both', Retroactive = true},
       -- Explore Tanaris Desert
-      [851] = {Faction = 'Both'},
+      [851] = {Faction = 'Both', Retroactive = true},
       -- Explore Azshara
-      [852] = {Faction = 'Both'},
+      [852] = {Faction = 'Both', Retroactive = true},
       -- Explore Felwood
-      [853] = {Faction = 'Both'},
+      [853] = {Faction = 'Both', Retroactive = true},
       -- Explore Un'Goro Crater
-      [854] = {Faction = 'Both'},
+      [854] = {Faction = 'Both', Retroactive = true},
       -- Explore Moonglade
-      [855] = {Faction = 'Both'},
+      [855] = {Faction = 'Both', Retroactive = true},
       -- Explore Silithus
-      [856] = {Faction = 'Both'},
+      [856] = {Faction = 'Both', Retroactive = true},
       -- Explore Winterspring
-      [857] = {Faction = 'Both'},
+      [857] = {Faction = 'Both', Retroactive = true},
       -- Explore Azuremyst Isle
-      [860] = {Faction = 'Both'},
+      [860] = {Faction = 'Both', Retroactive = true},
       -- Explore Bloodmyst Isle
-      [861] = {Faction = 'Both'},
+      [861] = {Faction = 'Both', Retroactive = true},
     -- Kalimdor Ends
     -- Outland Start
       -- Explore Netherstorm
-      [843] = {Faction = 'Both'},
+      [843] = {Faction = 'Both', Retroactive = true},
       -- Explore Hellfire Peninsula
-      [862] = {Faction = 'Both'},
+      [862] = {Faction = 'Both', Retroactive = true},
       -- Explore Zangarmarsh
-      [863] = {Faction = 'Both'},
+      [863] = {Faction = 'Both', Retroactive = true},
       -- Explore Shadowmoon Valley
-      [864] = {Faction = 'Both'},
+      [864] = {Faction = 'Both', Retroactive = true},
       -- Explore Blade's Edge Mountains
-      [865] = {Faction = 'Both'},
+      [865] = {Faction = 'Both', Retroactive = true},
       -- Explore Nagrand
-      [866] = {Faction = 'Both'},
+      [866] = {Faction = 'Both', Retroactive = true},
       -- Explore Terokkar Forest
-      [867] = {Faction = 'Both'},
+      [867] = {Faction = 'Both', Retroactive = true},
       -- Medium Rare
-      [1311] = {Faction = 'Both'},
+      [1311] = {Faction = 'Both', Retroactive = true},
       -- Bloody Rare
-      [1312] = {Faction = 'Both'},
+      [1312] = {Faction = 'Both', Retroactive = true},
     -- Outland Ends
     -- Northrend Start
       -- Explore Howling Fjord
@@ -440,9 +440,9 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Wrecking Ball
     [231] = {Faction = 'Both'},
     -- An Honorable Kill
-    [238] = {Faction = 'Both'},
+    [238] = {Faction = 'Both', Retroactive = true},
     -- 25000 Honorable Kills
-    [239] = {Faction = 'Both'},
+    [239] = {Faction = 'Both', Retroactive = true},
     -- That Takes Class
     [245] = {Faction = 'Both'},
     -- Know Thy Enemy (Alliance)
@@ -452,19 +452,19 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- City Defender (Alliance)
     [388] = {Faction = 'Alliance', OtherSide = 1006},
     -- Gurubashi Arena Master
-    [389] = {Faction = 'Both'},
+    [389] = {Faction = 'Both', Retroactive = true},
     -- Gurubashi Arena Grand Master
-    [396] = {Faction = 'Both'},
+    [396] = {Faction = 'Both', Retroactive = true},
     -- 10000 Honorable Kills
-    [509] = {Faction = 'Both'},
+    [509] = {Faction = 'Both', Retroactive = true},
     -- 5000 Honorable Kills
-    [512] = {Faction = 'Both'},
+    [512] = {Faction = 'Both', Retroactive = true},
     -- 100 Honorable Kills
-    [513] = {Faction = 'Both'},
+    [513] = {Faction = 'Both', Retroactive = true},
     -- 500 Honorable Kills
-    [515] = {Faction = 'Both'},
+    [515] = {Faction = 'Both', Retroactive = true},
     -- 1000 Honorable Kills
-    [516] = {Faction = 'Both'},
+    [516] = {Faction = 'Both', Retroactive = true},
     -- Wrath of the Horde (Horde)
     [603] = {Faction = 'Horde', OtherSide = 604},
     -- Wrath of the Alliance (Alliance)
@@ -478,7 +478,7 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Killed in Quel'Thalas (Alliance)
     [613] = {Faction = 'Alliance', OtherSide = 618},
     -- For The Alliance! (Alliance)
-    [614] = {Faction = 'Alliance', OtherSide = 619},
+    [614] = {Faction = 'Alliance', OtherSide = 619, Retroactive = true},
     -- Storming Stormwind (Horde)
     [615] = {Faction = 'Horde', OtherSide = 610},
     -- Death to the King! (Horde)
@@ -488,7 +488,7 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Putting Out the Light (Horde)
     [618] = {Faction = 'Horde', OtherSide = 613},
     -- For The Horde! (Horde)
-    [619] = {Faction = 'Horde', OtherSide = 614},
+    [619] = {Faction = 'Horde', OtherSide = 614, Retroactive = true},
     -- Freedom of the Horde (Horde)
     [700] = {Faction = 'Horde', OtherSide = 701},
     -- Freedom of the Alliance (Alliance)
@@ -498,15 +498,15 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Call in the Cavalry
     [727] = {Faction = 'Both'},
     -- 50000 Honorable Kills
-    [869] = {Faction = 'Both'},
+    [869] = {Faction = 'Both', Retroactive = true},
     -- 100000 Honorable Kills
-    [870] = {Faction = 'Both'},
+    [870] = {Faction = 'Both', Retroactive = true},
     -- The Justicar (Alliance)
     [907] = {Faction = 'Alliance', OtherSide = 714},
     -- Call to Arms! (Alliance)
-    [908] = {Faction = 'Alliance', OtherSide = 909},
+    [908] = {Faction = 'Alliance', OtherSide = 909, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Call to Arms! (Horde)
-    [909] = {Faction = 'Horde', OtherSide = 908},
+    [909] = {Faction = 'Horde', OtherSide = 908, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Know Thy Enemy (Horde)
     [1005] = {Faction = 'Horde', OtherSide = 246},
     -- City Defender (Horde)
@@ -1034,23 +1034,23 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
       -- Heroic: Magister's Terrace
       [682] = {Faction = 'Both'},
       -- Karazhan
-      [690] = {Faction = 'Both'},
+      [690] = {Faction = 'Both', Retroactive = true},
       -- Zul'Aman
-      [691] = {Faction = 'Both'},
+      [691] = {Faction = 'Both', Retroactive = true},
       -- Gruul's Lair
-      [692] = {Faction = 'Both'},
+      [692] = {Faction = 'Both', Retroactive = true},
       -- Magtheridon's Lair
-      [693] = {Faction = 'Both'},
+      [693] = {Faction = 'Both', Retroactive = true},
       -- Serpentshrine Cavern
-      [694] = {Faction = 'Both'},
+      [694] = {Faction = 'Both', Retroactive = true},
       -- The Battle for Mount Hyjal
-      [695] = {Faction = 'Both'},
+      [695] = {Faction = 'Both', Retroactive = true},
       -- Tempest Keep
-      [696] = {Faction = 'Both'},
+      [696] = {Faction = 'Both', Retroactive = true},
       -- The Black Temple
-      [697] = {Faction = 'Both'},
+      [697] = {Faction = 'Both', Retroactive = true},
       -- Sunwell Plateau
-      [698] = {Faction = 'Both'},
+      [698] = {Faction = 'Both', Retroactive = true},
     -- The Burning Crusade Ends
     -- Lich King Dungeon Start
       -- Utgarde Keep

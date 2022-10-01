@@ -18,6 +18,9 @@ API.Blz_GetAchievementNumCriteria = GetAchievementNumCriteria;
 API.Blz_GetAchievementCriteriaInfo = GetAchievementCriteriaInfo;
 API.Blz_GetAchievementLink = GetAchievementLink;
 API.Blz_HasCompletedAnyAchievement = HasCompletedAnyAchievement;
+API.Blz_GetCategoryList = GetCategoryList;
+API.Blz_GetGuildCategoryList = GetGuildCategoryList;
+API.Blz_GetStatisticsCategoryList = GetStatisticsCategoryList;
 
 function API.GetAchievementInfo(categoryid, index)
     if CrossoverAchievements.IsLoading then
@@ -25,6 +28,10 @@ function API.GetAchievementInfo(categoryid, index)
 	end
     local achievementid, name, points, completed, month, day, year, description, flags, icon, rewardText, isGuild, wasEarnedByMe, earnedBy;
     if index then
+        if CrossoverAchievements.Data.Categories:IsGuildCategory(categoryid) 
+		or CrossoverAchievements.Data.Categories:IsStatisticsCategory(categoryid) then
+	        return API.Blz_GetAchievementInfo(categoryid, index);
+        end
         -- search achievementid by index category in addon data
 	    achievementid = CrossoverAchievements.Data.Categories:GetCategoryAchievement(categoryid, index);
     else
@@ -82,6 +89,10 @@ function API.GetCategoryNumAchievements(categoryId, includeAll)
     if CrossoverAchievements.IsLoading then
 	    return API.Blz_GetCategoryNumAchievements(categoryId, includeAll);
 	end
+    if CrossoverAchievements.Data.Categories:IsGuildCategory(categoryid) 
+	or CrossoverAchievements.Data.Categories:IsStatisticsCategory(categoryid) then
+	    return API.Blz_GetCategoryNumAchievements(categoryId, includeAll);
+    end
     local total, completed, incompleted = 0;
     if CrossoverAchievements.Data.Categories:IsFOSLegacyAchievement(categoryId) then
         completed = CrossoverAchievements.Data.Categories:GetCategoryCompletedAchievements(categoryId);
@@ -107,9 +118,9 @@ function API.GetTotalAchievementPoints(guildOnly)
     return CrossoverAchievements.Account:GetTotalPoints();
 end
 
-function API.GetLatestCompletedAchievements()
-    if CrossoverAchievements.IsLoading then
-	    return API.Blz_GetLatestCompletedAchievements();
+function API.GetLatestCompletedAchievements(IN_GUILD_VIEW)
+    if CrossoverAchievements.IsLoading or IN_GUILD_VIEW then
+	    return API.Blz_GetLatestCompletedAchievements(IN_GUILD_VIEW);
 	end
     return CrossoverAchievements.Data.LastAchievements:GetLastAchievements();
 end
