@@ -94,7 +94,7 @@ local guildMemberRequestFrame;
 
 local trackedAchievements = {};
 local Crossover_achievementFunctions;
-local function updateTrackedAchievements (...)
+local function updateTrackedCrossoverAchievements (...)
 	local count = select("#", ...);
 
 	for i = 1, count do
@@ -347,7 +347,7 @@ function CrossoverAchievementFrameComparisonTab_OnClick (id)
 		CrossoverAchievementFrameTab_OnClick = CrossoverAchievementFrameBaseTab_OnClick;
 		CrossoverAchievementFrameTab_OnClick(2);
 	else
-		Crossover_achievementFunctions = COMPARISON_STAT_FUNCTIONS;
+		Crossover_achievementFunctions = CROSSOVER_COMPARISON_STAT_FUNCTIONS;
 		CrossoverAchievementFrame_ShowSubFrame(CrossoverAchievementFrameComparison, CrossoverAchievementFrameComparisonStatsContainer);
 		CrossoverAchievementFrameWaterMark:SetTexture("Interface\\AchievementFrame\\UI-Achievement-StatWatermark");
 	end
@@ -785,6 +785,9 @@ function CrossoverAchievementFrameCategories_ClearSelection ()
 end
 
 function CrossoverAchievementFrameComparison_UpdateStatusBars (id)
+	if id == "summary" then
+		id = ACHIEVEMENT_COMPARISON_SUMMARY_ID;
+	end
 	local numAchievements, numCompleted = GetCategoryNumAchievements(id);
 	local name = GetCategoryInfo(id);
 
@@ -857,7 +860,7 @@ function CrossoverAchievementFrameAchievements_OnEvent (self, event, ...)
 		self:RegisterEvent("RECEIVED_ACHIEVEMENT_MEMBER_LIST");
 		self:RegisterEvent("ACHIEVEMENT_SEARCH_UPDATED");
 
-		updateTrackedAchievements(GetTrackedAchievements());
+		updateTrackedCrossoverAchievements(GetTrackedAchievements());
 	elseif ( event == "ACHIEVEMENT_EARNED" ) then
 		local achievementID = ...;
 		CrossoverAchievementFrameCategories_GetCategoryList(ACHIEVEMENTUI_CATEGORIES);
@@ -888,7 +891,7 @@ function CrossoverAchievementFrameAchievements_OnEvent (self, event, ...)
 			trackedAchievements[k] = nil;
 		end
 
-		updateTrackedAchievements(GetTrackedAchievements());
+		updateTrackedCrossoverAchievements(GetTrackedAchievements());
 	elseif ( event == "RECEIVED_ACHIEVEMENT_MEMBER_LIST" ) then
 		local achievementID = ...;
 		-- check if we initiated the request from a meta criteria and we're still over it
