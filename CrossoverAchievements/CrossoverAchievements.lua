@@ -19,10 +19,6 @@ frame.events.ACHIEVEMENT_EARNED = function(achievementid)
     CrossoverAchievements:OnAchievementEarned(achievementid);
 end
 
-local Blz_AchievementFrame_ToggleAchievementFrame = nil;
-local Blz_AchievementFrameCategories_Update = nil;
-local Blz_ToggleAchievementFrame = nil;
-local Blz_AchievementMicroButton_Update = nil;
 local CanReplaceBlizzardFrame = true;
 	
 function CrossoverAchievements:OnInitialize()
@@ -109,6 +105,22 @@ function CrossoverAchievements.ToggleAchievementFrame(stats)
 	end
 end
 
+function CrossoverAchievementsInspectAchievements (unit)
+	if (Kiosk.IsEnabled()) then
+		return;
+	end
+
+	CrossoverAchievementFrame_DisplayComparison(unit);
+end
+
+CrossoverAchievements.Blz_AchievementFrame_ToggleAchievementFrame = nil;
+CrossoverAchievements.Blz_AchievementFrameCategories_Update = nil;
+CrossoverAchievements.Blz_ToggleAchievementFrame = nil;
+CrossoverAchievements.Blz_AchievementMicroButton_Update = nil;
+CrossoverAchievements.Blz_AchievementFrame_OnShow = nil;
+CrossoverAchievements.Blz_InspectAchievements = nil;
+CrossoverAchievements.Blz_AchievementFrameComparison_UpdateStatusBars = nil;
+
 function CrossoverAchievements:ReplaceBlizzardFrame()
     if not CanReplaceBlizzardFrame then
 	    return;
@@ -117,10 +129,14 @@ function CrossoverAchievements:ReplaceBlizzardFrame()
     self.Blz_AchievementFrame_ToggleAchievementFrame = AchievementFrame_ToggleAchievementFrame;
     self.Blz_AchievementFrameCategories_Update = CrossoverAchievementFrameCategories_Update;
     self.Blz_ToggleAchievementFrame = ToggleAchievementFrame;
-    self.Blz_AchievementMicroButton_Update = AchievementMicroButton_Update;
+    self.Blz_AchievementMicroButton_Update = AchievementMicroButton_Update
+    self.Blz_AchievementFrame_OnShow = AchievementFrame_OnShow;
+    self.Blz_InspectAchievements = InspectAchievements;
+    self.Blz_AchievementFrameComparison_UpdateStatusBars = AchievementFrameComparison_UpdateStatusBars;
     AchievementFrame_ToggleAchievementFrame = CrossoverAchievementFrame_ToggleAchievementFrame;
     AchievementFrameCategories_Update = CrossoverAchievementFrameCategories_Update;
-    ToggleAchievementFrame = CrossoverAchievements.ToggleAchievementFrame;
+    InspectAchievements = CrossoverAchievementsInspectAchievements;
+    AchievementFrameComparison_UpdateStatusBars = CrossoverAchievementFrameComparison_UpdateStatusBars;
 end
 
 function CrossoverAchievements:OnAchievementEarned(achievementid)
