@@ -1334,10 +1334,17 @@ function CrossoverAchievementButton_OnClick (self, button, down, ignoreModifiers
 	end
 end
 
+function CrossoverAchievementWatchFrame_Update()
+	if CrossoverAchievements.Helpers.GameVersionHelper:HasClassicQuestFrame() then
+		WatchFrame_Update();
+	end
+end
+
 function CrossoverAchievementButton_ToggleTracking (id)
 	if ( trackedAchievements[id] ) then
 		RemoveTrackedAchievement(id);
 		CrossoverAchievementFrameAchievements_ForceUpdate();
+		CrossoverAchievementWatchFrame_Update();
 		return;
 	end
 
@@ -1356,7 +1363,7 @@ function CrossoverAchievementButton_ToggleTracking (id)
 
 	AddTrackedAchievement(id);
 	CrossoverAchievementFrameAchievements_ForceUpdate();
-
+	CrossoverAchievementWatchFrame_Update();
 	return true;
 end
 
@@ -2680,7 +2687,11 @@ function CrossoverAchievementFrameSummaryCategory_OnHide (self)
 end
 
 function CrossoverAchievementFrame_SelectAchievement(id, forceSelect, isComparison)
-	if ( (not CrossoverAchievementFrame:IsShown() and not forceSelect) or (not C_AchievementInfo.IsValidAchievement(id)) ) then
+	if not CrossoverAchievementFrame:IsShown() and not forceSelect then
+		return;
+	end
+
+	if CrossoverAchievements.Helpers.GameVersionHelper:IsRetail() and not C_AchievementInfo.IsValidAchievement(id) then
 		return;
 	end
 
