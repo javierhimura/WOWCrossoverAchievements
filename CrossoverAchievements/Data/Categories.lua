@@ -5,6 +5,8 @@ CrossoverAchievements.Data.Categories = CrossoverAchievements.Data.Categories or
 local Categories = CrossoverAchievements.Data.Categories;
 
 local CategoryList = {};
+local GuildCategoryList = {};
+local StatisticsCategoryList = {};
 local FOSLegacyCategoryList = {};
 
 local LegacyAchievementCategoryID = 15234;
@@ -13,10 +15,43 @@ local SaveCategoriesWFT = false;
 
 local GetCategoryNumAchievements = nil;
 local GetAchievementInfo = nil;
+local GetCategoryList = nil;
+local GetGuildCategoryList = nil;
+local GetStatisticsCategoryList = nil;
 
 function Categories:Initialize()
 	GetCategoryNumAchievements = CrossoverAchievements.API.Blz_GetCategoryNumAchievements;
 	GetAchievementInfo = CrossoverAchievements.API.Blz_GetAchievementInfo;
+    GetCategoryList = CrossoverAchievements.API.Blz_GetCategoryList;
+    GetGuildCategoryList = CrossoverAchievements.API.Blz_GetGuildCategoryList;
+	GetStatisticsCategoryList = CrossoverAchievements.API.Blz_GetStatisticsCategoryList;
+	self:SetCategoryGuildList();
+	self:SetCategoryStatisticsList();
+end
+
+function Categories:SetCategoryGuildList()
+	if not CrossoverAchievements.Helpers.GameVersionHelper:HasGuildAchievements() then
+		return;
+	end
+    local categories = GetGuildCategoryList();
+    for _,categoryid in ipairs(categories) do
+		GuildCategoryList[categoryid] = true;
+	end
+end
+
+function Categories:SetCategoryStatisticsList()
+    local categories = GetStatisticsCategoryList();
+    for _,categoryid in ipairs(categories) do
+		StatisticsCategoryList[categoryid] = true;
+	end
+end
+
+function Categories:IsGuildCategory(categoryid)
+	return GuildCategoryList[categoryid];
+end
+
+function Categories:IsStatisticsCategory(categoryid)
+	return StatisticsCategoryList[categoryid];
 end
 
 function Categories:SetCategoryAchievement(categoryid, achievementid)

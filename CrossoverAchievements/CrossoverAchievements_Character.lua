@@ -6,9 +6,15 @@ CrossoverAchievements.Character = Character;
 local CharacterNames = nil;
 local SaveCharacterNamesWTF = false;
 local GetAchievementInfo = nil;
+local GetCategoryNumAchievements = nil;
+local GetPreviousAchievement = nil;
+local GetCategoryList = nil;
 
 function Character:Initialize()
 	GetAchievementInfo = CrossoverAchievements.API.Blz_GetAchievementInfo;
+    GetCategoryNumAchievements = CrossoverAchievements.API.Blz_GetCategoryNumAchievements;
+    GetPreviousAchievement = CrossoverAchievements.API.Blz_GetPreviousAchievement;
+    GetCategoryList = CrossoverAchievements.API.Blz_GetCategoryList;
 end
 
 function Character:ProcessBlizzardAchievementsData()

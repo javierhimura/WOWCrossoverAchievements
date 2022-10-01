@@ -12,19 +12,17 @@ local GetLatestCompletedAchievements = CrossoverAchievements.API.GetLatestComple
 local GetAchievementLink = CrossoverAchievements.API.GetAchievementLink; 
 local GetAchievementCategory = CrossoverAchievements.API.GetAchievementCategory;
 local GetNumCompletedAchievements = CrossoverAchievements.API.GetNumCompletedAchievements;
-local GetCategoryList = GetCategoryList;
-local GetGuildCategoryList = GetGuildCategoryList;
+local GetCategoryList = CrossoverAchievements.API.Blz_GetCategoryList;
+local GetGuildCategoryList = CrossoverAchievements.API.Blz_GetGuildCategoryList;
 local GetGuildLogoInfo = GetGuildLogoInfo;
 local GetGuildAchievementNumMembers = GetGuildAchievementNumMembers;
 local GetGuildAchievementMembers = GetGuildAchievementMembers;
 local GetGuildAchievementMemberInfo = GetGuildAchievementMemberInfo;
 local GetComparisonAchievementPoints = GetComparisonAchievementPoints;
 local GetComparisonCategoryNumAchievements = GetComparisonCategoryNumAchievements;
-local GetComparisonAchievementPoints = GetComparisonAchievementPoints;
-local GetComparisonCategoryNumAchievements = GetComparisonCategoryNumAchievements;
 local GetComparisonStatistic = GetComparisonStatistic;
 local GetStatistic = GetStatistic;
-local GetStatisticsCategoryList = GetStatisticsCategoryList;
+local GetStatisticsCategoryList = CrossoverAchievements.API.Blz_GetStatisticsCategoryList;
 
 local ACHIEVEMENTUI_CATEGORIES = {};
 
