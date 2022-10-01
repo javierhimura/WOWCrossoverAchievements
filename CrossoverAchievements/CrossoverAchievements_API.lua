@@ -93,6 +93,9 @@ function API.GetCategoryNumAchievements(categoryId, includeAll)
 	or CrossoverAchievements.Data.Categories:IsStatisticsCategory(categoryid) then
 	    return API.Blz_GetCategoryNumAchievements(categoryId, includeAll);
     end
+    if categoryId == -1 then --summary achievements
+	    return API.GetNumCompletedAchievements();
+	end
     local total, completed, incompleted = 0;
     if CrossoverAchievements.Data.Categories:IsFOSLegacyAchievement(categoryId) then
         completed = CrossoverAchievements.Data.Categories:GetCategoryCompletedAchievements(categoryId);
