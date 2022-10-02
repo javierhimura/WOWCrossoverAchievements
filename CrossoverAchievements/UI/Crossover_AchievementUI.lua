@@ -23,6 +23,7 @@ local GetComparisonCategoryNumAchievements = GetComparisonCategoryNumAchievement
 local GetComparisonStatistic = GetComparisonStatistic;
 local GetStatistic = GetStatistic;
 local GetStatisticsCategoryList = CrossoverAchievements.API.Blz_GetStatisticsCategoryList;
+local InCombatLockdown = InCombatLockdown;
 
 local ACHIEVEMENTUI_CATEGORIES = {};
 
@@ -109,7 +110,7 @@ end
 -- [[ CrossoverAchievementFrame ]] --
 
 function CrossoverAchievementFrame_ToggleAchievementFrame(toggleStatFrame, toggleGuildView)
-	if not CrossoverAchievements.IsLoaded then
+	if not CrossoverAchievements.IsLoaded or InCombatLockdown() then
 		return;
 	end
 	CrossoverAchievementFrameComparison:Hide();

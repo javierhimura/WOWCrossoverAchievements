@@ -20,7 +20,8 @@ frame.events.ACHIEVEMENT_EARNED = function(achievementid)
 end
 
 local CanReplaceBlizzardFrame = true;
-	
+local InCombatLockdown = InCombatLockdown;
+
 function CrossoverAchievements:OnInitialize()
     if not self.Helpers.GameVersionHelper:IsValidVersion() then
         print('CrossoverAchievements not compatible with this game version');
@@ -95,7 +96,7 @@ function CrossoverAchievements.AchievementMicroButton_Update(...)
 end
 
 function CrossoverAchievements.ToggleAchievementFrame(stats)
-	if (Kiosk.IsEnabled()) then
+	if (Kiosk.IsEnabled() or InCombatLockdown()) then
 		return;
 	end
 
@@ -106,7 +107,7 @@ function CrossoverAchievements.ToggleAchievementFrame(stats)
 end
 
 function CrossoverAchievementsInspectAchievements (unit)
-	if (Kiosk.IsEnabled()) then
+	if (Kiosk.IsEnabled() or InCombatLockdown()) then
 		return;
 	end
 
