@@ -10,6 +10,7 @@
 lib\LibStub\LibStub.lua
 lib\AceAddon-3.0\AceAddon-3.0.xml
 lib\AceTimer-3.0\AceTimer-3.0.xml
+lib\AceHook-3.0\AceHook-3.0.xml
 lib\AceSerializer-3.0\AceSerializer-3.0.xml
 lib\CallbackHandler-1.0\CallbackHandler-1.0.lua
 lib\LibDeflate\LibDeflate.lua

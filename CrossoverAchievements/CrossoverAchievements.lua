@@ -48,6 +48,7 @@ function CrossoverAchievements:Initialize()
         --print('Start '.. date("%a %b %d %H:%M:%S %Y"));
         self.IsLoading = true;
 
+        self.API:OnInitialize();
         self.Storage:OnInitialize();
         self.Data.Categories:Initialize();
         self.Data.Achievements:Initialize();
@@ -61,7 +62,7 @@ function CrossoverAchievements:Initialize()
         self.IsLoading = false;
         self.IsLoaded = true;
         self.Data.LastAchievements:SetLastAchievements();
-        CrossoverAchievements.EnableAchievementMicroButton()
+        CrossoverAchievements.EnableAchievementMicroButton();
         --print('End '.. date("%a %b %d %H:%M:%S %Y"));
 	end
 end

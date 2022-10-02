@@ -1,11 +1,27 @@
 local CrossoverAchievements = LibStub("AceAddon-3.0"):GetAddon("CrossoverAchievements");
+local API = CrossoverAchievements:NewModule("API", "AceHook-3.0");
 
-local API = {};
 CrossoverAchievements.API = API;
 
 local playerGUID = UnitGUID('PLAYER');
 
-API.Blz_GetAchievementInfo = GetAchievementInfo;
+local Initialized = false;
+
+function API.Blz_GetAchievementInfo(...)
+    if self.hooks.GetAchievementInfo then
+	    return self.hooks.GetAchievementInfo(...);
+	end
+    return GetAchievementInfo(...);
+end
+
+function API:OnInitialize()
+    if not Initialized then
+        self:RawHook("GetAchievementInfo", true);
+        API.Blz_GetAchievementInfo = self.hooks.GetAchievementInfo;
+        Initialized = true;
+	end
+end
+
 API.Blz_GetPreviousAchievement = GetPreviousAchievement;
 API.Blz_GetNextAchievement = GetNextAchievement;
 API.Blz_GetCategoryNumAchievements = GetCategoryNumAchievements;
@@ -22,7 +38,8 @@ API.Blz_GetCategoryList = GetCategoryList;
 API.Blz_GetGuildCategoryList = GetGuildCategoryList;
 API.Blz_GetStatisticsCategoryList = GetStatisticsCategoryList;
 
-function API.GetAchievementInfo(categoryid, index)
+
+function API.GetAchievementInfo(self,categoryid, index)
     if CrossoverAchievements.IsLoading then
 	    return API.Blz_GetAchievementInfo(categoryid, index);
 	end
