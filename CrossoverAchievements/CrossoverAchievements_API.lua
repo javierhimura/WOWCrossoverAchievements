@@ -22,6 +22,49 @@ API.Blz_GetCategoryList = GetCategoryList;
 API.Blz_GetGuildCategoryList = GetGuildCategoryList;
 API.Blz_GetStatisticsCategoryList = GetStatisticsCategoryList;
 
+function API.GetAchievementCompleted(categoryid, index, ByMe)
+    local Position = 4; -- Completed achievement return parameter position
+    if ByMe then
+	    Position = 13; -- Completed by me achievement return parameter position
+	end
+    if CrossoverAchievements.IsLoading then
+	    return select(Position, API.Blz_GetAchievementInfo(categoryid, index));
+	end
+    local achievementid, completed;
+    if index then
+        if CrossoverAchievements.Data.Categories:IsGuildCategory(categoryid) 
+		or CrossoverAchievements.Data.Categories:IsStatisticsCategory(categoryid) then
+	        return select(Position, API.Blz_GetAchievementInfo(categoryid, index));
+        end
+        -- search achievementid by index category in addon data
+	    achievementid = CrossoverAchievements.Data.Categories:GetCategoryAchievement(categoryid, index);
+    else
+        achievementid = categoryid;
+	end
+	if not achievementid then
+        -- statistic or guild achievement don't exits in categories data, search in blizzard data
+       return select(Position, API.Blz_GetAchievementInfo(categoryid, index));
+	end
+
+    local AccountInfo = CrossoverAchievements.Account:GetCompletedAchievementInfo(achievementid);
+    if not AccountInfo then
+       -- Achievement not stored as collected, return collected information from Blizzard
+       return select(Position, API.Blz_GetAchievementInfo(categoryid, index));
+	end
+    if ByMe then
+	    return AccountInfo.WasEarnedByMe;
+	end
+    return true;
+end
+
+function API.GetAchievementCompletedAny(categoryid, index)
+    return API.GetAchievementCompleted(categoryid, index, false);
+end
+
+function API.GetAchievementCompletedByMe(categoryid, index)
+    return API.GetAchievementCompleted(categoryid, index, true);
+end
+
 function API.GetAchievementInfo(categoryid, index)
     if CrossoverAchievements.IsLoading then
 	    return API.Blz_GetAchievementInfo(categoryid, index);
