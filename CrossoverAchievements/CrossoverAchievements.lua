@@ -123,7 +123,7 @@ CrossoverAchievements.Blz_InspectAchievements = nil;
 CrossoverAchievements.Blz_AchievementFrameComparison_UpdateStatusBars = nil;
 
 function CrossoverAchievements:ReplaceBlizzardFrame()
-    if not CanReplaceBlizzardFrame then
+    if not CanReplaceBlizzardFrame or not CrossoverAchievements.Helpers.GameVersionHelper:IsWOTLK() then
 	    return;
 	end
     LoadAddOn("Blizzard_AchievementUI");
