@@ -1,4 +1,4 @@
-## Interface: 90207
+## Interface: 100002
 ## Title: Crossover Achievements
 ## Name: Crossover Achievements
 ## Author: Javier Himura
@@ -26,6 +26,3 @@ CrossoverAchievements_Storage.lua
 CrossoverAchievements_Account.lua
 CrossoverAchievements_API.lua
 CrossoverAchievements_Extract.lua
-UI\Localization.lua
-UI\Crossover_AchievementUI.lua
-UI\Crossover_AchievementUI.xml
