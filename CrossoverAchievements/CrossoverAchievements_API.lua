@@ -141,7 +141,7 @@ function API.GetCategoryNumAchievements(categoryId, includeAll)
 	end
     local total, completed, incompleted = 0;
     if CrossoverAchievements.Data.Categories:IsFOSLegacyAchievement(categoryId) then
-        completed = CrossoverAchievements.Data.Categories:GetCategoryCompletedAchievements(categoryId);
+        completed = CrossoverAchievements.Data.Categories:GetCategoryVisibleAchievements(categoryId);
         total = completed;
     elseif includeAll then
         total  = CrossoverAchievements.Data.Categories:GetCategoryTotalAchievements(categoryId);
