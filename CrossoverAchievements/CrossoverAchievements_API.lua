@@ -22,6 +22,27 @@ API.Blz_GetCategoryList = GetCategoryList;
 API.Blz_GetGuildCategoryList = GetGuildCategoryList;
 API.Blz_GetStatisticsCategoryList = GetStatisticsCategoryList;
 
+function API.ReplaceBlizzardFunctions()
+    GetAchievementInfo = API.GetAchievementInfo;
+    GetPreviousAchievement = API.GetPreviousAchievement;
+    GetNextAchievement = API.GetNextAchievement;
+    GetCategoryNumAchievements = API.GetCategoryNumAchievements;
+    GetTotalAchievementPoints = API.GetTotalAchievementPoints;
+    GetLatestCompletedAchievements = API.GetLatestCompletedAchievements;
+    GetAchievementCategory = API.GetAchievementCategory;
+    GetNumCompletedAchievements = API.GetNumCompletedAchievements;
+    --GetCategoryInfo = API.GetCategoryInfo;
+    --GetAchievementNumCriteria = API.GetAchievementNumCriteria;
+    --GetAchievementCriteriaInfo = API.GetAchievementCriteriaInfo;
+    if CrossoverAchievements.Helpers.GameVersionHelper:IsWOTLK() then
+        GetAchievementLink = API.GetAchievementLink;
+    end
+    HasCompletedAnyAchievement = API.HasCompletedAnyAchievement;
+    --GetCategoryList = API.GetCategoryList;
+    --GetGuildCategoryList = API.GetGuildCategoryList;
+    --GetStatisticsCategoryList = API.GetStatisticsCategoryList;
+end
+
 function API.GetAchievementCompleted(categoryid, index, ByMe)
     local Position = 4; -- Completed achievement return parameter position
     if ByMe then

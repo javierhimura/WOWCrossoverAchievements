@@ -61,6 +61,7 @@ function CrossoverAchievements:Initialize()
         self.IsLoading = false;
         self.IsLoaded = true;
         self.Data.LastAchievements:SetLastAchievements();
+        CrossoverAchievements.API.ReplaceBlizzardFunctions();
         CrossoverAchievements.EnableAchievementMicroButton()
         --print('End '.. date("%a %b %d %H:%M:%S %Y"));
 	end
