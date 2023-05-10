@@ -36,8 +36,8 @@ function API.ReplaceBlizzardFunctions()
     --GetAchievementCriteriaInfo = API.GetAchievementCriteriaInfo;
     if CrossoverAchievements.Helpers.GameVersionHelper:IsWOTLK() then
         GetAchievementLink = API.GetAchievementLink;
+        HasCompletedAnyAchievement = API.HasCompletedAnyAchievement;
     end
-    HasCompletedAnyAchievement = API.HasCompletedAnyAchievement;
     --GetCategoryList = API.GetCategoryList;
     --GetGuildCategoryList = API.GetGuildCategoryList;
     --GetStatisticsCategoryList = API.GetStatisticsCategoryList;

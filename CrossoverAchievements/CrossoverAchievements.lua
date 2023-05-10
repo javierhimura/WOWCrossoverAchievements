@@ -84,6 +84,9 @@ function CrossoverAchievements:ShowBlizFrame()
 end
 
 function CrossoverAchievements.EnableAchievementMicroButton()
+    if not CanReplaceBlizzardFrame or not CrossoverAchievements.Helpers.GameVersionHelper:IsWOTLK() then
+	    return;
+	end
 	if CrossoverAchievements.API.HasCompletedAnyAchievement() and CanShowAchievementUI() and not Kiosk.IsEnabled()  then
         AchievementMicroButton.minLevel = nil;
 		AchievementMicroButton:Enable();
