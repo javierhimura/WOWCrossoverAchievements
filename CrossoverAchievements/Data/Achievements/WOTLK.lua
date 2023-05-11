@@ -181,9 +181,9 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     [1182] = {Faction = 'Both'},
     -- Of Blood and Anguish
     [1576] = {Faction = 'Both'},
-    -- The Loremaster (WOTLK Alliance) //7520
+    -- The Loremaster (WOTLK Alliance)
     [1681] = {Faction = 'Alliance', OtherSide = 1682, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 7520, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH, Retroactive = true},
-    -- The Loremaster (WOTLK Horde) //7520
+    -- The Loremaster (WOTLK Horde)
     [1682] = {Faction = 'Horde', OtherSide = 1681, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 7520, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH, Retroactive = true},
     -- The Loremaster (Retail)
     [7520] = {Faction = 'Both', Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedNew = true, MergedId = 1681, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH, Retroactive = true},
@@ -771,9 +771,9 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
       -- Wintergrasp Veteran
       [1718] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Archavon the Stone Watcher (25 player)
-      [1721] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1721] = {Faction = 'Both', Phase = PHASE1_RAIDS},
       -- Archavon the Stone Watcher (10 player)
-      [1722] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1722] = {Faction = 'Both', Phase = PHASE1_RAIDS},
       -- Vehicular Gnomeslaughter
       [1723] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Leaning Tower
@@ -783,7 +783,7 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
       -- Didn't Stand a Chance
       [1751] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Master of Wintergrasp (Alliance)
-      [1752] = {Faction = 'Alliance', OtherSide = 2776, Merged = LE_EXPANSION_CATACLYSM, MergedId = 1752, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1752] = {Faction = 'Alliance', OtherSide = 2776, Merged = LE_EXPANSION_CATACLYSM, MergedId = 1752, Phase = PHASE1_RAIDS},
       -- Within Our Grasp
       [1755] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Black War Mammoth
@@ -803,19 +803,19 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
       -- Destruction Derby (Horde)
       [2476] = {Faction = 'Horde', OtherSide = 1737, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Master of Wintergrasp (Horde)
-      [2776] = {Faction = 'Horde', OtherSide = 1752, Merged = LE_EXPANSION_CATACLYSM, MergedId = 1752, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2776] = {Faction = 'Horde', OtherSide = 1752, Merged = LE_EXPANSION_CATACLYSM, MergedId = 1752, Phase = PHASE1_RAIDS},
       -- Emalon the Storm Watcher (10 player)
-      [3136] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [3136] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
       -- Emalon the Storm Watcher (25 player)
-      [3137] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [3137] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
       -- Koralon the Flame Watcher (10 player)
-      [3836] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [3836] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CRUSADER},
       -- Koralon the Flame Watcher (25 player)
-      [3837] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [3837] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CRUSADER},
       -- Toravon the Ice Watcher (10 player)
-      [4585] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [4585] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
       -- Toravon the Ice Watcher (25 player)
-      [4586] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [4586] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
     -- Wintergrasp Ends
     -- Isle of Conquest Start
       -- Isle of Conquest Victory
@@ -1078,15 +1078,15 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
       -- Utgarde Pinnacle
       [488] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Trial of the Champion (Horde)
-      [3778] = {Faction = 'Horde', OtherSide = 4296, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [3778] = {Faction = 'Horde', OtherSide = 4296, Phase = PHASE3_TRIAL_OF_CHAMPION},
       -- Trial of the Champion (Alliance)
-      [4296] = {Faction = 'Alliance', OtherSide = 3778, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [4296] = {Faction = 'Alliance', OtherSide = 3778, Phase = PHASE3_TRIAL_OF_CHAMPION},
       -- The Forge of Souls
-      [4516] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [4516] = {Faction = 'Both', Phase = PHASE4_ICC_DUNGEONS},
       -- The Pit of Saron
-      [4517] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [4517] = {Faction = 'Both', Phase = PHASE4_ICC_DUNGEONS},
       -- The Halls of Reflection
-      [4518] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [4518] = {Faction = 'Both', Phase = PHASE4_ICC_DUNGEONS},
     -- Lich King Dungeon Ends
     -- Lich King Heroic Start
       -- Heroic: Utgarde Keep
@@ -1192,31 +1192,31 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
       -- King's Bane
       [2157] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Argent Confessor
-      [3802] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [3802] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CHAMPION},
       -- The Faceroller
-      [3803] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [3803] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CHAMPION},
       -- I've Had Worse
-      [3804] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [3804] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CHAMPION},
       -- Heroic: Trial of the Champion (Horde)
-      [4297] = {Faction = 'Horde', OtherSide = 4298, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [4297] = {Faction = 'Horde', OtherSide = 4298, Phase = PHASE3_TRIAL_OF_CHAMPION},
       -- Heroic: Trial of the Champion (Alliance)
-      [4298] = {Faction = 'Alliance', OtherSide = 4297, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [4298] = {Faction = 'Alliance', OtherSide = 4297, Phase = PHASE3_TRIAL_OF_CHAMPION},
       -- Heroic: The Forge of Souls
-      [4519] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [4519] = {Faction = 'Both', Phase = PHASE4_ICC_DUNGEONS},
       -- Heroic: The Pit of Saron
-      [4520] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [4520] = {Faction = 'Both', Phase = PHASE4_ICC_DUNGEONS},
       -- Heroic: The Halls of Reflection
-      [4521] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [4521] = {Faction = 'Both', Phase = PHASE4_ICC_DUNGEONS},
       -- Soul Power
-      [4522] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [4522] = {Faction = 'Both', Phase = PHASE4_ICC_DUNGEONS},
       -- Three Faced
-      [4523] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [4523] = {Faction = 'Both', Phase = PHASE4_ICC_DUNGEONS},
       -- Doesn't Go to Eleven
-      [4524] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [4524] = {Faction = 'Both', Phase = PHASE4_ICC_DUNGEONS},
       -- Don't Look Up
       [4525] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- We're Not Retreating; We're Advancing in a Different Direction.
-      [4526] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [4526] = {Faction = 'Both', Phase = PHASE4_ICC_DUNGEONS},
     -- Lich King Heroic Ends
     -- Lich King 10-Player Raid Start
       -- The Arachnid Quarter (10 player)
@@ -1278,19 +1278,19 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
       -- The Undying
       [2187] = {Faction = 'Both', Phase = PHASE1_RAIDS},
       -- Earth, Wind & Fire (10 player)
-      [4016] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [4016] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CRUSADER},
       -- Onyxia's Lair (10 player)
-      [4396] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [4396] = {Faction = 'Both', Phase = PHASE3_ONYXIA_LAIR},
       -- More Dots! (10 player)
-      [4402] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [4402] = {Faction = 'Both', Phase = PHASE3_ONYXIA_LAIR},
       -- Many Whelps! Handle It! (10 player)
-      [4403] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [4403] = {Faction = 'Both', Phase = PHASE3_ONYXIA_LAIR},
       -- She Deep Breaths More (10 player)
-      [4404] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [4404] = {Faction = 'Both', Phase = PHASE3_ONYXIA_LAIR},
       -- The Twilight Destroyer (10 player)
-      [4817] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [4817] = {Faction = 'Both', Phase = PHASE5_RUBY_SANCTUM},
       -- Heroic: The Twilight Destroyer (10 player)
-      [4818] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [4818] = {Faction = 'Both', Phase = PHASE5_RUBY_SANCTUM},
     -- Lich King 10-Player Raid Ends
     -- Lich King 25-Player Raid Start
       -- The Arachnid Quarter (25 player)
@@ -1352,19 +1352,19 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
       -- The Immortal
       [2186] = {Faction = 'Both', Phase = PHASE1_RAIDS},
       -- Earth, Wind & Fire (25 player)
-      [4017] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [4017] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CRUSADER},
       -- Onyxia's Lair (25 player)
-      [4397] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [4397] = {Faction = 'Both', Phase = PHASE3_ONYXIA_LAIR},
       -- More Dots! (25 player)
-      [4405] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [4405] = {Faction = 'Both', Phase = PHASE3_ONYXIA_LAIR},
       -- Many Whelps! Handle It! (25 player)
-      [4406] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [4406] = {Faction = 'Both', Phase = PHASE3_ONYXIA_LAIR},
       -- She Deep Breaths More (25 player)
-      [4407] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [4407] = {Faction = 'Both', Phase = PHASE3_ONYXIA_LAIR},
       -- The Twilight Destroyer (25 player)
-      [4815] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [4815] = {Faction = 'Both', Phase = PHASE5_RUBY_SANCTUM},
       -- Heroic: The Twilight Destroyer (25 player)
-      [4816] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [4816] = {Faction = 'Both', Phase = PHASE5_RUBY_SANCTUM},
     -- Lich King 25-Player Raid Ends
     -- Secrets of Ulduar 10-Player Raid Start
       -- The Siege of Ulduar (10 player)
@@ -2515,49 +2515,49 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Champion of the Naaru
     [432] = {Faction = 'Both'},
     -- Grand Marshal (Alliance)
-    [433] = {Faction = 'Alliance', OtherSide = 443},
+    [433] = {Faction = 'Alliance', OtherSide = 443, Retroactive = true, VanillaOnly = true},
     -- Field Marshal (Alliance)
-    [434] = {Faction = 'Alliance', OtherSide = 445},
+    [434] = {Faction = 'Alliance', OtherSide = 445, Retroactive = true, VanillaOnly = true},
     -- Commander (Alliance)
-    [435] = {Faction = 'Alliance', OtherSide = 444},
+    [435] = {Faction = 'Alliance', OtherSide = 444, Retroactive = true, VanillaOnly = true},
     -- Lieutenant Commander (Alliance)
-    [436] = {Faction = 'Alliance', OtherSide = 447},
+    [436] = {Faction = 'Alliance', OtherSide = 447, Retroactive = true, VanillaOnly = true},
     -- Knight-Champion (Alliance)
-    [437] = {Faction = 'Alliance', OtherSide = 448},
+    [437] = {Faction = 'Alliance', OtherSide = 448, Retroactive = true, VanillaOnly = true},
     -- Knight-Captain (Alliance)
-    [438] = {Faction = 'Alliance', OtherSide = 469},
+    [438] = {Faction = 'Alliance', OtherSide = 469, Retroactive = true, VanillaOnly = true},
     -- Knight (Alliance)
-    [439] = {Faction = 'Alliance', OtherSide = 451},
+    [439] = {Faction = 'Alliance', OtherSide = 451, Retroactive = true, VanillaOnly = true},
     -- Sergeant Major (Alliance)
-    [440] = {Faction = 'Alliance', OtherSide = 452},
+    [440] = {Faction = 'Alliance', OtherSide = 452, Retroactive = true, VanillaOnly = true},
     -- Master Sergeant (Alliance)
-    [441] = {Faction = 'Alliance', OtherSide = 450},
+    [441] = {Faction = 'Alliance', OtherSide = 450, Retroactive = true, VanillaOnly = true},
     -- Private (Alliance)
-    [442] = {Faction = 'Alliance', OtherSide = 454},
+    [442] = {Faction = 'Alliance', OtherSide = 454, Retroactive = true, VanillaOnly = true},
     -- High Warlord (Horde)
-    [443] = {Faction = 'Horde', OtherSide = 433},
+    [443] = {Faction = 'Horde', OtherSide = 433, Retroactive = true, VanillaOnly = true},
     -- Lieutenant General (Horde)
-    [444] = {Faction = 'Horde', OtherSide = 435},
+    [444] = {Faction = 'Horde', OtherSide = 435, Retroactive = true, VanillaOnly = true},
     -- Warlord (Horde)
-    [445] = {Faction = 'Horde', OtherSide = 434},
+    [445] = {Faction = 'Horde', OtherSide = 434, Retroactive = true, VanillaOnly = true},
     -- General (Horde)
-    [446] = {Faction = 'Horde', OtherSide = 473},
+    [446] = {Faction = 'Horde', OtherSide = 473, Retroactive = true, VanillaOnly = true},
     -- Champion (Horde)
-    [447] = {Faction = 'Horde', OtherSide = 436},
+    [447] = {Faction = 'Horde', OtherSide = 436, Retroactive = true, VanillaOnly = true},
     -- Centurion (Horde)
-    [448] = {Faction = 'Horde', OtherSide = 437},
+    [448] = {Faction = 'Horde', OtherSide = 437, Retroactive = true, VanillaOnly = true},
     -- Blood Guard (Horde)
-    [449] = {Faction = 'Horde', OtherSide = 472},
+    [449] = {Faction = 'Horde', OtherSide = 472, Retroactive = true, VanillaOnly = true},
     -- Senior Sergeant (Horde)
-    [450] = {Faction = 'Horde', OtherSide = 441},
+    [450] = {Faction = 'Horde', OtherSide = 441, Retroactive = true, VanillaOnly = true},
     -- Stone Guard (Horde)
-    [451] = {Faction = 'Horde', OtherSide = 439},
+    [451] = {Faction = 'Horde', OtherSide = 439, Retroactive = true, VanillaOnly = true},
     -- First Sergeant (Horde)
-    [452] = {Faction = 'Horde', OtherSide = 440},
+    [452] = {Faction = 'Horde', OtherSide = 440, Retroactive = true, VanillaOnly = true},
     -- Sergeant (Horde)
-    [453] = {Faction = 'Horde', OtherSide = 471},
+    [453] = {Faction = 'Horde', OtherSide = 471, Retroactive = true, VanillaOnly = true},
     -- Scout (Horde)
-    [454] = {Faction = 'Horde', OtherSide = 442},
+    [454] = {Faction = 'Horde', OtherSide = 442, Retroactive = true, VanillaOnly = true},
     -- Realm First! Obsidian Slayer
     [456] = {Faction = 'Both', Phase = PHASE1_RAIDS},
     -- Realm First! Level 80
@@ -2613,7 +2613,7 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Avast Ye, Admiral!
     [871] = {Faction = 'Both'},
     -- Old School Ride
-    [879] = {Faction = 'Both', Phase = UNRELEASED_PROMOTIONS},
+    [879] = {Faction = 'Both', Phase = UNRELEASED_PROMOTIONS, Retroactive = true, VanillaOnly = true},
     -- Swift Zulian Tiger
     [880] = {Faction = 'Both'},
     -- Swift Razzashi Raptor
@@ -2834,27 +2834,27 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     [15209] = {Faction = 'Both', ClassicOnly = true},
     -- Challenger: Season 2
     [15210] = {Faction = 'Both', ClassicOnly = true},
-    -- Survivor of the Firelord
+    -- Survivor of the Firelord (Season of Mastery)
     [15330] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE0_SEASON_OF_MASTERY},
-    -- [DNT] Survivor (hidden)
+    -- [DNT] Survivor (Season of Mastery) (hidden)
     --[15332] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE0_SEASON_OF_MASTERY},
-    -- Survivor of the Shadow Flame
+    -- Survivor of the Shadow Flame (Season of Mastery)
     [15333] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE0_SEASON_OF_MASTERY},
-    -- Survivor of the Old God
+    -- Survivor of the Old God (Season of Mastery)
     [15334] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE0_SEASON_OF_MASTERY},
-    -- Survivor of the Damned
+    -- Survivor of the Damned (Season of Mastery)
     [15335] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE0_SEASON_OF_MASTERY},
-    --  The Immortal Season of Mastery
+    -- The Immortal (Season of Mastery)
     [15637] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE0_SEASON_OF_MASTERY},
-    -- <Hidden> Joyous Journeys - Hit 70 with Buff Joyous Journeys
+    -- &lt;Hidden&gt; Joyous Journeys - Hit 70 with Buff Joyous Journeys
     --[15853] = {Faction = 'Both', ClassicOnly = true},
     -- The Perfect Pebble
     [16332] = {Faction = 'Both', ClassicOnly = true},
     -- [DNT] Heirloom Tracking - Bloodied Arcanite Reaper (Hidden)
     --[16397] = {Faction = 'Both', ClassicOnly = true},
-    --  Soul of Iron
+    -- Soul of Iron (Season of Mastery)
     [16433] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE0_SEASON_OF_MASTERY},
-	--[DNT] Soul of Iron Tracker (hidden)
+    -- [DNT] Soul of Iron Tracker (Season of Mastery) (hidden)
     --[16437] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE0_SEASON_OF_MASTERY},
   -- Feats of Strength End
 };
