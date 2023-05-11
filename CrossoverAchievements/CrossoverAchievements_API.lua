@@ -110,16 +110,29 @@ function API.GetAchievementInfo(categoryid, index)
 	end
     local AccountInfo = CrossoverAchievements.Account:GetCompletedAchievementInfo(achievementid);
     if not AccountInfo then
-        return achievementid, name, points, completed, month, day, year, description, flags, icon, rewardText, isGuild, wasEarnedByMe, earnedBy;
+        if CrossoverAchievements.Account:IsForceAllAccountAchievement() then
+            flags = bit.bor(flags,ACHIEVEMENT_FLAGS_ACCOUNT);
+        end
     else
         if AccountInfo.Account then
             flags = bit.bor(flags,ACHIEVEMENT_FLAGS_ACCOUNT);
         end
-        year = date("%y", AccountInfo.AchievementTime)
-        month = date("%m", AccountInfo.AchievementTime)
-        day = date("%d", AccountInfo.AchievementTime)
-        return achievementid, name, points, true, month, day, year, description, flags, icon, rewardText, isGuild, AccountInfo.WasEarnedByMe, AccountInfo.EarnedBy;
+        completed = true;
+        wasEarnedByMe = AccountInfo.WasEarnedByMe;
+        earnedBy = AccountInfo.EarnedBy;
+        year = date("%y", AccountInfo.AchievementTime);
+        month = date("%m", AccountInfo.AchievementTime);
+        day = date("%d", AccountInfo.AchievementTime);
     end
+    if CrossoverAchievements.Account:ShowCharacterAchievementsOnly() and not wasEarnedByMe then
+        completed = false;
+        wasEarnedByMe = false;
+        earnedBy = nil;
+        year = nil;
+        month = nil;
+        day = nil;
+    end
+    return achievementid, name, points, completed, month, day, year, description, flags, icon, rewardText, isGuild, wasEarnedByMe, earnedBy;
 end
 
 function API.IsAccountWideAchievement(achievementid)

@@ -7,6 +7,8 @@ local CompletedAchievements = {};
 local TotalPoints = 0;
 local NumCompletedAchievements = 0;
 local SaveCompletedAchievementsWTF = false;
+local ForceAllAccountAchievement = false;
+local CurrentCharacterAchievementsOnly = false;
 
 local playerGUID = UnitGUID('PLAYER');
 local playerFaction = UnitFactionGroup('PLAYER');
@@ -25,7 +27,18 @@ function Account:GetNumCompletedAchievements()
     return NumCompletedAchievements;
 end
 
+function Account:IsForceAllAccountAchievement()
+    return ForceAllAccountAchievement;
+end
+
+function Account:ShowCharacterAchievementsOnly()
+    return not ForceAllAccountAchievement and CurrentCharacterAchievementsOnly;
+end
+
 function Account:IsForceAccountAchievement(AchievementID)
+    if self:IsForceAllAccountAchievement() then
+        return true;
+    end
     local CurrentGameVersionAchievementsDataType = CrossoverAchievements.Helpers.GameVersionHelper:GetAchievementsDataType();
     local ImportAchievementsData = CrossoverAchievements.Data.Achievements[CurrentGameVersionAchievementsDataType];
     if ImportAchievementsData == nil then
