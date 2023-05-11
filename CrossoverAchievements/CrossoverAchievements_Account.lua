@@ -25,7 +25,23 @@ function Account:GetNumCompletedAchievements()
     return NumCompletedAchievements;
 end
 
-function Account:ConvertAchievementVersion(AchievementID, ImportAchievementsData)
+function Account:IsOtherFactionAchievement(AchievementID)
+    local CurrentGameVersionAchievementsDataType = CrossoverAchievements.Helpers.GameVersionHelper:GetAchievementsDataType();
+    local ImportAchievementsData = CrossoverAchievements.Data.Achievements[CurrentGameVersionAchievementsDataType];
+    if ImportAchievementsData == nil then
+        return false;
+    end 
+    if not ImportAchievementsData.List[AchievementID] then
+	    return false;
+	end
+    local data = ImportAchievementsData.List[AchievementID];
+    if data.Faction ~= factionBoth and playerFaction ~= data.Faction then
+        return true;
+	end
+    return false;
+end
+
+function Account:ConvertAchievementVersion(AchievementID, ImportAchievementsData) 
     if ImportAchievementsData == nil then
         -- There is no import data table for achievements between Retail and Retail, every achievement is returned valid without transformation
 	    return AchievementID;
@@ -80,6 +96,9 @@ function Account:ProcessCompletedAchievement(AchievementID, AchievementTime, Acc
     if ConvertedAchievementID == nil then
 	    return;
 	end
+    if self:IsOtherFactionAchievement(AchievementID) then
+        return;
+    end
 	if not CompletedAchievements[ConvertedAchievementID] then
         CompletedAchievements[ConvertedAchievementID] = { 
                                  AchievementID = ConvertedAchievementID,

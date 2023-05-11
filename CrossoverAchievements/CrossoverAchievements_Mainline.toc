@@ -19,6 +19,7 @@ Data\Achievements.lua
 Data\Categories.lua
 Data\LastAchievements.lua
 Data\Achievements\WOTLK.lua
+Data\Achievements\Retail.lua
 Helpers\CompressHelper.lua
 Helpers\GameVersionHelper.lua
 CrossoverAchievements_Character.lua
