@@ -32,6 +32,9 @@ function Achievements:SetAchievementData(achievementid, points, accountwide)
 			accountwide = false;
 		end
   	end;
+    if not accountwide then
+        accountwide = CrossoverAchievements.Account:IsForceAccountAchievement(achievementid, accountwide);
+    end;
 	Achievements.List[achievementid] = {};
 	Achievements.List[achievementid].Points = points;
 	Achievements.List[achievementid].AccountWide = accountwide;

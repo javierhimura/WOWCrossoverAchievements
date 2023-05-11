@@ -733,5 +733,26 @@ CrossoverAchievements.Data.Achievements[GameVersion_Retail].List = {
       [13192] = {Faction = 'Horde', OtherSide = 13191},
     -- World Events Ends
   -- Legacy End
+  
+  -- Crashin Thrashin Racer
+  [1706] = {Faction = 'Both', Account = true},
+  -- MiniZep Controller
+  [6060] = {Faction = 'Both', Account = true},
+  -- They're Both Footballs?
+  [7852] = {Faction = 'Both', Account = true},
+  -- Crashin' Thrashin' Flyer
+  [8698] = {Faction = 'Both', Account = true},
+  -- Crashin' Thrashin' Shredder
+  [9915] = {Faction = 'Both', Account = true},
+  -- Crashin' Thrashin' Flamer
+  [10337] = {Faction = 'Both', Account = true},
+  -- Brr... It's Cold in Here
+  [10751] = {Faction = 'Both', Account = true},
+  -- Don't Play With That In The House
+  [11913] = {Faction = 'Both', Account = true},
+  -- At Least You're Being Careful
+  [12850] = {Faction = 'Both', Account = true},
+  -- Crashin' Splashin'
+  [13927] = {Faction = 'Both', Account = true},
 };
 

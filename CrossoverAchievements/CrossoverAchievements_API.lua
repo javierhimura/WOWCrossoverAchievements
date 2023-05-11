@@ -112,6 +112,9 @@ function API.GetAchievementInfo(categoryid, index)
     if not AccountInfo then
         return achievementid, name, points, completed, month, day, year, description, flags, icon, rewardText, isGuild, wasEarnedByMe, earnedBy;
     else
+        if AccountInfo.Account then
+            flags = bit.bor(flags,ACHIEVEMENT_FLAGS_ACCOUNT);
+        end
         year = date("%y", AccountInfo.AchievementTime)
         month = date("%m", AccountInfo.AchievementTime)
         day = date("%d", AccountInfo.AchievementTime)

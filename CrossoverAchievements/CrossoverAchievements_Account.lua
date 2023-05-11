@@ -25,6 +25,22 @@ function Account:GetNumCompletedAchievements()
     return NumCompletedAchievements;
 end
 
+function Account:IsForceAccountAchievement(AchievementID)
+    local CurrentGameVersionAchievementsDataType = CrossoverAchievements.Helpers.GameVersionHelper:GetAchievementsDataType();
+    local ImportAchievementsData = CrossoverAchievements.Data.Achievements[CurrentGameVersionAchievementsDataType];
+    if ImportAchievementsData == nil then
+        return false;
+    end 
+    if not ImportAchievementsData.List[AchievementID] then
+	    return false;
+	end
+    local data = ImportAchievementsData.List[AchievementID];
+    if data.Account then
+        return true;
+	end
+    return false;
+end
+
 function Account:IsOtherFactionAchievement(AchievementID)
     local CurrentGameVersionAchievementsDataType = CrossoverAchievements.Helpers.GameVersionHelper:GetAchievementsDataType();
     local ImportAchievementsData = CrossoverAchievements.Data.Achievements[CurrentGameVersionAchievementsDataType];
@@ -99,6 +115,9 @@ function Account:ProcessCompletedAchievement(AchievementID, AchievementTime, Acc
     if self:IsOtherFactionAchievement(AchievementID) then
         return;
     end
+    if self:IsForceAccountAchievement(ConvertedAchievementID) then
+        Account = true;
+	end
 	if not CompletedAchievements[ConvertedAchievementID] then
         CompletedAchievements[ConvertedAchievementID] = { 
                                  AchievementID = ConvertedAchievementID,
