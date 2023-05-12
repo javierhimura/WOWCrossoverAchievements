@@ -146,6 +146,7 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
   -- General End
 
 
+
   -- Quests Start
     -- A Simple Re-Quest
     [31] = {Faction = 'Both'},
@@ -181,9 +182,9 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     [1182] = {Faction = 'Both'},
     -- Of Blood and Anguish
     [1576] = {Faction = 'Both'},
-    -- The Loremaster (WOTLK Alliance)
+    -- The Loremaster (WOTLK) (Alliance)
     [1681] = {Faction = 'Alliance', OtherSide = 1682, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 7520, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH, Retroactive = true},
-    -- The Loremaster (WOTLK Horde)
+    -- The Loremaster (WOTLK) (Horde)
     [1682] = {Faction = 'Horde', OtherSide = 1681, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 7520, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH, Retroactive = true},
     -- The Loremaster (Retail)
     [7520] = {Faction = 'Both', Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedNew = true, MergedId = 1681, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH, Retroactive = true},
