@@ -916,61 +916,61 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     [4603] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
     -- Classic Start
       -- Deadmines
-      [628] = {Faction = 'Both'},
+      [628] = {Faction = 'Both', Retroactive = true},
       -- Ragefire Chasm
-      [629] = {Faction = 'Both'},
+      [629] = {Faction = 'Both', Retroactive = true},
       -- Wailing Caverns
       [630] = {Faction = 'Both'},
       -- Shadowfang Keep
       [631] = {Faction = 'Both'},
       -- Blackfathom Deeps
-      [632] = {Faction = 'Both'},
+      [632] = {Faction = 'Both', Retroactive = true},
       -- Stormwind Stockade
-      [633] = {Faction = 'Both'},
+      [633] = {Faction = 'Both', Retroactive = true},
       -- Gnomeregan
-      [634] = {Faction = 'Both'},
+      [634] = {Faction = 'Both', Retroactive = true},
       -- Razorfen Kraul
-      [635] = {Faction = 'Both'},
+      [635] = {Faction = 'Both', Retroactive = true},
       -- Razorfen Downs
-      [636] = {Faction = 'Both'},
+      [636] = {Faction = 'Both', Retroactive = true},
       -- Scarlet Monastery
       [637] = {Faction = 'Both'},
       -- Uldaman
-      [638] = {Faction = 'Both'},
+      [638] = {Faction = 'Both', Retroactive = true},
       -- Zul'Farrak
       [639] = {Faction = 'Both'},
       -- Maraudon
-      [640] = {Faction = 'Both'},
+      [640] = {Faction = 'Both', Retroactive = true},
       -- Sunken Temple
-      [641] = {Faction = 'Both'},
+      [641] = {Faction = 'Both', Retroactive = true},
       -- Blackrock Depths
-      [642] = {Faction = 'Both'},
+      [642] = {Faction = 'Both', Retroactive = true},
       -- Lower Blackrock Spire
-      [643] = {Faction = 'Both'},
+      [643] = {Faction = 'Both', Retroactive = true},
       -- King of Dire Maul
       [644] = {Faction = 'Both'},
       -- Scholomance
       [645] = {Faction = 'Both'},
       -- Stratholme
-      [646] = {Faction = 'Both'},
+      [646] = {Faction = 'Both', Retroactive = true},
       -- Blackwing Lair
-      [685] = {Faction = 'Both'},
+      [685] = {Faction = 'Both', Retroactive = true},
       -- Molten Core
-      [686] = {Faction = 'Both'},
+      [686] = {Faction = 'Both', Retroactive = true},
       -- Temple of Ahn'Qiraj
-      [687] = {Faction = 'Both'},
+      [687] = {Faction = 'Both', Retroactive = true},
       -- Zul'Gurub
-      [688] = {Faction = 'Both'},
+      [688] = {Faction = 'Both', Retroactive = true},
       -- Ruins of Ahn'Qiraj
-      [689] = {Faction = 'Both'},
+      [689] = {Faction = 'Both', Retroactive = true},
       -- Upper Blackrock Spire
-      [1307] = {Faction = 'Both'},
+      [1307] = {Faction = 'Both', Retroactive = true},
       -- Leeeeeeeeeeeeeroy!
       [2188] = {Faction = 'Both'},
     -- Classic Ends
     -- The Burning Crusade Start
       -- Hellfire Ramparts
-      [647] = {Faction = 'Both'},
+      [647] = {Faction = 'Both', Retroactive = true},
       -- The Blood Furnace
       [648] = {Faction = 'Both'},
       -- The Slave Pens
@@ -978,29 +978,29 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
       -- Underbog
       [650] = {Faction = 'Both'},
       -- Mana-Tombs
-      [651] = {Faction = 'Both'},
+      [651] = {Faction = 'Both', Retroactive = true},
       -- The Escape From Durnholde
-      [652] = {Faction = 'Both'},
+      [652] = {Faction = 'Both', Retroactive = true},
       -- Sethekk Halls
-      [653] = {Faction = 'Both'},
+      [653] = {Faction = 'Both', Retroactive = true},
       -- Shadow Labyrinth
-      [654] = {Faction = 'Both'},
+      [654] = {Faction = 'Both', Retroactive = true},
       -- Opening of the Dark Portal
-      [655] = {Faction = 'Both'},
+      [655] = {Faction = 'Both', Retroactive = true},
       -- The Steamvault
-      [656] = {Faction = 'Both'},
+      [656] = {Faction = 'Both', Retroactive = true},
       -- The Shattered Halls
-      [657] = {Faction = 'Both'},
+      [657] = {Faction = 'Both', Retroactive = true},
       -- The Mechanar
-      [658] = {Faction = 'Both'},
+      [658] = {Faction = 'Both', Retroactive = true},
       -- The Botanica
-      [659] = {Faction = 'Both'},
+      [659] = {Faction = 'Both', Retroactive = true},
       -- The Arcatraz
-      [660] = {Faction = 'Both'},
+      [660] = {Faction = 'Both', Retroactive = true},
       -- Magister's Terrace
-      [661] = {Faction = 'Both'},
+      [661] = {Faction = 'Both', Retroactive = true},
       -- Auchenai Crypts
-      [666] = {Faction = 'Both'},
+      [666] = {Faction = 'Both', Retroactive = true},
       -- Heroic: Hellfire Ramparts
       [667] = {Faction = 'Both'},
       -- Heroic: The Blood Furnace
@@ -1018,19 +1018,19 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
       -- Heroic: Sethekk Halls
       [674] = {Faction = 'Both'},
       -- Heroic: Shadow Labyrinth
-      [675] = {Faction = 'Both'},
+      [675] = {Faction = 'Both', Retroactive = true},
       -- Heroic: Opening of the Dark Portal
       [676] = {Faction = 'Both'},
       -- Heroic: The Steamvault
-      [677] = {Faction = 'Both'},
+      [677] = {Faction = 'Both', Retroactive = true},
       -- Heroic: The Shattered Halls
-      [678] = {Faction = 'Both'},
+      [678] = {Faction = 'Both', Retroactive = true},
       -- Heroic: The Mechanar
       [679] = {Faction = 'Both'},
       -- Heroic: The Botanica
       [680] = {Faction = 'Both'},
       -- Heroic: The Arcatraz
-      [681] = {Faction = 'Both'},
+      [681] = {Faction = 'Both', Retroactive = true},
       -- Heroic: Magister's Terrace
       [682] = {Faction = 'Both'},
       -- Karazhan
