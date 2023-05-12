@@ -2638,9 +2638,9 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Hero of Shattrath
     [1205] = {Faction = 'Both'},
     -- Yellow Brewfest Stein (Never available in Classic. TBC started with 2008 Reward Blue Brewfest Stein)
-    [1292] = {Faction = 'Both', Phase = UNRELEASED_PROMOTIONS},
+    [1292] = {Faction = 'Both', Phase = UNRELEASED_PROMOTIONS, Retroactive = true},
     -- Blue Brewfest Stein
-    [1293] = {Faction = 'Both'},
+    [1293] = {Faction = 'Both', Retroactive = true},
     -- Realm First! Magic Seeker
     [1400] = {Faction = 'Both', Phase = PHASE1_RAIDS},
     -- Realm First! Conqueror of Naxxramas
