@@ -217,7 +217,7 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
       -- Shadow of the Betrayer
       [1195] = {Faction = 'Both', Retroactive = true},
       -- Loremaster of Outland (Alliance)
-      [1262] = {Faction = 'Alliance', OtherSide = 1274, Merged = LE_EXPANSION_CATACLYSM, MergedId = 1262, Retroactive = true},
+      [1262] = {Faction = 'Alliance', OtherSide = 1274, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1262, Retroactive = true},
       -- To Hellfire and Back (Horde)
       [1271] = {Faction = 'Horde', OtherSide = 1189, Retroactive = true},
       -- Terror of Terokkar (Horde)
@@ -225,7 +225,7 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
       -- Nagrand Slam (Horde)
       [1273] = {Faction = 'Horde', OtherSide = 1192, Retroactive = true},
       -- Loremaster of Outland (Horde)
-      [1274] = {Faction = 'Horde', OtherSide = 1262, Merged = LE_EXPANSION_CATACLYSM, MergedId = 1262, Retroactive = true},
+      [1274] = {Faction = 'Horde', OtherSide = 1262, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1262, Retroactive = true},
       -- Bombs Away
       [1275] = {Faction = 'Both'},
       -- Blade's Edge Bomberman
@@ -249,7 +249,7 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
       -- Icecrown: The Final Goal
       [40] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Loremaster of Northrend (Alliance)
-      [41] = {Faction = 'Alliance', OtherSide = 1360, Merged = LE_EXPANSION_CATACLYSM, MergedId = 41, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [41] = {Faction = 'Alliance', OtherSide = 1360, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 41, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Veteran of the Wrathgate
       [547] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- D.E.H.T.A's Little P.I.T.A.
@@ -271,7 +271,7 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
       -- Might of Dragonblight (Horde)
       [1359] = {Faction = 'Horde', OtherSide = 35, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Loremaster of Northrend (Horde)
-      [1360] = {Faction = 'Horde', OtherSide = 41, Merged = LE_EXPANSION_CATACLYSM, MergedId = 41, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1360] = {Faction = 'Horde', OtherSide = 41, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 41, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Mine Sweeper
       [1428] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Guru of Drakuru
@@ -617,9 +617,9 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
       -- To the Looter Go the Spoils
       [1166] = {Faction = 'Both'},
       -- Master of Alterac Valley (Alliance)
-      [1167] = {Faction = 'Alliance', OtherSide = 1168, Merged = LE_EXPANSION_CATACLYSM, MergedId = 1167},
+      [1167] = {Faction = 'Alliance', OtherSide = 1168, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1167},
       -- Master of Alterac Valley (Horde)
-      [1168] = {Faction = 'Horde', OtherSide = 1167, Merged = LE_EXPANSION_CATACLYSM, MergedId = 1167},
+      [1168] = {Faction = 'Horde', OtherSide = 1167, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1167},
     -- Alterac Valley Ends
     -- Arathi Basin Start
       -- Disgracin' The Basin
@@ -653,9 +653,9 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
       -- Overly Defensive
       [1153] = {Faction = 'Both'},
       -- Master of Arathi Basin (Alliance)
-      [1169] = {Faction = 'Alliance', OtherSide = 1170, Merged = LE_EXPANSION_CATACLYSM, MergedId = 1169},
+      [1169] = {Faction = 'Alliance', OtherSide = 1170, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1169},
       -- Master of Arathi Basin (Horde)
-      [1170] = {Faction = 'Horde', OtherSide = 1169, Merged = LE_EXPANSION_CATACLYSM, MergedId = 1169},
+      [1170] = {Faction = 'Horde', OtherSide = 1169, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1169},
     -- Arathi Basin Ends
     -- Eye of the Storm Start
       -- Eye of the Storm Victory
@@ -715,9 +715,9 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
       -- Frenzied Defender
       [872] = {Faction = 'Both'},
       -- Master of Warsong Gulch (Alliance)
-      [1172] = {Faction = 'Alliance', OtherSide = 1173, Merged = LE_EXPANSION_CATACLYSM, MergedId = 1172},
+      [1172] = {Faction = 'Alliance', OtherSide = 1173, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1172},
       -- Master of Warsong Gulch (Horde)
-      [1173] = {Faction = 'Horde', OtherSide = 1172, Merged = LE_EXPANSION_CATACLYSM, MergedId = 1172},
+      [1173] = {Faction = 'Horde', OtherSide = 1172, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1172},
       -- Not In My House (Horde)
       [1251] = {Faction = 'Horde', OtherSide = 203},
       -- Supreme Defender (Horde)
@@ -759,9 +759,9 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
       -- Explosives Expert
       [2193] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Master of Strand of the Ancients (Alliance)
-      [2194] = {Faction = 'Alliance', OtherSide = 2195, Merged = LE_EXPANSION_CATACLYSM, MergedId = 2194, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2194] = {Faction = 'Alliance', OtherSide = 2195, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 2194, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Master of Strand of the Ancients (Horde)
-      [2195] = {Faction = 'Horde', OtherSide = 2194, Merged = LE_EXPANSION_CATACLYSM, MergedId = 2194, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2195] = {Faction = 'Horde', OtherSide = 2194, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 2194, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Defense of the Ancients (Horde)
       [2200] = {Faction = 'Horde', OtherSide = 1757, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Strand of the Ancients Ends
@@ -783,7 +783,7 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
       -- Didn't Stand a Chance
       [1751] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Master of Wintergrasp (Alliance)
-      [1752] = {Faction = 'Alliance', OtherSide = 2776, Merged = LE_EXPANSION_CATACLYSM, MergedId = 1752, Phase = PHASE1_RAIDS},
+      [1752] = {Faction = 'Alliance', OtherSide = 2776, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1752, Phase = PHASE1_RAIDS},
       -- Within Our Grasp
       [1755] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Black War Mammoth
@@ -803,7 +803,7 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
       -- Destruction Derby (Horde)
       [2476] = {Faction = 'Horde', OtherSide = 1737, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Master of Wintergrasp (Horde)
-      [2776] = {Faction = 'Horde', OtherSide = 1752, Merged = LE_EXPANSION_CATACLYSM, MergedId = 1752, Phase = PHASE1_RAIDS},
+      [2776] = {Faction = 'Horde', OtherSide = 1752, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1752, Phase = PHASE1_RAIDS},
       -- Emalon the Storm Watcher (10 player)
       [3136] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
       -- Emalon the Storm Watcher (25 player)
@@ -1839,7 +1839,7 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
       -- Kickin' It Up a Notch
       [906] = {Faction = 'Both'},
       -- Hail to the Chef (Alliance)
-      [1563] = {Faction = 'Alliance', OtherSide = 1784, Merged = LE_EXPANSION_CATACLYSM, MergedId = 1563},
+      [1563] = {Faction = 'Alliance', OtherSide = 1784, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1563},
       -- The Northrend Gourmet
       [1777] = {Faction = 'Both'},
       -- The Northrend Gourmet
@@ -1855,7 +1855,7 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
       -- Our Daily Bread (Horde)
       [1783] = {Faction = 'Horde', OtherSide = 1782},
       -- Hail to the Chef (Horde)
-      [1784] = {Faction = 'Horde', OtherSide = 1563, Merged = LE_EXPANSION_CATACLYSM, MergedId = 1563},
+      [1784] = {Faction = 'Horde', OtherSide = 1563, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1563},
       -- Dinner Impossible
       [1785] = {Faction = 'Both'},
       -- Lunch Lady
@@ -2088,39 +2088,39 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- The Flame Keeper (Horde)
     [1039] = {Faction = 'Horde', OtherSide = 1038},
     -- Hallowed Be Thy Name (Alliance)
-    [1656] = {Faction = 'Alliance', OtherSide = 1657, Merged = LE_EXPANSION_CATACLYSM, MergedId = 1656},
+    [1656] = {Faction = 'Alliance', OtherSide = 1657, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1656},
     -- Hallowed Be Thy Name (Horde)
-    [1657] = {Faction = 'Horde', OtherSide = 1656, Merged = LE_EXPANSION_CATACLYSM, MergedId = 1656},
+    [1657] = {Faction = 'Horde', OtherSide = 1656, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1656},
     -- Brewmaster (Horde)
-    [1683] = {Faction = 'Horde', OtherSide = 1684, Merged = LE_EXPANSION_CATACLYSM, MergedId = 1683},
+    [1683] = {Faction = 'Horde', OtherSide = 1684, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1683},
     -- Brewmaster (Alliance)
-    [1684] = {Faction = 'Alliance', OtherSide = 1683, Merged = LE_EXPANSION_CATACLYSM, MergedId = 1683},
+    [1684] = {Faction = 'Alliance', OtherSide = 1683, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1683},
     -- Merrymaker (Horde)
-    [1691] = {Faction = 'Horde', OtherSide = 1692, Merged = LE_EXPANSION_CATACLYSM, MergedId = 1691},
+    [1691] = {Faction = 'Horde', OtherSide = 1692, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1691},
     -- Merrymaker (Alliance)
-    [1692] = {Faction = 'Alliance', OtherSide = 1691, Merged = LE_EXPANSION_CATACLYSM, MergedId = 1691},
+    [1692] = {Faction = 'Alliance', OtherSide = 1691, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1691},
     -- Fool For Love (Horde)
-    [1693] = {Faction = 'Horde', OtherSide = 1707, Merged = LE_EXPANSION_CATACLYSM, MergedId = 1693},
+    [1693] = {Faction = 'Horde', OtherSide = 1707, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1693},
     -- Fool For Love (Alliance)
-    [1707] = {Faction = 'Alliance', OtherSide = 1693, Merged = LE_EXPANSION_CATACLYSM, MergedId = 1693},
+    [1707] = {Faction = 'Alliance', OtherSide = 1693, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1693},
     -- For The Children
     [1793] = {Faction = 'Both'},
     -- What A Long, Strange Trip It's Been (Alliance)
-    [2144] = {Faction = 'Alliance', OtherSide = 2145, Merged = LE_EXPANSION_CATACLYSM, MergedId = 2144, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [2144] = {Faction = 'Alliance', OtherSide = 2145, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 2144, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- What A Long, Strange Trip It's Been (Horde)
-    [2145] = {Faction = 'Horde', OtherSide = 2144, Merged = LE_EXPANSION_CATACLYSM, MergedId = 2144, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [2145] = {Faction = 'Horde', OtherSide = 2144, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 2144, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Noble Gardener (Alliance)
-    [2797] = {Faction = 'Alliance', OtherSide = 2798, Merged = LE_EXPANSION_CATACLYSM, MergedId = 2798},
+    [2797] = {Faction = 'Alliance', OtherSide = 2798, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 2798},
     -- Noble Gardener (Horde)
-    [2798] = {Faction = 'Horde', OtherSide = 2797, Merged = LE_EXPANSION_CATACLYSM, MergedId = 2798},
+    [2798] = {Faction = 'Horde', OtherSide = 2797, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 2798},
     -- Dead Man's Party
     [3456] = {Faction = 'Both'},
     -- The Captain's Booty
     [3457] = {Faction = 'Both'},
     -- Pilgrim (Alliance)
-    [3478] = {Faction = 'Alliance', OtherSide = 3656, Merged = LE_EXPANSION_CATACLYSM, MergedId = 3478},
+    [3478] = {Faction = 'Alliance', OtherSide = 3656, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 3478},
     -- Pilgrim (Horde)
-    [3656] = {Faction = 'Horde', OtherSide = 3478, Merged = LE_EXPANSION_CATACLYSM, MergedId = 3478},
+    [3656] = {Faction = 'Horde', OtherSide = 3478, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 3478},
     -- Lunar Festival Start
       -- A Coin of Ancestry
       [605] = {Faction = 'Both'},
@@ -2329,9 +2329,9 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
       -- Tricks and Treats of Outland (Alliance)
       [969] = {Faction = 'Alliance', OtherSide = 968},
       -- Tricks and Treats of Azeroth (Alliance)
-      [970] = {Faction = 'Alliance', OtherSide = 971, Merged = LE_EXPANSION_CATACLYSM, MergedId = 971},
+      [970] = {Faction = 'Alliance', OtherSide = 971, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 971},
       -- Tricks and Treats of Azeroth (Horde)
-      [971] = {Faction = 'Horde', OtherSide = 970, Merged = LE_EXPANSION_CATACLYSM, MergedId = 971},
+      [971] = {Faction = 'Horde', OtherSide = 970, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 971},
       -- Trick or Treat!
       [972] = {Faction = 'Both'},
       -- The Mask Task
