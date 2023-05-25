@@ -915,6 +915,8 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     [4602] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
     -- Glory of the Icecrown Raider (25 player)
     [4603] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+    -- Defense Protocol Alpha: Terminated
+    [17304] = {Faction = 'Both', ClassicOnly = true},
     -- Classic Start
       -- Deadmines
       [628] = {Faction = 'Both', Retroactive = true},
@@ -2857,6 +2859,16 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     [16433] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE0_SEASON_OF_MASTERY},
     -- [DNT] Soul of Iron Tracker (Season of Mastery) (hidden)
     --[16437] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE0_SEASON_OF_MASTERY},
+    -- [DNT] Joyous Journeys - Hit 80 with Buff Joyous Journeys (hidden)
+    --[17328] = {Faction = 'Both', ClassicOnly = true},
+    -- Ahead of the Curve: Yogg-Saron
+    [17340] = {Faction = 'Both', ClassicOnly = true},
+    -- Cutting Edge: Ulduar
+    [17341] = {Faction = 'Both', ClassicOnly = true},
+    -- [DNT] Joyous Journeys - Hit 80 with Buff Joyous Journeys (hidden)
+    --[18375] = {Faction = 'Both', ClassicOnly = true},
+    -- [DNT] Joyous Journeys - Hit 80 with Buff Joyous Journeys (hidden)
+    --[18376] = {Faction = 'Both', ClassicOnly = true},
   -- Feats of Strength End
 };
 
