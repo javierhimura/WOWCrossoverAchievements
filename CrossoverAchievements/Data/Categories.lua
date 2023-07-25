@@ -251,7 +251,6 @@ function Categories:SortCategoryFOS(categoryid)
 		if completed then
 			-- Get last achievement in chain completed
 			while data.NextId and CrossoverAchievements.Account:GetCompletedAchievementInfo(data.NextId)
-			      and CrossoverAchievements.Account:GetCompletedAchievementInfo(data.NextId)
 			do
 				lastid = data.NextId;
 				data = CrossoverAchievements.Data.Achievements:GetAchievementData(lastid);
