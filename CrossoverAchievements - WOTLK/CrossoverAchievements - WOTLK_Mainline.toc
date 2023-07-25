@@ -1,4 +1,4 @@
-## Interface: 100100
+## Interface: 100105
 ## Title: Crossover Achievements WOTLK Classic Import
 ## Name: Crossover Achievements WOTLK Classic Import
 ## Author: Javier Himura
