@@ -1,4 +1,4 @@
-## Interface: 30400
+## Interface: 30402
 ## Title: Crossover Achievements Retail Import
 ## Name: Crossover Achievements Retail Import
 ## Author: Javier Himura
