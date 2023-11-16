@@ -145,6 +145,9 @@ function CrossoverAchievements:ReplaceBlizzardFrame()
 end
 
 function CrossoverAchievements:OnAchievementEarned(achievementid)
+    if not self.IsLoaded then
+        return;
+    end
     local CurrentGameVersionTable = self.Storage:GetCurrentGameVersionTable();
     local CurrentCharacterTable = self.Storage:GetCurrentCharacterTable();
     self.Character:ProcessBlizzardAchievementData(CurrentGameVersionTable, CurrentCharacterTable, achievementid);
