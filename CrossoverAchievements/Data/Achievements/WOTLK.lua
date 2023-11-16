@@ -10,20 +10,23 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].Phases = {
     PHASE1_CLASSIC_WOTLK_LAUNCH = 2,
     PHASE1_RAIDS = 3,
     PHASE2_ULDUAR = 4,
-    PHASE3_TRIAL_OF_CHAMPION = 5,
-    PHASE3_TRIAL_OF_CRUSADER = 6,
-    PHASE3_ONYXIA_LAIR = 7,
-    PHASE4_ICC_DUNGEONS = 8,
-    PHASE4_ICC_RAID = 9,
-    PHASE5_RUBY_SANCTUM = 10,
-    RFD = 11,
-    UNRELEASED_PROMOTIONS = 12,
-    CATACLYSM_PREPATCH = 13,
-    PHASE1_ARENA_SEASON_5_START = 14,
-    PHASE1_ARENA_SEASON_5_END = 15,
-    PHASE2_ARENA_SEASON_6_END = 16,
-    PHASE3_ARENA_SEASON_7_END = 17,
-    PHASE4_ARENA_SEASON_8_END = 18,
+    PHASE2_DEFENSE_PROTOCOL_ALPHA = 5,
+    PHASE3_TRIAL_OF_CHAMPION = 6,
+    PHASE3_TRIAL_OF_CRUSADER = 7,
+    PHASE3_ONYXIA_LAIR = 8,
+    PHASE3_DEFENSE_PROTOCOL_BETA = 9,
+    PHASE4_ICC_DUNGEONS = 10,
+    PHASE4_ICC_RAID = 11,
+    PHASE4_DEFENSE_PROTOCOL_GAMMA = 12,
+    PHASE4_RFD = 13,
+    PHASE5_RUBY_SANCTUM = 14,
+    UNRELEASED_PROMOTIONS = 15,
+    CATACLYSM_PREPATCH = 16,
+    PHASE1_ARENA_SEASON_5_START = 17,
+    PHASE1_ARENA_SEASON_5_END = 18,
+    PHASE2_ARENA_SEASON_6_END = 19,
+    PHASE3_ARENA_SEASON_7_END = 20,
+    PHASE4_ARENA_SEASON_8_END = 21,
 };
 -- ClassicOnly Achievement added in WOTLK Classic never available in Retail, not even in OG WOTLK
 -- Merged Achievement with different version for Alliance and Horde but was merged in a given expansion into a single achievement
@@ -579,6 +582,30 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
       [16315] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_END},
       -- Challenger: Season 5
       [16316] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_END},
+      -- Rival: Season 6
+      [17415] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_START},
+      -- Gladiator: Season 6
+      [17416] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_START},
+      -- Duelist: Season 6
+      [17417] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_START},
+      -- Challenger: Season 6
+      [17418] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_START},
+      -- Rival: Season 7
+      [18544] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_START},
+      -- Gladiator: Season 7
+      [18545] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_START},
+      -- Duelist: Season 7
+      [18546] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_START},
+      -- Challenger: Season 7
+      [18547] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_START},
+      -- Rival: Season 8
+      [18548] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_START},
+      -- Duelist: Season 8
+      [18549] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_START},
+      -- Challenger: Season 8
+      [18550] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_START},
+      -- Gladiator: Season 8
+      [18551] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_START},
     -- Arena Ends
     -- Alterac Valley Start
       -- Alterac Valley Victory
@@ -906,17 +933,25 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- 2500 Dungeon & Raid Emblems
     [4316] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Looking For More
-    [4476] = {Faction = 'Both', Phase = RFD},
+    [4476] = {Faction = 'Both', Phase = PHASE4_RFD},
     -- Looking For Many
-    [4477] = {Faction = 'Both', Phase = RFD},
+    [4477] = {Faction = 'Both', Phase = PHASE4_RFD},
     -- Looking For Multitudes
-    [4478] = {Faction = 'Both', Phase = RFD},
+    [4478] = {Faction = 'Both', Phase = PHASE4_RFD},
     -- Glory of the Icecrown Raider (10 player)
     [4602] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
     -- Glory of the Icecrown Raider (25 player)
     [4603] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
     -- Defense Protocol Alpha: Terminated
-    [17304] = {Faction = 'Both', ClassicOnly = true},
+    [17304] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE2_DEFENSE_PROTOCOL_ALPHA},
+    -- Defense Protocol Beta: Terminated (Alliance)
+    [18614] = {Faction = 'Alliance', OtherSide = 18688, ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+    -- Defense Protocol Beta: Terminated (Horde)
+    [18688] = {Faction = 'Horde', OtherSide = 18614, ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+    -- Defense Protocol Gamma: Terminated (Alliance)
+    [19439] = {Faction = 'Alliance', OtherSide = 19440, ClassicOnly = true, Phase = PHASE4_DEFENSE_PROTOCOL_GAMMA},
+    -- Defense Protocol Gamma: Terminated (Horde)
+    [19440] = {Faction = 'Horde', OtherSide = 19439, ClassicOnly = true, Phase = PHASE4_DEFENSE_PROTOCOL_GAMMA},
     -- Classic Start
       -- Deadmines
       [628] = {Faction = 'Both', Retroactive = true},
@@ -1220,6 +1255,88 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
       [4525] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- We're Not Retreating; We're Advancing in a Different Direction.
       [4526] = {Faction = 'Both', Phase = PHASE4_ICC_DUNGEONS},
+      -- Defense Protocol Alpha: Utgarde Keep
+      [17213] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE2_DEFENSE_PROTOCOL_ALPHA},
+      -- Defense Protocol Alpha: The Nexus
+      [17283] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE2_DEFENSE_PROTOCOL_ALPHA},
+      -- Defense Protocol Alpha: Azjol-Nerub
+      [17285] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE2_DEFENSE_PROTOCOL_ALPHA},
+      -- Defense Protocol Alpha: Ahn'kahet: The Old Kingdom
+      [17291] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE2_DEFENSE_PROTOCOL_ALPHA},
+      -- Defense Protocol Alpha: Drak'Tharon Keep
+      [17292] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE2_DEFENSE_PROTOCOL_ALPHA},
+      -- Defense Protocol Alpha: The Violet Hold
+      [17293] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE2_DEFENSE_PROTOCOL_ALPHA},
+      -- Defense Protocol Alpha: Gundrak
+      [17295] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE2_DEFENSE_PROTOCOL_ALPHA},
+      -- Defense Protocol Alpha: Halls of Stone
+      [17297] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE2_DEFENSE_PROTOCOL_ALPHA},
+      -- Defense Protocol Alpha: Halls of Lightning
+      [17299] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE2_DEFENSE_PROTOCOL_ALPHA},
+      -- Defense Protocol Alpha: The Oculus
+      [17300] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE2_DEFENSE_PROTOCOL_ALPHA},
+      -- Defense Protocol Alpha: Utgarde Pinnacle
+      [17301] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE2_DEFENSE_PROTOCOL_ALPHA},
+      -- Defense Protocol Alpha: The Culling of Stratholme
+      [17302] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE2_DEFENSE_PROTOCOL_ALPHA},
+      -- Defense Protocol Beta: Utgarde Keep
+      [18590] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+      -- Defense Protocol Beta: The Nexus
+      [18591] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+      -- Defense Protocol Beta: Azjol-Nerub
+      [18592] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+      -- Defense Protocol Beta: Ahn'kahet: The Old Kingdom
+      [18593] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+      -- Defense Protocol Beta: Drak'Tharon Keep
+      [18594] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+      -- Defense Protocol Beta: The Violet Hold
+      [18595] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+      -- Defense Protocol Beta: Gundrak
+      [18596] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+      -- Defense Protocol Beta: Halls of Stone
+      [18597] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+      -- Defense Protocol Beta: Halls of Lightning
+      [18598] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+      -- Defense Protocol Beta: The Oculus
+      [18599] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+      -- Defense Protocol Beta: Utgarde Pinnacle
+      [18600] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+      -- Defense Protocol Beta: The Culling of Stratholme
+      [18601] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+      -- Defense Protocol Beta: Trial of The Champion
+      [18602] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+      -- Defense Protocol Beta: Trial of the Champion (Alliance)
+      [18677] = {Faction = 'Alliance', OtherSide = 18602, ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+      -- Defense Protocol Beta: Trial of the Champion (Horde)
+      [18678] = {Faction = 'Horde', OtherSide = 18602, ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+      -- Defense Protocol Gamma: Trial of the Champion (Horde)
+      [19425] = {Faction = 'Horde', OtherSide = 19426, ClassicOnly = true, Phase = PHASE4_DEFENSE_PROTOCOL_GAMMA},
+      -- Defense Protocol Gamma: Trial of the Champion (Alliance)
+      [19426] = {Faction = 'Alliance', OtherSide = 19425, ClassicOnly = true, Phase = PHASE4_DEFENSE_PROTOCOL_GAMMA},
+      -- Defense Protocol Gamma: Utgarde Keep
+      [19427] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE4_DEFENSE_PROTOCOL_GAMMA},
+      -- Defense Protocol Gamma: The Nexus
+      [19428] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE4_DEFENSE_PROTOCOL_GAMMA},
+      -- Defense Protocol Gamma: Azjol-Nerub
+      [19429] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE4_DEFENSE_PROTOCOL_GAMMA},
+      -- Defense Protocol Gamma: Ahn'kahet: The Old Kingdom
+      [19430] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE4_DEFENSE_PROTOCOL_GAMMA},
+      -- Defense Protocol Gamma: Drak'Tharon Keep
+      [19431] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE4_DEFENSE_PROTOCOL_GAMMA},
+      -- Defense Protocol Gamma: The Violet Hold
+      [19432] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE4_DEFENSE_PROTOCOL_GAMMA},
+      -- Defense Protocol Gamma: Gundrak
+      [19433] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE4_DEFENSE_PROTOCOL_GAMMA},
+      -- Defense Protocol Gamma: Halls of Stone
+      [19434] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE4_DEFENSE_PROTOCOL_GAMMA},
+      -- Defense Protocol Gamma: Halls of Lightning
+      [19435] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE4_DEFENSE_PROTOCOL_GAMMA},
+      -- Defense Protocol Gamma: The Oculus
+      [19436] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE4_DEFENSE_PROTOCOL_GAMMA},
+      -- Defense Protocol Gamma: Utgarde Pinnacle
+      [19437] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE4_DEFENSE_PROTOCOL_GAMMA},
+      -- Defense Protocol Gamma: The Culling of Stratholme
+      [19438] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE4_DEFENSE_PROTOCOL_GAMMA},
     -- Lich King Heroic Ends
     -- Lich King 10-Player Raid Start
       -- The Arachnid Quarter (10 player)
@@ -2871,4 +2988,3 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     --[18376] = {Faction = 'Both', ClassicOnly = true},
   -- Feats of Strength End
 };
-
