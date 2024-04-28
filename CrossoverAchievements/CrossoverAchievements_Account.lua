@@ -125,7 +125,7 @@ function Account:ProcessCompletedAchievement(AchievementID, AchievementTime, Acc
     if ConvertedAchievementID == nil then
 	    return;
 	end
-    if self:IsOtherFactionAchievement(AchievementID) then
+    if ConvertedAchievementID == AchievementID and self:IsOtherFactionAchievement(AchievementID) then
         return;
     end
     if self:IsForceAccountAchievement(ConvertedAchievementID) then
