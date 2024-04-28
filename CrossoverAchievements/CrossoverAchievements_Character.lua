@@ -20,6 +20,10 @@ end
 function Character:ProcessBlizzardAchievementsData()
     local CurrentGameVersionTable = CrossoverAchievements.Storage:GetCurrentGameVersionTable();
     local CurrentCharacterTable = CrossoverAchievements.Storage:GetCurrentCharacterTable();
+    if CurrentCharacterTable.AccountName == nil and CrossoverAchievements_AccountData.AccountName ~= nil then
+        CurrentCharacterTable.AccountName = CrossoverAchievements_AccountData.AccountName;
+    end
+    
     local categories = GetCategoryList();
     self:GroupCharactersByName(CurrentGameVersionTable);
     for categoryindex,categoryID in ipairs(categories) do
@@ -129,6 +133,7 @@ function Character:ProcessCharacterNameBlizzardAchievementData(CurrentGameVersio
         CharacterByNameTable.Total = 0;
         CharacterByNameTable.Name = earnedBy;
         CharacterByNameTable.GameVersion = CrossoverAchievements.Helpers.GameVersionHelper:GetCurrentVersion();
+        CharacterByNameTable.AccountName = CrossoverAchievements_AccountData.AccountName;
         CurrentGameVersionTable.Characters[earnedBy] = CharacterByNameTable;
     end
 
