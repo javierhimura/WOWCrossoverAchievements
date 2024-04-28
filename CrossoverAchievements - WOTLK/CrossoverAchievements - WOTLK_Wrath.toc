@@ -1,4 +1,4 @@
-## Interface: 30400
+## Interface: 30403
 ## Title: Crossover Achievements WOTLK Classic Export
 ## Name: Crossover Achievements WOTLK Classic Export
 ## Author: Javier Himura
