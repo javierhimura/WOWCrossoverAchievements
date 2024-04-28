@@ -132,6 +132,7 @@ function Storage:OnInitialize()
     for _,GameVersion in pairs(GameVersionsWithAchievements) do
         Storage:ImportVersionData(GameVersion);
 	end
+    Storage:ImportAccountData();
 end
 
 function Storage:GetAccountData()
@@ -240,12 +241,51 @@ function Storage:IsCompressDataValid(GameVersion, CompressData)
        not CompressData.GameVersion or 
        not CompressData.Time or 
        not CompressData.DataVersion or
-       CompressData.GameVersion ~= GameVersion or
+       (GameVersion ~= nil and CompressData.GameVersion ~= GameVersion) or
        CompressData.DataVersion ~= self.AddonDataVersion then
         return false;
     end
 
     return true;
+end
+
+function Storage:GetImportAccountData()
+	if CrossoverAchievements_AccountData.AccountName == nil then
+		return nil;
+	end
+    local CompressData;
+    local ModifyCompress = false;
+    
+    if not LoadAddOn("CrossoverAchievements - Account") then
+        return
+    end
+    CompressData = CrossoverAchievements_OtherAccount;
+    if CompressData and CompressData.DataVersion then
+        if not DoCompressImportData and not CompressData.Clear then
+            ModifyCompress = true;
+        else
+            if CompressData.DataVersion == self.AddonDataVersionUpdate then
+                CompressData.DataVersion = self.AddonDataVersion;
+            end
+            if CompressData.DataVersion > self.AddonDataVersion then
+                print('Please upgrade CrossoverAchievements addon to be able to Import Account data');
+                CrossoverAchievements_WOTLK = nil;
+                return nil;
+            end
+            if CompressData.DataVersion < self.AddonDataVersion then
+                print('Please Export Account data with the last version of CrossoverAchievements addon');
+                CrossoverAchievements_WOTLK = nil;
+                return nil;
+            end
+        end
+    end
+    
+    -- Not allow invalid data
+    if not self:IsCompressDataValid(nil, CompressData) then
+        return nil;
+    end
+
+    return CompressData;
 end
 
 function Storage:GetImportVersionData(GameVersion)
@@ -334,6 +374,19 @@ function Storage:GetImportVersionData(GameVersion)
     return CompressData;
 end
 
+function Storage:ImportAccountData(GameVersion)
+    CompressData = self:GetImportAccountData(GameVersion);
+
+    if CompressData == nil then
+        return false;
+    end    
+
+    if CompressData ~= nil and not self:DecompressAccountData(CompressData) then
+        return false;
+    end
+    return true;
+end
+
 function Storage:ImportVersionData(GameVersion)
     CompressData = self:GetImportVersionData(GameVersion);
 
@@ -389,5 +442,72 @@ function Storage:DecompressVersionData(CompressData)
         CrossoverAchievements_AccountData[ImportData.GameVersion] = ImportData;
         CrossoverAchievements_AccountData[ImportData.GameVersion].Clear = true;
     end
+    return true;
+end
+
+
+function Storage:CopyAccountData(ImportData, Compressed)
+    print("CopyAccountData");
+    if ImportData == nil then
+        return nil;
+    end
+    if not Compressed then
+        ImportData = ImportData.Export;
+    end
+
+    if ImportData == nil or ImportData.Characters == nil then
+        return nil;
+    end
+    local GameVersionsWithAchievements = CrossoverAchievements.Helpers.GameVersionHelper.GameVersionsWithAchievements;
+    for _,GameVersion in pairs(GameVersionsWithAchievements) do 
+        if ImportData.GameVersion == GameVersion then
+            local GameVersionTable = CrossoverAchievements.Storage:GetGameVersionTable(GameVersion);
+            if GameVersionTable == nil then
+                return;
+            end
+            for _,CharacterTable in pairs(ImportData.Characters) do
+				if CrossoverAchievements_AccountData.AccountName == nil or CharacterTable.AccountName == nil or CharacterTable.AccountName == CrossoverAchievements_AccountData.AccountName then
+                    print("Invalid CharacterTable.Name ".. CharacterTable.Name);
+                    return nil;
+				end
+                print("Valid CharacterTable.Name ".. CharacterTable.Name);
+                GameVersionTable.Characters[CharacterTable.GUID] = CharacterTable;
+            end
+        end
+    end
+end
+
+function Storage:DecompressAccountData(CompressData)
+    if CompressData.Clear then
+        Storage:CopyAccountData(CompressData, false);
+        return true;
+    end
+    
+    local ImportData = CrossoverAchievements.Helpers.CompressHelper:DecompressDecodeData(CompressData.Export);
+    -- Data exported cant be decompressed
+    if not ImportData or
+       not ImportData.Time or
+       not ImportData.DataVersion or
+       not ImportData.GameVersion then
+        return false;
+    end
+
+    if ImportData.DataVersion == self.AddonDataVersionUpdate then
+	    ImportData.DataVersion = self.AddonDataVersion;
+    end
+  
+    if ImportData.GameVersion ~= CompressData.GameVersion or
+       ImportData.Time ~= CompressData.Time or
+       ImportData.DataVersion ~= CompressData.DataVersion  then
+        -- Invalid data, it should have the same information compressed and decompressed
+        return false;
+    end
+  
+    if ImportData.Achievements and not CrossoverAchievements.Helpers.GameVersionHelper:HasBlizzardAccountAchievements(ImportData.GameVersion) then
+        -- WOTLK Classic data can't have account achievements
+        return false;
+    end
+
+    Storage:CopyAccountData(ImportData, true);
     return true;
 end
