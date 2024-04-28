@@ -9,7 +9,8 @@ local realmName = GetRealmName();
 
 local AccountData = {};
 local ClearWTFData = false;
-local DoCompressData = false;
+local DoKeepDecoded = false;
+local DoCompressData = true;
 local DoCompressImportData = true;
 local DoCompressExportData = true;
 
@@ -51,6 +52,14 @@ function Storage:UpdateDataVersion()
             CompressDataTable.Export = ExportTable.Export;
             CompressDataTable.GameVersion = GameVersionTable.GameVersion;
             CompressDataTable.Time = GameVersionTable.Time;
+			if DoKeepDecoded then
+	            CompressDataTable.DecodedData = {};
+	            CompressDataTable.DecodedData.GameVersion = GameVersionTable.GameVersion;
+	            CompressDataTable.DecodedData.Time = GameVersionTable.Time;
+	            CompressDataTable.DecodedData.Characters = GameVersionTable.Characters;
+	            CompressDataTable.DecodedData.Achievements = GameVersionTable.Achievements;
+	            CompressDataTable.DecodedData.DataVersion = self.AddonDataVersion;
+			end
             CrossoverAchievements_AccountData[GameVersion] = CompressDataTable;
 		end
         if not CrossoverAchievements.Helpers.GameVersionHelper:IsRetail() and
@@ -175,6 +184,9 @@ function Storage:CopyVersionData(GameVersionTable, CompressData, ExportTable)
       CrossoverAchievements_Version.Time = CrossoverAchievements_AccountData.Time;
       if DoCompressExportData then
         CrossoverAchievements_Version.Export = CompressData;
+		if DoKeepDecoded then
+        	CrossoverAchievements_Version.DecodedData = ExportTable;
+		end
       else
         CrossoverAchievements_Version.Export = ExportTable;
         CrossoverAchievements_Version.Clear = true;
@@ -196,6 +208,9 @@ function Storage:ExportVersionData()
     local CompressDataTable = {}
     CompressDataTable.DataVersion = self.AddonDataVersion;
     CompressDataTable.Export = CompressData;
+	if DoKeepDecoded then
+    	CompressDataTable.DecodedData = ExportTable;
+	end
     CompressDataTable.GameVersion = GameVersionTable.GameVersion;
     CompressDataTable.Time = GameVersionTable.Time;
     if not DoCompressData then
@@ -353,7 +368,7 @@ function Storage:DecompressVersionData(CompressData)
     if ImportData.DataVersion == self.AddonDataVersionUpdate then
 	    ImportData.DataVersion = self.AddonDataVersion;
     end
-  
+    
     if ImportData.GameVersion ~= CompressData.GameVersion or
        ImportData.Time ~= CompressData.Time or
        ImportData.DataVersion ~= CompressData.DataVersion  then
