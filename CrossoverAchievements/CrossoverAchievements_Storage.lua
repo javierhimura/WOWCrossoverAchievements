@@ -59,6 +59,8 @@ function Storage:UpdateDataVersion()
 	            CompressDataTable.DecodedData.Characters = GameVersionTable.Characters;
 	            CompressDataTable.DecodedData.Achievements = GameVersionTable.Achievements;
 	            CompressDataTable.DecodedData.DataVersion = self.AddonDataVersion;
+            else
+	            CompressDataTable.DecodedData = nil;
 			end
             CrossoverAchievements_AccountData[GameVersion] = CompressDataTable;
 		end
@@ -187,6 +189,8 @@ function Storage:CopyVersionData(GameVersionTable, CompressData, ExportTable)
         CrossoverAchievements_Version.Export = CompressData;
 		if DoKeepDecoded then
         	CrossoverAchievements_Version.DecodedData = ExportTable;
+        else
+            CrossoverAchievements_Version.DecodedData = nil;
 		end
       else
         CrossoverAchievements_Version.Export = ExportTable;
@@ -211,6 +215,8 @@ function Storage:ExportVersionData()
     CompressDataTable.Export = CompressData;
 	if DoKeepDecoded then
     	CompressDataTable.DecodedData = ExportTable;
+    else
+        CompressDataTable.DecodedData = nil;
 	end
     CompressDataTable.GameVersion = GameVersionTable.GameVersion;
     CompressDataTable.Time = GameVersionTable.Time;
