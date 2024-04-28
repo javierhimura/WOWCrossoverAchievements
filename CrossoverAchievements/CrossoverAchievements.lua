@@ -79,6 +79,17 @@ function CrossoverAchievements:OnUpdate()
 	end
 end
 
+-- /run CrossoverAchievements:SetAccountName("WOW1")
+function CrossoverAchievements:SetAccountName(name)
+	if not CrossoverAchievements_AccountData.AccountName then
+		CrossoverAchievements_AccountData.AccountName = name;
+		print('Account Name set to '..name);
+	else 
+		print('Account Name already set to '..QuestCompleteData.AccountName );
+	end
+end
+
+
 function CrossoverAchievements:ShowBlizFrame()
     self.Blz_AchievementFrame_ToggleAchievementFrame();
 end
