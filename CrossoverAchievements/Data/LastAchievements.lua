@@ -14,7 +14,7 @@ local MaxLastAchievements = 5;
 local LastTime = nil;
 
 function LastAchievements:SetLastAchievement(achievementid, achievementime)
-	if AchievementBlzList[achievementid] or (Total == MaxLastAchievements and achievementime < LastTime) then
+	if AchievementBlzList[achievementid] or (Total == MaxLastAchievements and LastTime ~= nil and achievementime < LastTime) then
 		return;
 	end
 	if Total < MaxLastAchievements then
