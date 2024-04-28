@@ -263,12 +263,12 @@ function Storage:GetImportAccountData()
         return
     end
     
-	if CrossoverAchievements_AccountData.AccountName == nil then
-        print("Set AccountName before importing other accounts data");
-		return nil;
-	end
     CompressData = CrossoverAchievements_OtherAccount;
     if CompressData and CompressData.DataVersion then
+        if CrossoverAchievements_AccountData.AccountName == nil then
+            print("Set AccountName before importing other accounts data");
+            return nil;
+        end
         if not DoCompressImportData and not CompressData.Clear then
             ModifyCompress = true;
         else
