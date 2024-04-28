@@ -51,11 +51,11 @@ function Storage:UpdateDataVersion()
             CompressDataTable.DataVersion = self.AddonDataVersion;
             CompressDataTable.Export = ExportTable.Export;
             CompressDataTable.GameVersion = GameVersionTable.GameVersion;
-            CompressDataTable.Time = GameVersionTable.Time;
+            CompressDataTable.Time = ExportTable.Time;
 			if DoKeepDecoded then
 	            CompressDataTable.DecodedData = {};
 	            CompressDataTable.DecodedData.GameVersion = GameVersionTable.GameVersion;
-	            CompressDataTable.DecodedData.Time = GameVersionTable.Time;
+	            CompressDataTable.DecodedData.Time = ExportTable.Time;
 	            CompressDataTable.DecodedData.Characters = GameVersionTable.Characters;
 	            CompressDataTable.DecodedData.Achievements = GameVersionTable.Achievements;
 	            CompressDataTable.DecodedData.DataVersion = self.AddonDataVersion;
@@ -219,14 +219,14 @@ function Storage:ExportVersionData()
         CompressDataTable.DecodedData = nil;
 	end
     CompressDataTable.GameVersion = GameVersionTable.GameVersion;
-    CompressDataTable.Time = GameVersionTable.Time;
+    CompressDataTable.Time = ExportTable.Time;
     if not DoCompressData then
         CompressDataTable.Export = ExportTable;
         CompressDataTable.Clear = true;
     end 
     CrossoverAchievements_AccountData[GameVersionTable.GameVersion] = CompressDataTable;
     CrossoverAchievements_AccountData.DataVersion = self.AddonDataVersion;
-    CrossoverAchievements_AccountData.Time = time();
+    CrossoverAchievements_AccountData.Time = ExportTable.Time;
     if CrossoverAchievements.Helpers.GameVersionHelper:IsRetail() then
       if not LoadAddOn("CrossoverAchievements - Retail") then
           return;
@@ -256,15 +256,17 @@ function Storage:IsCompressDataValid(GameVersion, CompressData)
 end
 
 function Storage:GetImportAccountData()
-	if CrossoverAchievements_AccountData.AccountName == nil then
-		return nil;
-	end
     local CompressData;
     local ModifyCompress = false;
     
     if not LoadAddOn("CrossoverAchievements - Account") then
         return
     end
+    
+	if CrossoverAchievements_AccountData.AccountName == nil then
+        print("Set AccountName before importing other accounts data");
+		return nil;
+	end
     CompressData = CrossoverAchievements_OtherAccount;
     if CompressData and CompressData.DataVersion then
         if not DoCompressImportData and not CompressData.Clear then
@@ -421,6 +423,7 @@ function Storage:DecompressVersionData(CompressData)
        not ImportData.Time or
        not ImportData.DataVersion or
        not ImportData.GameVersion then
+        print("Can't import other version game exported data");
         return false;
     end
 
@@ -431,6 +434,7 @@ function Storage:DecompressVersionData(CompressData)
     if ImportData.GameVersion ~= CompressData.GameVersion or
        ImportData.Time ~= CompressData.Time or
        ImportData.DataVersion ~= CompressData.DataVersion  then
+        print("Can't import other version game exported data");
         -- Invalid data, it should have the same information compressed and decompressed
         return false;
     end
@@ -492,6 +496,7 @@ function Storage:DecompressAccountData(CompressData)
        not ImportData.Time or
        not ImportData.DataVersion or
        not ImportData.GameVersion then
+        print("Can't import other account exported data");
         return false;
     end
 
@@ -502,6 +507,7 @@ function Storage:DecompressAccountData(CompressData)
     if ImportData.GameVersion ~= CompressData.GameVersion or
        ImportData.Time ~= CompressData.Time or
        ImportData.DataVersion ~= CompressData.DataVersion  then
+        print("Can't import other account exported data");
         -- Invalid data, it should have the same information compressed and decompressed
         return false;
     end
