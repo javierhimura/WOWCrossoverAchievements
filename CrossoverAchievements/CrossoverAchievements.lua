@@ -80,6 +80,7 @@ function CrossoverAchievements:OnUpdate()
 end
 
 -- /run CrossoverAchievements:SetAccountName("WOW1")
+-- /run CrossoverAchievements:SetAccountName("JAVIER_HIMURA")
 function CrossoverAchievements:SetAccountName(name)
 	if not CrossoverAchievements_AccountData.AccountName then
 		CrossoverAchievements_AccountData.AccountName = name;

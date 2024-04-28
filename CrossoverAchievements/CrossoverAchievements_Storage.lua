@@ -453,7 +453,6 @@ end
 
 
 function Storage:CopyAccountData(ImportData, Compressed)
-    print("CopyAccountData");
     if ImportData == nil then
         return nil;
     end
@@ -473,10 +472,8 @@ function Storage:CopyAccountData(ImportData, Compressed)
             end
             for _,CharacterTable in pairs(ImportData.Characters) do
 				if CrossoverAchievements_AccountData.AccountName == nil or CharacterTable.AccountName == nil or CharacterTable.AccountName == CrossoverAchievements_AccountData.AccountName then
-                    print("Invalid CharacterTable.Name ".. CharacterTable.Name);
                     return nil;
 				end
-                print("Valid CharacterTable.Name ".. CharacterTable.Name);
                 GameVersionTable.Characters[CharacterTable.GUID] = CharacterTable;
             end
         end
