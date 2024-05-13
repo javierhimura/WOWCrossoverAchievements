@@ -37,85 +37,85 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].Phases = {
 CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
   -- General Start
     -- Level 10
-    [6] = {Faction = 'Both', Retroactive = true},
+    [6] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Level 20
-    [7] = {Faction = 'Both', Retroactive = true},
+    [7] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Level 30
-    [8] = {Faction = 'Both', Retroactive = true},
+    [8] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Level 40
-    [9] = {Faction = 'Both', Retroactive = true},
+    [9] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Level 50
-    [10] = {Faction = 'Both', Retroactive = true},
+    [10] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Level 60
-    [11] = {Faction = 'Both', Retroactive = true},
+    [11] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Level 70
-    [12] = {Faction = 'Both', Retroactive = true},
+    [12] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Level 80
     [13] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Plenty of Pets
-    [15] = {Faction = 'Both', Retroactive = true},
+    [15] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Did Somebody Order a Knuckle Sandwich?
     [16] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Shave and a Haircut
-    [545] = {Faction = 'Both'},
+    [545] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Safe Deposit
-    [546] = {Faction = 'Both'},
+    [546] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Epic
     [556] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Superior
     [557] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Greedy
-    [558] = {Faction = 'Both'},
+    [558] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Needy
-    [559] = {Faction = 'Both'},
+    [559] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Represent
-    [621] = {Faction = 'Both', Retroactive = true},
+    [621] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Master of Arms
     [705] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Fast and Furious
-    [889] = {Faction = 'Both', Retroactive = true},
+    [889] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Into The Wild Blue Yonder
-    [890] = {Faction = 'Both', Retroactive = true},
+    [890] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Giddy Up!
-    [891] = {Faction = 'Both', Retroactive = true},
+    [891] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- The Right Stuff
-    [892] = {Faction = 'Both', Retroactive = true},
+    [892] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Going Down?
-    [964] = {Faction = 'Both'},
+    [964] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Can I Keep Him?
-    [1017] = {Faction = 'Both', Retroactive = true},
+    [1017] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Ten Tabards
-    [1020] = {Faction = 'Both', Retroactive = true},
+    [1020] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Twenty-Five Tabards
-    [1021] = {Faction = 'Both', Retroactive = true},
+    [1021] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- My Storage is 'Gigantique'
-    [1165] = {Faction = 'Both', Retroactive = true},
+    [1165] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Got My Mind On My Money
-    [1176] = {Faction = 'Both'},
+    [1176] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Got My Mind On My Money
-    [1177] = {Faction = 'Both'},
+    [1177] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Got My Mind On My Money
-    [1178] = {Faction = 'Both'},
+    [1178] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Got My Mind On My Money
-    [1180] = {Faction = 'Both'},
+    [1180] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Got My Mind On My Money
-    [1181] = {Faction = 'Both'},
+    [1181] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- The Keymaster
     [1187] = {Faction = 'Both', Removed = LE_EXPANSION_CATACLYSM, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- To All The Squirrels I've Loved Before
     [1206] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Well Read
-    [1244] = {Faction = 'Both'},
+    [1244] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Plethora of Pets
-    [1248] = {Faction = 'Both', Retroactive = true},
+    [1248] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Shop Smart, Shop Pet...Smart
-    [1250] = {Faction = 'Both', Retroactive = true},
+    [1250] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Friend or Fowl?
-    [1254] = {Faction = 'Both'},
+    [1254] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Tastes Like Chicken
-    [1832] = {Faction = 'Both'},
+    [1832] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- It's Happy Hour Somewhere
-    [1833] = {Faction = 'Both'},
+    [1833] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Higher Learning
     [1956] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Armored Brown Bear
@@ -129,62 +129,62 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Get to the Choppa!
     [2097] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Stable Keeper
-    [2141] = {Faction = 'Both', Retroactive = true},
+    [2141] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Filling Up The Barn
-    [2142] = {Faction = 'Both', Retroactive = true},
+    [2142] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Leading the Cavalry
-    [2143] = {Faction = 'Both', Retroactive = true},
+    [2143] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Lil' Game Hunter
-    [2516] = {Faction = 'Both', Retroactive = true},
+    [2516] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Mountain o' Mounts (Alliance)
-    [2536] = {Faction = 'Alliance', OtherSide = 2537, Retroactive = true},
+    [2536] = {Faction = 'Alliance', OtherSide = 2537, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Mountain o' Mounts (Horde)
-    [2537] = {Faction = 'Horde', OtherSide = 2536, Retroactive = true},
+    [2537] = {Faction = 'Horde', OtherSide = 2536, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Pest Control
-    [2556] = {Faction = 'Both'},
+    [2556] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- To All The Squirrels Who Shared My Life
-    [2557] = {Faction = 'Both'},
+    [2557] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Dual Talent Specialization
-    [2716] = {Faction = 'Both'},
+    [2716] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
   -- General End
 
 
 
   -- Quests Start
     -- A Simple Re-Quest
-    [31] = {Faction = 'Both'},
+    [31] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- 2000 Quests Completed
-    [32] = {Faction = 'Both', Retroactive = true},
+    [32] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- 50 Quests Completed
-    [503] = {Faction = 'Both', Retroactive = true},
+    [503] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- 100 Quests Completed
-    [504] = {Faction = 'Both', Retroactive = true},
+    [504] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- 250 Quests Completed
-    [505] = {Faction = 'Both', Retroactive = true},
+    [505] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- 500 Quests Completed
-    [506] = {Faction = 'Both', Retroactive = true},
+    [506] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- 1000 Quests Completed
-    [507] = {Faction = 'Both', Retroactive = true},
+    [507] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- 1500 Quests Completed
-    [508] = {Faction = 'Both', Retroactive = true},
+    [508] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Hemet Nesingwary: The Collected Quests
     [941] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- 5 Daily Quests Complete
-    [973] = {Faction = 'Both'},
+    [973] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- 50 Daily Quests Complete
-    [974] = {Faction = 'Both'},
+    [974] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- 200 Daily Quests Complete
-    [975] = {Faction = 'Both'},
+    [975] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- 500 Daily Quests Complete
-    [976] = {Faction = 'Both'},
+    [976] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- 1000 Daily Quests Complete
-    [977] = {Faction = 'Both'},
+    [977] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- 3000 Quests Completed
-    [978] = {Faction = 'Both'},
+    [978] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- The Bread Winner
-    [1182] = {Faction = 'Both'},
+    [1182] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Of Blood and Anguish
-    [1576] = {Faction = 'Both'},
+    [1576] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- The Loremaster (WOTLK) (Alliance)
     [1681] = {Faction = 'Alliance', OtherSide = 1682, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 7520, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH, Retroactive = true},
     -- The Loremaster (WOTLK) (Horde)
@@ -193,47 +193,47 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     [7520] = {Faction = 'Both', Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedNew = true, MergedId = 1681, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH, Retroactive = true},
     -- Classic Start
       -- The Green Hills of Stranglethorn
-      [940] = {Faction = 'Both', Retroactive = true},
+      [940] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Loremaster of Eastern Kingdoms (Alliance)
-      [1676] = {Faction = 'Alliance', OtherSide = 1677, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1676, Retroactive = true},
+      [1676] = {Faction = 'Alliance', OtherSide = 1677, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1676, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Loremaster of Eastern Kingdoms (Horde)
-      [1677] = {Faction = 'Horde', OtherSide = 1676, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1676, Retroactive = true},
+      [1677] = {Faction = 'Horde', OtherSide = 1676, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1676, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Loremaster of Kalimdor (Alliance)
-      [1678] = {Faction = 'Alliance', OtherSide = 1680, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1678, Retroactive = true},
+      [1678] = {Faction = 'Alliance', OtherSide = 1680, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1678, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Loremaster of Kalimdor (Horde)
-      [1680] = {Faction = 'Horde', OtherSide = 1678, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1678, Retroactive = true},
+      [1680] = {Faction = 'Horde', OtherSide = 1678, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1678, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Classic Ends
     -- The Burning Crusade Start
       -- Hills Like White Elekk
-      [939] = {Faction = 'Both', Retroactive = true},
+      [939] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- To Hellfire and Back (Alliance)
-      [1189] = {Faction = 'Alliance', OtherSide = 1271, Retroactive = true},
+      [1189] = {Faction = 'Alliance', OtherSide = 1271, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Mysteries of the Marsh
-      [1190] = {Faction = 'Both', Retroactive = true},
+      [1190] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Terror of Terokkar (Alliance)
-      [1191] = {Faction = 'Alliance', OtherSide = 1272, Retroactive = true},
+      [1191] = {Faction = 'Alliance', OtherSide = 1272, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Nagrand Slam (Alliance)
-      [1192] = {Faction = 'Alliance', OtherSide = 1273, Retroactive = true},
+      [1192] = {Faction = 'Alliance', OtherSide = 1273, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- On the Blade's Edge
-      [1193] = {Faction = 'Both', Retroactive = true},
+      [1193] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Into the Nether
-      [1194] = {Faction = 'Both', Retroactive = true},
+      [1194] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Shadow of the Betrayer
-      [1195] = {Faction = 'Both', Retroactive = true},
+      [1195] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Loremaster of Outland (Alliance)
-      [1262] = {Faction = 'Alliance', OtherSide = 1274, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1262, Retroactive = true},
+      [1262] = {Faction = 'Alliance', OtherSide = 1274, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1262, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- To Hellfire and Back (Horde)
-      [1271] = {Faction = 'Horde', OtherSide = 1189, Retroactive = true},
+      [1271] = {Faction = 'Horde', OtherSide = 1189, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Terror of Terokkar (Horde)
-      [1272] = {Faction = 'Horde', OtherSide = 1191, Retroactive = true},
+      [1272] = {Faction = 'Horde', OtherSide = 1191, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Nagrand Slam (Horde)
-      [1273] = {Faction = 'Horde', OtherSide = 1192, Retroactive = true},
+      [1273] = {Faction = 'Horde', OtherSide = 1192, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Loremaster of Outland (Horde)
-      [1274] = {Faction = 'Horde', OtherSide = 1262, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1262, Retroactive = true},
+      [1274] = {Faction = 'Horde', OtherSide = 1262, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1262, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Bombs Away
-      [1275] = {Faction = 'Both'},
+      [1275] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Blade's Edge Bomberman
-      [1276] = {Faction = 'Both'},
+      [1276] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- The Burning Crusade Ends
     -- Wrath of the Lich King Start
       -- Nothing Boring About Borean (Alliance)
@@ -285,128 +285,128 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
 
   -- Exploration Start
     -- Explore Eastern Kingdoms
-    [42] = {Faction = 'Both', Retroactive = true},
+    [42] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Explore Kalimdor
-    [43] = {Faction = 'Both', Retroactive = true},
+    [43] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Explore Outland
-    [44] = {Faction = 'Both', Retroactive = true},
+    [44] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Explore Northrend
     [45] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- World Explorer
     [46] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Eastern Kingdoms Start
       -- Explore Dun Morogh
-      [627] = {Faction = 'Both', Retroactive = true},
+      [627] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Alterac Mountains
-      [760] = {Faction = 'Both', Removed = LE_EXPANSION_CATACLYSM, Retroactive = true},
+      [760] = {Faction = 'Both', Removed = LE_EXPANSION_CATACLYSM, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Arathi Highlands
-      [761] = {Faction = 'Both', Retroactive = true},
+      [761] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Badlands
-      [765] = {Faction = 'Both', Retroactive = true},
+      [765] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Blasted Lands
-      [766] = {Faction = 'Both', Retroactive = true},
+      [766] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Tirisfal Glades
-      [768] = {Faction = 'Both', Retroactive = true},
+      [768] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Silverpine Forest
-      [769] = {Faction = 'Both', Retroactive = true},
+      [769] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Western Plaguelands
-      [770] = {Faction = 'Both', Retroactive = true},
+      [770] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Eastern Plaguelands
-      [771] = {Faction = 'Both', Retroactive = true},
+      [771] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Hillsbrad Foothills
-      [772] = {Faction = 'Both', Retroactive = true},
+      [772] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore The Hinterlands
-      [773] = {Faction = 'Both', Retroactive = true},
+      [773] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Searing Gorge
-      [774] = {Faction = 'Both', Retroactive = true},
+      [774] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Burning Steppes
-      [775] = {Faction = 'Both', Retroactive = true},
+      [775] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Elwynn Forest
-      [776] = {Faction = 'Both', Retroactive = true},
+      [776] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Deadwind Pass
-      [777] = {Faction = 'Both', Retroactive = true},
+      [777] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Duskwood
-      [778] = {Faction = 'Both', Retroactive = true},
+      [778] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Loch Modan
-      [779] = {Faction = 'Both', Retroactive = true},
+      [779] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Redridge Mountains
-      [780] = {Faction = 'Both', Retroactive = true},
+      [780] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Stranglethorn Vale
-      [781] = {Faction = 'Both', Retroactive = true},
+      [781] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Swamp of Sorrows
-      [782] = {Faction = 'Both', Retroactive = true},
+      [782] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Westfall
-      [802] = {Faction = 'Both', Retroactive = true},
+      [802] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Wetlands
-      [841] = {Faction = 'Both', Retroactive = true},
+      [841] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Ghostlands
-      [858] = {Faction = 'Both', Retroactive = true},
+      [858] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Eversong Woods
-      [859] = {Faction = 'Both', Retroactive = true},
+      [859] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Isle of Quel'Danas
-      [868] = {Faction = 'Both', Retroactive = true},
+      [868] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Eastern Kingdoms Ends
     -- Kalimdor Start
       -- Explore Durotar
-      [728] = {Faction = 'Both', Retroactive = true},
+      [728] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Mulgore
-      [736] = {Faction = 'Both', Retroactive = true},
+      [736] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore The Barrens
-      [750] = {Faction = 'Both', Retroactive = true},
+      [750] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Teldrassil
-      [842] = {Faction = 'Both', Retroactive = true},
+      [842] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Darkshore
-      [844] = {Faction = 'Both', Retroactive = true},
+      [844] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Ashenvale
-      [845] = {Faction = 'Both', Retroactive = true},
+      [845] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Thousand Needles
-      [846] = {Faction = 'Both', Retroactive = true},
+      [846] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Stonetalon Mountains
-      [847] = {Faction = 'Both', Retroactive = true},
+      [847] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Desolace
-      [848] = {Faction = 'Both', Retroactive = true},
+      [848] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Feralas
-      [849] = {Faction = 'Both', Retroactive = true},
+      [849] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Dustwallow Marsh
-      [850] = {Faction = 'Both', Retroactive = true},
+      [850] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Tanaris Desert
-      [851] = {Faction = 'Both', Retroactive = true},
+      [851] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Azshara
-      [852] = {Faction = 'Both', Retroactive = true},
+      [852] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Felwood
-      [853] = {Faction = 'Both', Retroactive = true},
+      [853] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Un'Goro Crater
-      [854] = {Faction = 'Both', Retroactive = true},
+      [854] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Moonglade
-      [855] = {Faction = 'Both', Retroactive = true},
+      [855] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Silithus
-      [856] = {Faction = 'Both', Retroactive = true},
+      [856] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Winterspring
-      [857] = {Faction = 'Both', Retroactive = true},
+      [857] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Azuremyst Isle
-      [860] = {Faction = 'Both', Retroactive = true},
+      [860] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Bloodmyst Isle
-      [861] = {Faction = 'Both', Retroactive = true},
+      [861] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Kalimdor Ends
     -- Outland Start
       -- Explore Netherstorm
-      [843] = {Faction = 'Both', Retroactive = true},
+      [843] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Hellfire Peninsula
-      [862] = {Faction = 'Both', Retroactive = true},
+      [862] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Zangarmarsh
-      [863] = {Faction = 'Both', Retroactive = true},
+      [863] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Shadowmoon Valley
-      [864] = {Faction = 'Both', Retroactive = true},
+      [864] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Blade's Edge Mountains
-      [865] = {Faction = 'Both', Retroactive = true},
+      [865] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Nagrand
-      [866] = {Faction = 'Both', Retroactive = true},
+      [866] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Explore Terokkar Forest
-      [867] = {Faction = 'Both', Retroactive = true},
+      [867] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Medium Rare
-      [1311] = {Faction = 'Both', Retroactive = true},
+      [1311] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Bloody Rare
-      [1312] = {Faction = 'Both', Retroactive = true},
+      [1312] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Outland Ends
     -- Northrend Start
       -- Explore Howling Fjord
@@ -436,87 +436,87 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
 
   -- Player vs. Player Start
     -- Damage Control
-    [227] = {Faction = 'Both'},
+    [227] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- The Grim Reaper
-    [229] = {Faction = 'Both'},
+    [229] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Battlemaster (Alliance)
     [230] = {Faction = 'Alliance', OtherSide = 1175, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Wrecking Ball
-    [231] = {Faction = 'Both'},
+    [231] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- An Honorable Kill
-    [238] = {Faction = 'Both', Retroactive = true},
+    [238] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- 25000 Honorable Kills
-    [239] = {Faction = 'Both', Retroactive = true},
+    [239] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- That Takes Class
-    [245] = {Faction = 'Both'},
+    [245] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Know Thy Enemy (Alliance)
-    [246] = {Faction = 'Alliance', OtherSide = 1005},
+    [246] = {Faction = 'Alliance', OtherSide = 1005, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Make Love, Not Warcraft
-    [247] = {Faction = 'Both'},
+    [247] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- City Defender (Alliance)
-    [388] = {Faction = 'Alliance', OtherSide = 1006},
+    [388] = {Faction = 'Alliance', OtherSide = 1006, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Gurubashi Arena Master
-    [389] = {Faction = 'Both', Retroactive = true},
+    [389] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Gurubashi Arena Grand Master
-    [396] = {Faction = 'Both', Retroactive = true},
+    [396] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- 10000 Honorable Kills
-    [509] = {Faction = 'Both', Retroactive = true},
+    [509] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- 5000 Honorable Kills
-    [512] = {Faction = 'Both', Retroactive = true},
+    [512] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- 100 Honorable Kills
-    [513] = {Faction = 'Both', Retroactive = true},
+    [513] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- 500 Honorable Kills
-    [515] = {Faction = 'Both', Retroactive = true},
+    [515] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- 1000 Honorable Kills
-    [516] = {Faction = 'Both', Retroactive = true},
+    [516] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Wrath of the Horde (Horde)
-    [603] = {Faction = 'Horde', OtherSide = 604},
+    [603] = {Faction = 'Horde', OtherSide = 604, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Wrath of the Alliance (Alliance)
-    [604] = {Faction = 'Alliance', OtherSide = 603},
+    [604] = {Faction = 'Alliance', OtherSide = 603, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Death to the Warchief! (Alliance)
-    [610] = {Faction = 'Alliance', OtherSide = 615},
+    [610] = {Faction = 'Alliance', OtherSide = 615, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Bleeding Bloodhoof (Alliance)
-    [611] = {Faction = 'Alliance', OtherSide = 616},
+    [611] = {Faction = 'Alliance', OtherSide = 616, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Downing the Dark Lady (Alliance)
-    [612] = {Faction = 'Alliance', OtherSide = 617},
+    [612] = {Faction = 'Alliance', OtherSide = 617, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Killed in Quel'Thalas (Alliance)
-    [613] = {Faction = 'Alliance', OtherSide = 618},
+    [613] = {Faction = 'Alliance', OtherSide = 618, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- For The Alliance! (Alliance)
-    [614] = {Faction = 'Alliance', OtherSide = 619, Retroactive = true},
+    [614] = {Faction = 'Alliance', OtherSide = 619, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Storming Stormwind (Horde)
-    [615] = {Faction = 'Horde', OtherSide = 610},
+    [615] = {Faction = 'Horde', OtherSide = 610, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Death to the King! (Horde)
-    [616] = {Faction = 'Horde', OtherSide = 611},
+    [616] = {Faction = 'Horde', OtherSide = 611, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Immortal No More (Horde)
-    [617] = {Faction = 'Horde', OtherSide = 612},
+    [617] = {Faction = 'Horde', OtherSide = 612, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Putting Out the Light (Horde)
-    [618] = {Faction = 'Horde', OtherSide = 613},
+    [618] = {Faction = 'Horde', OtherSide = 613, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- For The Horde! (Horde)
-    [619] = {Faction = 'Horde', OtherSide = 614, Retroactive = true},
+    [619] = {Faction = 'Horde', OtherSide = 614, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Freedom of the Horde (Horde)
-    [700] = {Faction = 'Horde', OtherSide = 701},
+    [700] = {Faction = 'Horde', OtherSide = 701, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Freedom of the Alliance (Alliance)
-    [701] = {Faction = 'Alliance', OtherSide = 700},
+    [701] = {Faction = 'Alliance', OtherSide = 700, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- The Conqueror (Horde)
-    [714] = {Faction = 'Horde', OtherSide = 907},
+    [714] = {Faction = 'Horde', OtherSide = 907, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Call in the Cavalry
-    [727] = {Faction = 'Both'},
+    [727] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- 50000 Honorable Kills
-    [869] = {Faction = 'Both', Retroactive = true},
+    [869] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- 100000 Honorable Kills
-    [870] = {Faction = 'Both', Retroactive = true},
+    [870] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- The Justicar (Alliance)
-    [907] = {Faction = 'Alliance', OtherSide = 714},
+    [907] = {Faction = 'Alliance', OtherSide = 714, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Call to Arms! (Alliance)
     [908] = {Faction = 'Alliance', OtherSide = 909, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Call to Arms! (Horde)
     [909] = {Faction = 'Horde', OtherSide = 908, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Know Thy Enemy (Horde)
-    [1005] = {Faction = 'Horde', OtherSide = 246},
+    [1005] = {Faction = 'Horde', OtherSide = 246, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- City Defender (Horde)
-    [1006] = {Faction = 'Horde', OtherSide = 388},
+    [1006] = {Faction = 'Horde', OtherSide = 388, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Duel-icious
-    [1157] = {Faction = 'Both'},
+    [1157] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Battlemaster (Horde)
     [1175] = {Faction = 'Horde', OtherSide = 230, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Grizzled Veteran (Alliance)
@@ -609,151 +609,151 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Arena Ends
     -- Alterac Valley Start
       -- Alterac Valley Victory
-      [218] = {Faction = 'Both'},
+      [218] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Alterac Valley Veteran
-      [219] = {Faction = 'Both'},
+      [219] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Stormpike Perfection (Alliance)
-      [220] = {Faction = 'Alliance', OtherSide = 873},
+      [220] = {Faction = 'Alliance', OtherSide = 873, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Alterac Grave Robber
-      [221] = {Faction = 'Both'},
+      [221] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Tower Defense
-      [222] = {Faction = 'Both'},
+      [222] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- The Sickly Gazelle
-      [223] = {Faction = 'Both'},
+      [223] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Loyal Defender (Horde)
-      [224] = {Faction = 'Horde', OtherSide = 1151},
+      [224] = {Faction = 'Horde', OtherSide = 1151, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Everything Counts (Alliance)
-      [225] = {Faction = 'Alliance', OtherSide = 1164},
+      [225] = {Faction = 'Alliance', OtherSide = 1164, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- The Alterac Blitz
-      [226] = {Faction = 'Both'},
+      [226] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Alterac Valley All-Star
-      [582] = {Faction = 'Both'},
+      [582] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Frostwolf Howler (Horde)
-      [706] = {Faction = 'Horde', OtherSide = 707},
+      [706] = {Faction = 'Horde', OtherSide = 707, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Stormpike Battle Charger (Alliance)
-      [707] = {Faction = 'Alliance', OtherSide = 706},
+      [707] = {Faction = 'Alliance', OtherSide = 706, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Hero of the Frostwolf Clan (Horde)
-      [708] = {Faction = 'Horde', OtherSide = 709},
+      [708] = {Faction = 'Horde', OtherSide = 709, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Hero of the Stormpike Guard (Alliance)
-      [709] = {Faction = 'Alliance', OtherSide = 708},
+      [709] = {Faction = 'Alliance', OtherSide = 708, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Frostwolf Perfection (Horde)
-      [873] = {Faction = 'Horde', OtherSide = 220},
+      [873] = {Faction = 'Horde', OtherSide = 220, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Loyal Defender (Alliance)
-      [1151] = {Faction = 'Alliance', OtherSide = 224},
+      [1151] = {Faction = 'Alliance', OtherSide = 224, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Everything Counts (Horde)
-      [1164] = {Faction = 'Horde', OtherSide = 225},
+      [1164] = {Faction = 'Horde', OtherSide = 225, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- To the Looter Go the Spoils
-      [1166] = {Faction = 'Both'},
+      [1166] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Master of Alterac Valley (Alliance)
-      [1167] = {Faction = 'Alliance', OtherSide = 1168, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1167},
+      [1167] = {Faction = 'Alliance', OtherSide = 1168, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1167, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Master of Alterac Valley (Horde)
-      [1168] = {Faction = 'Horde', OtherSide = 1167, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1167},
+      [1168] = {Faction = 'Horde', OtherSide = 1167, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1167, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Alterac Valley Ends
     -- Arathi Basin Start
       -- Disgracin' The Basin
-      [73] = {Faction = 'Both'},
+      [73] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Arathi Basin Victory
-      [154] = {Faction = 'Both'},
+      [154] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Arathi Basin Veteran
-      [155] = {Faction = 'Both'},
+      [155] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Territorial Dominance
-      [156] = {Faction = 'Both'},
+      [156] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- To The Rescue!
-      [157] = {Faction = 'Both'},
+      [157] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Me and the Cappin' Makin' it Happen
-      [158] = {Faction = 'Both'},
+      [158] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Let's Get This Done
-      [159] = {Faction = 'Both'},
+      [159] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Resilient Victory
-      [161] = {Faction = 'Both'},
+      [161] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- We Had It All Along *cough*
-      [162] = {Faction = 'Both'},
+      [162] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Arathi Basin Perfection
-      [165] = {Faction = 'Both'},
+      [165] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Arathi Basin All-Star
-      [583] = {Faction = 'Both'},
+      [583] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Arathi Basin Assassin
-      [584] = {Faction = 'Both'},
+      [584] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- The Defiler (Horde)
-      [710] = {Faction = 'Horde', OtherSide = 711},
+      [710] = {Faction = 'Horde', OtherSide = 711, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Knight of Arathor (Alliance)
-      [711] = {Faction = 'Alliance', OtherSide = 710},
+      [711] = {Faction = 'Alliance', OtherSide = 710, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Overly Defensive
-      [1153] = {Faction = 'Both'},
+      [1153] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Master of Arathi Basin (Alliance)
-      [1169] = {Faction = 'Alliance', OtherSide = 1170, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1169},
+      [1169] = {Faction = 'Alliance', OtherSide = 1170, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1169, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Master of Arathi Basin (Horde)
-      [1170] = {Faction = 'Horde', OtherSide = 1169, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1169},
+      [1170] = {Faction = 'Horde', OtherSide = 1169, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1169, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Arathi Basin Ends
     -- Eye of the Storm Start
       -- Eye of the Storm Victory
-      [208] = {Faction = 'Both'},
+      [208] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Eye of the Storm Veteran
-      [209] = {Faction = 'Both'},
+      [209] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Storm Glory
-      [211] = {Faction = 'Both'},
+      [211] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Storm Capper
-      [212] = {Faction = 'Both'},
+      [212] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Stormtrooper
-      [213] = {Faction = 'Both'},
+      [213] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Flurry
-      [214] = {Faction = 'Both'},
+      [214] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Bound for Glory
-      [216] = {Faction = 'Both'},
+      [216] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Bloodthirsty Berserker
-      [233] = {Faction = 'Both'},
+      [233] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Stormy Assassin
-      [587] = {Faction = 'Both'},
+      [587] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- The Perfect Storm
-      [783] = {Faction = 'Both'},
+      [783] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Eye of the Storm Domination
-      [784] = {Faction = 'Both'},
+      [784] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Master of Eye of the Storm
-      [1171] = {Faction = 'Both'},
+      [1171] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Take a Chill Pill
-      [1258] = {Faction = 'Both'},
+      [1258] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Eye of the Storm Ends
     -- Warsong Gulch Start
       -- Warsong Gulch Victory
-      [166] = {Faction = 'Both'},
+      [166] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Warsong Gulch Veteran
-      [167] = {Faction = 'Both'},
+      [167] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Warsong Gulch Perfection
-      [168] = {Faction = 'Both'},
+      [168] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Capture the Flag
-      [199] = {Faction = 'Both'},
+      [199] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Persistent Defender
-      [200] = {Faction = 'Both'},
+      [200] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Warsong Expedience
-      [201] = {Faction = 'Both'},
+      [201] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Quick Cap (Alliance)
-      [202] = {Faction = 'Alliance', OtherSide = 1502},
+      [202] = {Faction = 'Alliance', OtherSide = 1502, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Not In My House (Alliance)
-      [203] = {Faction = 'Alliance', OtherSide = 1251},
+      [203] = {Faction = 'Alliance', OtherSide = 1251, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Ironman
-      [204] = {Faction = 'Both'},
+      [204] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Supreme Defender (Alliance)
-      [206] = {Faction = 'Alliance', OtherSide = 1252},
+      [206] = {Faction = 'Alliance', OtherSide = 1252, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Save The Day
-      [207] = {Faction = 'Both'},
+      [207] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Warsong Outrider (Horde)
-      [712] = {Faction = 'Horde', OtherSide = 713},
+      [712] = {Faction = 'Horde', OtherSide = 713, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Silverwing Sentinel (Alliance)
-      [713] = {Faction = 'Alliance', OtherSide = 712},
+      [713] = {Faction = 'Alliance', OtherSide = 712, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Frenzied Defender
-      [872] = {Faction = 'Both'},
+      [872] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Master of Warsong Gulch (Alliance)
-      [1172] = {Faction = 'Alliance', OtherSide = 1173, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1172},
+      [1172] = {Faction = 'Alliance', OtherSide = 1173, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1172, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Master of Warsong Gulch (Horde)
-      [1173] = {Faction = 'Horde', OtherSide = 1172, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1172},
+      [1173] = {Faction = 'Horde', OtherSide = 1172, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1172, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Not In My House (Horde)
-      [1251] = {Faction = 'Horde', OtherSide = 203},
+      [1251] = {Faction = 'Horde', OtherSide = 203, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Supreme Defender (Horde)
-      [1252] = {Faction = 'Horde', OtherSide = 206},
+      [1252] = {Faction = 'Horde', OtherSide = 206, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Not So Fast
-      [1259] = {Faction = 'Both'},
+      [1259] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Quick Cap (Horde)
-      [1502] = {Faction = 'Horde', OtherSide = 202},
+      [1502] = {Faction = 'Horde', OtherSide = 202, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Warsong Gulch Ends
     -- Strand of the Ancients Start
       -- Strand of the Ancients Victory
@@ -889,15 +889,15 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
 
   -- Dungeons & Raids Start
     -- Classic Dungeonmaster
-    [1283] = {Faction = 'Both'},
+    [1283] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Outland Dungeonmaster
-    [1284] = {Faction = 'Both'},
+    [1284] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Classic Raider
-    [1285] = {Faction = 'Both'},
+    [1285] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Outland Raider
-    [1286] = {Faction = 'Both'},
+    [1286] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Outland Dungeon Hero
-    [1287] = {Faction = 'Both'},
+    [1287] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Northrend Dungeonmaster
     [1288] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Northrend Dungeon Hero
@@ -954,141 +954,141 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     [19440] = {Faction = 'Horde', OtherSide = 19439, ClassicOnly = true, Phase = EXPANSION_03_PHASE4_DEFENSE_PROTOCOL_GAMMA},
     -- Classic Start
       -- Deadmines
-      [628] = {Faction = 'Both', Retroactive = true},
+      [628] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Ragefire Chasm
-      [629] = {Faction = 'Both', Retroactive = true},
+      [629] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Wailing Caverns
-      [630] = {Faction = 'Both'},
+      [630] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Shadowfang Keep
-      [631] = {Faction = 'Both'},
+      [631] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Blackfathom Deeps
-      [632] = {Faction = 'Both', Retroactive = true},
+      [632] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Stormwind Stockade
-      [633] = {Faction = 'Both', Retroactive = true},
+      [633] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Gnomeregan
-      [634] = {Faction = 'Both', Retroactive = true},
+      [634] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Razorfen Kraul
-      [635] = {Faction = 'Both', Retroactive = true},
+      [635] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Razorfen Downs
-      [636] = {Faction = 'Both', Retroactive = true},
+      [636] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Scarlet Monastery
-      [637] = {Faction = 'Both'},
+      [637] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Uldaman
-      [638] = {Faction = 'Both', Retroactive = true},
+      [638] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Zul'Farrak
-      [639] = {Faction = 'Both'},
+      [639] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Maraudon
-      [640] = {Faction = 'Both', Retroactive = true},
+      [640] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Sunken Temple
-      [641] = {Faction = 'Both', Retroactive = true},
+      [641] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Blackrock Depths
-      [642] = {Faction = 'Both', Retroactive = true},
+      [642] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Lower Blackrock Spire
-      [643] = {Faction = 'Both', Retroactive = true},
+      [643] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- King of Dire Maul
-      [644] = {Faction = 'Both'},
+      [644] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Scholomance
-      [645] = {Faction = 'Both'},
+      [645] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Stratholme
-      [646] = {Faction = 'Both', Retroactive = true},
+      [646] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Blackwing Lair
-      [685] = {Faction = 'Both', Retroactive = true},
+      [685] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Molten Core
-      [686] = {Faction = 'Both', Retroactive = true},
+      [686] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Temple of Ahn'Qiraj
-      [687] = {Faction = 'Both', Retroactive = true},
+      [687] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Zul'Gurub
-      [688] = {Faction = 'Both', Retroactive = true},
+      [688] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Ruins of Ahn'Qiraj
-      [689] = {Faction = 'Both', Retroactive = true},
+      [689] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Upper Blackrock Spire
-      [1307] = {Faction = 'Both', Retroactive = true},
+      [1307] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Leeeeeeeeeeeeeroy!
-      [2188] = {Faction = 'Both'},
+      [2188] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Classic Ends
     -- The Burning Crusade Start
       -- Hellfire Ramparts
-      [647] = {Faction = 'Both', Retroactive = true},
+      [647] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- The Blood Furnace
-      [648] = {Faction = 'Both'},
+      [648] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- The Slave Pens
-      [649] = {Faction = 'Both'},
+      [649] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Underbog
-      [650] = {Faction = 'Both'},
+      [650] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Mana-Tombs
-      [651] = {Faction = 'Both', Retroactive = true},
+      [651] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- The Escape From Durnholde
-      [652] = {Faction = 'Both', Retroactive = true},
+      [652] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Sethekk Halls
-      [653] = {Faction = 'Both', Retroactive = true},
+      [653] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Shadow Labyrinth
-      [654] = {Faction = 'Both', Retroactive = true},
+      [654] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Opening of the Dark Portal
-      [655] = {Faction = 'Both', Retroactive = true},
+      [655] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- The Steamvault
-      [656] = {Faction = 'Both', Retroactive = true},
+      [656] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- The Shattered Halls
-      [657] = {Faction = 'Both', Retroactive = true},
+      [657] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- The Mechanar
-      [658] = {Faction = 'Both', Retroactive = true},
+      [658] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- The Botanica
-      [659] = {Faction = 'Both', Retroactive = true},
+      [659] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- The Arcatraz
-      [660] = {Faction = 'Both', Retroactive = true},
+      [660] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Magister's Terrace
-      [661] = {Faction = 'Both', Retroactive = true},
+      [661] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Auchenai Crypts
-      [666] = {Faction = 'Both', Retroactive = true},
+      [666] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Heroic: Hellfire Ramparts
-      [667] = {Faction = 'Both'},
+      [667] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Heroic: The Blood Furnace
-      [668] = {Faction = 'Both'},
+      [668] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Heroic: The Slave Pens
-      [669] = {Faction = 'Both'},
+      [669] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Heroic: Underbog
-      [670] = {Faction = 'Both'},
+      [670] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Heroic: Mana-Tombs
-      [671] = {Faction = 'Both'},
+      [671] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Heroic: Auchenai Crypts
-      [672] = {Faction = 'Both'},
+      [672] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Heroic: The Escape From Durnholde
-      [673] = {Faction = 'Both'},
+      [673] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Heroic: Sethekk Halls
-      [674] = {Faction = 'Both'},
+      [674] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Heroic: Shadow Labyrinth
-      [675] = {Faction = 'Both', Retroactive = true},
+      [675] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Heroic: Opening of the Dark Portal
-      [676] = {Faction = 'Both'},
+      [676] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Heroic: The Steamvault
-      [677] = {Faction = 'Both', Retroactive = true},
+      [677] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Heroic: The Shattered Halls
-      [678] = {Faction = 'Both', Retroactive = true},
+      [678] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Heroic: The Mechanar
-      [679] = {Faction = 'Both'},
+      [679] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Heroic: The Botanica
-      [680] = {Faction = 'Both'},
+      [680] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Heroic: The Arcatraz
-      [681] = {Faction = 'Both', Retroactive = true},
+      [681] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Heroic: Magister's Terrace
-      [682] = {Faction = 'Both'},
+      [682] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Karazhan
-      [690] = {Faction = 'Both', Retroactive = true},
+      [690] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Zul'Aman
-      [691] = {Faction = 'Both', Retroactive = true},
+      [691] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Gruul's Lair
-      [692] = {Faction = 'Both', Retroactive = true},
+      [692] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Magtheridon's Lair
-      [693] = {Faction = 'Both', Retroactive = true},
+      [693] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Serpentshrine Cavern
-      [694] = {Faction = 'Both', Retroactive = true},
+      [694] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- The Battle for Mount Hyjal
-      [695] = {Faction = 'Both', Retroactive = true},
+      [695] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Tempest Keep
-      [696] = {Faction = 'Both', Retroactive = true},
+      [696] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- The Black Temple
-      [697] = {Faction = 'Both', Retroactive = true},
+      [697] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
       -- Sunwell Plateau
-      [698] = {Faction = 'Both', Retroactive = true},
+      [698] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- The Burning Crusade Ends
     -- Lich King Dungeon Start
       -- Utgarde Keep
@@ -1930,68 +1930,68 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
 
   -- Professions Start
     -- Professional Journeyman
-    [116] = {Faction = 'Both'},
+    [116] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Skills to Pay the Bills
-    [730] = {Faction = 'Both'},
+    [730] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Professional Expert
-    [731] = {Faction = 'Both'},
+    [731] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Professional Artisan
-    [732] = {Faction = 'Both'},
+    [732] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Professional Master
-    [733] = {Faction = 'Both'},
+    [733] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Professional Grand Master
     [734] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Working Day and Night
     [735] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Cooking Start
       -- Journeyman Cook
-      [121] = {Faction = 'Both'},
+      [121] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Expert Cook
-      [122] = {Faction = 'Both'},
+      [122] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Artisan Cook
-      [123] = {Faction = 'Both'},
+      [123] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Master Cook
-      [124] = {Faction = 'Both'},
+      [124] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Grand Master Cook
-      [125] = {Faction = 'Both'},
+      [125] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- The Cake Is Not A Lie
-      [877] = {Faction = 'Both'},
+      [877] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Kickin' It Up a Notch
-      [906] = {Faction = 'Both'},
+      [906] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Hail to the Chef (Alliance)
-      [1563] = {Faction = 'Alliance', OtherSide = 1784, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1563},
+      [1563] = {Faction = 'Alliance', OtherSide = 1784, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1563, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- The Northrend Gourmet
-      [1777] = {Faction = 'Both'},
+      [1777] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- The Northrend Gourmet
-      [1778] = {Faction = 'Both'},
+      [1778] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- The Northrend Gourmet
-      [1779] = {Faction = 'Both'},
+      [1779] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Second That Emotion
-      [1780] = {Faction = 'Both'},
+      [1780] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Critter Gitter
-      [1781] = {Faction = 'Both'},
+      [1781] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Our Daily Bread (Alliance)
-      [1782] = {Faction = 'Alliance', OtherSide = 1783},
+      [1782] = {Faction = 'Alliance', OtherSide = 1783, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Our Daily Bread (Horde)
-      [1783] = {Faction = 'Horde', OtherSide = 1782},
+      [1783] = {Faction = 'Horde', OtherSide = 1782, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Hail to the Chef (Horde)
-      [1784] = {Faction = 'Horde', OtherSide = 1563, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1563},
+      [1784] = {Faction = 'Horde', OtherSide = 1563, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1563, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Dinner Impossible
-      [1785] = {Faction = 'Both'},
+      [1785] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Lunch Lady
-      [1795] = {Faction = 'Both'},
+      [1795] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Short Order Cook
-      [1796] = {Faction = 'Both'},
+      [1796] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Chef de Partie
-      [1797] = {Faction = 'Both'},
+      [1797] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Sous Chef
-      [1798] = {Faction = 'Both'},
+      [1798] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Chef de Cuisine
-      [1799] = {Faction = 'Both'},
+      [1799] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- The Outland Gourmet
-      [1800] = {Faction = 'Both'},
+      [1800] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Captain Rumsey's Lager
-      [1801] = {Faction = 'Both'},
+      [1801] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Dalaran Cooking Award
       [1998] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- 10 Dalaran Cooking Awards
@@ -2007,57 +2007,57 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Cooking Ends
     -- Fishing Start
       -- Journeyman Fisherman
-      [126] = {Faction = 'Both'},
+      [126] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Expert Fisherman
-      [127] = {Faction = 'Both'},
+      [127] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Artisan Fisherman
-      [128] = {Faction = 'Both'},
+      [128] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Master Fisherman
-      [129] = {Faction = 'Both'},
+      [129] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Grand Master Fisherman
       [130] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- The Lurker Above
-      [144] = {Faction = 'Both'},
+      [144] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- The Fishing Diplomat
-      [150] = {Faction = 'Both'},
+      [150] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- The Old Gnome and the Sea
-      [153] = {Faction = 'Both'},
+      [153] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Master Angler of Azeroth
-      [306] = {Faction = 'Both'},
+      [306] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Deadliest Catch
-      [560] = {Faction = 'Both'},
+      [560] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Mr. Pinchy's Magical Crawdad Box
-      [726] = {Faction = 'Both'},
+      [726] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- One That Didn't Get Away
-      [878] = {Faction = 'Both'},
+      [878] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Old Man Barlowned
-      [905] = {Faction = 'Both'},
+      [905] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Outland Angler
-      [1225] = {Faction = 'Both'},
+      [1225] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Fish Don't Leave Footprints
-      [1243] = {Faction = 'Both'},
+      [1243] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- The Scavenger
-      [1257] = {Faction = 'Both'},
+      [1257] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Accomplished Angler
-      [1516] = {Faction = 'Both'},
+      [1516] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Northrend Angler
       [1517] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- 25 Fish
-      [1556] = {Faction = 'Both'},
+      [1556] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- 50 Fish
-      [1557] = {Faction = 'Both'},
+      [1557] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- 100 Fish
-      [1558] = {Faction = 'Both'},
+      [1558] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- 250 Fish
-      [1559] = {Faction = 'Both'},
+      [1559] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- 500 Fish
-      [1560] = {Faction = 'Both'},
+      [1560] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- 1000 Fish
-      [1561] = {Faction = 'Both'},
+      [1561] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Old Crafty
-      [1836] = {Faction = 'Both'},
+      [1836] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Old Ironjaw
-      [1837] = {Faction = 'Both'},
+      [1837] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- There's Gold In That There Fountain
       [1957] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- I Smell A Giant Rat
@@ -2075,98 +2075,98 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Fishing Ends
     -- First Aid Start
       -- Journeyman in First Aid
-      [131] = {Faction = 'Both'},
+      [131] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Expert in First Aid
-      [132] = {Faction = 'Both'},
+      [132] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Artisan in First Aid
-      [133] = {Faction = 'Both'},
+      [133] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Master in First Aid
-      [134] = {Faction = 'Both'},
+      [134] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Grand Master in First Aid
       [135] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Stocking Up
-      [137] = {Faction = 'Both'},
+      [137] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Ultimate Triage
-      [141] = {Faction = 'Both'},
+      [141] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- First Aid Ends
   -- Professions End
 
   -- Reputation Start
     -- 30 Exalted Reputations
-    [518] = {Faction = 'Both'},
+    [518] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- 25 Exalted Reputations
-    [519] = {Faction = 'Both'},
+    [519] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- 20 Exalted Reputations
-    [520] = {Faction = 'Both'},
+    [520] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- 15 Exalted Reputations
-    [521] = {Faction = 'Both'},
+    [521] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Somebody Likes Me
-    [522] = {Faction = 'Both'},
+    [522] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- 5 Exalted Reputations
-    [523] = {Faction = 'Both'},
+    [523] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- 10 Exalted Reputations
-    [524] = {Faction = 'Both'},
+    [524] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Ambassador of the Horde (Horde)
-    [762] = {Faction = 'Horde', OtherSide = 948},
+    [762] = {Faction = 'Horde', OtherSide = 948, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- The Diplomat (Alliance)
-    [942] = {Faction = 'Alliance', OtherSide = 943},
+    [942] = {Faction = 'Alliance', OtherSide = 943, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- The Diplomat (Horde)
-    [943] = {Faction = 'Horde', OtherSide = 942},
+    [943] = {Faction = 'Horde', OtherSide = 942, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- The Argent Champion
     [945] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Ambassador of the Alliance (Alliance)
-    [948] = {Faction = 'Alliance', OtherSide = 762},
+    [948] = {Faction = 'Alliance', OtherSide = 762, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Guardian of Cenarius
     [953] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- 35 Exalted Reputations
-    [1014] = {Faction = 'Both'},
+    [1014] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- 40 Exalted Reputations
     [1015] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Classic Start
       -- They Love Me In That Tunnel
-      [944] = {Faction = 'Both'},
+      [944] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- The Argent Dawn
-      [946] = {Faction = 'Both'},
+      [946] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Hydraxian Waterlords
-      [955] = {Faction = 'Both'},
+      [955] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Brood of Nozdormu
-      [956] = {Faction = 'Both'},
+      [956] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Hero of the Zandalar Tribe
-      [957] = {Faction = 'Both'},
+      [957] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Classic Ends
     -- The Burning Crusade Start
       -- The Burning Crusader (Horde)
-      [763] = {Faction = 'Horde', OtherSide = 764},
+      [763] = {Faction = 'Horde', OtherSide = 764, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- The Burning Crusader (Alliance)
-      [764] = {Faction = 'Alliance', OtherSide = 763},
+      [764] = {Faction = 'Alliance', OtherSide = 763, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Cenarion War Hippogryph
-      [893] = {Faction = 'Both'},
+      [893] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Flying High Over Skettis
-      [894] = {Faction = 'Both'},
+      [894] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- A Quest a Day Keeps the Ogres at Bay
-      [896] = {Faction = 'Both'},
+      [896] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- You're So Offensive
-      [897] = {Faction = 'Both'},
+      [897] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- On Wings of Nether
-      [898] = {Faction = 'Both'},
+      [898] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Oh My, Kurenai (Alliance)
-      [899] = {Faction = 'Alliance', OtherSide = 901},
+      [899] = {Faction = 'Alliance', OtherSide = 901, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- The Czar of Sporeggar
-      [900] = {Faction = 'Both'},
+      [900] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Mag'har of Draenor (Horde)
-      [901] = {Faction = 'Horde', OtherSide = 899},
+      [901] = {Faction = 'Horde', OtherSide = 899, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Chief Exalted Officer
-      [902] = {Faction = 'Both'},
+      [902] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Shattrath Divided
-      [903] = {Faction = 'Both'},
+      [903] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Sworn to the Deathsworn
-      [958] = {Faction = 'Both'},
+      [958] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- The Scale of the Sands
-      [959] = {Faction = 'Both'},
+      [959] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- The Violet Eye
-      [960] = {Faction = 'Both'},
+      [960] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Skyshattered
-      [1638] = {Faction = 'Both'},
+      [1638] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- The Burning Crusade Ends
     -- Wrath of the Lich King Start
       -- The Argent Crusade
@@ -2204,328 +2204,328 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- To Honor One's Elders
     [913] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- The Flame Warden (Alliance)
-    [1038] = {Faction = 'Alliance', OtherSide = 1039},
+    [1038] = {Faction = 'Alliance', OtherSide = 1039, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- The Flame Keeper (Horde)
-    [1039] = {Faction = 'Horde', OtherSide = 1038},
+    [1039] = {Faction = 'Horde', OtherSide = 1038, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Hallowed Be Thy Name (Alliance)
-    [1656] = {Faction = 'Alliance', OtherSide = 1657, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1656},
+    [1656] = {Faction = 'Alliance', OtherSide = 1657, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1656, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Hallowed Be Thy Name (Horde)
-    [1657] = {Faction = 'Horde', OtherSide = 1656, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1656},
+    [1657] = {Faction = 'Horde', OtherSide = 1656, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1656, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Brewmaster (Horde)
-    [1683] = {Faction = 'Horde', OtherSide = 1684, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1683},
+    [1683] = {Faction = 'Horde', OtherSide = 1684, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1683, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Brewmaster (Alliance)
-    [1684] = {Faction = 'Alliance', OtherSide = 1683, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1683},
+    [1684] = {Faction = 'Alliance', OtherSide = 1683, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1683, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Merrymaker (Horde)
-    [1691] = {Faction = 'Horde', OtherSide = 1692, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1691},
+    [1691] = {Faction = 'Horde', OtherSide = 1692, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1691, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Merrymaker (Alliance)
-    [1692] = {Faction = 'Alliance', OtherSide = 1691, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1691},
+    [1692] = {Faction = 'Alliance', OtherSide = 1691, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1691, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Fool For Love (Horde)
-    [1693] = {Faction = 'Horde', OtherSide = 1707, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1693},
+    [1693] = {Faction = 'Horde', OtherSide = 1707, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1693, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Fool For Love (Alliance)
-    [1707] = {Faction = 'Alliance', OtherSide = 1693, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1693},
+    [1707] = {Faction = 'Alliance', OtherSide = 1693, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1693, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- For The Children
-    [1793] = {Faction = 'Both'},
+    [1793] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- What A Long, Strange Trip It's Been (Alliance)
     [2144] = {Faction = 'Alliance', OtherSide = 2145, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 2144, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- What A Long, Strange Trip It's Been (Horde)
     [2145] = {Faction = 'Horde', OtherSide = 2144, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 2144, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Noble Gardener (Alliance)
-    [2797] = {Faction = 'Alliance', OtherSide = 2798, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 2798},
+    [2797] = {Faction = 'Alliance', OtherSide = 2798, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 2798, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Noble Gardener (Horde)
-    [2798] = {Faction = 'Horde', OtherSide = 2797, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 2798},
+    [2798] = {Faction = 'Horde', OtherSide = 2797, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 2798, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Dead Man's Party
-    [3456] = {Faction = 'Both'},
+    [3456] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- The Captain's Booty
-    [3457] = {Faction = 'Both'},
+    [3457] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Pilgrim (Alliance)
-    [3478] = {Faction = 'Alliance', OtherSide = 3656, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 3478},
+    [3478] = {Faction = 'Alliance', OtherSide = 3656, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 3478, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Pilgrim (Horde)
-    [3656] = {Faction = 'Horde', OtherSide = 3478, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 3478},
+    [3656] = {Faction = 'Horde', OtherSide = 3478, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 3478, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Lunar Festival Start
       -- A Coin of Ancestry
-      [605] = {Faction = 'Both'},
+      [605] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- 5 Coins of Ancestry
-      [606] = {Faction = 'Both'},
+      [606] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- 10 Coins of Ancestry
-      [607] = {Faction = 'Both'},
+      [607] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- 25 Coins of Ancestry
-      [608] = {Faction = 'Both'},
+      [608] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- 50 Coins of Ancestry
-      [609] = {Faction = 'Both'},
+      [609] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Lunar Festival Finery
-      [626] = {Faction = 'Both'},
+      [626] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Elders of the Dungeons
-      [910] = {Faction = 'Both'},
+      [910] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Elders of Kalimdor
-      [911] = {Faction = 'Both'},
+      [911] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Elders of Eastern Kingdoms
-      [912] = {Faction = 'Both'},
+      [912] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Elders of the Horde
-      [914] = {Faction = 'Both'},
+      [914] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Elders of the Alliance
-      [915] = {Faction = 'Both'},
+      [915] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Elune's Blessing
-      [937] = {Faction = 'Both'},
+      [937] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- The Rocket's Red Glare
-      [1281] = {Faction = 'Both'},
+      [1281] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Elders of Northrend
       [1396] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Frenzied Firecracker
-      [1552] = {Faction = 'Both'},
+      [1552] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Lunar Festival Ends
     -- Love is in the Air Start
       -- Charming
-      [260] = {Faction = 'Both'},
+      [260] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Shafted!
-      [1188] = {Faction = 'Both'},
+      [1188] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Flirt With Disaster (Alliance)
-      [1279] = {Faction = 'Alliance', OtherSide = 1280},
+      [1279] = {Faction = 'Alliance', OtherSide = 1280, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Flirt With Disaster (Horde)
-      [1280] = {Faction = 'Horde', OtherSide = 1279},
+      [1280] = {Faction = 'Horde', OtherSide = 1279, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Lonely?
-      [1291] = {Faction = 'Both'},
+      [1291] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Lovely Luck Is On Your Side
-      [1694] = {Faction = 'Both'},
+      [1694] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Dangerous Love
-      [1695] = {Faction = 'Both'},
+      [1695] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- The Rocket's Pink Glare
-      [1696] = {Faction = 'Both'},
+      [1696] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Nation of Adoration (Alliance)
-      [1697] = {Faction = 'Alliance', OtherSide = 1698},
+      [1697] = {Faction = 'Alliance', OtherSide = 1698, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Nation of Adoration (Horde)
-      [1698] = {Faction = 'Horde', OtherSide = 1697},
+      [1698] = {Faction = 'Horde', OtherSide = 1697, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Fistful of Love
-      [1699] = {Faction = 'Both'},
+      [1699] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Perma-Peddle
-      [1700] = {Faction = 'Both'},
+      [1700] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Be Mine!
-      [1701] = {Faction = 'Both'},
+      [1701] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Sweet Tooth
-      [1702] = {Faction = 'Both'},
+      [1702] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- My Love is Like a Red, Red Rose
-      [1703] = {Faction = 'Both'},
+      [1703] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- I Pitied The Fool
-      [1704] = {Faction = 'Both'},
+      [1704] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Tough Love
-      [4624] = {Faction = 'Both'},
+      [4624] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Love is in the Air Ends
     -- Noblegarden Start
       -- Sunday's Finest
-      [248] = {Faction = 'Both'},
+      [248] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Dressed for the Occasion
-      [249] = {Faction = 'Both'},
+      [249] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Hard Boiled
-      [2416] = {Faction = 'Both'},
+      [2416] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Chocolate Lover
-      [2417] = {Faction = 'Both'},
+      [2417] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Chocoholic
-      [2418] = {Faction = 'Both'},
+      [2418] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Spring Fling (Alliance)
-      [2419] = {Faction = 'Alliance', OtherSide = 2497},
+      [2419] = {Faction = 'Alliance', OtherSide = 2497, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Noble Garden (Horde)
-      [2420] = {Faction = 'Horde', OtherSide = 2421},
+      [2420] = {Faction = 'Horde', OtherSide = 2421, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Noble Garden (Alliance)
-      [2421] = {Faction = 'Alliance', OtherSide = 2420},
+      [2421] = {Faction = 'Alliance', OtherSide = 2420, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Shake Your Bunny-Maker
-      [2422] = {Faction = 'Both'},
+      [2422] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Desert Rose
-      [2436] = {Faction = 'Both'},
+      [2436] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Spring Fling (Horde)
-      [2497] = {Faction = 'Horde', OtherSide = 2419},
+      [2497] = {Faction = 'Horde', OtherSide = 2419, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Blushing Bride
-      [2576] = {Faction = 'Both'},
+      [2576] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- I Found One!
-      [2676] = {Faction = 'Both'},
+      [2676] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Noblegarden Ends
     -- Children's Week Start
       -- Veteran Nanny
-      [275] = {Faction = 'Both'},
+      [275] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- School of Hard Knocks
-      [1786] = {Faction = 'Both'},
+      [1786] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Once An Orphan... -- Not in Classic Removed in OG WOTLK Patch 3.1.0 before anyone was able to complete it
-      --[1787] = {Faction = 'Both', Removed = LE_EXPANSION_WRATH_OF_THE_LICH_KING},
+      --[1787] = {Faction = 'Both', Removed = LE_EXPANSION_WRATH_OF_THE_LICH_KING, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Bad Example
-      [1788] = {Faction = 'Both'},
+      [1788] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Daily Chores
-      [1789] = {Faction = 'Both'},
+      [1789] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Hail To The King, Baby
-      [1790] = {Faction = 'Both'},
+      [1790] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Home Alone
-      [1791] = {Faction = 'Both'},
+      [1791] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Aw, Isn't It Cute?
-      [1792] = {Faction = 'Both'},
+      [1792] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Children's Week Ends
     -- Midsummer Start
       -- Ice the Frost Lord
-      [263] = {Faction = 'Both'},
+      [263] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Burning Hot Pole Dance
-      [271] = {Faction = 'Both'},
+      [271] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Torch Juggler
-      [272] = {Faction = 'Both'},
+      [272] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Flame Warden of Eastern Kingdoms (Alliance)
-      [1022] = {Faction = 'Alliance', OtherSide = 1025},
+      [1022] = {Faction = 'Alliance', OtherSide = 1025, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Flame Warden of Kalimdor (Alliance)
-      [1023] = {Faction = 'Alliance', OtherSide = 1026},
+      [1023] = {Faction = 'Alliance', OtherSide = 1026, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Flame Warden of Outland (Alliance)
-      [1024] = {Faction = 'Alliance', OtherSide = 1027},
+      [1024] = {Faction = 'Alliance', OtherSide = 1027, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Flame Keeper of Eastern Kingdoms (Horde)
-      [1025] = {Faction = 'Horde', OtherSide = 1022},
+      [1025] = {Faction = 'Horde', OtherSide = 1022, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Flame Keeper of Kalimdor (Horde)
-      [1026] = {Faction = 'Horde', OtherSide = 1023},
+      [1026] = {Faction = 'Horde', OtherSide = 1023, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Flame Keeper of Outland (Horde)
-      [1027] = {Faction = 'Horde', OtherSide = 1024},
+      [1027] = {Faction = 'Horde', OtherSide = 1024, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Extinguishing Eastern Kingdoms (Alliance)
-      [1028] = {Faction = 'Alliance', OtherSide = 1031},
+      [1028] = {Faction = 'Alliance', OtherSide = 1031, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Extinguishing Kalimdor (Alliance)
-      [1029] = {Faction = 'Alliance', OtherSide = 1032},
+      [1029] = {Faction = 'Alliance', OtherSide = 1032, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Extinguishing Outland (Alliance)
-      [1030] = {Faction = 'Alliance', OtherSide = 1033},
+      [1030] = {Faction = 'Alliance', OtherSide = 1033, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Extinguishing Eastern Kingdoms (Horde)
-      [1031] = {Faction = 'Horde', OtherSide = 1028},
+      [1031] = {Faction = 'Horde', OtherSide = 1028, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Extinguishing Kalimdor (Horde)
-      [1032] = {Faction = 'Horde', OtherSide = 1029},
+      [1032] = {Faction = 'Horde', OtherSide = 1029, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Extinguishing Outland (Horde)
-      [1033] = {Faction = 'Horde', OtherSide = 1030},
+      [1033] = {Faction = 'Horde', OtherSide = 1030, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- The Fires of Azeroth (Alliance)
-      [1034] = {Faction = 'Alliance', OtherSide = 1036},
+      [1034] = {Faction = 'Alliance', OtherSide = 1036, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Desecration of the Horde (Alliance)
-      [1035] = {Faction = 'Alliance', OtherSide = 1037},
+      [1035] = {Faction = 'Alliance', OtherSide = 1037, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- The Fires of Azeroth (Horde)
-      [1036] = {Faction = 'Horde', OtherSide = 1034},
+      [1036] = {Faction = 'Horde', OtherSide = 1034, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Desecration of the Alliance (Horde)
-      [1037] = {Faction = 'Horde', OtherSide = 1035},
+      [1037] = {Faction = 'Horde', OtherSide = 1035, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- King of the Fire Festival
-      [1145] = {Faction = 'Both'},
+      [1145] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Midsummer Ends
     -- Brewfest Start
       -- Disturbing the Peace
-      [293] = {Faction = 'Both'},
+      [293] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Direbrewfest
-      [295] = {Faction = 'Both'},
+      [295] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Have Keg, Will Travel
-      [303] = {Faction = 'Both'},
+      [303] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Brew of the Year
-      [1183] = {Faction = 'Both'},
+      [1183] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Strange Brew (Alliance)
-      [1184] = {Faction = 'Alliance', OtherSide = 1203},
+      [1184] = {Faction = 'Alliance', OtherSide = 1203, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- The Brewfest Diet
-      [1185] = {Faction = 'Both'},
+      [1185] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Down With The Dark Iron
-      [1186] = {Faction = 'Both'},
+      [1186] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Strange Brew (Horde)
-      [1203] = {Faction = 'Horde', OtherSide = 1184},
+      [1203] = {Faction = 'Horde', OtherSide = 1184, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Drunken Stupor
-      [1260] = {Faction = 'Both'},
+      [1260] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Does Your Wolpertinger Linger?
-      [1936] = {Faction = 'Both'},
+      [1936] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Brew of the Month
-      [2796] = {Faction = 'Both'},
+      [2796] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Brewfest Ends
     -- Hallow's End Start
       -- Bring Me The Head of... Oh Wait
-      [255] = {Faction = 'Both'},
+      [255] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- The Masquerade
-      [283] = {Faction = 'Both'},
+      [283] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- A Mask for All Occasions
-      [284] = {Faction = 'Both'},
+      [284] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Out With It
-      [288] = {Faction = 'Both'},
+      [288] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- The Savior of Hallow's End
-      [289] = {Faction = 'Both'},
+      [289] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Check Your Head
-      [291] = {Faction = 'Both'},
+      [291] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Sinister Calling
-      [292] = {Faction = 'Both'},
+      [292] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Tricks and Treats of Kalimdor (Alliance)
-      [963] = {Faction = 'Alliance', OtherSide = 965},
+      [963] = {Faction = 'Alliance', OtherSide = 965, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Tricks and Treats of Kalimdor (Horde)
-      [965] = {Faction = 'Horde', OtherSide = 963},
+      [965] = {Faction = 'Horde', OtherSide = 963, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Tricks and Treats of Eastern Kingdoms (Alliance)
-      [966] = {Faction = 'Alliance', OtherSide = 967},
+      [966] = {Faction = 'Alliance', OtherSide = 967, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Tricks and Treats of Eastern Kingdoms (Horde)
-      [967] = {Faction = 'Horde', OtherSide = 966},
+      [967] = {Faction = 'Horde', OtherSide = 966, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Tricks and Treats of Outland (Horde)
-      [968] = {Faction = 'Horde', OtherSide = 969},
+      [968] = {Faction = 'Horde', OtherSide = 969, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Tricks and Treats of Outland (Alliance)
-      [969] = {Faction = 'Alliance', OtherSide = 968},
+      [969] = {Faction = 'Alliance', OtherSide = 968, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Tricks and Treats of Azeroth (Alliance)
-      [970] = {Faction = 'Alliance', OtherSide = 971, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 971},
+      [970] = {Faction = 'Alliance', OtherSide = 971, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 971, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Tricks and Treats of Azeroth (Horde)
-      [971] = {Faction = 'Horde', OtherSide = 970, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 971},
+      [971] = {Faction = 'Horde', OtherSide = 970, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 971, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Trick or Treat!
-      [972] = {Faction = 'Both'},
+      [972] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- The Mask Task
-      [979] = {Faction = 'Both'},
+      [979] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- That Sparkling Smile
-      [981] = {Faction = 'Both'},
+      [981] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Rotten Hallow (Alliance)
-      [1040] = {Faction = 'Alliance', OtherSide = 1041},
+      [1040] = {Faction = 'Alliance', OtherSide = 1041, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Rotten Hallow (Horde)
-      [1041] = {Faction = 'Horde', OtherSide = 1040},
+      [1041] = {Faction = 'Horde', OtherSide = 1040, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- G.N.E.R.D. Rage
-      [1261] = {Faction = 'Both'},
+      [1261] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Hallow's End Ends
     -- Pilgrim's Bounty Start
       -- Pilgrim's Paunch (Alliance)
-      [3556] = {Faction = 'Alliance', OtherSide = 3557},
+      [3556] = {Faction = 'Alliance', OtherSide = 3557, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Pilgrim's Paunch (Horde)
-      [3557] = {Faction = 'Horde', OtherSide = 3556},
+      [3557] = {Faction = 'Horde', OtherSide = 3556, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Sharing is Caring
-      [3558] = {Faction = 'Both'},
+      [3558] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Turkey Lurkey
-      [3559] = {Faction = 'Both'},
+      [3559] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Now We're Cookin' (Alliance)
-      [3576] = {Faction = 'Alliance', OtherSide = 3577},
+      [3576] = {Faction = 'Alliance', OtherSide = 3577, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Now We're Cookin' (Horde)
-      [3577] = {Faction = 'Horde', OtherSide = 3576},
+      [3577] = {Faction = 'Horde', OtherSide = 3576, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- The Turkinator
-      [3578] = {Faction = 'Both'},
+      [3578] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- 'FOOD FIGHT!'
-      [3579] = {Faction = 'Both'},
+      [3579] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Pilgrim's Peril (Alliance)
-      [3580] = {Faction = 'Alliance', OtherSide = 3581},
+      [3580] = {Faction = 'Alliance', OtherSide = 3581, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Pilgrim's Peril (Horde)
-      [3581] = {Faction = 'Horde', OtherSide = 3580},
+      [3581] = {Faction = 'Horde', OtherSide = 3580, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Terokkar Turkey Time
-      [3582] = {Faction = 'Both'},
+      [3582] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Pilgrim's Progress (Alliance)
-      [3596] = {Faction = 'Alliance', OtherSide = 3597},
+      [3596] = {Faction = 'Alliance', OtherSide = 3597, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Pilgrim's Progress (Horde)
-      [3597] = {Faction = 'Horde', OtherSide = 3596},
+      [3597] = {Faction = 'Horde', OtherSide = 3596, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Pilgrim's Bounty Ends
     -- Winter Veil Start
       -- With a Little Helper from My Friends
-      [252] = {Faction = 'Both'},
+      [252] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Scrooge (Horde)
-      [259] = {Faction = 'Horde', OtherSide = 1255},
+      [259] = {Faction = 'Horde', OtherSide = 1255, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- On Metzen!
-      [273] = {Faction = 'Both'},
+      [273] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- 'Tis the Season
-      [277] = {Faction = 'Both'},
+      [277] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Simply Abominable
-      [279] = {Faction = 'Both'},
+      [279] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Scrooge (Alliance)
-      [1255] = {Faction = 'Alliance', OtherSide = 259},
+      [1255] = {Faction = 'Alliance', OtherSide = 259, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Fa-la-la-la-Ogri'la
-      [1282] = {Faction = 'Both'},
+      [1282] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Crashin' & Thrashin'
-      [1295] = {Faction = 'Both'},
+      [1295] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Holiday Bromance (Horde)
-      [1685] = {Faction = 'Horde', OtherSide = 1686},
+      [1685] = {Faction = 'Horde', OtherSide = 1686, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Holiday Bromance (Alliance)
-      [1686] = {Faction = 'Alliance', OtherSide = 1685},
+      [1686] = {Faction = 'Alliance', OtherSide = 1685, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- Let It Snow
-      [1687] = {Faction = 'Both'},
+      [1687] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- The Winter Veil Gourmet
-      [1688] = {Faction = 'Both'},
+      [1688] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- He Knows If You've Been Naughty
-      [1689] = {Faction = 'Both'},
+      [1689] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- A Frosty Shake
-      [1690] = {Faction = 'Both'},
+      [1690] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
       -- BB King (Alliance)
-      [4436] = {Faction = 'Alliance', OtherSide = 4437},
+      [4436] = {Faction = 'Alliance', OtherSide = 4437, Phase = EXPANSION_03_PHASE0_PREPATH},
       -- BB King (Horde)
-      [4437] = {Faction = 'Horde', OtherSide = 4436},
+      [4437] = {Faction = 'Horde', OtherSide = 4436, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Winter Veil Ends
     -- Argent Tournament Start
       -- Argent Aspiration
@@ -2611,73 +2611,73 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Big Blizzard Bear
     [415] = {Faction = 'Both', Phase = UNRELEASED_PROMOTIONS, Retroactive = true},
     -- Scarab Lord
-    [416] = {Faction = 'Both', Retroactive = true},
+    [416] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Merciless Gladiator
-    [418] = {Faction = 'Both', Retroactive = true},
+    [418] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Vengeful Gladiator
-    [419] = {Faction = 'Both', Retroactive = true},
+    [419] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Brutal Gladiator
-    [420] = {Faction = 'Both', Retroactive = true},
+    [420] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Why? Because It's Red
-    [424] = {Faction = 'Both', Retroactive = true},
+    [424] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Atiesh, Greatstaff of the Guardian
-    [425] = {Faction = 'Both', Retroactive = true},
+    [425] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Warglaives of Azzinoth
-    [426] = {Faction = 'Both', Retroactive = true},
+    [426] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Thunderfury, Blessed Blade of the Windseeker
-    [428] = {Faction = 'Both', Retroactive = true},
+    [428] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Sulfuras, Hand of Ragnaros
-    [429] = {Faction = 'Both', Retroactive = true},
+    [429] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Amani War Bear
-    [430] = {Faction = 'Both', Retroactive = true},
+    [430] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Hand of A'dal
-    [431] = {Faction = 'Both', Retroactive = true},
+    [431] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Champion of the Naaru
-    [432] = {Faction = 'Both', Retroactive = true},
+    [432] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Grand Marshal (Alliance)
-    [433] = {Faction = 'Alliance', OtherSide = 443, Retroactive = true, VanillaOnly = true},
+    [433] = {Faction = 'Alliance', OtherSide = 443, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true, VanillaOnly = true},
     -- Field Marshal (Alliance)
-    [434] = {Faction = 'Alliance', OtherSide = 445, Retroactive = true, VanillaOnly = true},
+    [434] = {Faction = 'Alliance', OtherSide = 445, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true, VanillaOnly = true},
     -- Commander (Alliance)
-    [435] = {Faction = 'Alliance', OtherSide = 444, Retroactive = true, VanillaOnly = true},
+    [435] = {Faction = 'Alliance', OtherSide = 444, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true, VanillaOnly = true},
     -- Lieutenant Commander (Alliance)
-    [436] = {Faction = 'Alliance', OtherSide = 447, Retroactive = true, VanillaOnly = true},
+    [436] = {Faction = 'Alliance', OtherSide = 447, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true, VanillaOnly = true},
     -- Knight-Champion (Alliance)
-    [437] = {Faction = 'Alliance', OtherSide = 448, Retroactive = true, VanillaOnly = true},
+    [437] = {Faction = 'Alliance', OtherSide = 448, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true, VanillaOnly = true},
     -- Knight-Captain (Alliance)
-    [438] = {Faction = 'Alliance', OtherSide = 469, Retroactive = true, VanillaOnly = true},
+    [438] = {Faction = 'Alliance', OtherSide = 469, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true, VanillaOnly = true},
     -- Knight (Alliance)
-    [439] = {Faction = 'Alliance', OtherSide = 451, Retroactive = true, VanillaOnly = true},
+    [439] = {Faction = 'Alliance', OtherSide = 451, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true, VanillaOnly = true},
     -- Sergeant Major (Alliance)
-    [440] = {Faction = 'Alliance', OtherSide = 452, Retroactive = true, VanillaOnly = true},
+    [440] = {Faction = 'Alliance', OtherSide = 452, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true, VanillaOnly = true},
     -- Master Sergeant (Alliance)
-    [441] = {Faction = 'Alliance', OtherSide = 450, Retroactive = true, VanillaOnly = true},
+    [441] = {Faction = 'Alliance', OtherSide = 450, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true, VanillaOnly = true},
     -- Private (Alliance)
-    [442] = {Faction = 'Alliance', OtherSide = 454, Retroactive = true, VanillaOnly = true},
+    [442] = {Faction = 'Alliance', OtherSide = 454, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true, VanillaOnly = true},
     -- High Warlord (Horde)
-    [443] = {Faction = 'Horde', OtherSide = 433, Retroactive = true, VanillaOnly = true},
+    [443] = {Faction = 'Horde', OtherSide = 433, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true, VanillaOnly = true},
     -- Lieutenant General (Horde)
-    [444] = {Faction = 'Horde', OtherSide = 435, Retroactive = true, VanillaOnly = true},
+    [444] = {Faction = 'Horde', OtherSide = 435, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true, VanillaOnly = true},
     -- Warlord (Horde)
-    [445] = {Faction = 'Horde', OtherSide = 434, Retroactive = true, VanillaOnly = true},
+    [445] = {Faction = 'Horde', OtherSide = 434, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true, VanillaOnly = true},
     -- General (Horde)
-    [446] = {Faction = 'Horde', OtherSide = 473, Retroactive = true, VanillaOnly = true},
+    [446] = {Faction = 'Horde', OtherSide = 473, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true, VanillaOnly = true},
     -- Champion (Horde)
-    [447] = {Faction = 'Horde', OtherSide = 436, Retroactive = true, VanillaOnly = true},
+    [447] = {Faction = 'Horde', OtherSide = 436, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true, VanillaOnly = true},
     -- Centurion (Horde)
-    [448] = {Faction = 'Horde', OtherSide = 437, Retroactive = true, VanillaOnly = true},
+    [448] = {Faction = 'Horde', OtherSide = 437, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true, VanillaOnly = true},
     -- Blood Guard (Horde)
-    [449] = {Faction = 'Horde', OtherSide = 472, Retroactive = true, VanillaOnly = true},
+    [449] = {Faction = 'Horde', OtherSide = 472, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true, VanillaOnly = true},
     -- Senior Sergeant (Horde)
-    [450] = {Faction = 'Horde', OtherSide = 441, Retroactive = true, VanillaOnly = true},
+    [450] = {Faction = 'Horde', OtherSide = 441, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true, VanillaOnly = true},
     -- Stone Guard (Horde)
-    [451] = {Faction = 'Horde', OtherSide = 439, Retroactive = true, VanillaOnly = true},
+    [451] = {Faction = 'Horde', OtherSide = 439, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true, VanillaOnly = true},
     -- First Sergeant (Horde)
-    [452] = {Faction = 'Horde', OtherSide = 440, Retroactive = true, VanillaOnly = true},
+    [452] = {Faction = 'Horde', OtherSide = 440, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true, VanillaOnly = true},
     -- Sergeant (Horde)
-    [453] = {Faction = 'Horde', OtherSide = 471, Retroactive = true, VanillaOnly = true},
+    [453] = {Faction = 'Horde', OtherSide = 471, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true, VanillaOnly = true},
     -- Scout (Horde)
-    [454] = {Faction = 'Horde', OtherSide = 442, Retroactive = true, VanillaOnly = true},
+    [454] = {Faction = 'Horde', OtherSide = 442, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true, VanillaOnly = true},
     -- Realm First! Obsidian Slayer
     [456] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
     -- Realm First! Level 80
@@ -2703,63 +2703,63 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Realm First! Level 80 Shaman
     [467] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Grunt (Horde)
-    [468] = {Faction = 'Horde', OtherSide = 470, Retroactive = true},
+    [468] = {Faction = 'Horde', OtherSide = 470, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Legionnaire (Horde)
-    [469] = {Faction = 'Horde', OtherSide = 438, Retroactive = true},
+    [469] = {Faction = 'Horde', OtherSide = 438, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Corporal (Alliance)
-    [470] = {Faction = 'Alliance', OtherSide = 468, Retroactive = true},
+    [470] = {Faction = 'Alliance', OtherSide = 468, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Sergeant (Alliance)
-    [471] = {Faction = 'Alliance', OtherSide = 453, Retroactive = true},
+    [471] = {Faction = 'Alliance', OtherSide = 453, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Knight-Lieutenant (Alliance)
-    [472] = {Faction = 'Alliance', OtherSide = 449, Retroactive = true},
+    [472] = {Faction = 'Alliance', OtherSide = 449, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Marshal (Alliance)
-    [473] = {Faction = 'Alliance', OtherSide = 446, Retroactive = true},
+    [473] = {Faction = 'Alliance', OtherSide = 446, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Collector's Edition: Mini-Diablo
-    [662] = {Faction = 'Both', Retroactive = true},
+    [662] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Collector's Edition: Panda
-    [663] = {Faction = 'Both', Retroactive = true},
+    [663] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Collector's Edition: Zergling
-    [664] = {Faction = 'Both', Retroactive = true},
+    [664] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Collector's Edition: Netherwhelp
-    [665] = {Faction = 'Both', Retroactive = true},
+    [665] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Collector's Edition: Frost Wyrm Whelp
-    [683] = {Faction = 'Both'},
+    [683] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Onyxia's Lair (Level 60)
-    [684] = {Faction = 'Both', Retroactive = true},
+    [684] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Thori'dal, the Stars' Fury
-    [725] = {Faction = 'Both'},
+    [725] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Deathcharger's Reins
-    [729] = {Faction = 'Both', Retroactive = true},
+    [729] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Avast Ye, Admiral!
-    [871] = {Faction = 'Both', Retroactive = true},
+    [871] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Old School Ride
     [879] = {Faction = 'Both', Phase = UNRELEASED_PROMOTIONS, Retroactive = true, VanillaOnly = true},
     -- Swift Zulian Tiger
-    [880] = {Faction = 'Both', Retroactive = true},
+    [880] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Swift Razzashi Raptor
-    [881] = {Faction = 'Both', Retroactive = true},
+    [881] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Fiery Warhorse's Reins
-    [882] = {Faction = 'Both', Retroactive = true},
+    [882] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Reins of the Raven Lord
-    [883] = {Faction = 'Both', Retroactive = true},
+    [883] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Swift White Hawkstrider
-    [884] = {Faction = 'Both', Retroactive = true},
+    [884] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Ashes of Al'ar
-    [885] = {Faction = 'Both', Retroactive = true},
+    [885] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Swift Nether Drake
-    [886] = {Faction = 'Both', Retroactive = true},
+    [886] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Merciless Nether Drake
-    [887] = {Faction = 'Both', Retroactive = true},
+    [887] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Vengeful Nether Drake
-    [888] = {Faction = 'Both', Retroactive = true},
+    [888] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- The Horseman's Reins
-    [980] = {Faction = 'Both', Retroactive = true},
+    [980] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Hero of Shattrath
-    [1205] = {Faction = 'Both'},
+    [1205] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Yellow Brewfest Stein (Never available in Classic. TBC started with 2008 Reward Blue Brewfest Stein)
     [1292] = {Faction = 'Both', Phase = UNRELEASED_PROMOTIONS, Retroactive = true},
     -- Blue Brewfest Stein
-    [1293] = {Faction = 'Both', Retroactive = true},
+    [1293] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Realm First! Magic Seeker
     [1400] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
     -- Realm First! Conqueror of Naxxramas
@@ -2817,39 +2817,39 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Realm First! Northrend Vanguard
     [1463] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Competitor's Tabard
-    [1636] = {Faction = 'Both', Retroactive = true},
+    [1636] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Spirit of Competition
-    [1637] = {Faction = 'Both', Retroactive = true},
+    [1637] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Clockwork Rocket Bot
-    [1705] = {Faction = 'Both'},
+    [1705] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Crashin' Thrashin' Racer
-    [1706] = {Faction = 'Both'},
+    [1706] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Timear Foresees
     [2018] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Proof of Demise
     [2019] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Tabard of the Protector
-    [2079] = {Faction = 'Both', Retroactive = true},
+    [2079] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Grand Black War Mammoth
     [2081] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
     -- Tabard of the Argent Dawn
-    [2116] = {Faction = 'Both'},
+    [2116] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Brutal Nether Drake
-    [2316] = {Faction = 'Both', Retroactive = true},
+    [2316] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Insane in the Membrane
-    [2336] = {Faction = 'Both'},
+    [2336] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Dreadsteed of Xoroth
-    [2357] = {Faction = 'Both', Retroactive = true},
+    [2357] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Charger
-    [2358] = {Faction = 'Both', Retroactive = true},
+    [2358] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Swift Flight Form
-    [2359] = {Faction = 'Both', Retroactive = true},
+    [2359] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- WoW's 4th Anniversary
     [2398] = {Faction = 'Both', Phase = UNRELEASED_PROMOTIONS},
     -- Vampire Hunter
-    [2456] = {Faction = 'Both'},
+    [2456] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- The Fifth Element
-    [2496] = {Faction = 'Both', Retroactive = true},
+    [2496] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Deadly Gladiator's Frostwyrm
     [3096] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_END},
     -- Realm First! Death's Demise
@@ -2861,13 +2861,13 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Deadly Gladiator
     [3336] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_END},
     -- Winterspring Frostsaber (Alliance)
-    [3356] = {Faction = 'Alliance', OtherSide = 3357, Retroactive = true},
+    [3356] = {Faction = 'Alliance', OtherSide = 3357, Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- Venomhide Ravasaur (Horde)
-    [3357] = {Faction = 'Horde', OtherSide = 3356},
+    [3357] = {Faction = 'Horde', OtherSide = 3356, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Furious Gladiator
     [3436] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ARENA_SEASON_6_END},
     -- A Brew-FAST Mount
-    [3496] = {Faction = 'Both', Retroactive = true},
+    [3496] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH, Retroactive = true},
     -- The Marine Marine
     [3536] = {Faction = 'Both', Phase = UNRELEASED_PROMOTIONS},
     -- Murkimus the Gladiator
@@ -2891,7 +2891,7 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- WoW's 5th Anniversary
     [4400] = {Faction = 'Both', Phase = UNRELEASED_PROMOTIONS},
     -- It's Over Nine Thousand!
-    [4496] = {Faction = 'Both'},
+    [4496] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Realm First! Fall of the Lich King
     [4576] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
     -- Wrathful Gladiator
@@ -2905,9 +2905,9 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- And I'll Form the Head!
     [4626] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
     -- X-45 Heartbreaker
-    [4627] = {Faction = 'Both'},
+    [4627] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Green Brewfest Stein
-    [4782] = {Faction = 'Both'},
+    [4782] = {Faction = 'Both', Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Emblematic (Alliance)
     [4784] = {Faction = 'Alliance', OtherSide = 4785, Removed = LE_EXPANSION_CATACLYSM, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Emblematic (Horde)
@@ -2919,41 +2919,41 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Collector's Edition: Mini Thor
     [4824] = {Faction = 'Both', Phase = UNRELEASED_PROMOTIONS},
     -- Infernal Gladiator
-    [15018] = {Faction = 'Both', ClassicOnly = true},
+    [15018] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Gladiator: Season 1
-    [15019] = {Faction = 'Both', ClassicOnly = true},
+    [15019] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Duelist: Season 1
-    [15020] = {Faction = 'Both', ClassicOnly = true},
+    [15020] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Rival: Season 1
-    [15021] = {Faction = 'Both', ClassicOnly = true},
+    [15021] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Challenger: Season 1
-    [15022] = {Faction = 'Both', ClassicOnly = true},
+    [15022] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- [DNT] BCC Arena Tournament - Vanquisher Title
-    --[15198] = {Faction = 'Both', ClassicOnly = true},
+    --[15198] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Gladiator: Season 2
-    [15199] = {Faction = 'Both', ClassicOnly = true},
+    [15199] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Gladiator: Season 4
-    [15200] = {Faction = 'Both', ClassicOnly = true},
+    [15200] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Duelist: Season 4
-    [15201] = {Faction = 'Both', ClassicOnly = true},
+    [15201] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Rival: Season 4
-    [15202] = {Faction = 'Both', ClassicOnly = true},
+    [15202] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Challenger: Season 4
-    [15203] = {Faction = 'Both', ClassicOnly = true},
+    [15203] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Gladiator: Season 3
-    [15204] = {Faction = 'Both', ClassicOnly = true},
+    [15204] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Duelist: Season 3
-    [15205] = {Faction = 'Both', ClassicOnly = true},
+    [15205] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Rival: Season 3
-    [15206] = {Faction = 'Both', ClassicOnly = true},
+    [15206] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Challenger: Season 3
-    [15207] = {Faction = 'Both', ClassicOnly = true},
+    [15207] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Duelist: Season 2
-    [15208] = {Faction = 'Both', ClassicOnly = true},
+    [15208] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Rival: Season 2
-    [15209] = {Faction = 'Both', ClassicOnly = true},
+    [15209] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Challenger: Season 2
-    [15210] = {Faction = 'Both', ClassicOnly = true},
+    [15210] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Survivor of the Firelord (Season of Mastery)
     [15330] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_01_PHASE0_SEASON_OF_MASTERY},
     -- [DNT] Survivor (Season of Mastery) (hidden)
@@ -2967,24 +2967,24 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- The Immortal (Season of Mastery)
     [15637] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_01_PHASE0_SEASON_OF_MASTERY},
     -- &lt;Hidden&gt; Joyous Journeys - Hit 70 with Buff Joyous Journeys
-    --[15853] = {Faction = 'Both', ClassicOnly = true},
+    --[15853] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- The Perfect Pebble
-    [16332] = {Faction = 'Both', ClassicOnly = true},
+    [16332] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- [DNT] Heirloom Tracking - Bloodied Arcanite Reaper (Hidden)
-    --[16397] = {Faction = 'Both', ClassicOnly = true},
+    --[16397] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Soul of Iron (Season of Mastery)
     [16433] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_01_PHASE0_SEASON_OF_MASTERY},
     -- [DNT] Soul of Iron Tracker (Season of Mastery) (hidden)
     --[16437] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_01_PHASE0_SEASON_OF_MASTERY},
     -- [DNT] Joyous Journeys - Hit 80 with Buff Joyous Journeys (hidden)
-    --[17328] = {Faction = 'Both', ClassicOnly = true},
+    --[17328] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- Ahead of the Curve: Yogg-Saron
-    [17340] = {Faction = 'Both', ClassicOnly = true},
+    [17340] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE2_ULDUAR},
     -- Cutting Edge: Ulduar
-    [17341] = {Faction = 'Both', ClassicOnly = true},
+    [17341] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE2_ULDUAR},
     -- [DNT] Joyous Journeys - Hit 80 with Buff Joyous Journeys (hidden)
-    --[18375] = {Faction = 'Both', ClassicOnly = true},
+    --[18375] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE0_PREPATH},
     -- [DNT] Joyous Journeys - Hit 80 with Buff Joyous Journeys (hidden)
-    --[18376] = {Faction = 'Both', ClassicOnly = true},
+    --[18376] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE0_PREPATH},
   -- Feats of Strength End
 };
