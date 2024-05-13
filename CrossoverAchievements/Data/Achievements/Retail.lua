@@ -452,8 +452,52 @@ CrossoverAchievements.Data.Achievements[GameVersion_Retail].List = {
       [17104] = {Faction = 'Alliance', OtherSide = 17105},
       -- Vicious Saddle (36) (Horde)
       [17105] = {Faction = 'Horde', OtherSide = 17104},
+      -- Vicious Saddle (37) (Alliance)
+      [17725] = {Faction = 'Alliance', OtherSide = 17726},
+      -- Vicious Saddle (37) (Horde)
+      [17726] = {Faction = 'Horde', OtherSide = 17725},
+      -- Obsidian Combatant (Alliance)
+      [17727] = {Faction = 'Alliance', OtherSide = 17728},
+      -- Obsidian Combatant (Horde)
+      [17728] = {Faction = 'Horde', OtherSide = 17727},
+      -- Hero of the Alliance: Obsidian (Alliance)
+      [17768] = {Faction = 'Alliance', OtherSide = 17772},
+      -- Hero of the Horde: Obsidian (Horde)
+      [17772] = {Faction = 'Horde', OtherSide = 17768},
+      -- Verdant Combatant (Alliance)
+      [19140] = {Faction = 'Alliance', OtherSide = 19141},
+      -- Verdant Combatant (Horde)
+      [19141] = {Faction = 'Horde', OtherSide = 19140},
+      -- Hero of the Horde: Verdant (Horde)
+      [19161] = {Faction = 'Horde', OtherSide = 19162},
+      -- Hero of the Alliance: Verdant (Alliance)
+      [19162] = {Faction = 'Alliance', OtherSide = 19161},
+      -- Vicious Saddle (38) (Alliance)
+      [19287] = {Faction = 'Alliance', OtherSide = 19289},
+      -- Vicious Saddle (38) (Horde)
+      [19289] = {Faction = 'Horde', OtherSide = 19287},
+      -- Hero of the Alliance: Draconic (Alliance)
+      [19455] = {Faction = 'Alliance', OtherSide = 19456},
+      -- Hero of the Horde: Draconic (Horde)
+      [19456] = {Faction = 'Horde', OtherSide = 19455},
+      -- Draconic Combatant (Alliance)
+      [19501] = {Faction = 'Alliance', OtherSide = 19502},
+      -- Draconic Combatant (Horde)
+      [19502] = {Faction = 'Horde', OtherSide = 19501},
+      -- Vicious Saddle (39) (Alliance)
+      [19551] = {Faction = 'Alliance', OtherSide = 19552},
+      -- Vicious Saddle (39) (Horde)
+      [19552] = {Faction = 'Horde', OtherSide = 19551},
     -- Player vs. Player Ends
     -- Events Start
+      -- Flirt With Disaster (Alliance)
+      [1279] = {Faction = 'Alliance', OtherSide = 1280},
+      -- Flirt With Disaster (Horde)
+      [1280] = {Faction = 'Horde', OtherSide = 1279},
+      -- Nation of Adoration (Alliance)
+      [1697] = {Faction = 'Alliance', OtherSide = 1698},
+      -- Nation of Adoration (Horde)
+      [1698] = {Faction = 'Horde', OtherSide = 1697},
       -- Operation: Gnomeregan (Alliance)
       [4786] = {Faction = 'Alliance', OtherSide = 4790},
       -- Zalazane's Fall (Horde)
@@ -733,7 +777,7 @@ CrossoverAchievements.Data.Achievements[GameVersion_Retail].List = {
       [13192] = {Faction = 'Horde', OtherSide = 13191},
     -- World Events Ends
   -- Legacy End
-  
+
   -- Crashin Thrashin Racer
   [1706] = {Faction = 'Both', Account = true},
   -- MiniZep Controller
