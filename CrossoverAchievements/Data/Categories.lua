@@ -230,7 +230,7 @@ function Categories:SortCategory(categoryid)
 end
 
 function Categories:SortCategoryFOS(categoryid)
-	if not CategoryList[categoryid] or CategoryList[categoryid].SortedAchievement then
+	if not CategoryList[categoryid] or CategoryList[categoryid].IsSorted then
 		return;
 	end
 	

@@ -237,9 +237,14 @@ function API.GetAchievementLink(achievementid)
     local AccountInfo = CrossoverAchievements.Account:GetCompletedAchievementInfo(achievementid);
     if not AccountInfo or AccountInfo.WasEarnedByMe then
         -- Uncompleted achievement or achievement earned by current character
-        -- Blizzard link is the same as the one we could generate so return Blizzard's instead
+        -- Blizzard link is the same as the one we could generate so return Blizzard's data instead
 	    return API.Blz_GetAchievementLink(achievementid);
 	end
+    if CrossoverAchievements.Helpers.GameVersionHelper:HasBlizzardAccountAchievements() and AccountInfo.WasEarnedHere then
+	    -- Achievement earned in this version in which there are official Account achievements
+	    -- Blizzard link is the same as the one we could generate so return Blizzard's data instead
+	    return API.Blz_GetAchievementLink(achievementid);
+    end
     -- Create an achievement link with addon achievement time
     local year = date("%y", AccountInfo.AchievementTime)
     local month = date("%m", AccountInfo.AchievementTime)
