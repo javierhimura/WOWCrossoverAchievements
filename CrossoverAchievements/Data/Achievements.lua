@@ -38,7 +38,11 @@ function Achievements:SetAchievementData(achievementid, points, accountwide)
 	Achievements.List[achievementid] = {};
 	Achievements.List[achievementid].Points = points;
 	Achievements.List[achievementid].AccountWide = accountwide;
-	Achievements.List[achievementid].NextId = GetNextAchievement(achievementid);
+    local NextAchievementId = GetNextAchievement(achievementid);
+    local CurrentGameVersionAchievementsDataType = CrossoverAchievements.Helpers.GameVersionHelper:GetClassicAchievementsDataType();
+    local ImportAchievementsDataGlobal = CrossoverAchievements.Data.Achievements[CurrentGameVersionAchievementsDataType];
+    local ConvertedNextAchievementID = CrossoverAchievements.Account:ConvertAchievementVersion(NextAchievementId, ImportAchievementsDataGlobal);
+	Achievements.List[achievementid].NextId = ConvertedNextAchievementID;
 	Achievements.List[achievementid].PreviousId = GetPreviousAchievement(achievementid);
 	local categoryid = GetAchievementCategory(achievementid);
 	if categoryid ~= nil then

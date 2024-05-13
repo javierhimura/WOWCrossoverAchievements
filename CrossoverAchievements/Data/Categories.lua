@@ -155,6 +155,12 @@ function Categories:SortCategories()
 	end
 end
 
+function Categories:PrintDebug(active,message)
+    if active then
+        print(message);
+    end
+end
+
 function Categories:SortCategory(categoryid)
 	if not CategoryList[categoryid] then
 		return;
@@ -185,10 +191,9 @@ function Categories:SortCategory(categoryid)
 		local lastid = achievementid;
 		local data = CrossoverAchievements.Data.Achievements:GetAchievementData(lastid);
 		local completed = CrossoverAchievements.Account:GetCompletedAchievementInfo(lastid);
-
 		if completed then
 			-- Get last achievement in chain completed
-			while data.NextId and CrossoverAchievements.Account:GetCompletedAchievementInfo(data.NextId) do
+            while data.NextId and CrossoverAchievements.Account:GetCompletedAchievementInfo(data.NextId) do
 				lastid = data.NextId;
 				data = CrossoverAchievements.Data.Achievements:GetAchievementData(lastid);
 			end
@@ -203,10 +208,6 @@ function Categories:SortCategory(categoryid)
 			CategoryList[categoryid].Total = CategoryList[categoryid].Total + numtotal;
 			CategoryList[categoryid].TotalCompleted = CategoryList[categoryid].TotalCompleted + numcompleted;
 			CategoryList[categoryid].SortedAchievements[CategoryList[categoryid].Visible] = lastid;
-			while data.NextId do
-				lastid = data.NextId;
-				data = CrossoverAchievements.Data.Achievements:GetAchievementData(lastid);
-			end
 		end
 		if completed and data.NextId then
 			-- if not in FOS nor Legacy add next uncompleted achievement in chain
