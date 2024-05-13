@@ -450,8 +450,6 @@ function Storage:DecompressVersionData(CompressData)
            CompressData.GameVersion == CrossoverAchievements.Helpers.GameVersionHelper.GameVersion_ClassicCataclysm then
            ImportData.GameVersion = CrossoverAchievements.Helpers.GameVersionHelper.GameVersion_ClassicCataclysm;
         end
-        print('Other ImportData.GameVersion  '..ImportData.GameVersion ); 
-        print('Other CompressData.GameVersion  '..CompressData.GameVersion );
     end 
     
     if ImportData.GameVersion ~= CompressData.GameVersion or
