@@ -5,34 +5,34 @@ CrossoverAchievements.Data = CrossoverAchievements.Data or {};
 CrossoverAchievements.Data.Achievements = CrossoverAchievements.Data.Achievements or {};
 CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK] = CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK] or {};
 CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].Phases = {
-    PHASE0_PREPATH = 0,
-    PHASE0_SEASON_OF_MASTERY = 1,
-    PHASE1_CLASSIC_WOTLK_LAUNCH = 2,
-    PHASE1_RAIDS = 3,
-    PHASE2_ULDUAR = 4,
-    PHASE2_DEFENSE_PROTOCOL_ALPHA = 5,
-    PHASE3_TRIAL_OF_CHAMPION = 6,
-    PHASE3_TRIAL_OF_CRUSADER = 7,
-    PHASE3_ONYXIA_LAIR = 8,
-    PHASE3_DEFENSE_PROTOCOL_BETA = 9,
-    PHASE4_ICC_DUNGEONS = 10,
-    PHASE4_ICC_RAID = 11,
-    PHASE4_DEFENSE_PROTOCOL_GAMMA = 12,
-    PHASE4_RFD = 13,
-    PHASE5_RUBY_SANCTUM = 14,
-    UNRELEASED_PROMOTIONS = 15,
-    CATACLYSM_PREPATCH = 16,
-    PHASE1_ARENA_SEASON_5_START = 17,
-    PHASE1_ARENA_SEASON_5_END = 18,
-    PHASE2_ARENA_SEASON_6_END = 19,
-    PHASE3_ARENA_SEASON_7_END = 20,
-    PHASE4_ARENA_SEASON_8_END = 21,
+    EXPANSION_01_SEASON_OF_MASTERY             =  0001,
+    EXPANSION_03_PHASE0_PREPATH                =  3000,
+    EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH   =  3001,
+    EXPANSION_03_PHASE1_RAIDS                  =  3002,
+    EXPANSION_03_PHASE1_ARENA_SEASON_5_START   =  3003,
+    EXPANSION_03_PHASE1_ARENA_SEASON_5_END     =  3004,
+    EXPANSION_03_PHASE2_ULDUAR                 =  3100,
+    EXPANSION_03_PHASE2_DEFENSE_PROTOCOL_ALPHA =  3101,
+    EXPANSION_03_PHASE2_ARENA_SEASON_6_END     =  3102,
+    EXPANSION_03_PHASE3_TRIAL_OF_CHAMPION      =  3200,
+    EXPANSION_03_PHASE3_TRIAL_OF_CRUSADER      =  3201,
+    EXPANSION_03_PHASE3_DEFENSE_PROTOCOL_BETA  =  3202,
+    EXPANSION_03_PHASE3_ONYXIA_LAIR            =  3220,
+    EXPANSION_03_PHASE3_ARENA_SEASON_7_END     =  3221,
+    EXPANSION_03_PHASE4_ICC_DUNGEONS           =  3300,
+    EXPANSION_03_PHASE4_ICC_RAID               =  3301,
+    EXPANSION_03_PHASE4_DEFENSE_PROTOCOL_GAMMA =  3302,
+    EXPANSION_03_PHASE4_RFD                    =  3303,
+    EXPANSION_03_PHASE5_RUBY_SANCTUM           =  3350,
+    EXPANSION_03_PHASE6_GNOMETROLL_EVENT       =  3351,
+    EXPANSION_03_PHASE6_ARENA_SEASON_8_END     =  3352,
+    UNRELEASED_PROMOTIONS                      = 99999,
 };
 -- ClassicOnly Achievement added in WOTLK Classic never available in Retail, not even in OG WOTLK
 -- Merged Achievement with different version for Alliance and Horde but was merged in a given expansion into a single achievement
 -- MergeId Achievement assigned to both Alliance and Horde achievements after merging, it is not always the same faction
 -- Removed Achievement that was available in a given expansion, including Retail, but was removed without being turned into a Legacy achievement or FOS 
--- Phase in which the achievement will be added in Classic WOTLK or was added in OG WOTLK
+-- Phase in which the achievement will be added in Classic WOTLK or was added in OG WO TLK
 -- OtherSide For Alliance/Horde separate factions the achievement in the other faction
 CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
   -- General Start
@@ -51,19 +51,19 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Level 70
     [12] = {Faction = 'Both', Retroactive = true},
     -- Level 80
-    [13] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [13] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Plenty of Pets
     [15] = {Faction = 'Both', Retroactive = true},
     -- Did Somebody Order a Knuckle Sandwich?
-    [16] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [16] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Shave and a Haircut
     [545] = {Faction = 'Both'},
     -- Safe Deposit
     [546] = {Faction = 'Both'},
     -- Epic
-    [556] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [556] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Superior
-    [557] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [557] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Greedy
     [558] = {Faction = 'Both'},
     -- Needy
@@ -71,7 +71,7 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Represent
     [621] = {Faction = 'Both', Retroactive = true},
     -- Master of Arms
-    [705] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [705] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Fast and Furious
     [889] = {Faction = 'Both', Retroactive = true},
     -- Into The Wild Blue Yonder
@@ -101,9 +101,9 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Got My Mind On My Money
     [1181] = {Faction = 'Both'},
     -- The Keymaster
-    [1187] = {Faction = 'Both', Removed = LE_EXPANSION_CATACLYSM, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1187] = {Faction = 'Both', Removed = LE_EXPANSION_CATACLYSM, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- To All The Squirrels I've Loved Before
-    [1206] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1206] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Well Read
     [1244] = {Faction = 'Both'},
     -- Plethora of Pets
@@ -117,17 +117,17 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- It's Happy Hour Somewhere
     [1833] = {Faction = 'Both'},
     -- Higher Learning
-    [1956] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1956] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Armored Brown Bear
-    [2076] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [2076] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Wooly Mammoth
-    [2077] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [2077] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Traveler's Tundra Mammoth
-    [2078] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [2078] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Ring of the Kirin Tor
-    [2084] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [2084] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Get to the Choppa!
-    [2097] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [2097] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Stable Keeper
     [2141] = {Faction = 'Both', Retroactive = true},
     -- Filling Up The Barn
@@ -168,7 +168,7 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- 1500 Quests Completed
     [508] = {Faction = 'Both', Retroactive = true},
     -- Hemet Nesingwary: The Collected Quests
-    [941] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [941] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- 5 Daily Quests Complete
     [973] = {Faction = 'Both'},
     -- 50 Daily Quests Complete
@@ -186,11 +186,11 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Of Blood and Anguish
     [1576] = {Faction = 'Both'},
     -- The Loremaster (WOTLK) (Alliance)
-    [1681] = {Faction = 'Alliance', OtherSide = 1682, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 7520, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH, Retroactive = true},
+    [1681] = {Faction = 'Alliance', OtherSide = 1682, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 7520, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH, Retroactive = true},
     -- The Loremaster (WOTLK) (Horde)
-    [1682] = {Faction = 'Horde', OtherSide = 1681, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 7520, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH, Retroactive = true},
+    [1682] = {Faction = 'Horde', OtherSide = 1681, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 7520, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH, Retroactive = true},
     -- The Loremaster (Retail)
-    [7520] = {Faction = 'Both', Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedNew = true, MergedId = 1681, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH, Retroactive = true},
+    [7520] = {Faction = 'Both', Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedNew = true, MergedId = 1681, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH, Retroactive = true},
     -- Classic Start
       -- The Green Hills of Stranglethorn
       [940] = {Faction = 'Both', Retroactive = true},
@@ -237,49 +237,49 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- The Burning Crusade Ends
     -- Wrath of the Lich King Start
       -- Nothing Boring About Borean (Alliance)
-      [33] = {Faction = 'Alliance', OtherSide = 1358, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [33] = {Faction = 'Alliance', OtherSide = 1358, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- I've Toured the Fjord (Alliance)
-      [34] = {Faction = 'Alliance', OtherSide = 1356, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [34] = {Faction = 'Alliance', OtherSide = 1356, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Might of Dragonblight (Alliance)
-      [35] = {Faction = 'Alliance', OtherSide = 1359, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [35] = {Faction = 'Alliance', OtherSide = 1359, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- The Empire of Zul'Drak
-      [36] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [36] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Fo' Grizzle My Shizzle (Alliance)
-      [37] = {Faction = 'Alliance', OtherSide = 1357, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [37] = {Faction = 'Alliance', OtherSide = 1357, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- The Summit of Storm Peaks
-      [38] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [38] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Into the Basin
-      [39] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [39] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Icecrown: The Final Goal
-      [40] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [40] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Loremaster of Northrend (Alliance)
-      [41] = {Faction = 'Alliance', OtherSide = 1360, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 41, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [41] = {Faction = 'Alliance', OtherSide = 1360, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 41, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Veteran of the Wrathgate
-      [547] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [547] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- D.E.H.T.A's Little P.I.T.A.
-      [561] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [561] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- The Snows of Northrend
-      [938] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [938] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Honorary Frenzyheart
-      [961] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [961] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Savior of the Oracles
-      [962] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [962] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Rapid Defense
-      [1277] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1277] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- I've Toured the Fjord (Horde)
-      [1356] = {Faction = 'Horde', OtherSide = 34, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1356] = {Faction = 'Horde', OtherSide = 34, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Fo' Grizzle My Shizzle (Horde)
-      [1357] = {Faction = 'Horde', OtherSide = 37, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1357] = {Faction = 'Horde', OtherSide = 37, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Nothing Boring About Borean (Horde)
-      [1358] = {Faction = 'Horde', OtherSide = 33, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1358] = {Faction = 'Horde', OtherSide = 33, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Might of Dragonblight (Horde)
-      [1359] = {Faction = 'Horde', OtherSide = 35, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1359] = {Faction = 'Horde', OtherSide = 35, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Loremaster of Northrend (Horde)
-      [1360] = {Faction = 'Horde', OtherSide = 41, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 41, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1360] = {Faction = 'Horde', OtherSide = 41, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 41, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Mine Sweeper
-      [1428] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1428] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Guru of Drakuru
-      [1596] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1596] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Wrath of the Lich King Ends
   -- Quests End
 
@@ -291,9 +291,9 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Explore Outland
     [44] = {Faction = 'Both', Retroactive = true},
     -- Explore Northrend
-    [45] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [45] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- World Explorer
-    [46] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [46] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Eastern Kingdoms Start
       -- Explore Dun Morogh
       [627] = {Faction = 'Both', Retroactive = true},
@@ -410,27 +410,27 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Outland Ends
     -- Northrend Start
       -- Explore Howling Fjord
-      [1263] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1263] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Explore Borean Tundra
-      [1264] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1264] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Explore Dragonblight
-      [1265] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1265] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Explore Grizzly Hills
-      [1266] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1266] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Explore Zul'Drak
-      [1267] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1267] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Explore Sholazar Basin
-      [1268] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1268] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Explore Storm Peaks
-      [1269] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1269] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Explore Icecrown
-      [1270] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1270] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Explore Crystalsong Forest
-      [1457] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1457] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Northern Exposure
-      [2256] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2256] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Frostbitten
-      [2257] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2257] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Northrend Ends
   -- Exploration End
 
@@ -440,7 +440,7 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- The Grim Reaper
     [229] = {Faction = 'Both'},
     -- Battlemaster (Alliance)
-    [230] = {Faction = 'Alliance', OtherSide = 1175, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [230] = {Faction = 'Alliance', OtherSide = 1175, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Wrecking Ball
     [231] = {Faction = 'Both'},
     -- An Honorable Kill
@@ -508,9 +508,9 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- The Justicar (Alliance)
     [907] = {Faction = 'Alliance', OtherSide = 714},
     -- Call to Arms! (Alliance)
-    [908] = {Faction = 'Alliance', OtherSide = 909, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [908] = {Faction = 'Alliance', OtherSide = 909, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Call to Arms! (Horde)
-    [909] = {Faction = 'Horde', OtherSide = 908, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [909] = {Faction = 'Horde', OtherSide = 908, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Know Thy Enemy (Horde)
     [1005] = {Faction = 'Horde', OtherSide = 246},
     -- City Defender (Horde)
@@ -518,94 +518,94 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Duel-icious
     [1157] = {Faction = 'Both'},
     -- Battlemaster (Horde)
-    [1175] = {Faction = 'Horde', OtherSide = 230, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1175] = {Faction = 'Horde', OtherSide = 230, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Grizzled Veteran (Alliance)
-    [2016] = {Faction = 'Alliance', OtherSide = 2017, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [2016] = {Faction = 'Alliance', OtherSide = 2017, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Grizzled Veteran (Horde)
-    [2017] = {Faction = 'Horde', OtherSide = 2016, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [2017] = {Faction = 'Horde', OtherSide = 2016, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Arena Start
       -- Step Into The Arena
-      [397] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
+      [397] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_START},
       -- Mercilessly Dedicated
-      [398] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
+      [398] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_START},
       -- Just the Two of Us: 1550
-      [399] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
+      [399] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_START},
       -- Just the Two of Us: 1750
-      [400] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
+      [400] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_START},
       -- Just the Two of Us: 2000
-      [401] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
+      [401] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_START},
       -- Three's Company: 1550
-      [402] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
+      [402] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_START},
       -- Three's Company: 1750
-      [403] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
+      [403] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_START},
       -- High Five: 2000
-      [404] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
+      [404] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_START},
       -- Three's Company: 2000
-      [405] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
+      [405] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_START},
       -- High Five: 1550
-      [406] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
+      [406] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_START},
       -- High Five: 1750
-      [407] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
+      [407] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_START},
       -- Hot Streak
-      [408] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
+      [408] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_START},
       -- Last Man Standing
-      [409] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
+      [409] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_START},
       -- World Wide Winner
-      [699] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
+      [699] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_START},
       -- Vengefully Dedicated
-      [875] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
+      [875] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_START},
       -- Brutally Dedicated
-      [876] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
+      [876] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_START},
       -- Just the Two of Us: 2200
-      [1159] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
+      [1159] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_START},
       -- Three's Company: 2200
-      [1160] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
+      [1160] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_START},
       -- High Five: 2200
-      [1161] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
+      [1161] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_START},
       -- Hotter Streak
-      [1162] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
+      [1162] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_START},
       -- The Arena Master
-      [1174] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_START},
+      [1174] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_START},
       -- Challenger
-      [2090] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_END},
+      [2090] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_END},
       -- Gladiator
-      [2091] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_END},
+      [2091] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_END},
       -- Duelist
-      [2092] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_END},
+      [2092] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_END},
       -- Rival
-      [2093] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_END},
+      [2093] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_END},
       -- Rival: Season 5
-      [16313] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_END},
+      [16313] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_END},
       -- Gladiator: Season 5
-      [16314] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_END},
+      [16314] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_END},
       -- Duelist: Season 5
-      [16315] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_END},
+      [16315] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_END},
       -- Challenger: Season 5
-      [16316] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_END},
+      [16316] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_END},
       -- Rival: Season 6
-      [17415] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_START},
+      [17415] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_START},
       -- Gladiator: Season 6
-      [17416] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_START},
+      [17416] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_START},
       -- Duelist: Season 6
-      [17417] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_START},
+      [17417] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_START},
       -- Challenger: Season 6
-      [17418] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_START},
+      [17418] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_START},
       -- Rival: Season 7
-      [18544] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_START},
+      [18544] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_START},
       -- Gladiator: Season 7
-      [18545] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_START},
+      [18545] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_START},
       -- Duelist: Season 7
-      [18546] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_START},
+      [18546] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_START},
       -- Challenger: Season 7
-      [18547] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_START},
+      [18547] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_START},
       -- Rival: Season 8
-      [18548] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_START},
+      [18548] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_START},
       -- Duelist: Season 8
-      [18549] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_START},
+      [18549] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_START},
       -- Challenger: Season 8
-      [18550] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_START},
+      [18550] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_START},
       -- Gladiator: Season 8
-      [18551] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE1_ARENA_SEASON_5_START},
+      [18551] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_START},
     -- Arena Ends
     -- Alterac Valley Start
       -- Alterac Valley Victory
@@ -757,133 +757,133 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Warsong Gulch Ends
     -- Strand of the Ancients Start
       -- Strand of the Ancients Victory
-      [1308] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1308] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Strand of the Ancients Veteran
-      [1309] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1309] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Storm the Beach
-      [1310] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1310] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Defense of the Ancients (Alliance)
-      [1757] = {Faction = 'Alliance', OtherSide = 2200, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1757] = {Faction = 'Alliance', OtherSide = 2200, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- The Dapper Sapper
-      [1761] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1761] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Not Even a Scratch (Alliance)
-      [1762] = {Faction = 'Alliance', OtherSide = 2192, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1762] = {Faction = 'Alliance', OtherSide = 2192, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Artillery Veteran
-      [1763] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1763] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Drop it!
-      [1764] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1764] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Steady Hands
-      [1765] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1765] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Ancient Protector
-      [1766] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1766] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Artillery Expert
-      [2189] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2189] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Drop it now!
-      [2190] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2190] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Ancient Courtyard Protector
-      [2191] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2191] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Not Even a Scratch (Horde)
-      [2192] = {Faction = 'Horde', OtherSide = 1762, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2192] = {Faction = 'Horde', OtherSide = 1762, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Explosives Expert
-      [2193] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2193] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Master of Strand of the Ancients (Alliance)
-      [2194] = {Faction = 'Alliance', OtherSide = 2195, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 2194, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2194] = {Faction = 'Alliance', OtherSide = 2195, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 2194, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Master of Strand of the Ancients (Horde)
-      [2195] = {Faction = 'Horde', OtherSide = 2194, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 2194, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2195] = {Faction = 'Horde', OtherSide = 2194, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 2194, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Defense of the Ancients (Horde)
-      [2200] = {Faction = 'Horde', OtherSide = 1757, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2200] = {Faction = 'Horde', OtherSide = 1757, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Strand of the Ancients Ends
     -- Wintergrasp Start
       -- Wintergrasp Victory
-      [1717] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1717] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Wintergrasp Veteran
-      [1718] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1718] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Archavon the Stone Watcher (25 player)
-      [1721] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [1721] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Archavon the Stone Watcher (10 player)
-      [1722] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [1722] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Vehicular Gnomeslaughter
-      [1723] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1723] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Leaning Tower
-      [1727] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1727] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Destruction Derby (Alliance)
-      [1737] = {Faction = 'Alliance', OtherSide = 2476, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1737] = {Faction = 'Alliance', OtherSide = 2476, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Didn't Stand a Chance
-      [1751] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1751] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Master of Wintergrasp (Alliance)
-      [1752] = {Faction = 'Alliance', OtherSide = 2776, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1752, Phase = PHASE1_RAIDS},
+      [1752] = {Faction = 'Alliance', OtherSide = 2776, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1752, Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Within Our Grasp
-      [1755] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1755] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Black War Mammoth
-      [2080] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2080] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- 50 Stone Keeper's Shards
-      [2085] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2085] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- 100 Stone Keeper's Shards
-      [2086] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2086] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- 250 Stone Keeper's Shards
-      [2087] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2087] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- 500 Stone Keeper's Shards
-      [2088] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2088] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- 1000 Stone Keeper's Shards
-      [2089] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2089] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Wintergrasp Ranger
-      [2199] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2199] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Destruction Derby (Horde)
-      [2476] = {Faction = 'Horde', OtherSide = 1737, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2476] = {Faction = 'Horde', OtherSide = 1737, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Master of Wintergrasp (Horde)
-      [2776] = {Faction = 'Horde', OtherSide = 1752, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1752, Phase = PHASE1_RAIDS},
+      [2776] = {Faction = 'Horde', OtherSide = 1752, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 1752, Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Emalon the Storm Watcher (10 player)
-      [3136] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3136] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Emalon the Storm Watcher (25 player)
-      [3137] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3137] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Koralon the Flame Watcher (10 player)
-      [3836] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CRUSADER},
+      [3836] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_TRIAL_OF_CRUSADER},
       -- Koralon the Flame Watcher (25 player)
-      [3837] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CRUSADER},
+      [3837] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_TRIAL_OF_CRUSADER},
       -- Toravon the Ice Watcher (10 player)
-      [4585] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4585] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Toravon the Ice Watcher (25 player)
-      [4586] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4586] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
     -- Wintergrasp Ends
     -- Isle of Conquest Start
       -- Isle of Conquest Victory
-      [3776] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [3776] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Isle of Conquest Veteran
-      [3777] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [3777] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Isle of Conquest All-Star
-      [3845] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [3845] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Resource Glut (Alliance)
-      [3846] = {Faction = 'Alliance', OtherSide = 4176, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [3846] = {Faction = 'Alliance', OtherSide = 4176, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Four Car Garage
-      [3847] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [3847] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- A-bomb-inable
-      [3848] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [3848] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- A-bomb-ination
-      [3849] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [3849] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Mowed Down
-      [3850] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [3850] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Mine (Alliance)
-      [3851] = {Faction = 'Alliance', OtherSide = 4177, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [3851] = {Faction = 'Alliance', OtherSide = 4177, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Cut the Blue Wire... No the Red Wire!
-      [3852] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [3852] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- All Over the Isle
-      [3853] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [3853] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Back Door Job
-      [3854] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [3854] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Glaive Grave
-      [3855] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [3855] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Demolition Derby (Alliance)
-      [3856] = {Faction = 'Alliance', OtherSide = 4256, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [3856] = {Faction = 'Alliance', OtherSide = 4256, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Master of Isle of Conquest (Alliance)
-      [3857] = {Faction = 'Alliance', OtherSide = 3957, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [3857] = {Faction = 'Alliance', OtherSide = 3957, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Master of Isle of Conquest (Horde)
-      [3957] = {Faction = 'Horde', OtherSide = 3857, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [3957] = {Faction = 'Horde', OtherSide = 3857, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Resource Glut (Horde)
-      [4176] = {Faction = 'Horde', OtherSide = 3846, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [4176] = {Faction = 'Horde', OtherSide = 3846, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Mine (Horde)
-      [4177] = {Faction = 'Horde', OtherSide = 3851, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [4177] = {Faction = 'Horde', OtherSide = 3851, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Demolition Derby (Horde)
-      [4256] = {Faction = 'Horde', OtherSide = 3856, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [4256] = {Faction = 'Horde', OtherSide = 3856, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Isle of Conquest Ends
   -- Player vs. Player End
 
@@ -899,59 +899,59 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Outland Dungeon Hero
     [1287] = {Faction = 'Both'},
     -- Northrend Dungeonmaster
-    [1288] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1288] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Northrend Dungeon Hero
-    [1289] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1289] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Champion of the Frozen Wastes
-    [1658] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+    [1658] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
     -- Glory of the Hero
-    [2136] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [2136] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Glory of the Raider (10 player)
-    [2137] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+    [2137] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
     -- Glory of the Raider (25 player)
-    [2138] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+    [2138] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
     -- Glory of the Ulduar Raider (10 player)
-    [2957] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+    [2957] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
     -- Glory of the Ulduar Raider (25 player)
-    [2958] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+    [2958] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
     -- Dungeon & Raid Emblem
-    [3838] = {Faction = 'Both', Removed = LE_EXPANSION_CATACLYSM, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [3838] = {Faction = 'Both', Removed = LE_EXPANSION_CATACLYSM, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- 25 Dungeon & Raid Emblems
-    [3839] = {Faction = 'Both', Removed = LE_EXPANSION_CATACLYSM, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [3839] = {Faction = 'Both', Removed = LE_EXPANSION_CATACLYSM, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- 50 Dungeon & Raid Emblems
-    [3840] = {Faction = 'Both', Removed = LE_EXPANSION_CATACLYSM, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [3840] = {Faction = 'Both', Removed = LE_EXPANSION_CATACLYSM, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- 100 Dungeon & Raid Emblems
-    [3841] = {Faction = 'Both', Removed = LE_EXPANSION_CATACLYSM, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [3841] = {Faction = 'Both', Removed = LE_EXPANSION_CATACLYSM, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- 250 Dungeon & Raid Emblems
-    [3842] = {Faction = 'Both', Removed = LE_EXPANSION_CATACLYSM, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [3842] = {Faction = 'Both', Removed = LE_EXPANSION_CATACLYSM, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- 500 Dungeon & Raid Emblems
-    [3843] = {Faction = 'Both', Removed = LE_EXPANSION_CATACLYSM, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [3843] = {Faction = 'Both', Removed = LE_EXPANSION_CATACLYSM, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- 1000 Dungeon & Raid Emblems
-    [3844] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [3844] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- 1500 Dungeon & Raid Emblems
-    [3876] = {Faction = 'Both', Removed = LE_EXPANSION_CATACLYSM, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [3876] = {Faction = 'Both', Removed = LE_EXPANSION_CATACLYSM, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- 2500 Dungeon & Raid Emblems
-    [4316] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [4316] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Looking For More
-    [4476] = {Faction = 'Both', Phase = PHASE4_RFD},
+    [4476] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_RFD},
     -- Looking For Many
-    [4477] = {Faction = 'Both', Phase = PHASE4_RFD},
+    [4477] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_RFD},
     -- Looking For Multitudes
-    [4478] = {Faction = 'Both', Phase = PHASE4_RFD},
+    [4478] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_RFD},
     -- Glory of the Icecrown Raider (10 player)
-    [4602] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+    [4602] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
     -- Glory of the Icecrown Raider (25 player)
-    [4603] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+    [4603] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
     -- Defense Protocol Alpha: Terminated
-    [17304] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE2_DEFENSE_PROTOCOL_ALPHA},
+    [17304] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE2_DEFENSE_PROTOCOL_ALPHA},
     -- Defense Protocol Beta: Terminated (Alliance)
-    [18614] = {Faction = 'Alliance', OtherSide = 18688, ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+    [18614] = {Faction = 'Alliance', OtherSide = 18688, ClassicOnly = true, Phase = EXPANSION_03_PHASE3_DEFENSE_PROTOCOL_BETA},
     -- Defense Protocol Beta: Terminated (Horde)
-    [18688] = {Faction = 'Horde', OtherSide = 18614, ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+    [18688] = {Faction = 'Horde', OtherSide = 18614, ClassicOnly = true, Phase = EXPANSION_03_PHASE3_DEFENSE_PROTOCOL_BETA},
     -- Defense Protocol Gamma: Terminated (Alliance)
-    [19439] = {Faction = 'Alliance', OtherSide = 19440, ClassicOnly = true, Phase = PHASE4_DEFENSE_PROTOCOL_GAMMA},
+    [19439] = {Faction = 'Alliance', OtherSide = 19440, ClassicOnly = true, Phase = EXPANSION_03_PHASE4_DEFENSE_PROTOCOL_GAMMA},
     -- Defense Protocol Gamma: Terminated (Horde)
-    [19440] = {Faction = 'Horde', OtherSide = 19439, ClassicOnly = true, Phase = PHASE4_DEFENSE_PROTOCOL_GAMMA},
+    [19440] = {Faction = 'Horde', OtherSide = 19439, ClassicOnly = true, Phase = EXPANSION_03_PHASE4_DEFENSE_PROTOCOL_GAMMA},
     -- Classic Start
       -- Deadmines
       [628] = {Faction = 'Both', Retroactive = true},
@@ -1092,839 +1092,839 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- The Burning Crusade Ends
     -- Lich King Dungeon Start
       -- Utgarde Keep
-      [477] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [477] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- The Nexus
-      [478] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [478] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- The Culling of Stratholme
-      [479] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [479] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Azjol-Nerub
-      [480] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [480] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Ahn'kahet: The Old Kingdom
-      [481] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [481] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Drak'Tharon Keep
-      [482] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [482] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- The Violet Hold
-      [483] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [483] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Gundrak
-      [484] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [484] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Halls of Stone
-      [485] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [485] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Halls of Lightning
-      [486] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [486] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- The Oculus
-      [487] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [487] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Utgarde Pinnacle
-      [488] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [488] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Trial of the Champion (Horde)
-      [3778] = {Faction = 'Horde', OtherSide = 4296, Phase = PHASE3_TRIAL_OF_CHAMPION},
+      [3778] = {Faction = 'Horde', OtherSide = 4296, Phase = EXPANSION_03_PHASE3_TRIAL_OF_CHAMPION},
       -- Trial of the Champion (Alliance)
-      [4296] = {Faction = 'Alliance', OtherSide = 3778, Phase = PHASE3_TRIAL_OF_CHAMPION},
+      [4296] = {Faction = 'Alliance', OtherSide = 3778, Phase = EXPANSION_03_PHASE3_TRIAL_OF_CHAMPION},
       -- The Forge of Souls
-      [4516] = {Faction = 'Both', Phase = PHASE4_ICC_DUNGEONS},
+      [4516] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- The Pit of Saron
-      [4517] = {Faction = 'Both', Phase = PHASE4_ICC_DUNGEONS},
+      [4517] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- The Halls of Reflection
-      [4518] = {Faction = 'Both', Phase = PHASE4_ICC_DUNGEONS},
+      [4518] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
     -- Lich King Dungeon Ends
     -- Lich King Heroic Start
       -- Heroic: Utgarde Keep
-      [489] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [489] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Heroic: The Nexus
-      [490] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [490] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Heroic: Azjol-Nerub
-      [491] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [491] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Heroic: Ahn'kahet: The Old Kingdom
-      [492] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [492] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Heroic: Drak'Tharon Keep
-      [493] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [493] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Heroic: The Violet Hold
-      [494] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [494] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Heroic: Gundrak
-      [495] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [495] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Heroic: Halls of Stone
-      [496] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [496] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Heroic: Halls of Lightning
-      [497] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [497] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Heroic: The Oculus
-      [498] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [498] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Heroic: Utgarde Pinnacle
-      [499] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [499] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Heroic: The Culling of Stratholme
-      [500] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [500] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Watch Him Die
-      [1296] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1296] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Hadronox Denied
-      [1297] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1297] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Defenseless
-      [1816] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1816] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- The Culling of Time
-      [1817] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1817] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Lightning Struck
-      [1834] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1834] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Gotta Go!
-      [1860] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1860] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- The Party's Over -- Not in Classic Removed in OG WOTLK Patch 3.3.0
-      --[1861] = {Faction = 'Both', Removed = LE_EXPANSION_WRATH_OF_THE_LICH_KING, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      --[1861] = {Faction = 'Both', Removed = LE_EXPANSION_WRATH_OF_THE_LICH_KING, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Volazj's Quick Demise
-      [1862] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1862] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- What the Eck?
-      [1864] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1864] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Lockdown!
-      [1865] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1865] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Good Grief
-      [1866] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1866] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Timely Death
-      [1867] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1867] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Make It Count
-      [1868] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1868] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Experienced Drake Rider
-      [1871] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1871] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Zombiefest!
-      [1872] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1872] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Lodi Dodi We Loves the Skadi
-      [1873] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1873] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- On The Rocks
-      [1919] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1919] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Intense Cold
-      [2036] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2036] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Chaos Theory
-      [2037] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2037] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Respect Your Elders
-      [2038] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2038] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Better Off Dred
-      [2039] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2039] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Less-rabi
-      [2040] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2040] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Dehydration
-      [2041] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2041] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Shatter Resistant
-      [2042] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2042] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- The Incredible Hulk
-      [2043] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2043] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Ruby Void
-      [2044] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2044] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Emerald Void
-      [2045] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2045] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Amber Void
-      [2046] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2046] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Volunteer Work
-      [2056] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2056] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Oh Novos!
-      [2057] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2057] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Snakes. Why'd It Have To Be Snakes?
-      [2058] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2058] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Split Personality
-      [2150] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2150] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Consumption Junction
-      [2151] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2151] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Share The Love
-      [2152] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2152] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- A Void Dance
-      [2153] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2153] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Brann Spankin' New
-      [2154] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2154] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Abuse the Ooze
-      [2155] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2155] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- My Girl Loves to Skadi All the Time
-      [2156] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2156] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- King's Bane
-      [2157] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2157] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Argent Confessor
-      [3802] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CHAMPION},
+      [3802] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_TRIAL_OF_CHAMPION},
       -- The Faceroller
-      [3803] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CHAMPION},
+      [3803] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_TRIAL_OF_CHAMPION},
       -- I've Had Worse
-      [3804] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CHAMPION},
+      [3804] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_TRIAL_OF_CHAMPION},
       -- Heroic: Trial of the Champion (Horde)
-      [4297] = {Faction = 'Horde', OtherSide = 4298, Phase = PHASE3_TRIAL_OF_CHAMPION},
+      [4297] = {Faction = 'Horde', OtherSide = 4298, Phase = EXPANSION_03_PHASE3_TRIAL_OF_CHAMPION},
       -- Heroic: Trial of the Champion (Alliance)
-      [4298] = {Faction = 'Alliance', OtherSide = 4297, Phase = PHASE3_TRIAL_OF_CHAMPION},
+      [4298] = {Faction = 'Alliance', OtherSide = 4297, Phase = EXPANSION_03_PHASE3_TRIAL_OF_CHAMPION},
       -- Heroic: The Forge of Souls
-      [4519] = {Faction = 'Both', Phase = PHASE4_ICC_DUNGEONS},
+      [4519] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Heroic: The Pit of Saron
-      [4520] = {Faction = 'Both', Phase = PHASE4_ICC_DUNGEONS},
+      [4520] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Heroic: The Halls of Reflection
-      [4521] = {Faction = 'Both', Phase = PHASE4_ICC_DUNGEONS},
+      [4521] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Soul Power
-      [4522] = {Faction = 'Both', Phase = PHASE4_ICC_DUNGEONS},
+      [4522] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Three Faced
-      [4523] = {Faction = 'Both', Phase = PHASE4_ICC_DUNGEONS},
+      [4523] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Doesn't Go to Eleven
-      [4524] = {Faction = 'Both', Phase = PHASE4_ICC_DUNGEONS},
+      [4524] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Don't Look Up
-      [4525] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [4525] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- We're Not Retreating; We're Advancing in a Different Direction.
-      [4526] = {Faction = 'Both', Phase = PHASE4_ICC_DUNGEONS},
+      [4526] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Defense Protocol Alpha: Utgarde Keep
-      [17213] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE2_DEFENSE_PROTOCOL_ALPHA},
+      [17213] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE2_DEFENSE_PROTOCOL_ALPHA},
       -- Defense Protocol Alpha: The Nexus
-      [17283] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE2_DEFENSE_PROTOCOL_ALPHA},
+      [17283] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE2_DEFENSE_PROTOCOL_ALPHA},
       -- Defense Protocol Alpha: Azjol-Nerub
-      [17285] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE2_DEFENSE_PROTOCOL_ALPHA},
+      [17285] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE2_DEFENSE_PROTOCOL_ALPHA},
       -- Defense Protocol Alpha: Ahn'kahet: The Old Kingdom
-      [17291] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE2_DEFENSE_PROTOCOL_ALPHA},
+      [17291] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE2_DEFENSE_PROTOCOL_ALPHA},
       -- Defense Protocol Alpha: Drak'Tharon Keep
-      [17292] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE2_DEFENSE_PROTOCOL_ALPHA},
+      [17292] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE2_DEFENSE_PROTOCOL_ALPHA},
       -- Defense Protocol Alpha: The Violet Hold
-      [17293] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE2_DEFENSE_PROTOCOL_ALPHA},
+      [17293] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE2_DEFENSE_PROTOCOL_ALPHA},
       -- Defense Protocol Alpha: Gundrak
-      [17295] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE2_DEFENSE_PROTOCOL_ALPHA},
+      [17295] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE2_DEFENSE_PROTOCOL_ALPHA},
       -- Defense Protocol Alpha: Halls of Stone
-      [17297] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE2_DEFENSE_PROTOCOL_ALPHA},
+      [17297] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE2_DEFENSE_PROTOCOL_ALPHA},
       -- Defense Protocol Alpha: Halls of Lightning
-      [17299] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE2_DEFENSE_PROTOCOL_ALPHA},
+      [17299] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE2_DEFENSE_PROTOCOL_ALPHA},
       -- Defense Protocol Alpha: The Oculus
-      [17300] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE2_DEFENSE_PROTOCOL_ALPHA},
+      [17300] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE2_DEFENSE_PROTOCOL_ALPHA},
       -- Defense Protocol Alpha: Utgarde Pinnacle
-      [17301] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE2_DEFENSE_PROTOCOL_ALPHA},
+      [17301] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE2_DEFENSE_PROTOCOL_ALPHA},
       -- Defense Protocol Alpha: The Culling of Stratholme
-      [17302] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE2_DEFENSE_PROTOCOL_ALPHA},
+      [17302] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE2_DEFENSE_PROTOCOL_ALPHA},
       -- Defense Protocol Beta: Utgarde Keep
-      [18590] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+      [18590] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE3_DEFENSE_PROTOCOL_BETA},
       -- Defense Protocol Beta: The Nexus
-      [18591] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+      [18591] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE3_DEFENSE_PROTOCOL_BETA},
       -- Defense Protocol Beta: Azjol-Nerub
-      [18592] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+      [18592] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE3_DEFENSE_PROTOCOL_BETA},
       -- Defense Protocol Beta: Ahn'kahet: The Old Kingdom
-      [18593] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+      [18593] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE3_DEFENSE_PROTOCOL_BETA},
       -- Defense Protocol Beta: Drak'Tharon Keep
-      [18594] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+      [18594] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE3_DEFENSE_PROTOCOL_BETA},
       -- Defense Protocol Beta: The Violet Hold
-      [18595] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+      [18595] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE3_DEFENSE_PROTOCOL_BETA},
       -- Defense Protocol Beta: Gundrak
-      [18596] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+      [18596] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE3_DEFENSE_PROTOCOL_BETA},
       -- Defense Protocol Beta: Halls of Stone
-      [18597] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+      [18597] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE3_DEFENSE_PROTOCOL_BETA},
       -- Defense Protocol Beta: Halls of Lightning
-      [18598] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+      [18598] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE3_DEFENSE_PROTOCOL_BETA},
       -- Defense Protocol Beta: The Oculus
-      [18599] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+      [18599] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE3_DEFENSE_PROTOCOL_BETA},
       -- Defense Protocol Beta: Utgarde Pinnacle
-      [18600] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+      [18600] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE3_DEFENSE_PROTOCOL_BETA},
       -- Defense Protocol Beta: The Culling of Stratholme
-      [18601] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+      [18601] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE3_DEFENSE_PROTOCOL_BETA},
       -- Defense Protocol Beta: Trial of The Champion
-      [18602] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+      [18602] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE3_DEFENSE_PROTOCOL_BETA},
       -- Defense Protocol Beta: Trial of the Champion (Alliance)
-      [18677] = {Faction = 'Alliance', OtherSide = 18678, ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+      [18677] = {Faction = 'Alliance', OtherSide = 18678, ClassicOnly = true, Phase = EXPANSION_03_PHASE3_DEFENSE_PROTOCOL_BETA},
       -- Defense Protocol Beta: Trial of the Champion (Horde)
-      [18678] = {Faction = 'Horde', OtherSide = 18677, ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+      [18678] = {Faction = 'Horde', OtherSide = 18677, ClassicOnly = true, Phase = EXPANSION_03_PHASE3_DEFENSE_PROTOCOL_BETA},
       -- Defense Protocol Gamma: Trial of the Champion (Horde)
-      [19425] = {Faction = 'Horde', OtherSide = 19426, ClassicOnly = true, Phase = PHASE4_DEFENSE_PROTOCOL_GAMMA},
+      [19425] = {Faction = 'Horde', OtherSide = 19426, ClassicOnly = true, Phase = EXPANSION_03_PHASE4_DEFENSE_PROTOCOL_GAMMA},
       -- Defense Protocol Gamma: Trial of the Champion (Alliance)
-      [19426] = {Faction = 'Alliance', OtherSide = 19425, ClassicOnly = true, Phase = PHASE4_DEFENSE_PROTOCOL_GAMMA},
+      [19426] = {Faction = 'Alliance', OtherSide = 19425, ClassicOnly = true, Phase = EXPANSION_03_PHASE4_DEFENSE_PROTOCOL_GAMMA},
       -- Defense Protocol Gamma: Utgarde Keep
-      [19427] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE4_DEFENSE_PROTOCOL_GAMMA},
+      [19427] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE4_DEFENSE_PROTOCOL_GAMMA},
       -- Defense Protocol Gamma: The Nexus
-      [19428] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE4_DEFENSE_PROTOCOL_GAMMA},
+      [19428] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE4_DEFENSE_PROTOCOL_GAMMA},
       -- Defense Protocol Gamma: Azjol-Nerub
-      [19429] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE4_DEFENSE_PROTOCOL_GAMMA},
+      [19429] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE4_DEFENSE_PROTOCOL_GAMMA},
       -- Defense Protocol Gamma: Ahn'kahet: The Old Kingdom
-      [19430] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE4_DEFENSE_PROTOCOL_GAMMA},
+      [19430] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE4_DEFENSE_PROTOCOL_GAMMA},
       -- Defense Protocol Gamma: Drak'Tharon Keep
-      [19431] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE4_DEFENSE_PROTOCOL_GAMMA},
+      [19431] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE4_DEFENSE_PROTOCOL_GAMMA},
       -- Defense Protocol Gamma: The Violet Hold
-      [19432] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE4_DEFENSE_PROTOCOL_GAMMA},
+      [19432] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE4_DEFENSE_PROTOCOL_GAMMA},
       -- Defense Protocol Gamma: Gundrak
-      [19433] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE4_DEFENSE_PROTOCOL_GAMMA},
+      [19433] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE4_DEFENSE_PROTOCOL_GAMMA},
       -- Defense Protocol Gamma: Halls of Stone
-      [19434] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE4_DEFENSE_PROTOCOL_GAMMA},
+      [19434] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE4_DEFENSE_PROTOCOL_GAMMA},
       -- Defense Protocol Gamma: Halls of Lightning
-      [19435] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE4_DEFENSE_PROTOCOL_GAMMA},
+      [19435] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE4_DEFENSE_PROTOCOL_GAMMA},
       -- Defense Protocol Gamma: The Oculus
-      [19436] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE4_DEFENSE_PROTOCOL_GAMMA},
+      [19436] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE4_DEFENSE_PROTOCOL_GAMMA},
       -- Defense Protocol Gamma: Utgarde Pinnacle
-      [19437] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE4_DEFENSE_PROTOCOL_GAMMA},
+      [19437] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE4_DEFENSE_PROTOCOL_GAMMA},
       -- Defense Protocol Gamma: The Culling of Stratholme
-      [19438] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE4_DEFENSE_PROTOCOL_GAMMA},
+      [19438] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_03_PHASE4_DEFENSE_PROTOCOL_GAMMA},
     -- Lich King Heroic Ends
     -- Lich King 10-Player Raid Start
       -- The Arachnid Quarter (10 player)
-      [562] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [562] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- The Construct Quarter (10 player)
-      [564] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [564] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- The Plague Quarter (10 player)
-      [566] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [566] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- The Military Quarter (10 player)
-      [568] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [568] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Sapphiron's Demise (10 player)
-      [572] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [572] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Kel'Thuzad's Defeat (10 player)
-      [574] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [574] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- The Fall of Naxxramas (10 player)
-      [576] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [576] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- The Dedicated Few (10 player)
-      [578] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [578] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- The Spellweaver's Downfall (10 player)
-      [622] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [622] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Less Is More (10 player)
-      [624] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [624] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Make Quick Werk Of Him (10 player)
-      [1856] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [1856] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Arachnophobia (10 player)
-      [1858] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [1858] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- A Poke In The Eye (10 player)
-      [1869] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [1869] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- You Don't Have An Eternity (10 player)
-      [1874] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [1874] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Besting the Black Dragonflight (10 player)
-      [1876] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [1876] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- The Safety Dance (10 player)
-      [1996] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [1996] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Momma Said Knock You Out (10 player)
-      [1997] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [1997] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Gonna Go When the Volcano Blows (10 player)
-      [2047] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [2047] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Twilight Assist (10 player)
-      [2049] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [2049] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Twilight Duo (10 player)
-      [2050] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [2050] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- The Twilight Zone (10 player)
-      [2051] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [2051] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- The Hundred Club (10 player)
-      [2146] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [2146] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Denyin' the Scion (10 player)
-      [2148] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [2148] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- And They Would All Go Down Together (10 player)
-      [2176] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [2176] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Shocking! (10 player)
-      [2178] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [2178] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Subtraction (10 player)
-      [2180] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [2180] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Spore Loser (10 player)
-      [2182] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [2182] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Just Can't Get Enough (10 player)
-      [2184] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [2184] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- The Undying
-      [2187] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [2187] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Earth, Wind & Fire (10 player)
-      [4016] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CRUSADER},
+      [4016] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_TRIAL_OF_CRUSADER},
       -- Onyxia's Lair (10 player)
-      [4396] = {Faction = 'Both', Phase = PHASE3_ONYXIA_LAIR},
+      [4396] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_ONYXIA_LAIR},
       -- More Dots! (10 player)
-      [4402] = {Faction = 'Both', Phase = PHASE3_ONYXIA_LAIR},
+      [4402] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_ONYXIA_LAIR},
       -- Many Whelps! Handle It! (10 player)
-      [4403] = {Faction = 'Both', Phase = PHASE3_ONYXIA_LAIR},
+      [4403] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_ONYXIA_LAIR},
       -- She Deep Breaths More (10 player)
-      [4404] = {Faction = 'Both', Phase = PHASE3_ONYXIA_LAIR},
+      [4404] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_ONYXIA_LAIR},
       -- The Twilight Destroyer (10 player)
-      [4817] = {Faction = 'Both', Phase = PHASE5_RUBY_SANCTUM},
+      [4817] = {Faction = 'Both', Phase = EXPANSION_03_PHASE5_RUBY_SANCTUM},
       -- Heroic: The Twilight Destroyer (10 player)
-      [4818] = {Faction = 'Both', Phase = PHASE5_RUBY_SANCTUM},
+      [4818] = {Faction = 'Both', Phase = EXPANSION_03_PHASE5_RUBY_SANCTUM},
     -- Lich King 10-Player Raid Ends
     -- Lich King 25-Player Raid Start
       -- The Arachnid Quarter (25 player)
-      [563] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [563] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- The Construct Quarter (25 player)
-      [565] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [565] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- The Plague Quarter (25 player)
-      [567] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [567] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- The Military Quarter (25 player)
-      [569] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [569] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Sapphiron's Demise (25 player)
-      [573] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [573] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Kel'Thuzad's Defeat (25 player)
-      [575] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [575] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- The Fall of Naxxramas (25 player)
-      [577] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [577] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- The Dedicated Few (25 player)
-      [579] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [579] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- The Spellweaver's Downfall (25 player)
-      [623] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [623] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Besting the Black Dragonflight (25 player)
-      [625] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [625] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Make Quick Werk Of Him (25 player)
-      [1857] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [1857] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Arachnophobia (25 player)
-      [1859] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [1859] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- A Poke In The Eye (25 player)
-      [1870] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [1870] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- You Don't Have An Eternity (25 player)
-      [1875] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [1875] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Less Is More (25 player)
-      [1877] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [1877] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Gonna Go When the Volcano Blows (25 player)
-      [2048] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [2048] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Twilight Assist (25 player)
-      [2052] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [2052] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Twilight Duo (25 player)
-      [2053] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [2053] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- The Twilight Zone (25 player)
-      [2054] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [2054] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- The Safety Dance (25 player)
-      [2139] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [2139] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Momma Said Knock You Out (25 player)
-      [2140] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [2140] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- The Hundred Club (25 player)
-      [2147] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [2147] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Denyin' the Scion (25 player)
-      [2149] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [2149] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- And They Would All Go Down Together (25 player)
-      [2177] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [2177] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Shocking! (25 player)
-      [2179] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [2179] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Subtraction (25 player)
-      [2181] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [2181] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Spore Loser (25 player)
-      [2183] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [2183] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Just Can't Get Enough (25 player)
-      [2185] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [2185] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- The Immortal
-      [2186] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+      [2186] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
       -- Earth, Wind & Fire (25 player)
-      [4017] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CRUSADER},
+      [4017] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_TRIAL_OF_CRUSADER},
       -- Onyxia's Lair (25 player)
-      [4397] = {Faction = 'Both', Phase = PHASE3_ONYXIA_LAIR},
+      [4397] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_ONYXIA_LAIR},
       -- More Dots! (25 player)
-      [4405] = {Faction = 'Both', Phase = PHASE3_ONYXIA_LAIR},
+      [4405] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_ONYXIA_LAIR},
       -- Many Whelps! Handle It! (25 player)
-      [4406] = {Faction = 'Both', Phase = PHASE3_ONYXIA_LAIR},
+      [4406] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_ONYXIA_LAIR},
       -- She Deep Breaths More (25 player)
-      [4407] = {Faction = 'Both', Phase = PHASE3_ONYXIA_LAIR},
+      [4407] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_ONYXIA_LAIR},
       -- The Twilight Destroyer (25 player)
-      [4815] = {Faction = 'Both', Phase = PHASE5_RUBY_SANCTUM},
+      [4815] = {Faction = 'Both', Phase = EXPANSION_03_PHASE5_RUBY_SANCTUM},
       -- Heroic: The Twilight Destroyer (25 player)
-      [4816] = {Faction = 'Both', Phase = PHASE5_RUBY_SANCTUM},
+      [4816] = {Faction = 'Both', Phase = EXPANSION_03_PHASE5_RUBY_SANCTUM},
     -- Lich King 25-Player Raid Ends
     -- Secrets of Ulduar 10-Player Raid Start
       -- The Siege of Ulduar (10 player)
-      [2886] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2886] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- The Antechamber of Ulduar (10 player)
-      [2888] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2888] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- The Keepers of Ulduar (10 player)
-      [2890] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2890] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- The Descent into Madness (10 player)
-      [2892] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2892] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- The Secrets of Ulduar (10 player)
-      [2894] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2894] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Champion of Ulduar
-      [2903] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2903] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Unbroken (10 player)
-      [2905] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2905] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Three Car Garage (10 player)
-      [2907] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2907] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Take Out Those Turrets (10 player)
-      [2909] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2909] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Shutout (10 player)
-      [2911] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2911] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Orbital Bombardment (10 player)
-      [2913] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2913] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Orbital Devastation (10 player)
-      [2914] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2914] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Nuked from Orbit (10 player)
-      [2915] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2915] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- A Quick Shave (10 player)
-      [2919] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2919] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Iron Dwarf, Medium Rare (10 player)
-      [2923] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2923] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Shattered (10 player)
-      [2925] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2925] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Hot Pocket (10 player)
-      [2927] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2927] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Stokin' the Furnace (10 player)
-      [2930] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2930] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Nerf Engineering (10 player)
-      [2931] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2931] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Nerf Scrapbots (10 player)
-      [2933] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2933] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Nerf Gravity Bombs (10 player)
-      [2934] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2934] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Must Deconstruct Faster (10 player)
-      [2937] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2937] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- I Choose You, Runemaster Molgeim (10 player)
-      [2939] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2939] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- I Choose You, Stormcaller Brundir (10 player)
-      [2940] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2940] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- I Choose You, Steelbreaker (10 player)
-      [2941] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2941] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- But I'm On Your Side (10 player)
-      [2945] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2945] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Can't Do That While Stunned (10 player)
-      [2947] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2947] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- With Open Arms (10 player)
-      [2951] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2951] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Disarmed (10 player)
-      [2953] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2953] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- If Looks Could Kill (10 player)
-      [2955] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2955] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Rubble and Roll (10 player)
-      [2959] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2959] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Cheese the Freeze (10 player)
-      [2961] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2961] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- I Have the Coolest Friends (10 player)
-      [2963] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2963] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Getting Cold in Here (10 player)
-      [2967] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2967] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Staying Buffed All Winter (10 player)
-      [2969] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2969] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Don't Stand in the Lightning (10 player)
-      [2971] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2971] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- I'll Take You All On (10 player)
-      [2973] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2973] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Who Needs Bloodlust? (10 player)
-      [2975] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2975] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Siffed (10 player)
-      [2977] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2977] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Lumberjacked (10 player)
-      [2979] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2979] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Con-speed-atory (10 player)
-      [2980] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2980] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Getting Back to Nature (10 player)
-      [2982] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2982] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Deforestation (10 player)
-      [2985] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2985] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Set Up Us the Bomb (10 player)
-      [2989] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2989] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Shadowdodger (10 player)
-      [2996] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2996] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Supermassive (10 player)
-      [3003] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3003] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- He Feeds On Your Tears (10 player)
-      [3004] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3004] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Crazy Cat Lady (10 player)
-      [3006] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3006] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Drive Me Crazy (10 player)
-      [3008] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3008] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Kiss and Make Up (10 player)
-      [3009] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3009] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- He's Not Getting Any Older (10 player)
-      [3012] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3012] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- They're Coming Out of the Walls (10 player)
-      [3014] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3014] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- In His House He Waits Dreaming (10 player)
-      [3015] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3015] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Observed (10 player)
-      [3036] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3036] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Orbit-uary (10 player)
-      [3056] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3056] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Heartbreaker (10 player)
-      [3058] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3058] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Nine Lives (10 player)
-      [3076] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3076] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Dwarfageddon (10 player)
-      [3097] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3097] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Not-So-Friendly Fire (10 player)
-      [3138] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3138] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Two Lights in the Darkness (10 player)
-      [3141] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3141] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Three Lights in the Darkness (10 player)
-      [3157] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3157] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- One Light in the Darkness (10 player)
-      [3158] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3158] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Alone in the Darkness (10 player)
-      [3159] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3159] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Lose Your Illusion (10 player)
-      [3176] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3176] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Knock on Wood (10 player)
-      [3177] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3177] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Knock, Knock on Wood (10 player)
-      [3178] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3178] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Knock, Knock, Knock on Wood (10 player)
-      [3179] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3179] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Firefighter (10 player)
-      [3180] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3180] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- I Love the Smell of Saronite in the Morning (10 player)
-      [3181] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3181] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- I Could Say That This Cache Was Rare (10 player)
-      [3182] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3182] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Herald of the Titans
-      [3316] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3316] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
     -- Secrets of Ulduar 10-Player Raid Ends
     -- Secrets of Ulduar 25-Player Raid Start
       -- The Siege of Ulduar (25 player)
-      [2887] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2887] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- The Antechamber of Ulduar (25 player)
-      [2889] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2889] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- The Keepers of Ulduar (25 player)
-      [2891] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2891] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- The Descent into Madness (25 player)
-      [2893] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2893] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- The Secrets of Ulduar (25 player)
-      [2895] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2895] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Conqueror of Ulduar
-      [2904] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2904] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Unbroken (25 player)
-      [2906] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2906] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Three Car Garage (25 player)
-      [2908] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2908] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Take Out Those Turrets (25 player)
-      [2910] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2910] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Shutout (25 player)
-      [2912] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2912] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Orbital Devastation (25 player)
-      [2916] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2916] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Nuked from Orbit (25 player)
-      [2917] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2917] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Orbital Bombardment (25 player)
-      [2918] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2918] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- A Quick Shave (25 player)
-      [2921] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2921] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Iron Dwarf, Medium Rare (25 player)
-      [2924] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2924] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Shattered (25 player)
-      [2926] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2926] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Hot Pocket (25 player)
-      [2928] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2928] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Stokin' the Furnace (25 player)
-      [2929] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2929] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Nerf Engineering (25 player)
-      [2932] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2932] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Nerf Scrapbots (25 player)
-      [2935] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2935] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Nerf Gravity Bombs (25 player)
-      [2936] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2936] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Must Deconstruct Faster (25 player)
-      [2938] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2938] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- I Choose You, Runemaster Molgeim (25 player)
-      [2942] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2942] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- I Choose You, Stormcaller Brundir (25 player)
-      [2943] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2943] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- I Choose You, Steelbreaker (25 player)
-      [2944] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2944] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- But I'm On Your Side (25 player)
-      [2946] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2946] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Can't Do That While Stunned (25 player)
-      [2948] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2948] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- With Open Arms (25 player)
-      [2952] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2952] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Disarmed (25 player)
-      [2954] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2954] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- If Looks Could Kill (25 player)
-      [2956] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2956] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Rubble and Roll (25 player)
-      [2960] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2960] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Cheese the Freeze (25 player)
-      [2962] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2962] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- I Have the Coolest Friends (25 player)
-      [2965] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2965] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Getting Cold in Here (25 player)
-      [2968] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2968] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Staying Buffed All Winter (25 player)
-      [2970] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2970] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Don't Stand in the Lightning (25 player)
-      [2972] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2972] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- I'll Take You All On (25 player)
-      [2974] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2974] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Who Needs Bloodlust? (25 player)
-      [2976] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2976] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Siffed (25 player)
-      [2978] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2978] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Con-speed-atory (25 player)
-      [2981] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2981] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Getting Back to Nature (25 player)
-      [2983] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2983] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Deforestation (25 player)
-      [2984] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2984] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Not-So-Friendly Fire (25 player)
-      [2995] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2995] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Shadowdodger (25 player)
-      [2997] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [2997] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Supermassive (25 player)
-      [3002] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3002] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- He Feeds On Your Tears (25 player)
-      [3005] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3005] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Crazy Cat Lady (25 player)
-      [3007] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3007] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Drive Me Crazy (25 player)
-      [3010] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3010] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Kiss and Make Up (25 player)
-      [3011] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3011] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- He's Not Getting Any Older (25 player)
-      [3013] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3013] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- In His House He Waits Dreaming (25 player)
-      [3016] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3016] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- They're Coming Out of the Walls (25 player)
-      [3017] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3017] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Observed (25 player)
-      [3037] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3037] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Orbit-uary (25 player)
-      [3057] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3057] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Heartbreaker (25 player)
-      [3059] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3059] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Nine Lives (25 player)
-      [3077] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3077] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Dwarfageddon (25 player)
-      [3098] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3098] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Lumberjacked (25 player)
-      [3118] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3118] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Three Lights in the Darkness (25 player)
-      [3161] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3161] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Two Lights in the Darkness (25 player)
-      [3162] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3162] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- One Light in the Darkness (25 player)
-      [3163] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3163] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Alone in the Darkness (25 player)
-      [3164] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3164] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Lose Your Illusion (25 player)
-      [3183] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3183] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- I Could Say That This Cache Was Rare (25 player)
-      [3184] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3184] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Knock on Wood (25 player)
-      [3185] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3185] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Knock, Knock on Wood (25 player)
-      [3186] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3186] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Knock, Knock, Knock on Wood (25 player)
-      [3187] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3187] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- I Love the Smell of Saronite in the Morning (25 player)
-      [3188] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3188] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Firefighter (25 player)
-      [3189] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3189] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
       -- Set Up Us the Bomb (25 player)
-      [3237] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+      [3237] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
     -- Secrets of Ulduar 25-Player Raid Ends
     -- Call of the Crusade 10-Player Raid Start
       -- Upper Back Pain (10 player)
-      [3797] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CRUSADER},
+      [3797] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_TRIAL_OF_CRUSADER},
       -- Resilience Will Fix It (10 player)
-      [3798] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CRUSADER},
+      [3798] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_TRIAL_OF_CRUSADER},
       -- Salt and Pepper (10 player)
-      [3799] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CRUSADER},
+      [3799] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_TRIAL_OF_CRUSADER},
       -- The Traitor King (10 player)
-      [3800] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CRUSADER},
+      [3800] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_TRIAL_OF_CRUSADER},
       -- A Tribute to Skill (10 player)
-      [3808] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CRUSADER},
+      [3808] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_TRIAL_OF_CRUSADER},
       -- A Tribute to Mad Skill (10 player)
-      [3809] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CRUSADER},
+      [3809] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_TRIAL_OF_CRUSADER},
       -- A Tribute to Insanity (10 player)
-      [3810] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CRUSADER},
+      [3810] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_TRIAL_OF_CRUSADER},
       -- Call of the Crusade (10 player)
-      [3917] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CRUSADER},
+      [3917] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_TRIAL_OF_CRUSADER},
       -- Call of the Grand Crusade (10 player)
-      [3918] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CRUSADER},
+      [3918] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_TRIAL_OF_CRUSADER},
       -- Not One, But Two Jormungars (10 player)
-      [3936] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CRUSADER},
+      [3936] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_TRIAL_OF_CRUSADER},
       -- Three Sixty Pain Spike (10 player)
-      [3996] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CRUSADER},
+      [3996] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_TRIAL_OF_CRUSADER},
       -- A Tribute to Dedicated Insanity
-      [4080] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CRUSADER},
+      [4080] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_TRIAL_OF_CRUSADER},
     -- Call of the Crusade 10-Player Raid Ends
     -- Call of the Crusade 25-Player Raid Start
       -- Call of the Grand Crusade (25 player)
-      [3812] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CRUSADER},
+      [3812] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_TRIAL_OF_CRUSADER},
       -- Upper Back Pain (25 player)
-      [3813] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CRUSADER},
+      [3813] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_TRIAL_OF_CRUSADER},
       -- Resilience Will Fix It (25 player)
-      [3814] = {Faction = 'Both', Removed = LE_EXPANSION_CATACLYSM, Phase = PHASE3_TRIAL_OF_CRUSADER},
+      [3814] = {Faction = 'Both', Removed = LE_EXPANSION_CATACLYSM, Phase = EXPANSION_03_PHASE3_TRIAL_OF_CRUSADER},
       -- Salt and Pepper (25 player)
-      [3815] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CRUSADER},
+      [3815] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_TRIAL_OF_CRUSADER},
       -- The Traitor King (25 player)
-      [3816] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CRUSADER},
+      [3816] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_TRIAL_OF_CRUSADER},
       -- A Tribute to Skill (25 player)
-      [3817] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CRUSADER},
+      [3817] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_TRIAL_OF_CRUSADER},
       -- A Tribute to Mad Skill (25 player)
-      [3818] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CRUSADER},
+      [3818] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_TRIAL_OF_CRUSADER},
       -- A Tribute to Insanity (25 player)
-      [3819] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CRUSADER},
+      [3819] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_TRIAL_OF_CRUSADER},
       -- Call of the Crusade (25 player)
-      [3916] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CRUSADER},
+      [3916] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_TRIAL_OF_CRUSADER},
       -- Not One, But Two Jormungars (25 player)
-      [3937] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CRUSADER},
+      [3937] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_TRIAL_OF_CRUSADER},
       -- Three Sixty Pain Spike (25 player)
-      [3997] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CRUSADER},
+      [3997] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_TRIAL_OF_CRUSADER},
     -- Call of the Crusade 25-Player Raid Ends
     -- Fall of the Lich King 10-Player Raid Start
       -- The Frostwing Halls (10 player)
-      [4527] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4527] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- The Plagueworks (10 player)
-      [4528] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4528] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- The Crimson Hall (10 player)
-      [4529] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4529] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- The Frozen Throne (10 player)
-      [4530] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4530] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Storming the Citadel (10 player)
-      [4531] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4531] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Fall of the Lich King (10 player)
-      [4532] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4532] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Boned (10 player)
-      [4534] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4534] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Full House (10 player)
-      [4535] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4535] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- I'm on a Boat (10 player)
-      [4536] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4536] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- I've Gone and Made a Mess (10 player)
-      [4537] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4537] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Dances with Oozes (10 player)
-      [4538] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4538] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Once Bitten, Twice Shy (10 player)
-      [4539] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4539] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Flu Shot Shortage (10 player)
-      [4577] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4577] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Nausea, Heartburn, Indigestion... (10 player)
-      [4578] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4578] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Portal Jockey (10 player)
-      [4579] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4579] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- All You Can Eat (10 player)
-      [4580] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4580] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Neck-Deep in Vile (10 player)
-      [4581] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4581] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- The Orb Whisperer (10 player)
-      [4582] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4582] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Bane of the Fallen King
-      [4583] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4583] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Been Waiting a Long Time for This (10 player)
-      [4601] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4601] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Heroic: Storming the Citadel (10 player)
-      [4628] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4628] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Heroic: The Plagueworks (10 player)
-      [4629] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4629] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Heroic: The Crimson Hall (10 player)
-      [4630] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4630] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Heroic: The Frostwing Halls (10 player)
-      [4631] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4631] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Heroic: Fall of the Lich King (10 player)
-      [4636] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4636] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
     -- Fall of the Lich King 10-Player Raid Ends
     -- Fall of the Lich King 25-Player Raid Start
       -- The Light of Dawn
-      [4584] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4584] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- The Frozen Throne (25 player)
-      [4597] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4597] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Storming the Citadel (25 player)
-      [4604] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4604] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- The Plagueworks (25 player)
-      [4605] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4605] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- The Crimson Hall (25 player)
-      [4606] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4606] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- The Frostwing Halls (25 player)
-      [4607] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4607] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Fall of the Lich King (25 player)
-      [4608] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4608] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Boned (25 player)
-      [4610] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4610] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Full House (25 player)
-      [4611] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4611] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- I'm on a Boat (25 player)
-      [4612] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4612] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- I've Gone and Made a Mess (25 player)
-      [4613] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4613] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Dances with Oozes (25 player)
-      [4614] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4614] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Flu Shot Shortage (25 player)
-      [4615] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4615] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Nausea, Heartburn, Indigestion... (25 player)
-      [4616] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4616] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- The Orb Whisperer (25 player)
-      [4617] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4617] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Once Bitten, Twice Shy (25 player)
-      [4618] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4618] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Portal Jockey (25 player)
-      [4619] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4619] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- All You Can Eat (25 player)
-      [4620] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4620] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Been Waiting a Long Time for This (25 player)
-      [4621] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4621] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Neck-Deep in Vile (25 player)
-      [4622] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4622] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Heroic: Storming the Citadel (25 player)
-      [4632] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4632] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Heroic: The Plagueworks (25 player)
-      [4633] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4633] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Heroic: The Crimson Hall (25 player)
-      [4634] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4634] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Heroic: The Frostwing Halls (25 player)
-      [4635] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4635] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
       -- Heroic: Fall of the Lich King (25 player)
-      [4637] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+      [4637] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
     -- Fall of the Lich King 25-Player Raid Ends
   -- Dungeons & Raids End
 
@@ -1940,9 +1940,9 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Professional Master
     [733] = {Faction = 'Both'},
     -- Professional Grand Master
-    [734] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [734] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Working Day and Night
-    [735] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [735] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Cooking Start
       -- Journeyman Cook
       [121] = {Faction = 'Both'},
@@ -1993,17 +1993,17 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
       -- Captain Rumsey's Lager
       [1801] = {Faction = 'Both'},
       -- Dalaran Cooking Award
-      [1998] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1998] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- 10 Dalaran Cooking Awards
-      [1999] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1999] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- 25 Dalaran Cooking Awards
-      [2000] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2000] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- 50 Dalaran Cooking Awards
-      [2001] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2001] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- 100 Dalaran Cooking Awards
-      [2002] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2002] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Cooking with Style
-      [3296] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [3296] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Cooking Ends
     -- Fishing Start
       -- Journeyman Fisherman
@@ -2015,7 +2015,7 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
       -- Master Fisherman
       [129] = {Faction = 'Both'},
       -- Grand Master Fisherman
-      [130] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [130] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- The Lurker Above
       [144] = {Faction = 'Both'},
       -- The Fishing Diplomat
@@ -2041,7 +2041,7 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
       -- Accomplished Angler
       [1516] = {Faction = 'Both'},
       -- Northrend Angler
-      [1517] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1517] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- 25 Fish
       [1556] = {Faction = 'Both'},
       -- 50 Fish
@@ -2059,19 +2059,19 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
       -- Old Ironjaw
       [1837] = {Faction = 'Both'},
       -- There's Gold In That There Fountain
-      [1957] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1957] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- I Smell A Giant Rat
-      [1958] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1958] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- A Penny For Your Thoughts
-      [2094] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2094] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Silver in the City
-      [2095] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2095] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- The Coin Master
-      [2096] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2096] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Chasing Marcia
-      [3217] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [3217] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Turtles All the Way Down
-      [3218] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [3218] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Fishing Ends
     -- First Aid Start
       -- Journeyman in First Aid
@@ -2083,7 +2083,7 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
       -- Master in First Aid
       [134] = {Faction = 'Both'},
       -- Grand Master in First Aid
-      [135] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [135] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Stocking Up
       [137] = {Faction = 'Both'},
       -- Ultimate Triage
@@ -2113,15 +2113,15 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- The Diplomat (Horde)
     [943] = {Faction = 'Horde', OtherSide = 942},
     -- The Argent Champion
-    [945] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [945] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Ambassador of the Alliance (Alliance)
     [948] = {Faction = 'Alliance', OtherSide = 762},
     -- Guardian of Cenarius
-    [953] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [953] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- 35 Exalted Reputations
     [1014] = {Faction = 'Both'},
     -- 40 Exalted Reputations
-    [1015] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1015] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Classic Start
       -- They Love Me In That Tunnel
       [944] = {Faction = 'Both'},
@@ -2170,39 +2170,39 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- The Burning Crusade Ends
     -- Wrath of the Lich King Start
       -- The Argent Crusade
-      [947] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [947] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Tuskarrmageddon
-      [949] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [949] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Frenzyheart Tribe
-      [950] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [950] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- The Oracles
-      [951] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [951] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Mercenary of Sholazar
-      [952] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [952] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- The Wyrmrest Accord
-      [1007] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1007] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- The Kirin Tor
-      [1008] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1008] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Knights of the Ebon Blade
-      [1009] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1009] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Northrend Vanguard
-      [1010] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1010] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- The Winds of the North (Horde)
-      [1011] = {Faction = 'Horde', OtherSide = 1012, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1011] = {Faction = 'Horde', OtherSide = 1012, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- The Winds of the North (Alliance)
-      [1012] = {Faction = 'Alliance', OtherSide = 1011, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1012] = {Faction = 'Alliance', OtherSide = 1011, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Ice Mammoth
-      [2082] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2082] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Grand Ice Mammoth
-      [2083] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [2083] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- The Ashen Verdict
-      [4598] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [4598] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Wrath of the Lich King Ends
   -- Reputation End
 
   -- World Events Start
     -- To Honor One's Elders
-    [913] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [913] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- The Flame Warden (Alliance)
     [1038] = {Faction = 'Alliance', OtherSide = 1039},
     -- The Flame Keeper (Horde)
@@ -2226,9 +2226,9 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- For The Children
     [1793] = {Faction = 'Both'},
     -- What A Long, Strange Trip It's Been (Alliance)
-    [2144] = {Faction = 'Alliance', OtherSide = 2145, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 2144, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [2144] = {Faction = 'Alliance', OtherSide = 2145, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 2144, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- What A Long, Strange Trip It's Been (Horde)
-    [2145] = {Faction = 'Horde', OtherSide = 2144, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 2144, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [2145] = {Faction = 'Horde', OtherSide = 2144, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 2144, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Noble Gardener (Alliance)
     [2797] = {Faction = 'Alliance', OtherSide = 2798, Merged = LE_EXPANSION_MISTS_OF_PANDARIA, MergedId = 2798},
     -- Noble Gardener (Horde)
@@ -2269,7 +2269,7 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
       -- The Rocket's Red Glare
       [1281] = {Faction = 'Both'},
       -- Elders of Northrend
-      [1396] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+      [1396] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
       -- Frenzied Firecracker
       [1552] = {Faction = 'Both'},
     -- Lunar Festival Ends
@@ -2529,75 +2529,75 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Winter Veil Ends
     -- Argent Tournament Start
       -- Argent Aspiration
-      [2756] = {Faction = 'Both', Phase = PHASE4_ICC_DUNGEONS},
+      [2756] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Argent Valor
-      [2758] = {Faction = 'Both', Phase = PHASE4_ICC_DUNGEONS},
+      [2758] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Exalted Champion of Darnassus (Alliance)
-      [2760] = {Faction = 'Alliance', OtherSide = 2769, Phase = PHASE4_ICC_DUNGEONS},
+      [2760] = {Faction = 'Alliance', OtherSide = 2769, Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Exalted Champion of the Exodar (Alliance)
-      [2761] = {Faction = 'Alliance', OtherSide = 2767, Phase = PHASE4_ICC_DUNGEONS},
+      [2761] = {Faction = 'Alliance', OtherSide = 2767, Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Exalted Champion of Gnomeregan (Alliance)
-      [2762] = {Faction = 'Alliance', OtherSide = 2766, Phase = PHASE4_ICC_DUNGEONS},
+      [2762] = {Faction = 'Alliance', OtherSide = 2766, Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Exalted Champion of Ironforge (Alliance)
-      [2763] = {Faction = 'Alliance', OtherSide = 2768, Phase = PHASE4_ICC_DUNGEONS},
+      [2763] = {Faction = 'Alliance', OtherSide = 2768, Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Exalted Champion of Stormwind (Alliance)
-      [2764] = {Faction = 'Alliance', OtherSide = 2765, Phase = PHASE4_ICC_DUNGEONS},
+      [2764] = {Faction = 'Alliance', OtherSide = 2765, Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Exalted Champion of Orgrimmar (Horde)
-      [2765] = {Faction = 'Horde', OtherSide = 2764, Phase = PHASE4_ICC_DUNGEONS},
+      [2765] = {Faction = 'Horde', OtherSide = 2764, Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Exalted Champion of Sen'jin (Horde)
-      [2766] = {Faction = 'Horde', OtherSide = 2762, Phase = PHASE4_ICC_DUNGEONS},
+      [2766] = {Faction = 'Horde', OtherSide = 2762, Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Exalted Champion of Silvermoon City (Horde)
-      [2767] = {Faction = 'Horde', OtherSide = 2761, Phase = PHASE4_ICC_DUNGEONS},
+      [2767] = {Faction = 'Horde', OtherSide = 2761, Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Exalted Champion of Thunder Bluff (Horde)
-      [2768] = {Faction = 'Horde', OtherSide = 2763, Phase = PHASE4_ICC_DUNGEONS},
+      [2768] = {Faction = 'Horde', OtherSide = 2763, Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Exalted Champion of the Undercity (Horde)
-      [2769] = {Faction = 'Horde', OtherSide = 2760, Phase = PHASE4_ICC_DUNGEONS},
+      [2769] = {Faction = 'Horde', OtherSide = 2760, Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Exalted Champion of the Alliance (Alliance)
-      [2770] = {Faction = 'Alliance', OtherSide = 2771, Phase = PHASE4_ICC_DUNGEONS},
+      [2770] = {Faction = 'Alliance', OtherSide = 2771, Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Exalted Champion of the Horde (Horde)
-      [2771] = {Faction = 'Horde', OtherSide = 2770, Phase = PHASE4_ICC_DUNGEONS},
+      [2771] = {Faction = 'Horde', OtherSide = 2770, Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Tilted!
-      [2772] = {Faction = 'Both', Phase = PHASE4_ICC_DUNGEONS},
+      [2772] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- It's Just a Flesh Wound
-      [2773] = {Faction = 'Both', Phase = PHASE4_ICC_DUNGEONS},
+      [2773] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Champion of Darnassus (Alliance)
-      [2777] = {Faction = 'Alliance', OtherSide = 2787, Phase = PHASE4_ICC_DUNGEONS},
+      [2777] = {Faction = 'Alliance', OtherSide = 2787, Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Champion of the Exodar (Alliance)
-      [2778] = {Faction = 'Alliance', OtherSide = 2785, Phase = PHASE4_ICC_DUNGEONS},
+      [2778] = {Faction = 'Alliance', OtherSide = 2785, Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Champion of Gnomeregan (Alliance)
-      [2779] = {Faction = 'Alliance', OtherSide = 2784, Phase = PHASE4_ICC_DUNGEONS},
+      [2779] = {Faction = 'Alliance', OtherSide = 2784, Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Champion of Ironforge (Alliance)
-      [2780] = {Faction = 'Alliance', OtherSide = 2786, Phase = PHASE4_ICC_DUNGEONS},
+      [2780] = {Faction = 'Alliance', OtherSide = 2786, Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Champion of Stormwind (Alliance)
-      [2781] = {Faction = 'Alliance', OtherSide = 2783, Phase = PHASE4_ICC_DUNGEONS},
+      [2781] = {Faction = 'Alliance', OtherSide = 2783, Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Champion of the Alliance (Alliance)
-      [2782] = {Faction = 'Alliance', OtherSide = 2788, Phase = PHASE4_ICC_DUNGEONS},
+      [2782] = {Faction = 'Alliance', OtherSide = 2788, Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Champion of Orgrimmar (Horde)
-      [2783] = {Faction = 'Horde', OtherSide = 2781, Phase = PHASE4_ICC_DUNGEONS},
+      [2783] = {Faction = 'Horde', OtherSide = 2781, Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Champion of Sen'jin (Horde)
-      [2784] = {Faction = 'Horde', OtherSide = 2779, Phase = PHASE4_ICC_DUNGEONS},
+      [2784] = {Faction = 'Horde', OtherSide = 2779, Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Champion of Silvermoon City (Horde)
-      [2785] = {Faction = 'Horde', OtherSide = 2778, Phase = PHASE4_ICC_DUNGEONS},
+      [2785] = {Faction = 'Horde', OtherSide = 2778, Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Champion of Thunder Bluff (Horde)
-      [2786] = {Faction = 'Horde', OtherSide = 2780, Phase = PHASE4_ICC_DUNGEONS},
+      [2786] = {Faction = 'Horde', OtherSide = 2780, Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Champion of the Undercity (Horde)
-      [2787] = {Faction = 'Horde', OtherSide = 2777, Phase = PHASE4_ICC_DUNGEONS},
+      [2787] = {Faction = 'Horde', OtherSide = 2777, Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Champion of the Horde (Horde)
-      [2788] = {Faction = 'Horde', OtherSide = 2782, Phase = PHASE4_ICC_DUNGEONS},
+      [2788] = {Faction = 'Horde', OtherSide = 2782, Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Exalted Argent Champion of the Horde (Horde)
-      [2816] = {Faction = 'Horde', OtherSide = 2817, Phase = PHASE4_ICC_DUNGEONS},
+      [2816] = {Faction = 'Horde', OtherSide = 2817, Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Exalted Argent Champion of the Alliance (Alliance)
-      [2817] = {Faction = 'Alliance', OtherSide = 2816, Phase = PHASE4_ICC_DUNGEONS},
+      [2817] = {Faction = 'Alliance', OtherSide = 2816, Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Lance a Lot
-      [2836] = {Faction = 'Both', Phase = PHASE4_ICC_DUNGEONS},
+      [2836] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- A Silver Confidant (Alliance)
-      [3676] = {Faction = 'Alliance', OtherSide = 3677, Phase = PHASE4_ICC_DUNGEONS},
+      [3676] = {Faction = 'Alliance', OtherSide = 3677, Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- The Sunreavers (Horde)
-      [3677] = {Faction = 'Horde', OtherSide = 3676, Phase = PHASE4_ICC_DUNGEONS},
+      [3677] = {Faction = 'Horde', OtherSide = 3676, Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- Pony Up!
-      [3736] = {Faction = 'Both', Phase = PHASE4_ICC_DUNGEONS},
+      [3736] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
       -- The Sword in the Skull
-      [4596] = {Faction = 'Both', Phase = PHASE4_ICC_DUNGEONS},
+      [4596] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_DUNGEONS},
     -- Argent Tournament Ends
   -- World Events End
 
@@ -2679,29 +2679,29 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Scout (Horde)
     [454] = {Faction = 'Horde', OtherSide = 442, Retroactive = true, VanillaOnly = true},
     -- Realm First! Obsidian Slayer
-    [456] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+    [456] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
     -- Realm First! Level 80
-    [457] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [457] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Realm First! Level 80 Rogue
-    [458] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [458] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Realm First! Level 80 Warrior
-    [459] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [459] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Realm First! Level 80 Mage
-    [460] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [460] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Realm First! Level 80 Death Knight
-    [461] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [461] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Realm First! Level 80 Hunter
-    [462] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [462] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Realm First! Level 80 Warlock
-    [463] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [463] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Realm First! Level 80 Priest
-    [464] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [464] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Realm First! Level 80 Paladin
-    [465] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [465] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Realm First! Level 80 Druid
-    [466] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [466] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Realm First! Level 80 Shaman
-    [467] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [467] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Grunt (Horde)
     [468] = {Faction = 'Horde', OtherSide = 470, Retroactive = true},
     -- Legionnaire (Horde)
@@ -2761,61 +2761,61 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Blue Brewfest Stein
     [1293] = {Faction = 'Both', Retroactive = true},
     -- Realm First! Magic Seeker
-    [1400] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+    [1400] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
     -- Realm First! Conqueror of Naxxramas
-    [1402] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+    [1402] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
     -- Realm First! Level 80 Gnome
-    [1404] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1404] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Realm First! Level 80 Blood Elf
-    [1405] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1405] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Realm First! Level 80 Draenei
-    [1406] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1406] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Realm First! Level 80 Dwarf
-    [1407] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1407] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Realm First! Level 80 Human
-    [1408] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1408] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Realm First! Level 80 Night Elf
-    [1409] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1409] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Realm First! Level 80 Orc
-    [1410] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1410] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Realm First! Level 80 Tauren
-    [1411] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1411] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Realm First! Level 80 Troll
-    [1412] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1412] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Realm First! Level 80 Forsaken
-    [1413] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1413] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Realm First! Grand Master Blacksmith
-    [1414] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1414] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Realm First! Grand Master Alchemist
-    [1415] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1415] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Realm First! Cooking Grand Master
-    [1416] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1416] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Realm First! Grand Master Enchanter
-    [1417] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1417] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Realm First! Grand Master Engineer
-    [1418] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1418] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Realm First! First Aid Grand Master
-    [1419] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1419] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Realm First! Grand Master Angler
-    [1420] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1420] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Realm First! Grand Master Herbalist
-    [1421] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1421] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Realm First! Grand Master Scribe
-    [1422] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1422] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Realm First! Grand Master Jewelcrafter
-    [1423] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1423] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Realm First! Grand Master Leatherworker
-    [1424] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1424] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Realm First! Grand Master Miner
-    [1425] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1425] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Realm First! Grand Master Skinner
-    [1426] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1426] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Realm First! Grand Master Tailor
-    [1427] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1427] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Friends In High Places
     [1436] = {Faction = 'Both', Phase = UNRELEASED_PROMOTIONS},
     -- Realm First! Northrend Vanguard
-    [1463] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [1463] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Competitor's Tabard
     [1636] = {Faction = 'Both', Retroactive = true},
     -- Spirit of Competition
@@ -2825,13 +2825,13 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Crashin' Thrashin' Racer
     [1706] = {Faction = 'Both'},
     -- Timear Foresees
-    [2018] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [2018] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Proof of Demise
-    [2019] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [2019] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Tabard of the Protector
     [2079] = {Faction = 'Both', Retroactive = true},
     -- Grand Black War Mammoth
-    [2081] = {Faction = 'Both', Phase = PHASE1_RAIDS},
+    [2081] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_RAIDS},
     -- Tabard of the Argent Dawn
     [2116] = {Faction = 'Both'},
     -- Brutal Nether Drake
@@ -2851,21 +2851,21 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- The Fifth Element
     [2496] = {Faction = 'Both', Retroactive = true},
     -- Deadly Gladiator's Frostwyrm
-    [3096] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_END},
+    [3096] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_END},
     -- Realm First! Death's Demise
-    [3117] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+    [3117] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
     -- Val'anyr, Hammer of Ancient Kings
-    [3142] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+    [3142] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
     -- Realm First! Celestial Defender
-    [3259] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+    [3259] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
     -- Deadly Gladiator
-    [3336] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_END},
+    [3336] = {Faction = 'Both', Phase = EXPANSION_03_PHASE1_ARENA_SEASON_5_END},
     -- Winterspring Frostsaber (Alliance)
     [3356] = {Faction = 'Alliance', OtherSide = 3357, Retroactive = true},
     -- Venomhide Ravasaur (Horde)
     [3357] = {Faction = 'Horde', OtherSide = 3356},
     -- Furious Gladiator
-    [3436] = {Faction = 'Both', Phase = PHASE2_ARENA_SEASON_6_END},
+    [3436] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ARENA_SEASON_6_END},
     -- A Brew-FAST Mount
     [3496] = {Faction = 'Both', Retroactive = true},
     -- The Marine Marine
@@ -2875,47 +2875,47 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Jade Tiger
     [3636] = {Faction = 'Both', Phase = UNRELEASED_PROMOTIONS},
     -- Furious Gladiator's Frostwyrm
-    [3756] = {Faction = 'Both', Phase = PHASE2_ARENA_SEASON_6_END},
+    [3756] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ARENA_SEASON_6_END},
     -- Relentless Gladiator's Frostwyrm
-    [3757] = {Faction = 'Both', Phase = PHASE3_ARENA_SEASON_7_END},
+    [3757] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_ARENA_SEASON_7_END},
     -- Relentless Gladiator
-    [3758] = {Faction = 'Both', Phase = PHASE3_ARENA_SEASON_7_END},
+    [3758] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_ARENA_SEASON_7_END},
     -- Onyx Panther
     [3896] = {Faction = 'Both', Phase = UNRELEASED_PROMOTIONS},
     -- Realm First! Grand Crusader
-    [4078] = {Faction = 'Both', Phase = PHASE3_TRIAL_OF_CRUSADER},
+    [4078] = {Faction = 'Both', Phase = EXPANSION_03_PHASE3_TRIAL_OF_CRUSADER},
     -- A Tribute to Immortality (Horde)
-    [4079] = {Faction = 'Horde', OtherSide = 4156, Phase = PHASE3_TRIAL_OF_CRUSADER},
+    [4079] = {Faction = 'Horde', OtherSide = 4156, Phase = EXPANSION_03_PHASE3_TRIAL_OF_CRUSADER},
     -- A Tribute to Immortality (Alliance)
-    [4156] = {Faction = 'Alliance', OtherSide = 4079, Phase = PHASE3_TRIAL_OF_CRUSADER},
+    [4156] = {Faction = 'Alliance', OtherSide = 4079, Phase = EXPANSION_03_PHASE3_TRIAL_OF_CRUSADER},
     -- WoW's 5th Anniversary
     [4400] = {Faction = 'Both', Phase = UNRELEASED_PROMOTIONS},
     -- It's Over Nine Thousand!
     [4496] = {Faction = 'Both'},
     -- Realm First! Fall of the Lich King
-    [4576] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+    [4576] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
     -- Wrathful Gladiator
-    [4599] = {Faction = 'Both', Phase = PHASE4_ARENA_SEASON_8_END},
+    [4599] = {Faction = 'Both', Phase = EXPANSION_03_PHASE6_ARENA_SEASON_8_END},
     -- Wrathful Gladiator's Frostwyrm
-    [4600] = {Faction = 'Both', Phase = PHASE4_ARENA_SEASON_8_END},
+    [4600] = {Faction = 'Both', Phase = EXPANSION_03_PHASE6_ARENA_SEASON_8_END},
     -- Shadowmourne
-    [4623] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+    [4623] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
     -- Invincible's Reins
-    [4625] = {Faction = 'Both', Phase = PHASE4_ICC_RAID},
+    [4625] = {Faction = 'Both', Phase = EXPANSION_03_PHASE4_ICC_RAID},
     -- And I'll Form the Head!
-    [4626] = {Faction = 'Both', Phase = PHASE2_ULDUAR},
+    [4626] = {Faction = 'Both', Phase = EXPANSION_03_PHASE2_ULDUAR},
     -- X-45 Heartbreaker
     [4627] = {Faction = 'Both'},
     -- Green Brewfest Stein
     [4782] = {Faction = 'Both'},
     -- Emblematic (Alliance)
-    [4784] = {Faction = 'Alliance', OtherSide = 4785, Removed = LE_EXPANSION_CATACLYSM, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [4784] = {Faction = 'Alliance', OtherSide = 4785, Removed = LE_EXPANSION_CATACLYSM, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Emblematic (Horde)
-    [4785] = {Faction = 'Horde', OtherSide = 4784, Removed = LE_EXPANSION_CATACLYSM, Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
+    [4785] = {Faction = 'Horde', OtherSide = 4784, Removed = LE_EXPANSION_CATACLYSM, Phase = EXPANSION_03_PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Operation: Gnomeregan (Alliance)
-    [4786] = {Faction = 'Alliance', OtherSide = 4790, Phase = CATACLYSM_PREPATCH},
+    [4786] = {Faction = 'Alliance', OtherSide = 4790, Phase = EXPANSION_03_PHASE6_GNOMETROLL_EVENT},
     -- Zalazane's Fall (Horde)
-    [4790] = {Faction = 'Horde', OtherSide = 4786, Phase = CATACLYSM_PREPATCH},
+    [4790] = {Faction = 'Horde', OtherSide = 4786, Phase = EXPANSION_03_PHASE6_GNOMETROLL_EVENT},
     -- Collector's Edition: Mini Thor
     [4824] = {Faction = 'Both', Phase = UNRELEASED_PROMOTIONS},
     -- Infernal Gladiator
@@ -2955,17 +2955,17 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Challenger: Season 2
     [15210] = {Faction = 'Both', ClassicOnly = true},
     -- Survivor of the Firelord (Season of Mastery)
-    [15330] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE0_SEASON_OF_MASTERY},
+    [15330] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_01_PHASE0_SEASON_OF_MASTERY},
     -- [DNT] Survivor (Season of Mastery) (hidden)
-    --[15332] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE0_SEASON_OF_MASTERY},
+    --[15332] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_01_PHASE0_SEASON_OF_MASTERY},
     -- Survivor of the Shadow Flame (Season of Mastery)
-    [15333] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE0_SEASON_OF_MASTERY},
+    [15333] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_01_PHASE0_SEASON_OF_MASTERY},
     -- Survivor of the Old God (Season of Mastery)
-    [15334] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE0_SEASON_OF_MASTERY},
+    [15334] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_01_PHASE0_SEASON_OF_MASTERY},
     -- Survivor of the Damned (Season of Mastery)
-    [15335] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE0_SEASON_OF_MASTERY},
+    [15335] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_01_PHASE0_SEASON_OF_MASTERY},
     -- The Immortal (Season of Mastery)
-    [15637] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE0_SEASON_OF_MASTERY},
+    [15637] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_01_PHASE0_SEASON_OF_MASTERY},
     -- &lt;Hidden&gt; Joyous Journeys - Hit 70 with Buff Joyous Journeys
     --[15853] = {Faction = 'Both', ClassicOnly = true},
     -- The Perfect Pebble
@@ -2973,9 +2973,9 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- [DNT] Heirloom Tracking - Bloodied Arcanite Reaper (Hidden)
     --[16397] = {Faction = 'Both', ClassicOnly = true},
     -- Soul of Iron (Season of Mastery)
-    [16433] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE0_SEASON_OF_MASTERY},
+    [16433] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_01_PHASE0_SEASON_OF_MASTERY},
     -- [DNT] Soul of Iron Tracker (Season of Mastery) (hidden)
-    --[16437] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE0_SEASON_OF_MASTERY},
+    --[16437] = {Faction = 'Both', ClassicOnly = true, Phase = EXPANSION_01_PHASE0_SEASON_OF_MASTERY},
     -- [DNT] Joyous Journeys - Hit 80 with Buff Joyous Journeys (hidden)
     --[17328] = {Faction = 'Both', ClassicOnly = true},
     -- Ahead of the Curve: Yogg-Saron
