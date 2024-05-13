@@ -48,6 +48,7 @@ function CrossoverAchievements:Initialize()
         --print('Start '.. date("%a %b %d %H:%M:%S %Y"));
         self.IsLoading = true;
 
+        self.Storage:MigrateClassicVersions();
         self.Storage:OnInitialize();
         self.Data.Categories:Initialize();
         self.Data.Achievements:Initialize();

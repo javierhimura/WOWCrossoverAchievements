@@ -3,20 +3,35 @@ local CrossoverAchievements = LibStub("AceAddon-3.0"):GetAddon("CrossoverAchieve
 local GameVersion_ClassicEra = "Classic Era";
 local GameVersion_ClassicTBC = "Classic TBC";
 local GameVersion_ClassicWOTLK = "Classic Wotlk";
+local GameVersion_ClassicCataclysm = "Classic Cataclysm";
 local GameVersion_Retail = "Retail";
 
 local GameVersion_ClassicEra_PTR = "Classic Era PTR";
 local GameVersion_ClassicTBC_PTR = "Classic TBC PTR";
 local GameVersion_ClassicWOTLK_PTR = "Classic Wotlk PTR";
+local GameVersion_ClassicCataclysm_PTR = "Classic Cataclysm PTR";
 local GameVersion_Retail_PTR = "Retail PTR";
 
 CrossoverAchievements.Helpers = CrossoverAchievements.Helpers or {};
 CrossoverAchievements.Helpers.GameVersionHelper = CrossoverAchievements.Helpers.GameVersionHelper or {};
+CrossoverAchievements.Helpers.GameVersionHelper.GameVersion_ClassicWOTLK = GameVersion_ClassicWOTLK;
+CrossoverAchievements.Helpers.GameVersionHelper.GameVersion_ClassicCataclysm = GameVersion_ClassicCataclysm;
+CrossoverAchievements.Helpers.GameVersionHelper.GameVersion_Retail = GameVersion_Retail;
 local GameVersionHelper = CrossoverAchievements.Helpers.GameVersionHelper;
 
 CrossoverAchievements.Helpers.GameVersionHelper.GameVersionsWithAchievements = {
     GameVersion_ClassicWOTLK,
+    GameVersion_ClassicCataclysm,
     GameVersion_Retail
+};
+
+CrossoverAchievements.Helpers.GameVersionHelper.PreviousClassicGameVersions = {
+    [GameVersion_ClassicCataclysm] = { GameVersion_ClassicWOTLK },
+};
+
+
+CrossoverAchievements.Helpers.GameVersionHelper.NextClassicGameVersions = {
+    [GameVersion_ClassicWOTLK] = { GameVersion_ClassicCataclysm },
 };
 
 function GameVersionHelper:IsPTRorBeta()
@@ -33,9 +48,11 @@ function GameVersionHelper:CanImportData(GameVersion)
     end
     if self:IsRetail()  then
         if self:IsPTRorBeta() then
-            return GameVersion == GameVersion_ClassicWOTLK or GameVersion == GameVersion_ClassicWOTLK_PTR;
+            return GameVersion == GameVersion_ClassicWOTLK_PTR or
+                   GameVersion == GameVersion_ClassicCataclysm_PTR;
         else
-            return GameVersion == GameVersion_ClassicWOTLK;
+            return GameVersion == GameVersion_ClassicWOTLK or
+                   GameVersion == GameVersion_ClassicCataclysm;
         end
     end
     return false;
@@ -53,7 +70,14 @@ function GameVersionHelper:IsRetail(GameVersion)
 end
 
 function GameVersionHelper:IsClassic(GameVersion)
-    return self:IsWOTLK(GameVersion);
+    return self:IsWOTLK(GameVersion) or self:IsCataclysm(GameVersion);
+end
+
+function GameVersionHelper:IsCataclysm(GameVersion)
+    if GameVersion == nil then
+        GameVersion = self:GetCurrentVersion();
+    end
+    return GameVersion == GameVersion_ClassicCataclysm or GameVersion == GameVersion_ClassicCataclysm_PTR;
 end
 
 function GameVersionHelper:IsWOTLK(GameVersion)
@@ -94,9 +118,12 @@ function GameVersionHelper:GetVersionExpansionLevel(GameVersion)
     elseif GameVersion == GameVersion_ClassicWOTLK or GameVersion == GameVersion_ClassicWOTLK_PTR then
         -- wotlk
         return LE_EXPANSION_WRATH_OF_THE_LICH_KING;
+    elseif GameVersion == GameVersion_ClassicCataclysm or GameVersion == GameVersion_ClassicCataclysm_PTR then
+        -- wotlk
+        return LE_EXPANSION_CATACLYSM;
     elseif GameVersion == GameVersion_Retail or GameVersion == GameVersion_Retail_PTR then
         -- mainline
-        return LE_EXPANSION_SHADOWLANDS;
+        return LE_EXPANSION_DRAGONFLIGHT;
     else 
         -- future Classic versions, Cataclysm for now
         return LE_EXPANSION_CATACLYSM;
@@ -107,7 +134,7 @@ function GameVersionHelper:HasBlizzardAccountAchievements(GameVersion)
     if not GameVersion then
         GameVersion = self:GetCurrentVersion();
     end
-     return self:IsRetail(GameVersion);
+     return not self:IsWOTLK(GameVersion);
 end
 
 function GameVersionHelper:HasClassicQuestFrame()
@@ -131,12 +158,15 @@ function GameVersionHelper:GetAchievementsDataType(GameVersion)
     elseif GameVersion == GameVersion_ClassicWOTLK or GameVersion == GameVersion_ClassicWOTLK_PTR then
         -- wotlk
         return GameVersion_ClassicWOTLK;
+    elseif GameVersion == GameVersion_ClassicCataclysm or GameVersion == GameVersion_ClassicCataclysm_PTR then
+        -- wotlk
+        return GameVersion_ClassicCataclysm;
     elseif GameVersion == GameVersion_Retail or GameVersion == GameVersion_Retail_PTR then
         -- mainline
         return GameVersion_Retail;
     else 
-        -- future Classic versions, WOTLK for now
-        return GameVersion_ClassicWOTLK;
+        -- future Classic versions, Cataclysm for now
+        return GameVersion_ClassicCataclysm;
     end
 end
 
@@ -151,12 +181,15 @@ function GameVersionHelper:GetCurrentVersion()
         elseif WOW_PROJECT_ID == WOW_PROJECT_WRATH_CLASSIC then
             -- wotlk
             return GameVersion_ClassicWOTLK_PTR;
+        elseif WOW_PROJECT_ID == WOW_PROJECT_CATACLYSM_CLASSIC then
+            -- wotlk
+            return GameVersion_ClassicCataclysm_PTR;
         elseif WOW_PROJECT_ID == WOW_PROJECT_MAINLINE then
             -- mainline
             return GameVersion_Retail_PTR;
         else 
-            -- future Classic PTR and Beta versions, WOTLK PTR for now
-            return GameVersion_ClassicWOTLK_PTR;
+            -- future Classic PTR and Beta versions, Cataclysm PTR for now
+            return GameVersion_ClassicCataclysm_PTR;
         end
     else 
         if WOW_PROJECT_ID == WOW_PROJECT_CLASSIC then
@@ -168,12 +201,15 @@ function GameVersionHelper:GetCurrentVersion()
         elseif WOW_PROJECT_ID == WOW_PROJECT_WRATH_CLASSIC then
             -- wotlk
             return GameVersion_ClassicWOTLK;
+        elseif WOW_PROJECT_ID == WOW_PROJECT_CATACLYSM_CLASSIC_CLASSIC then
+            -- wotlk
+            return GameVersion_ClassicCataclysm;
         elseif WOW_PROJECT_ID == WOW_PROJECT_MAINLINE then
             -- mainline
             return GameVersion_Retail;
         else 
-            -- future Classic versions, WOTLK for now
-            return GameVersion_ClassicWOTLK;
+            -- future Classic versions, Cataclysm for now
+            return GameVersion_ClassicCataclysm;
         end
     end 
 end

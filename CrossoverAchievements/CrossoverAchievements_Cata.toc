@@ -1,4 +1,4 @@
-## Interface: 100206
+## Interface: 40400
 ## Title: Crossover Achievements
 ## Name: Crossover Achievements
 ## Author: Javier Himura
@@ -20,7 +20,6 @@ Data\Categories.lua
 Data\LastAchievements.lua
 Data\Achievements\WOTLK.lua
 Data\Achievements\Cataclysm.lua
-Data\Achievements\Retail.lua
 Helpers\CompressHelper.lua
 Helpers\GameVersionHelper.lua
 CrossoverAchievements_Character.lua

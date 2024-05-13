@@ -34,7 +34,7 @@ function API.ReplaceBlizzardFunctions()
     --GetCategoryInfo = API.GetCategoryInfo;
     --GetAchievementNumCriteria = API.GetAchievementNumCriteria;
     --GetAchievementCriteriaInfo = API.GetAchievementCriteriaInfo;
-    if CrossoverAchievements.Helpers.GameVersionHelper:IsWOTLK() then
+    if CrossoverAchievements.Helpers.GameVersionHelper:IsClassic() then
         GetAchievementLink = API.GetAchievementLink;
         HasCompletedAnyAchievement = API.HasCompletedAnyAchievement;
     end
@@ -229,7 +229,7 @@ function API.GetNumCompletedAchievements(IN_GUILD_VIEW)
 end
 
 function API.GetAchievementLink(achievementid)
-    if CrossoverAchievements.IsLoading or not CrossoverAchievements.Helpers.GameVersionHelper:IsWOTLK() then
+    if CrossoverAchievements.IsLoading or not CrossoverAchievements.Helpers.GameVersionHelper:IsClassic() then
         -- Achievements links can't be modified in Retail
 	    return API.Blz_GetAchievementLink(achievementid);
 	end
