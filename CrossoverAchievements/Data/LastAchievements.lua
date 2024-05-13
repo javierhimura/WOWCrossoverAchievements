@@ -25,7 +25,7 @@ function LastAchievements:SetLastAchievement(achievementid, achievementime)
 		table.remove(AchievedTimeList, MaxLastAchievements + 1);
 	end
 	for position = 1, MaxLastAchievements do
-		if position == Total or AchievedTimeList[position] < achievementime then
+		if position == Total or not AchievedTimeList[position] or AchievedTimeList[position] < achievementime then
 			table.insert(AchievementList, position, achievementid);
 			table.insert(AchievedTimeList, position, achievementime);
 			LastTime = AchievedTimeList[Total];
@@ -44,6 +44,15 @@ function LastAchievements:InitializeBlzData(...)
 			table.insert(AchievedTimeList, position, AccountInfo.AchievementTime);
 			AchievementBlzList[achievementid] = true;
 			LastTime = AchievedTimeList[position];
+        else
+            local _, name, _, _, achivementmonth, achivementday, achivementyear, _, _, _, _, _, _, _ = CrossoverAchievements.API.GetAchievementInfo(achievementid);
+            if name then
+                local achievementtime = time({year = 2000 + achivementyear, month = achivementmonth, day = achivementday});
+                table.insert(AchievementList, position, achievementid);
+                table.insert(AchievedTimeList, position, achievementtime);
+                AchievementBlzList[achievementid] = true;
+                LastTime = AchievedTimeList[position];
+            end
 		end
 		Total = position;
 	end
