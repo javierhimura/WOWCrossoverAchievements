@@ -1,0 +1,11 @@
+## Interface: 100206
+## Title: Crossover Achievements Cataclysm Classic Import
+## Name: Crossover Achievements Cataclysm Classic Import
+## Author: Javier Himura
+## Notes: Crossover Achievements between Retail and Cataclysm Classic. Imports achievement data into Retail that the same addon in Cataclysm Classic has exported.
+## Version: 1
+## SavedVariables: CrossoverAchievements_Cataclysm
+## Dependencies: CrossoverAchievements
+## LoadOnDemand: 1
+
+CrossoverAchievements - Cataclysm.lua
