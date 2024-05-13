@@ -2,7 +2,7 @@
 ## Title: Crossover Achievements Retail Export
 ## Name: Crossover Achievements Retail Export
 ## Author: Javier Himura
-## Notes: Crossover Achievements between Retail and WOTLK Classic. Exports achievement data from Retail for the equivalent addon in WOTLK Classic to do the import.
+## Notes: Crossover Achievements between Retail and Cataclysm Classic. Exports achievement data from Retail for the equivalent addon in Cataclysm Classic to do the import.
 ## Version: 1
 ## SavedVariables: CrossoverAchievements_Retail
 ## Dependencies: CrossoverAchievements
