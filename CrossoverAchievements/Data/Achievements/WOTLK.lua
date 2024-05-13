@@ -1306,9 +1306,9 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
       -- Defense Protocol Beta: Trial of The Champion
       [18602] = {Faction = 'Both', ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
       -- Defense Protocol Beta: Trial of the Champion (Alliance)
-      [18677] = {Faction = 'Alliance', OtherSide = 18602, ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+      [18677] = {Faction = 'Alliance', OtherSide = 18678, ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
       -- Defense Protocol Beta: Trial of the Champion (Horde)
-      [18678] = {Faction = 'Horde', OtherSide = 18602, ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
+      [18678] = {Faction = 'Horde', OtherSide = 18677, ClassicOnly = true, Phase = PHASE3_DEFENSE_PROTOCOL_BETA},
       -- Defense Protocol Gamma: Trial of the Champion (Horde)
       [19425] = {Faction = 'Horde', OtherSide = 19426, ClassicOnly = true, Phase = PHASE4_DEFENSE_PROTOCOL_GAMMA},
       -- Defense Protocol Gamma: Trial of the Champion (Alliance)
@@ -2603,37 +2603,37 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
 
   -- Feats of Strength Start
     -- Murky
-    [411] = {Faction = 'Both', Phase = UNRELEASED_PROMOTIONS},
+    [411] = {Faction = 'Both', Phase = UNRELEASED_PROMOTIONS, Retroactive = true},
     -- Murloc Costume
-    [412] = {Faction = 'Both', Phase = UNRELEASED_PROMOTIONS},
+    [412] = {Faction = 'Both', Phase = UNRELEASED_PROMOTIONS, Retroactive = true},
     -- Tyrael's Hilt
-    [414] = {Faction = 'Both', Phase = UNRELEASED_PROMOTIONS},
+    [414] = {Faction = 'Both', Phase = UNRELEASED_PROMOTIONS, Retroactive = true},
     -- Big Blizzard Bear
-    [415] = {Faction = 'Both', Phase = UNRELEASED_PROMOTIONS},
+    [415] = {Faction = 'Both', Phase = UNRELEASED_PROMOTIONS, Retroactive = true},
     -- Scarab Lord
-    [416] = {Faction = 'Both'},
+    [416] = {Faction = 'Both', Retroactive = true},
     -- Merciless Gladiator
-    [418] = {Faction = 'Both'},
+    [418] = {Faction = 'Both', Retroactive = true},
     -- Vengeful Gladiator
-    [419] = {Faction = 'Both'},
+    [419] = {Faction = 'Both', Retroactive = true},
     -- Brutal Gladiator
-    [420] = {Faction = 'Both'},
+    [420] = {Faction = 'Both', Retroactive = true},
     -- Why? Because It's Red
-    [424] = {Faction = 'Both'},
+    [424] = {Faction = 'Both', Retroactive = true},
     -- Atiesh, Greatstaff of the Guardian
-    [425] = {Faction = 'Both'},
+    [425] = {Faction = 'Both', Retroactive = true},
     -- Warglaives of Azzinoth
-    [426] = {Faction = 'Both'},
+    [426] = {Faction = 'Both', Retroactive = true},
     -- Thunderfury, Blessed Blade of the Windseeker
-    [428] = {Faction = 'Both'},
+    [428] = {Faction = 'Both', Retroactive = true},
     -- Sulfuras, Hand of Ragnaros
-    [429] = {Faction = 'Both'},
+    [429] = {Faction = 'Both', Retroactive = true},
     -- Amani War Bear
-    [430] = {Faction = 'Both'},
+    [430] = {Faction = 'Both', Retroactive = true},
     -- Hand of A'dal
-    [431] = {Faction = 'Both'},
+    [431] = {Faction = 'Both', Retroactive = true},
     -- Champion of the Naaru
-    [432] = {Faction = 'Both'},
+    [432] = {Faction = 'Both', Retroactive = true},
     -- Grand Marshal (Alliance)
     [433] = {Faction = 'Alliance', OtherSide = 443, Retroactive = true, VanillaOnly = true},
     -- Field Marshal (Alliance)
@@ -2703,57 +2703,57 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Realm First! Level 80 Shaman
     [467] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Grunt (Horde)
-    [468] = {Faction = 'Horde', OtherSide = 470},
+    [468] = {Faction = 'Horde', OtherSide = 470, Retroactive = true},
     -- Legionnaire (Horde)
-    [469] = {Faction = 'Horde', OtherSide = 438},
+    [469] = {Faction = 'Horde', OtherSide = 438, Retroactive = true},
     -- Corporal (Alliance)
-    [470] = {Faction = 'Alliance', OtherSide = 468},
+    [470] = {Faction = 'Alliance', OtherSide = 468, Retroactive = true},
     -- Sergeant (Alliance)
-    [471] = {Faction = 'Alliance', OtherSide = 453},
+    [471] = {Faction = 'Alliance', OtherSide = 453, Retroactive = true},
     -- Knight-Lieutenant (Alliance)
-    [472] = {Faction = 'Alliance', OtherSide = 449},
+    [472] = {Faction = 'Alliance', OtherSide = 449, Retroactive = true},
     -- Marshal (Alliance)
-    [473] = {Faction = 'Alliance', OtherSide = 446},
+    [473] = {Faction = 'Alliance', OtherSide = 446, Retroactive = true},
     -- Collector's Edition: Mini-Diablo
-    [662] = {Faction = 'Both'},
+    [662] = {Faction = 'Both', Retroactive = true},
     -- Collector's Edition: Panda
-    [663] = {Faction = 'Both'},
+    [663] = {Faction = 'Both', Retroactive = true},
     -- Collector's Edition: Zergling
-    [664] = {Faction = 'Both'},
+    [664] = {Faction = 'Both', Retroactive = true},
     -- Collector's Edition: Netherwhelp
-    [665] = {Faction = 'Both'},
+    [665] = {Faction = 'Both', Retroactive = true},
     -- Collector's Edition: Frost Wyrm Whelp
     [683] = {Faction = 'Both'},
     -- Onyxia's Lair (Level 60)
-    [684] = {Faction = 'Both'},
+    [684] = {Faction = 'Both', Retroactive = true},
     -- Thori'dal, the Stars' Fury
     [725] = {Faction = 'Both'},
     -- Deathcharger's Reins
-    [729] = {Faction = 'Both'},
+    [729] = {Faction = 'Both', Retroactive = true},
     -- Avast Ye, Admiral!
-    [871] = {Faction = 'Both'},
+    [871] = {Faction = 'Both', Retroactive = true},
     -- Old School Ride
     [879] = {Faction = 'Both', Phase = UNRELEASED_PROMOTIONS, Retroactive = true, VanillaOnly = true},
     -- Swift Zulian Tiger
-    [880] = {Faction = 'Both'},
+    [880] = {Faction = 'Both', Retroactive = true},
     -- Swift Razzashi Raptor
-    [881] = {Faction = 'Both'},
+    [881] = {Faction = 'Both', Retroactive = true},
     -- Fiery Warhorse's Reins
-    [882] = {Faction = 'Both'},
+    [882] = {Faction = 'Both', Retroactive = true},
     -- Reins of the Raven Lord
-    [883] = {Faction = 'Both'},
+    [883] = {Faction = 'Both', Retroactive = true},
     -- Swift White Hawkstrider
-    [884] = {Faction = 'Both'},
+    [884] = {Faction = 'Both', Retroactive = true},
     -- Ashes of Al'ar
-    [885] = {Faction = 'Both'},
+    [885] = {Faction = 'Both', Retroactive = true},
     -- Swift Nether Drake
-    [886] = {Faction = 'Both'},
+    [886] = {Faction = 'Both', Retroactive = true},
     -- Merciless Nether Drake
-    [887] = {Faction = 'Both'},
+    [887] = {Faction = 'Both', Retroactive = true},
     -- Vengeful Nether Drake
-    [888] = {Faction = 'Both'},
+    [888] = {Faction = 'Both', Retroactive = true},
     -- The Horseman's Reins
-    [980] = {Faction = 'Both'},
+    [980] = {Faction = 'Both', Retroactive = true},
     -- Hero of Shattrath
     [1205] = {Faction = 'Both'},
     -- Yellow Brewfest Stein (Never available in Classic. TBC started with 2008 Reward Blue Brewfest Stein)
@@ -2817,9 +2817,9 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Realm First! Northrend Vanguard
     [1463] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Competitor's Tabard
-    [1636] = {Faction = 'Both'},
+    [1636] = {Faction = 'Both', Retroactive = true},
     -- Spirit of Competition
-    [1637] = {Faction = 'Both'},
+    [1637] = {Faction = 'Both', Retroactive = true},
     -- Clockwork Rocket Bot
     [1705] = {Faction = 'Both'},
     -- Crashin' Thrashin' Racer
@@ -2829,27 +2829,27 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Proof of Demise
     [2019] = {Faction = 'Both', Phase = PHASE1_CLASSIC_WOTLK_LAUNCH},
     -- Tabard of the Protector
-    [2079] = {Faction = 'Both'},
+    [2079] = {Faction = 'Both', Retroactive = true},
     -- Grand Black War Mammoth
     [2081] = {Faction = 'Both', Phase = PHASE1_RAIDS},
     -- Tabard of the Argent Dawn
     [2116] = {Faction = 'Both'},
     -- Brutal Nether Drake
-    [2316] = {Faction = 'Both'},
+    [2316] = {Faction = 'Both', Retroactive = true},
     -- Insane in the Membrane
     [2336] = {Faction = 'Both'},
     -- Dreadsteed of Xoroth
-    [2357] = {Faction = 'Both'},
+    [2357] = {Faction = 'Both', Retroactive = true},
     -- Charger
-    [2358] = {Faction = 'Both'},
+    [2358] = {Faction = 'Both', Retroactive = true},
     -- Swift Flight Form
-    [2359] = {Faction = 'Both'},
+    [2359] = {Faction = 'Both', Retroactive = true},
     -- WoW's 4th Anniversary
     [2398] = {Faction = 'Both', Phase = UNRELEASED_PROMOTIONS},
     -- Vampire Hunter
     [2456] = {Faction = 'Both'},
     -- The Fifth Element
-    [2496] = {Faction = 'Both'},
+    [2496] = {Faction = 'Both', Retroactive = true},
     -- Deadly Gladiator's Frostwyrm
     [3096] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_END},
     -- Realm First! Death's Demise
@@ -2861,13 +2861,13 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicWOTLK].List = {
     -- Deadly Gladiator
     [3336] = {Faction = 'Both', Phase = PHASE1_ARENA_SEASON_5_END},
     -- Winterspring Frostsaber (Alliance)
-    [3356] = {Faction = 'Alliance', OtherSide = 3357},
+    [3356] = {Faction = 'Alliance', OtherSide = 3357, Retroactive = true},
     -- Venomhide Ravasaur (Horde)
     [3357] = {Faction = 'Horde', OtherSide = 3356},
     -- Furious Gladiator
     [3436] = {Faction = 'Both', Phase = PHASE2_ARENA_SEASON_6_END},
     -- A Brew-FAST Mount
-    [3496] = {Faction = 'Both'},
+    [3496] = {Faction = 'Both', Retroactive = true},
     -- The Marine Marine
     [3536] = {Faction = 'Both', Phase = UNRELEASED_PROMOTIONS},
     -- Murkimus the Gladiator
