@@ -1,0 +1,11 @@
+## Interface: 40400
+## Title: Crossover Achievements Multiple Account Export
+## Name: Crossover Achievements Multiple Account Export
+## Author: Javier Himura
+## Notes: Crossover Achievements between Multiple Accounts. Exports achievement data for the equivalent addon in another account to do the import.
+## Version: 1
+## SavedVariables: CrossoverAchievements_OtherAccount
+## Dependencies: CrossoverAchievements
+## LoadOnDemand: 1
+
+CrossoverAchievements - Account.lua
