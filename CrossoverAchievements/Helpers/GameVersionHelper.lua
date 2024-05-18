@@ -39,7 +39,7 @@ function GameVersionHelper:IsPTRorBeta()
 end
 
 function GameVersionHelper:CanImportData(GameVersion)
-    if self:IsWOTLK()  then
+    if self:IsClassic()  then
         if self:IsPTRorBeta() then
             return GameVersion == GameVersion_Retail or GameVersion == GameVersion_Retail_PTR;
         else

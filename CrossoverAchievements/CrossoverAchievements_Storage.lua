@@ -14,8 +14,8 @@ local DoCompressData = true;
 local DoCompressImportData = true;
 local DoCompressExportData = true;
 
-Storage.AddonDataVersion = 3
-Storage.AddonDataVersionUpdate = 2;
+Storage.AddonDataVersion = 4;
+--Storage.AddonDataVersionUpdate = 0;
 
 function Storage:InitializeAccountData()
     AccountData = {};
@@ -64,29 +64,29 @@ function Storage:UpdateDataVersion()
 			end
             CrossoverAchievements_AccountData[GameVersion] = CompressDataTable;
 		end
-        if not CrossoverAchievements.Helpers.GameVersionHelper:IsRetail() and
-		   LoadAddOn("CrossoverAchievements - Retail") and
-           CrossoverAchievements_Retail ~= nil and
-		   CrossoverAchievements_Retail.DataVersion == self.AddonDataVersionUpdate
-		then
-		   CrossoverAchievements_Retail.DataVersion = self.AddonDataVersion;
-		end
-
-        if not CrossoverAchievements.Helpers.GameVersionHelper:IsWOTLK() and 
-		   LoadAddOn("CrossoverAchievements - WOTLK") and
-		   CrossoverAchievements_WOTLK ~= nil and
-		   CrossoverAchievements_WOTLK.DataVersion == self.AddonDataVersionUpdate
-		then
-		   CrossoverAchievements_WOTLK.DataVersion = self.AddonDataVersion;
-		end	
-        
-        if not CrossoverAchievements.Helpers.GameVersionHelper:IsCataclysm() and 
-		   LoadAddOn("CrossoverAchievements - Cataclysm") and
-		   CrossoverAchievements_Cataclysm ~= nil and
-		   CrossoverAchievements_Cataclysm.DataVersion == self.AddonDataVersionUpdate
-		then
-		   CrossoverAchievements_Cataclysm.DataVersion = self.AddonDataVersion;
-		end	
+        --if not CrossoverAchievements.Helpers.GameVersionHelper:IsRetail() and
+		--   LoadAddOn("CrossoverAchievements - Retail") and
+        --   CrossoverAchievements_Retail ~= nil and
+		--   CrossoverAchievements_Retail.DataVersion == self.AddonDataVersionUpdate
+		--then
+		--   CrossoverAchievements_Retail.DataVersion = self.AddonDataVersion;
+		--end
+        --
+        --if not CrossoverAchievements.Helpers.GameVersionHelper:IsWOTLK() and 
+		--   LoadAddOn("CrossoverAchievements - WOTLK") and
+		--   CrossoverAchievements_WOTLK ~= nil and
+		--   CrossoverAchievements_WOTLK.DataVersion == self.AddonDataVersionUpdate
+		--then
+		--   CrossoverAchievements_WOTLK.DataVersion = self.AddonDataVersion;
+		--end	
+        --
+        --if not CrossoverAchievements.Helpers.GameVersionHelper:IsCataclysm() and 
+		--   LoadAddOn("CrossoverAchievements - Cataclysm") and
+		--   CrossoverAchievements_Cataclysm ~= nil and
+		--   CrossoverAchievements_Cataclysm.DataVersion == self.AddonDataVersionUpdate
+		--then
+		--   CrossoverAchievements_Cataclysm.DataVersion = self.AddonDataVersion;
+		--end	
 	end
 end
 
@@ -96,8 +96,8 @@ function Storage:CheckDataPreviousVersions()
 	end
     local WTFDataVersion = CrossoverAchievements_AccountData.DataVersion;
     if ClearWTFData or 
-	   not WTFDataVersion or
-	   WTFDataVersion == self.AddonDataVersionUpdate
+	   not WTFDataVersion
+	   --or WTFDataVersion == self.AddonDataVersionUpdate
 	then
         self:UpdateDataVersion();
 	end
@@ -109,8 +109,20 @@ function Storage:CheckDataPreviousVersions()
 	then
         CrossoverAchievements_AccountData = nil;
         print('CrossoverAchievements Data found from a previous incompatible version.');
-		print('You will need to login with all of your characters.');
-
+        if CrossoverAchievements.Helpers.GameVersionHelper:IsRetail() and 
+           LoadAddOn("CrossoverAchievements - Cataclysm") then
+            print('You will need to export new data from Cataclysm.');
+        elseif CrossoverAchievements.Helpers.GameVersionHelper:IsRetail() and 
+               LoadAddOn("CrossoverAchievements - WOTLK") then
+            print('You will need to export new data from WOTLK.');
+        elseif not CrossoverAchievements.Helpers.GameVersionHelper:IsRetail() and 
+               LoadAddOn("CrossoverAchievements - Retail") then
+            print('You will need to export new data from Retail.');
+        end
+        
+        return false;
+    else
+    
         if not CrossoverAchievements.Helpers.GameVersionHelper:IsRetail() and
 		   LoadAddOn("CrossoverAchievements - Retail") and
            CrossoverAchievements_Retail ~= nil and
@@ -119,6 +131,7 @@ function Storage:CheckDataPreviousVersions()
 		then
             CrossoverAchievements_Retail = nil;
 		    print('You will need to import updated achievements data from Retail');
+            return false;
 		end
 
         if not CrossoverAchievements.Helpers.GameVersionHelper:IsWOTLK() and 
@@ -129,8 +142,20 @@ function Storage:CheckDataPreviousVersions()
 		then
             CrossoverAchievements_WOTLK = nil;
 		    print('You will need to import updated achievements data from WOTLK');
-		end	
-        return false;
+            return false;
+		end
+        
+        if not CrossoverAchievements.Helpers.GameVersionHelper:IsCataclysm() and 
+           LoadAddOn("CrossoverAchievements - Cataclysm") and
+           CrossoverAchievements_Cataclysm ~= nil and
+           CrossoverAchievements_Cataclysm.DataVersion ~= nil and
+           CrossoverAchievements_Cataclysm.DataVersion < self.AddonDataVersion
+        then
+            CrossoverAchievements_Cataclysm = nil;
+            print('You will need to import updated achievements data from Cataclysm');
+            return false;
+        end	
+        
 	end
     return true;
 end
@@ -261,7 +286,7 @@ function Storage:IsCompressDataValid(GameVersion, CompressData)
        not CompressData.GameVersion or 
        not CompressData.Time or 
        not CompressData.DataVersion or
-       (GameVersion ~= nil and CompressData.GameVersion ~= GameVersion) or
+       CompressData.GameVersion ~= GameVersion or
        CompressData.DataVersion ~= self.AddonDataVersion then
         return false;
     end
@@ -286,9 +311,9 @@ function Storage:GetImportAccountData()
         if not DoCompressImportData and not CompressData.Clear then
             ModifyCompress = true;
         else
-            if CompressData.DataVersion == self.AddonDataVersionUpdate then
-                CompressData.DataVersion = self.AddonDataVersion;
-            end
+            --if CompressData.DataVersion == self.AddonDataVersionUpdate then
+            --    CompressData.DataVersion = self.AddonDataVersion;
+            --end
             if CompressData.DataVersion > self.AddonDataVersion then
                 print('Please upgrade CrossoverAchievements addon to be able to Import Account data');
                 CrossoverAchievements_OtherAccount = nil;
@@ -311,27 +336,27 @@ function Storage:GetImportAccountData()
 end
 
 function Storage:ClearImportVersion(ImportVersion)
-    if ImportVersion == CrossoverAchievements.Helpers.GameVersionHelper.Retail then
+    if ImportVersion == CrossoverAchievements.Helpers.GameVersionHelper.GameVersion_Retail then
         CrossoverAchievements_Retail = nil;
     elseif ImportVersion == CrossoverAchievements.Helpers.GameVersionHelper.GameVersion_ClassicWOTLK then
         CrossoverAchievements_WOTLK = nil;
-     elseif ImportVersion == CrossoverAchievements.Helpers.GameVersionHelper.GameVersion_ClassicCataclysm then
+    elseif ImportVersion == CrossoverAchievements.Helpers.GameVersionHelper.GameVersion_ClassicCataclysm then
         CrossoverAchievements_Cataclysm = nil;
     end
 end
 
 function Storage:GetImportVersionVariable(ImportVersion)
-    if ImportVersion == CrossoverAchievements.Helpers.GameVersionHelper.Retail then
+    if ImportVersion == CrossoverAchievements.Helpers.GameVersionHelper.GameVersion_Retail then
         return CrossoverAchievements_Retail;
     elseif ImportVersion == CrossoverAchievements.Helpers.GameVersionHelper.GameVersion_ClassicWOTLK then
         return CrossoverAchievements_WOTLK;
-     elseif ImportVersion == CrossoverAchievements.Helpers.GameVersionHelper.GameVersion_ClassicCataclysm then
+    elseif ImportVersion == CrossoverAchievements.Helpers.GameVersionHelper.GameVersion_ClassicCataclysm then
         return CrossoverAchievements_Cataclysm;
     end
 end
 
 function Storage:GetImportVersionAddon(ImportVersion)
-    if ImportVersion == CrossoverAchievements.Helpers.GameVersionHelper.Retail then
+    if ImportVersion == CrossoverAchievements.Helpers.GameVersionHelper.GameVersion_Retail then
         return "Retail";
     elseif ImportVersion == CrossoverAchievements.Helpers.GameVersionHelper.GameVersion_ClassicWOTLK then
         return "WOTLK";
@@ -350,7 +375,12 @@ function Storage:GetImportVersionData(ImportVersion)
     if CurrentVersionName == ImportVersionName then
         return nil;
     end 
-    if not ImportVersionName or not LoadAddOn("CrossoverAchievements - ".. ImportVersionName) then
+    
+    if not ImportVersionName then
+        print("Can't import other version game exported data ImportVersionName nil");
+        return nil;
+    end
+    if not LoadAddOn("CrossoverAchievements - ".. ImportVersionName) then
         return nil;
     end
     if not ImportVersionVariable then
@@ -362,9 +392,19 @@ function Storage:GetImportVersionData(ImportVersion)
         if not DoCompressImportData and not CompressData.Clear then
             ModifyCompress = true;
         else
-            if CompressData.DataVersion == self.AddonDataVersionUpdate then
-                CompressData.DataVersion = self.AddonDataVersion;
+            if not CompressData.GameVersion then
+                print('Please Export '.. ImportVersionName ..' data with the last version of CrossoverAchievements addon');
+                ImportVersionVariable = nil;
+                return nil;
             end
+            if CompressData.GameVersion ~= ImportVersion then
+                print('Please Export '.. ImportVersionName ..' data with the last version of CrossoverAchievements addon');
+                ImportVersionVariable = nil;
+                return nil;
+            end
+            --if CompressData.DataVersion == self.AddonDataVersionUpdate then
+            --    CompressData.DataVersion = self.AddonDataVersion;
+            --end
             if CompressData.DataVersion > self.AddonDataVersion then
                 print('Please upgrade CrossoverAchievements addon to be able to Import '.. ImportVersionName ..' data');
                 ImportVersionVariable = nil;
@@ -381,15 +421,16 @@ function Storage:GetImportVersionData(ImportVersion)
     if not self:IsCompressDataValid(ImportVersion, CompressData) then
         return nil;
     end
+    
     -- Not data exported from the same version
-    if not CrossoverAchievements.Helpers.GameVersionHelper:CanImportData(CompressData.ImportVersion) then
+    if not CrossoverAchievements.Helpers.GameVersionHelper:CanImportData(CompressData.GameVersion) then
         return nil;
     end
 
     -- Data exported from the other version already processed
     if not ModifyCompress and 
-       CrossoverAchievements_AccountData[CompressData.ImportVersion] and 
-       CrossoverAchievements_AccountData[CompressData.ImportVersion].Time >= CompressData.Time then
+       CrossoverAchievements_AccountData[CompressData.GameVersion] and 
+       CrossoverAchievements_AccountData[CompressData.GameVersion].Time >= CompressData.Time then
         return nil;
     end
 
@@ -437,13 +478,12 @@ function Storage:DecompressVersionData(CompressData)
        not ImportData.Time or
        not ImportData.DataVersion or
        not ImportData.GameVersion then
-        print("Can't import other version game exported data");
         return false;
     end
 
-    if ImportData.DataVersion == self.AddonDataVersionUpdate then
-	    ImportData.DataVersion = self.AddonDataVersion;
-    end
+    --if ImportData.DataVersion == self.AddonDataVersionUpdate then
+	--    ImportData.DataVersion = self.AddonDataVersion;
+    --end
     
     if ImportData.GameVersion ~= CompressData.GameVersion  then
         if ImportData.GameVersion  == CrossoverAchievements.Helpers.GameVersionHelper.GameVersion_ClassicWOTLK and 
@@ -455,7 +495,6 @@ function Storage:DecompressVersionData(CompressData)
     if ImportData.GameVersion ~= CompressData.GameVersion or
        ImportData.Time ~= CompressData.Time or
        ImportData.DataVersion ~= CompressData.DataVersion  then
-        print("Can't import other version game exported data");
         -- Invalid data, it should have the same information compressed and decompressed
         return false;
     end
@@ -477,10 +516,11 @@ function Storage:DecompressVersionData(CompressData)
 end
 
 function Storage:MigrateClassicVersions()
-    if CrossoverAchievements_AccountData[CrossoverAchievements.Helpers.GameVersionHelper.GameVersion_ClassicWOTLK] and
-       not CrossoverAchievements_AccountData[CrossoverAchievements.Helpers.GameVersionHelper.GameVersion_ClassicCataclysm] then
-       CrossoverAchievements_AccountData[CrossoverAchievements.Helpers.GameVersionHelper.GameVersion_ClassicCataclysm] = CrossoverAchievements_AccountData[CrossoverAchievements.Helpers.GameVersionHelper.GameVersion_ClassicWOTLK];
-       CrossoverAchievements_AccountData[CrossoverAchievements.Helpers.GameVersionHelper.GameVersion_ClassicCataclysm].GameVersion = CrossoverAchievements.Helpers.GameVersionHelper.GameVersion_ClassicCataclysm;
+    if CrossoverAchievements_AccountData and
+       CrossoverAchievements_AccountData[CrossoverAchievements.Helpers.GameVersionHelper.GameVersion_ClassicWOTLK] then
+       if CrossoverAchievements.Helpers.GameVersionHelper:IsCataclysm() then
+           CrossoverAchievements_AccountData[CrossoverAchievements.Helpers.GameVersionHelper.GameVersion_ClassicCataclysm] = CrossoverAchievements_AccountData[CrossoverAchievements.Helpers.GameVersionHelper.GameVersion_ClassicWOTLK];
+       end
        CrossoverAchievements_AccountData[CrossoverAchievements.Helpers.GameVersionHelper.GameVersion_ClassicWOTLK] = nil;
     end
 end
@@ -529,9 +569,9 @@ function Storage:DecompressAccountData(CompressData)
         return false;
     end
 
-    if ImportData.DataVersion == self.AddonDataVersionUpdate then
-	    ImportData.DataVersion = self.AddonDataVersion;
-    end
+    --if ImportData.DataVersion == self.AddonDataVersionUpdate then
+	--    ImportData.DataVersion = self.AddonDataVersion;
+    --end
   
     if ImportData.GameVersion ~= CompressData.GameVersion or
        ImportData.Time ~= CompressData.Time or
