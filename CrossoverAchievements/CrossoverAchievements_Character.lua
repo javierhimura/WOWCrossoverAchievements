@@ -112,16 +112,29 @@ function Character:ProcessCharacterNameBlizzardAchievementData(CurrentGameVersio
     if CharacterNames[earnedBy] ~= nil then
         for _,CharacterGuid in pairs(CharacterNames[earnedBy].Guids) do
             local CharacterGuidTable = CurrentGameVersionTable.Characters[CharacterGuid];
-            if CharacterGuidTable and 
-			   CharacterGuidTable.Achievements[achievementid] and 
-			   CharacterGuidTable.Achievements[achievementid] == achievementtime then
-                -- we have found the character by guid, so we don't need to add the achievement
-                if CharacterByNameTable ~= nil then
-                    -- if we already added the achievement to a character indexed by name we remove it
-                    self:ProcessCharacterNameRemoveAchievement(CurrentGameVersionTable, CharacterByNameTable, achievementid, achievementtime);
-				end
-                return;
-			end
+            if CharacterGuidTable then 
+                if CharacterGuidTable.Achievements[achievementid] and 
+                   CharacterGuidTable.Achievements[achievementid] == achievementtime then
+                    -- we have found the character by guid, so we don't need to add the achievement
+                    if CharacterByNameTable ~= nil then
+                        -- if we already added the achievement to a character indexed by name we remove it
+                        self:ProcessCharacterNameRemoveAchievement(CurrentGameVersionTable, CharacterByNameTable, achievementid, achievementtime);
+                    end
+                    return;
+                end
+                -- Search the achievement with the other faction version
+                local otherfactionachievementid = CrossoverAchievements.Account:ConvertAchievementOtherFaction(achievementid);
+                if otherfactionachievementid ~= achievementid and
+                   CharacterGuidTable.Achievements[otherfactionachievementid] and 
+                   CharacterGuidTable.Achievements[otherfactionachievementid] == achievementtime then
+                    -- we have found the character by guid, so we don't need to add the achievement
+                    if CharacterByNameTable ~= nil then
+                        -- if we already added the achievement to a character indexed by name we remove it
+                        self:ProcessCharacterNameRemoveAchievement(CurrentGameVersionTable, CharacterByNameTable, achievementid, achievementtime);
+                    end
+                    return;
+                end
+            end
         end
 	end
     -- we haven't found the character that earned the achievement so we create a temporal table with character name instead of guid

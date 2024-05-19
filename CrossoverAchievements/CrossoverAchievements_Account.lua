@@ -70,6 +70,21 @@ function Account:IsOtherFactionAchievement(AchievementID)
     return false;
 end
 
+function Account:ConvertAchievementOtherFaction(AchievementID, ImportAchievementsData) 
+    if ImportAchievementsData == nil then
+        local CurrentGameVersionAchievementsDataType = CrossoverAchievements.Helpers.GameVersionHelper:GetClassicAchievementsDataType();
+        ImportAchievementsData = CrossoverAchievements.Data.Achievements[CurrentGameVersionAchievementsDataType];
+	end
+    if not ImportAchievementsData.List[AchievementID] then
+	    return AchievementID;
+	end
+    local data = ImportAchievementsData.List[AchievementID];
+    if data.Faction ~= factionBoth and data.OtherSide then
+        return data.OtherSide;
+	end
+    return AchievementID;
+end
+
 function Account:ConvertAchievementVersion(AchievementID, ImportAchievementsData) 
     if ImportAchievementsData == nil then
         -- There is no import data table for achievements between Retail and Retail, every achievement is returned valid without transformation
