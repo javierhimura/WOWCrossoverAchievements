@@ -72,7 +72,7 @@ end
 
 function Account:ConvertAchievementOtherFaction(AchievementID, ImportAchievementsData) 
     if ImportAchievementsData == nil then
-        local CurrentGameVersionAchievementsDataType = CrossoverAchievements.Helpers.GameVersionHelper:GetClassicAchievementsDataType();
+        local CurrentGameVersionAchievementsDataType = CrossoverAchievements.Helpers.GameVersionHelper:GetAchievementsDataType();
         ImportAchievementsData = CrossoverAchievements.Data.Achievements[CurrentGameVersionAchievementsDataType];
 	end
     if not ImportAchievementsData.List[AchievementID] then
@@ -224,11 +224,13 @@ function Account:ProcessCompletedAchievements()
             if GameVersionTable ~= CurrentGameVersionTable then
                 self:ProcessCompletedAchievementsVersion(GameVersionTable, WasEarnedHere, ImportAchievementsDataVersion);
 			end
-            for _,CharacterTable in pairs(GameVersionTable.Characters) do 
-                if CharacterTable and CharacterTable ~= CurrentCharacterTable then
-                    local WasEarnedByMe = (CurrentCharacterTable == CharacterTable);
-                    self:ProcessCompletedAchievementsCharacter(CharacterTable, WasEarnedByMe, WasEarnedHere, ImportAchievementsDataVersion);
-				end
+            if GameVersionTable.Characters then
+                for _,CharacterTable in pairs(GameVersionTable.Characters) do 
+                    if CharacterTable and CharacterTable ~= CurrentCharacterTable then
+                        local WasEarnedByMe = (CurrentCharacterTable == CharacterTable);
+                        self:ProcessCompletedAchievementsCharacter(CharacterTable, WasEarnedByMe, WasEarnedHere, ImportAchievementsDataVersion);
+                    end
+                end
             end
         end
     end
