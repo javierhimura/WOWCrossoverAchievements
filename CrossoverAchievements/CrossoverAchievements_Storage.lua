@@ -451,7 +451,7 @@ function Storage:ImportAccountData(ImportVersion)
 end
 
 function Storage:ImportVersionData(ImportVersion)
-    CompressData = self:GetImportVersionData(ImportVersion);
+    local CompressData = self:GetImportVersionData(ImportVersion);
 
     if CompressData == nil then
         CompressData = CrossoverAchievements_AccountData[ImportVersion];
@@ -465,10 +465,11 @@ end
 
 function Storage:DecompressVersionData(CompressData)
     if CompressData.Clear then
-        CrossoverAchievements_AccountData[CompressData.GameVersion] = CompressData;
-        CrossoverAchievements_AccountData.DataVersion = self.AddonDataVersion;
-        CrossoverAchievements_AccountData.Time = time();
-        AccountData[CompressData.GameVersion] = CompressData;
+        if CompressData.GameVersion ==  CrossoverAchievements.Helpers.GameVersionHelper:GetCurrentVersion() then
+            AccountData[CompressData.GameVersion] = CompressData.Export;
+        else
+            AccountData[CompressData.GameVersion] = CompressData;
+        end
         return true;
     end
     
