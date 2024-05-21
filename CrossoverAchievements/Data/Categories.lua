@@ -18,6 +18,7 @@ local GetAchievementInfo = nil;
 local GetCategoryList = nil;
 local GetGuildCategoryList = nil;
 local GetStatisticsCategoryList = nil;
+local BlzCategoryOrder = {};
 
 function Categories:Initialize()
 	GetCategoryNumAchievements = CrossoverAchievements.API.Blz_GetCategoryNumAchievements;
@@ -191,13 +192,16 @@ function Categories:SortCategory(categoryid)
 		local lastid = achievementid;
 		local data = CrossoverAchievements.Data.Achievements:GetAchievementData(lastid);
 		local completed = CrossoverAchievements.Account:GetCompletedAchievementInfo(lastid);
+        BlzCategoryOrder[lastid] = index;
 		if completed then
 			-- Get last achievement in chain completed
             while data.NextId and CrossoverAchievements.Account:GetCompletedAchievementInfo(data.NextId) do
 				lastid = data.NextId;
+                BlzCategoryOrder[lastid] = index;
 				data = CrossoverAchievements.Data.Achievements:GetAchievementData(lastid);
 			end
 		end
+        
 		if not CategoryList[categoryid].VisibleAchievements[lastid] then
 			CategoryList[categoryid].VisibleAchievements[lastid] = true;
 			CategoryList[categoryid].Visible = CategoryList[categoryid].Visible + 1;
@@ -249,12 +253,14 @@ function Categories:SortCategoryFOS(categoryid)
 		local lastid = achievementid;
 		local data = CrossoverAchievements.Data.Achievements:GetAchievementData(lastid);
 		local completed = CrossoverAchievements.Account:GetCompletedAchievementInfo(lastid);
+        BlzCategoryOrder[lastid] = index;
 		if completed then
 			-- Get last achievement in chain completed
 			while data.NextId and CrossoverAchievements.Account:GetCompletedAchievementInfo(data.NextId)
 			do
 				lastid = data.NextId;
 				data = CrossoverAchievements.Data.Achievements:GetAchievementData(lastid);
+				BlzCategoryOrder[lastid] = index;
 			end
 			if not CategoryList[categoryid].VisibleAchievements[lastid] then
 				CategoryList[categoryid].VisibleAchievements[lastid] = true;
@@ -285,6 +291,13 @@ function OrderAchievements(achievementA, achievementB)
 	local DataB = CrossoverAchievements.Account:GetCompletedAchievementInfo(achievementB);
 	local CompletedA = DataA ~= nil;
 	local CompletedB = DataB ~= nil;
+    local BlzOrderA = BlzCategoryOrder[achievementA];
+    local BlzOrderB = BlzCategoryOrder[achievementB];
+    if not BlzOrderA or not BlzOrderB or BlzOrderA == BlzOrderB then
+        -- if we can not determine blizzard order, use achievement id order instead
+        BlzOrderA = achievementA;
+        BlzOrderB = achievementB;
+    end
 	
 	if CompletedA ~= CompletedB then
 		--completed achievement first
@@ -292,8 +305,8 @@ function OrderAchievements(achievementA, achievementB)
 	end
 
 	if not CompletedA and not CompletedB then
-		-- Incompleted achievements in id order
-		return achievementA < achievementB;
+		-- Incompleted achievements in blizzard order
+		return BlzOrderA < BlzOrderB;
 	end
 
 	if CrossoverAchievements.Helpers.GameVersionHelper:HasBlizzardAccountAchievements() and DataA.Account ~= DataB.Account then
@@ -316,6 +329,6 @@ function OrderAchievements(achievementA, achievementB)
 		return DataA.AchievementTime > DataB.AchievementTime;
 	end
 
-	-- If nothing else thenAchievement id order
-	return achievementA < achievementB;
+	-- If nothing else thenAchievement blizzard order
+	return BlzOrderA < BlzOrderB;
 end
