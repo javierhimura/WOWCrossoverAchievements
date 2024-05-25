@@ -21,6 +21,7 @@ end
 
 local CanReplaceBlizzardFrame = true;
 local InCombatLockdown = InCombatLockdown;
+local PendingLastAchievementsRefresh = false;
 
 function CrossoverAchievements:OnInitialize()
     if not self.Helpers.GameVersionHelper:IsValidVersion() then
@@ -44,7 +45,7 @@ function CrossoverAchievements:OnDisable()
 end
 
 function CrossoverAchievements:Initialize()
-    if not self.IsLoaded and not self.IsLoading then
+    if not self.IsLoaded and not self.IsLoading and not InCombatLockdown() then
         --print('Start '.. date("%a %b %d %H:%M:%S %Y"));
         self.IsLoading = true;
 
@@ -61,7 +62,7 @@ function CrossoverAchievements:Initialize()
         self.Data.Categories:SortCategories();
         self.IsLoading = false;
         self.IsLoaded = true;
-        self.Data.LastAchievements:SetLastAchievements();
+        self.Data.LastAchievements:Refresh();
         CrossoverAchievements.API.ReplaceBlizzardFunctions();
         CrossoverAchievements.EnableAchievementMicroButton()
         --print('End '.. date("%a %b %d %H:%M:%S %Y"));
@@ -72,7 +73,12 @@ function CrossoverAchievements:OnUpdate()
     if not self.Helpers.GameVersionHelper:IsValidVersion() then
         return;
     end
-    if self.IsLoaded then
+    if not self.IsLoaded and not self.IsLoading then
+        self:Initialize();
+    elseif self.IsLoaded then
+        if PendingAchievementsEarnedRefresh then
+            self:OnAchievementEarnedRefresh();
+        end
         -- It won't actually sort all categories on every update, only the ones that are pending sorting
         -- after earning one achievement it should sort only the category of the new achievements
         -- all other categories are sorted on initialize
@@ -157,6 +163,19 @@ function CrossoverAchievements:ReplaceBlizzardFrame()
     AchievementFrameComparison_UpdateStatusBars = CrossoverAchievementFrameComparison_UpdateStatusBars;
 end
 
+function CrossoverAchievements:OnAchievementEarnedRefresh()
+    if self.IsLoaded and not InCombatLockdown() then
+        print('OnAchievementEarnedRefresh not InCombatLockdown');
+        --/run CrossoverAchievements.Data.LastAchievements:Refresh();
+        --self.Data.LastAchievements:Refresh();
+        self.Data.LastAchievements:SetLastAchievementEarnedPending();
+        self.Storage:ExportVersionData();
+        PendingAchievementsEarnedRefresh = false;
+    else
+        PendingAchievementsEarnedRefresh = true;
+    end
+end
+
 function CrossoverAchievements:OnAchievementEarned(achievementid)
     if not self.IsLoaded then
         return;
@@ -167,6 +186,8 @@ function CrossoverAchievements:OnAchievementEarned(achievementid)
     local accountachievement = self.API.IsAccountWideAchievement(achievementid);
 	self.Account:ProcessCompletedAchievement(achievementid, time(), accountachievement, true, true, CurrentCharacterTable.Name,  CurrentCharacterTable.Realm, CurrentCharacterTable.GameVersion);
     self.Data.Achievements:RefreshSortAchievement(achievementid);
-    self.Data.LastAchievements:SetLastAchievement(achievementid, time());
-    self.Storage:ExportVersionData();
+    self.Data.LastAchievements:SetLastAchievementEarned(achievementid, time());
+    if InCombatLockdown() then
+        print('OnAchievementEarned InCombatLockdown()');
+    end
 end

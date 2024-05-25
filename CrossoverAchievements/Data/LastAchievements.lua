@@ -7,11 +7,58 @@ local LastAchievements = CrossoverAchievements.Data.LastAchievements;
 local GetCategoryList = GetCategoryList;
  
 local AchievementList = {};
+local AchievementListPending = {};
 local AchievementBlzList = {};
 local AchievedTimeList = {};
 local Total = 0;
-local MaxLastAchievements = 5;
+local TotalPending = 0;
+local MaxLastAchievements = 4;
 local LastTime = nil;
+
+function LastAchievements:IsPendingUpdate()
+    return TotalPending > 0;
+end
+
+function LastAchievements:Refresh()
+    AchievementList = {};
+    AchievementBlzList = {};
+    AchievedTimeList = {};
+    Total = 0;
+    LastTime = nil;
+    MaxLastAchievements = 4;
+    if CrossoverAchievements.Helpers.GameVersionHelper:IsWOTLK()  then
+        MaxLastAchievements = 5;
+    end
+    self:SetLastAchievements();
+end
+
+function LastAchievements:SetLastAchievementEarnedPending()
+	if AchievementBlzList[achievementid] or InCombatLockdown()  then
+		return;
+	end
+	for position = 1, TotalPending do
+        self:SetLastAchievementEarned(AchievementListPending[position], time());
+    end
+    AchievementListPending = {};
+    TotalPending = 0;
+end
+
+function LastAchievements:SetLastAchievementEarned(achievementid, achievementime)
+	if AchievementBlzList[achievementid] then
+		return;
+	end
+    if InCombatLockdown() then
+        TotalPending = TotalPending + 1;
+        AchievementListPending[TotalPending] = achievementid;
+        return;
+    end
+	if Total == MaxLastAchievements then
+		table.remove(AchievementList, MaxLastAchievements + 1);
+		table.remove(AchievedTimeList, MaxLastAchievements + 1);
+		Total = Total - 1;
+	end
+    self:SetLastAchievement(achievementid, achievementime);
+end
 
 function LastAchievements:SetLastAchievement(achievementid, achievementime)
 	if AchievementBlzList[achievementid] or (Total == MaxLastAchievements and LastTime ~= nil and achievementime < LastTime) then
@@ -46,6 +93,9 @@ function LastAchievements:InitializeBlzData(...)
 			LastTime = AchievedTimeList[position];
         else
             local _, name, _, _, achivementmonth, achivementday, achivementyear, _, _, _, _, _, _, _ = CrossoverAchievements.API.GetAchievementInfo(achievementid);
+            if not name then
+                _, name, _, _, achivementmonth, achivementday, achivementyear, _, _, _, _, _, _, _ = CrossoverAchievements.API.Blz_GetAchievementInfo(achievementid);
+            end
             if name then
                 local achievementtime = time({year = 2000 + achivementyear, month = achivementmonth, day = achivementday});
                 table.insert(AchievementList, position, achievementid);
@@ -66,7 +116,7 @@ function LastAchievements:SetLastAchievements()
     LastTime = nil;
 	-- Load first last achievements list from Blizzard, so in case the achievements from that list and the addon list  have the same achievements
 	-- addon list will preserve blizzard list order
-	LastAchievements:InitializeBlzData(CrossoverAchievements.API.Blz_GetLatestCompletedAchievements());
+	self:InitializeBlzData(CrossoverAchievements.API.Blz_GetLatestCompletedAchievements());
 
 	local NowDateTime = time();
 	local NowDateTable = {

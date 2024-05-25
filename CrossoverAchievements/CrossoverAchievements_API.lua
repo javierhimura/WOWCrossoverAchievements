@@ -202,7 +202,7 @@ function API.GetTotalAchievementPoints(guildOnly)
 end
 
 function API.GetLatestCompletedAchievements(IN_GUILD_VIEW)
-    if CrossoverAchievements.IsLoading or IN_GUILD_VIEW then
+    if CrossoverAchievements.IsLoading or IN_GUILD_VIEW or CrossoverAchievements.Data.LastAchievements:IsPendingUpdate() then
 	    return API.Blz_GetLatestCompletedAchievements(IN_GUILD_VIEW);
 	end
     return CrossoverAchievements.Data.LastAchievements:GetLastAchievements();
