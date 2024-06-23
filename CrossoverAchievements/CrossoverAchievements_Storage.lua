@@ -465,7 +465,7 @@ end
 
 function Storage:DecompressVersionData(CompressData)
     if CompressData.Clear then
-        if CompressData.GameVersion ==  CrossoverAchievements.Helpers.GameVersionHelper:GetCurrentVersion() then
+        if CompressData.Export then
             AccountData[CompressData.GameVersion] = CompressData.Export;
         else
             AccountData[CompressData.GameVersion] = CompressData;
