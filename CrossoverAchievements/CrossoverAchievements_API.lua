@@ -149,7 +149,7 @@ function API.GetPreviousAchievement(achievementid)
 	end
     local data = CrossoverAchievements.Data.Achievements:GetAchievementData(achievementid);
     if not data then
-	    return Blz_GetPreviousAchievement(achievementid);
+	    return API.Blz_GetPreviousAchievement(achievementid);
 	end
     return data.PreviousId;
 end
@@ -159,10 +159,16 @@ function API.GetNextAchievement(achievementid)
 	    return API.Blz_GetNextAchievement(achievementid);
 	end
     local data = CrossoverAchievements.Data.Achievements:GetAchievementData(achievementid);
-    if not data then
+    if not data or not data.NextId then
 	    return API.Blz_GetNextAchievement(achievementid);
 	end
-    return data.NextId;
+    local AccountInfo = CrossoverAchievements.Account:GetCompletedAchievementInfo(achievementid);
+    if AccountInfo then
+        -- next achievement completed
+        return data.NextId, true;
+    end
+    -- next achievement not completed
+    return data.NextId, false;
 end
 
 function API.GetCategoryNumAchievements(categoryId, includeAll)
