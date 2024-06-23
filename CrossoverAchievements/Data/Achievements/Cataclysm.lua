@@ -490,37 +490,37 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicCataclysm].List = {
       -- Fading into Twilight (Horde)
       [5501] = {Faction = 'Horde', OtherSide = 4873, Phase = EXPANSION_04_PHASE1_CLASSIC_CATACLYSM_LAUNCH},
       -- Legacy of Leyara
-      [5859] = {Faction = 'Both', Phase = EXPANSION_04_PHASE1_CLASSIC_CATACLYSM_LAUNCH},
+      [5859] = {Faction = 'Both', Phase = EXPANSION_04_PHASE3_FIRELANDS},
       -- The 'Unbeatable?' Pterodactyl: BEATEN.
-      [5860] = {Faction = 'Both', Phase = EXPANSION_04_PHASE1_CLASSIC_CATACLYSM_LAUNCH},
+      [5860] = {Faction = 'Both', Phase = EXPANSION_04_PHASE3_FIRELANDS},
       -- The Fiery Lords of Sethria's Roost
-      [5861] = {Faction = 'Both', Phase = EXPANSION_04_PHASE1_CLASSIC_CATACLYSM_LAUNCH},
+      [5861] = {Faction = 'Both', Phase = EXPANSION_04_PHASE3_FIRELANDS},
       -- Ludicrous Speed
-      [5862] = {Faction = 'Both', Phase = EXPANSION_04_PHASE1_CLASSIC_CATACLYSM_LAUNCH},
+      [5862] = {Faction = 'Both', Phase = EXPANSION_04_PHASE3_FIRELANDS},
       -- Gang War
-      [5864] = {Faction = 'Both', Phase = EXPANSION_04_PHASE1_CLASSIC_CATACLYSM_LAUNCH},
+      [5864] = {Faction = 'Both', Phase = EXPANSION_04_PHASE3_FIRELANDS},
       -- Have... Have We Met?
-      [5865] = {Faction = 'Both', Phase = EXPANSION_04_PHASE1_CLASSIC_CATACLYSM_LAUNCH},
+      [5865] = {Faction = 'Both', Phase = EXPANSION_04_PHASE3_FIRELANDS},
       -- The Molten Front Offensive
-      [5866] = {Faction = 'Both', Phase = EXPANSION_04_PHASE1_CLASSIC_CATACLYSM_LAUNCH},
+      [5866] = {Faction = 'Both', Phase = EXPANSION_04_PHASE3_FIRELANDS},
       -- Flawless Victory
-      [5867] = {Faction = 'Both', Phase = EXPANSION_04_PHASE1_CLASSIC_CATACLYSM_LAUNCH},
+      [5867] = {Faction = 'Both', Phase = EXPANSION_04_PHASE3_FIRELANDS},
       -- And the Meek Shall Inherit Kalimdor
-      [5868] = {Faction = 'Both', Phase = EXPANSION_04_PHASE1_CLASSIC_CATACLYSM_LAUNCH},
+      [5868] = {Faction = 'Both', Phase = EXPANSION_04_PHASE3_FIRELANDS},
       -- Infernal Ambassadors
-      [5869] = {Faction = 'Both', Phase = EXPANSION_04_PHASE1_CLASSIC_CATACLYSM_LAUNCH},
+      [5869] = {Faction = 'Both', Phase = EXPANSION_04_PHASE3_FIRELANDS},
       -- Fireside Chat
-      [5870] = {Faction = 'Both', Phase = EXPANSION_04_PHASE1_CLASSIC_CATACLYSM_LAUNCH},
+      [5870] = {Faction = 'Both', Phase = EXPANSION_04_PHASE3_FIRELANDS},
       -- Master of the Molten Flow
-      [5871] = {Faction = 'Both', Phase = EXPANSION_04_PHASE1_CLASSIC_CATACLYSM_LAUNCH},
+      [5871] = {Faction = 'Both', Phase = EXPANSION_04_PHASE3_FIRELANDS},
       -- King of the Spider-Hill
-      [5872] = {Faction = 'Both', Phase = EXPANSION_04_PHASE1_CLASSIC_CATACLYSM_LAUNCH},
+      [5872] = {Faction = 'Both', Phase = EXPANSION_04_PHASE3_FIRELANDS},
       -- Ready for Raiding II
-      [5873] = {Faction = 'Both', Phase = EXPANSION_04_PHASE1_CLASSIC_CATACLYSM_LAUNCH},
+      [5873] = {Faction = 'Both', Phase = EXPANSION_04_PHASE3_FIRELANDS},
       -- Death From Above
-      [5874] = {Faction = 'Both', Phase = EXPANSION_04_PHASE1_CLASSIC_CATACLYSM_LAUNCH},
+      [5874] = {Faction = 'Both', Phase = EXPANSION_04_PHASE3_FIRELANDS},
       -- Veteran of the Molten Front
-      [5879] = {Faction = 'Both', Phase = EXPANSION_04_PHASE1_CLASSIC_CATACLYSM_LAUNCH},
+      [5879] = {Faction = 'Both', Phase = EXPANSION_04_PHASE3_FIRELANDS},
     -- Cataclysm Ends
   -- Quests End
 
@@ -3007,7 +3007,7 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicCataclysm].List = {
       -- Hellscream's Reach (Horde)
       [5376] = {Faction = 'Horde', OtherSide = 5375, Phase = EXPANSION_04_PHASE1_CLASSIC_CATACLYSM_LAUNCH},
       -- Avengers of Hyjal
-      [5827] = {Faction = 'Both', Phase = EXPANSION_04_PHASE1_CLASSIC_CATACLYSM_LAUNCH},
+      [5827] = {Faction = 'Both', Phase = EXPANSION_04_PHASE3_FIRELANDS},
     -- Cataclysm Ends
   -- Reputation End
 
