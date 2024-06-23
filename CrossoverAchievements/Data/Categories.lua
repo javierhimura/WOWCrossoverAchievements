@@ -286,6 +286,11 @@ function Categories:SortCategoryFOS(categoryid)
 	CategoryList[categoryid].IsSorted = true;
 end
 
+-- Blizzard achievements order
+-- 1 Character achievements completed by this characters in date order
+-- 2 Account achievements completed in date order
+-- 3 Character achievements completed by other characters in date order
+-- 4 Non completed achievements. Order not related with achievement's id
 function OrderAchievements(achievementA, achievementB)
 	local DataA = CrossoverAchievements.Account:GetCompletedAchievementInfo(achievementA); 
 	local DataB = CrossoverAchievements.Account:GetCompletedAchievementInfo(achievementB);
@@ -308,9 +313,19 @@ function OrderAchievements(achievementA, achievementB)
 		-- Incompleted achievements in blizzard order
 		return BlzOrderA < BlzOrderB;
 	end
+    
+    if not CrossoverAchievements.Helpers.GameVersionHelper:IsClassic() then
+        -- completed by this character achievements before account achievements
+        if DataA.Account and not DataB.Account and DataB.WasEarnedByMe then
+            return false;
+        end
+        if DataB.Account and not DataA.Account and DataA.WasEarnedByMe then
+            return true;
+        end
+    end
 
 	if CrossoverAchievements.Helpers.GameVersionHelper:HasBlizzardAccountAchievements() and DataA.Account ~= DataB.Account then
-		--account achievement first
+		--account achievement before completed by other character achievements 
 		return DataA.Account;
 	end
 
