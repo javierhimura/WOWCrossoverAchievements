@@ -93,7 +93,7 @@ function CrossoverAchievements:SetAccountName(name)
 		CrossoverAchievements_AccountData.AccountName = name;
 		print('Account Name set to '..name);
 	else 
-		print('Account Name already set to '..QuestCompleteData.AccountName );
+		print('Account Name already set to '..CrossoverAchievements_AccountData.AccountName );
 	end
 end
 
