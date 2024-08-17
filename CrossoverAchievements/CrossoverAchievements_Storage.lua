@@ -218,6 +218,7 @@ function Storage:CopyVersionData(GameVersionTable, CompressData, ExportTable)
       CrossoverAchievements_Version.DataVersion = self.AddonDataVersion;
       CrossoverAchievements_Version.GameVersion = GameVersionTable.GameVersion;
       CrossoverAchievements_Version.Time = CrossoverAchievements_AccountData.Time;
+      CrossoverAchievements_Version.AccountName = CrossoverAchievements_AccountData.AccountName;
       if DoCompressExportData then
         CrossoverAchievements_Version.Export = CompressData;
 		if DoKeepDecoded then
@@ -239,6 +240,7 @@ function Storage:ExportVersionData()
     ExportTable.Time = GameVersionTable.Time;
     ExportTable.Characters = GameVersionTable.Characters;
     ExportTable.DataVersion = self.AddonDataVersion;
+    ExportTable.AccountName = CrossoverAchievements_AccountData.AccountName;
     if CrossoverAchievements.Helpers.GameVersionHelper:HasBlizzardAccountAchievements(GameVersionTable.GameVersion) then
       ExportTable.Achievements = GameVersionTable.Achievements;
     end
@@ -246,6 +248,7 @@ function Storage:ExportVersionData()
     local CompressDataTable = {}
     CompressDataTable.DataVersion = self.AddonDataVersion;
     CompressDataTable.Export = CompressData;
+    CompressDataTable.AccountName = CrossoverAchievements_AccountData.AccountName;
 	if DoKeepDecoded then
     	CompressDataTable.DecodedData = ExportTable;
     else

@@ -38,6 +38,7 @@ function Character:ProcessBlizzardAchievementsData()
             end
         end
     end
+    self:ProcessCharactersNoGuidBlizzardAchievementData(CurrentGameVersionTable);
 end
 
 function Character:ProcessBlizzardAchievementData(CurrentGameVersionTable, CurrentCharacterTable, achievementid)
@@ -70,7 +71,7 @@ function Character:ProcessBlizzardAchievementData(CurrentGameVersionTable, Curre
             -- in case we don't know the character we add the data to a temporal table indexed by character name
             -- it will be removed in the wasEarnedByMe condition once the player login with that character
             CrossoverAchievements.Data.Achievements:SetAchievementData(achievementid, points, false);
-            self:ProcessCharacterNameBlizzardAchievementData(CurrentGameVersionTable, CurrentCharacterTable, achievementid, earnedBy, achievementtime); 
+            self:ProcessCharacterNameBlizzardAchievementData(CurrentGameVersionTable, achievementid, earnedBy, achievementtime); 
         end
     end
 end
@@ -102,7 +103,7 @@ function Character:GroupCharactersByName(CurrentGameVersionTable)
 	end
 end
 
-function Character:ProcessCharacterNameBlizzardAchievementData(CurrentGameVersionTable, CurrentCharacterTable, achievementid, earnedBy, achievementtime)
+function Character:ProcessCharacterNameBlizzardAchievementData(CurrentGameVersionTable, achievementid, earnedBy, achievementtime)
 	-- Achievement from other character obtained from blizzard's data, we don't know character guid nor realm
 	if earnedBy == nil or earnedBy == "" then
 	    return;
@@ -156,6 +157,19 @@ function Character:ProcessCharacterNameBlizzardAchievementData(CurrentGameVersio
         CharacterByNameTable.Time = time();
         CurrentGameVersionTable.Time = time();
     end
+end
+
+function Character:ProcessCharactersNoGuidBlizzardAchievementData(CurrentGameVersionTable)
+    -- Search through all characters with guid and the same name
+    for CharacterKey, CharacterData in pairs(CurrentGameVersionTable.Characters) do
+        if CharacterData.Name == CharacterKey and CharacterData.Achievements then
+        print('ProcessCharactersNoGuidBlizzardAchievementData ', CharacterKey);
+            for achievementid, achievementtime in pairs(CharacterData.Achievements) do
+                self:ProcessCharacterNameBlizzardAchievementData(CurrentGameVersionTable, achievementid, CharacterKey, achievementtime);
+            end
+        end
+    end
+
 end
 
 function Character:ProcessCharacterNameRemoveAchievement(CurrentGameVersionTable, CurrentCharacterTable, achievementid, achievementtime)
