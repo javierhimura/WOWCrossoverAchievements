@@ -264,7 +264,7 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicCataclysm].List = {
       -- Hinterlands Quests
       [4897] = {Faction = 'Both', Phase = EXPANSION_04_PHASE0_PREPATCH_403},
       -- Wetlands Quests (Alliance)
-      [4898] = {Faction = 'Alliance', Phase = EXPANSION_04_PHASE0_PREPATCH_403},
+      [4898] = {Faction = 'Alliance', OtherSide = nil, Phase = EXPANSION_04_PHASE0_PREPATCH_403},
       -- Loch Modan Quests (Alliance)
       [4899] = {Faction = 'Alliance', OtherSide = 4908, Phase = EXPANSION_04_PHASE0_PREPATCH_403},
       -- Badlands Quests
@@ -282,7 +282,7 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicCataclysm].List = {
       -- Northern Stranglethorn Quests
       [4906] = {Faction = 'Both', Phase = EXPANSION_04_PHASE0_PREPATCH_403},
       -- Duskwood Quests (Alliance)
-      [4907] = {Faction = 'Alliance', Phase = EXPANSION_04_PHASE0_PREPATCH_403},
+      [4907] = {Faction = 'Alliance', OtherSide = nil, Phase = EXPANSION_04_PHASE0_PREPATCH_403},
       -- Ghostlands Quests (Horde)
       [4908] = {Faction = 'Horde', OtherSide = 4899, Phase = EXPANSION_04_PHASE0_PREPATCH_401, Retroactive = true},
       -- Blasted Lands Quests
@@ -1286,7 +1286,7 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicCataclysm].List = {
       -- Corporal (Alliance)
       [5331] = {Faction = 'Alliance', OtherSide = 5346, Phase = EXPANSION_04_PHASE1_CLASSIC_CATACLYSM_LAUNCH},
       -- Sergeant (Alliance)
-      [5332] = {Faction = 'Alliance', OtherSide = 453, Phase = EXPANSION_04_PHASE1_CLASSIC_CATACLYSM_LAUNCH},
+      [5332] = {Faction = 'Alliance', OtherSide = 5347, Phase = EXPANSION_04_PHASE1_CLASSIC_CATACLYSM_LAUNCH},
       -- Master Sergeant (Alliance)
       [5333] = {Faction = 'Alliance', OtherSide = 5348, Phase = EXPANSION_04_PHASE1_CLASSIC_CATACLYSM_LAUNCH},
       -- Sergeant Major (Alliance)
@@ -1316,7 +1316,7 @@ CrossoverAchievements.Data.Achievements[GameVersion_ClassicCataclysm].List = {
       -- Grunt (Horde)
       [5346] = {Faction = 'Horde', OtherSide = 5331, Phase = EXPANSION_04_PHASE1_CLASSIC_CATACLYSM_LAUNCH},
       -- Sergeant (Horde)
-      [5347] = {Faction = 'Horde', OtherSide = 471, Phase = EXPANSION_04_PHASE1_CLASSIC_CATACLYSM_LAUNCH},
+      [5347] = {Faction = 'Horde', OtherSide = 5332, Phase = EXPANSION_04_PHASE1_CLASSIC_CATACLYSM_LAUNCH},
       -- Senior Sergeant (Horde)
       [5348] = {Faction = 'Horde', OtherSide = 5333, Phase = EXPANSION_04_PHASE1_CLASSIC_CATACLYSM_LAUNCH},
       -- First Sergeant (Horde)
