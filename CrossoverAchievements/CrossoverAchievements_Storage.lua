@@ -14,6 +14,11 @@ local DoCompressData = true;
 local DoCompressImportData = true;
 local DoCompressExportData = true;
 
+local LoadAddOn = LoadAddOn;
+if not LoadAddon then
+ LoadAddOn = C_AddOns.LoadAddOn;
+end
+
 Storage.AddonDataVersion = 4;
 --Storage.AddonDataVersionUpdate = 0;
 

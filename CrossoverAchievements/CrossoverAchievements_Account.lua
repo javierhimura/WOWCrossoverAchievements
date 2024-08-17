@@ -6,9 +6,9 @@ CrossoverAchievements.Account = Account;
 local CompletedAchievements = {};
 local TotalPoints = 0;
 local NumCompletedAchievements = 0;
-local SaveCompletedAchievementsWTF = false;
-local ForceAllAccountAchievement = false;
-local CurrentCharacterAchievementsOnly = false;
+local SaveCompletedAchievementsWTF = true;
+local ForceAllAccountAchievement = true;
+local CurrentCharacterAchievementsOnly = true;
 
 local playerGUID = UnitGUID('PLAYER');
 local playerFaction = UnitFactionGroup('PLAYER');
