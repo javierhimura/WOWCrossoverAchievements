@@ -90,7 +90,7 @@ function API.GetAchievementInfo(categoryid, index)
     if CrossoverAchievements.IsLoading then
 	    return API.Blz_GetAchievementInfo(categoryid, index);
 	end
-    local achievementid, name, points, completed, month, day, year, description, flags, icon, rewardText, isGuild, wasEarnedByMe, earnedBy;
+    local achievementid, name, points, completed, month, day, year, description, flags, icon, rewardText, isGuild, wasEarnedByMe, earnedBy, isStatistic;
     if index then
         if CrossoverAchievements.Data.Categories:IsGuildCategory(categoryid) 
 		or CrossoverAchievements.Data.Categories:IsStatisticsCategory(categoryid) then
@@ -103,18 +103,25 @@ function API.GetAchievementInfo(categoryid, index)
 	end
 	if achievementid then
         -- achievementid received by parameter or found in category data, search additional data
-		_, name, points, completed, month, day, year, description, flags, icon, rewardText, isGuild, wasEarnedByMe, earnedBy = API.Blz_GetAchievementInfo(achievementid);
+		_, name, points, completed, month, day, year, description, flags, icon, rewardText, isGuild, wasEarnedByMe, earnedBy, isStatistic = API.Blz_GetAchievementInfo(achievementid);
     else
         -- statistic or guild achievement don't exits in categories data, search in blizzard data
-        achievementid, name, points, completed, month, day, year, description, flags, icon, rewardText, isGuild, wasEarnedByMe, earnedBy = API.Blz_GetAchievementInfo(categoryid, index);
+        achievementid, name, points, completed, month, day, year, description, flags, icon, rewardText, isGuild, wasEarnedByMe, earnedBy, isStatistic = API.Blz_GetAchievementInfo(categoryid, index);
+        
 	end
     local AccountInfo = CrossoverAchievements.Account:GetCompletedAchievementInfo(achievementid);
     if not AccountInfo then
         if CrossoverAchievements.Account:IsForceAllAccountAchievement() then
+            if not flags then
+                flags = 0;
+            end
             flags = bit.bor(flags,ACHIEVEMENT_FLAGS_ACCOUNT);
         end
     else
         if AccountInfo.Account then
+            if not flags then
+                flags = 0;
+            end
             flags = bit.bor(flags,ACHIEVEMENT_FLAGS_ACCOUNT);
         end
         completed = true;
@@ -132,7 +139,7 @@ function API.GetAchievementInfo(categoryid, index)
         month = nil;
         day = nil;
     end
-    return achievementid, name, points, completed, month, day, year, description, flags, icon, rewardText, isGuild, wasEarnedByMe, earnedBy;
+    return achievementid, name, points, completed, month, day, year, description, flags, icon, rewardText, isGuild, wasEarnedByMe, earnedBy, isStatistic;
 end
 
 function API.IsAccountWideAchievement(achievementid)
