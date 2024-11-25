@@ -169,13 +169,13 @@ function API.GetNextAchievement(achievementid)
     if not data or not data.NextId then
 	    return API.Blz_GetNextAchievement(achievementid);
 	end
-    local AccountInfo = CrossoverAchievements.Account:GetCompletedAchievementInfo(achievementid);
+    local AccountInfo = CrossoverAchievements.Account:GetCompletedAchievementInfo(data.NextId);
     if AccountInfo then
         -- next achievement completed
         return data.NextId, true;
     end
     -- next achievement not completed
-    return data.NextId, false;
+    return data.NextId;
 end
 
 function API.GetCategoryNumAchievements(categoryId, includeAll)
