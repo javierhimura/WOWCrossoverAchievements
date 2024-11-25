@@ -163,7 +163,7 @@ function Character:ProcessCharactersNoGuidBlizzardAchievementData(CurrentGameVer
     -- Search through all characters with guid and the same name
     for CharacterKey, CharacterData in pairs(CurrentGameVersionTable.Characters) do
         if CharacterData.Name == CharacterKey and CharacterData.Achievements then
-        print('ProcessCharactersNoGuidBlizzardAchievementData ', CharacterKey);
+            --print('ProcessCharactersNoGuidBlizzardAchievementData ', CharacterKey);
             for achievementid, achievementtime in pairs(CharacterData.Achievements) do
                 self:ProcessCharacterNameBlizzardAchievementData(CurrentGameVersionTable, achievementid, CharacterKey, achievementtime);
             end
